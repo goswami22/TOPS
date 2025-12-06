@@ -2,7 +2,7 @@
 
 int main() {
     printf("Hello world \n");
-    printf("First Task");
+    printf("First Task of c`Programming Language\n");
     return 0;
 }
 
