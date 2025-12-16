@@ -15,7 +15,13 @@ int main(){
 	printf("Enter c value: \n");
 	scanf("%d", &c);
 	
-
+	if(a >= b && a>= c){
+		printf("a is begger numbar");
+	}else if(b >= a && b >= c){
+		printf("b is begger numbar");
+	} else {
+		printf("c is begger numbar");
+	}
 	
 	
 	return 0;
