@@ -19,8 +19,8 @@ int main() {
 	printf("Enter the Gujarati Value here:\n");
 	scanf("%d",&Gujarati);
 
-	float avg = (Maths + English + Science + Gujarati) / 4;
-	printf("The average number is %f\n", avg);
+	int avg = (Maths + English + Science + Gujarati) / 4;
+	printf("The average number is %d\n", avg);
 
 	float per = ((Maths + English + Science + Gujarati) * 100.0) / 400;
 	printf("The percentage of Total marks is %.2f%% \n", per);
