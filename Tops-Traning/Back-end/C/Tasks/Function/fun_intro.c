@@ -4,7 +4,7 @@
 1. what is function?
 -> Function is a block of code.
 -> when we need it just call it.
--> itis reuseable code, We can use multiple time it.
+-> it's reuseable code, We can use multiple time it.
 
 => There are teo type of function
 	1. pre define function

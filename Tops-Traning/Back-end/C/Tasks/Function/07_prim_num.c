@@ -8,23 +8,17 @@
 
 int primNum(int n){
 	int i, count = 0;
-	
-	
 		
 	for(i = 1; i <= n; i++){
 		if( n % i == 0 ){
 			count++;
 		}
 	}
-	return 0;
+	
+	return count;
 }
 
-if(pnum == 2){
-	printf("prime number ");
-} else 
-{
-	printf("Not prime number ");
-}
+
 
 
 void main(){
@@ -35,6 +29,13 @@ void main(){
 	
 	printf("Your number: %d \n", num);
 	printf("%d \n", primNum(num));
+	
+	if(primNum(num) == 2){
+		printf("prime number ");
+	} else {
+		printf("not prime number ");
+	}
+	
 	
 	getch();
 }

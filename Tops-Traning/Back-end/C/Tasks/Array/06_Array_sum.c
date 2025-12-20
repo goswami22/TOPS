@@ -9,7 +9,7 @@ void main(){
 	
 	for(i = 0; i < 6; i++){
 		sum += data[i];
-		printf("\n data[%d]: %d \n", i, data[i]);
+		printf("\n data[%d]: %d \n",i, data[i]);
 	}
 	
 
