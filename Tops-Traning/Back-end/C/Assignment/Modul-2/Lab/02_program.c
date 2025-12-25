@@ -7,9 +7,9 @@
 
 
 int main(){
-	int a = 10;
-	float b = 10.5;
-	char c = 'c';
+	int a = 10;						// interger variable 
+	float b = 10.5;					// float variables 
+	char c = 'c';					// charecter variables 
 	
 	printf("The a Value is : %d \n", a);
 	printf("The b Value is : %0.2f \n", b);
