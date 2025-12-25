@@ -18,7 +18,7 @@ int primNum(int n) {
         }
     }
 
-    return 1;   // Prime
+    return 1;   // Prime number 
 }
 
 void main() {
