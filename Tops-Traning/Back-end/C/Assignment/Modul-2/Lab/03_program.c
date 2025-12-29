@@ -12,7 +12,6 @@ int main(){
 	printf("Enter a value : \n");
 	scanf("%d", &a);
 	
-	
 	printf("Enter b value : \n");
 	scanf("%d", &b);
 //	arithmetic operater 

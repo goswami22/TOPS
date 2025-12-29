@@ -38,14 +38,6 @@
 	
 	printf("The sum is %d", sum);
 	
-	 
-	 
- 	
- 	
- 	
- 	
- 	
- 	
  	return 0;
  }
  

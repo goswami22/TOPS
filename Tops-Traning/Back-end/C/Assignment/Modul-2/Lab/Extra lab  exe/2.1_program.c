@@ -13,17 +13,27 @@
  
  int main(){
  	
- 	int marks;
- 	printf("Enter your marks:");
- 	scanf("%d", &marks);
+ 	int total, s1, s2, s3;
+ 	printf("Enter your s1 marks:");
+ 	scanf("%d", &s1);
  	
- 	if(marks > 90){
- 		printf("\nGrade A");
-	 } else if(marks > 75 && marks <= 90){
+ 	printf("Enter your s2 marks:");
+ 	scanf("%d", &s2);
+ 	
+ 	printf("Enter your s3 marks:");
+ 	scanf("%d", &s3);
+ 	
+ 	total =  ((s1 + s2 + s3) * 100) / 300; 
+ 	
+ 	if(total > 100 || total < 0){
+ 		printf("\nInvalid number");
+	 } else if( total > 90 && total <= 100){
+	 	printf("\nGrade A");
+	 }else if(total > 75 && total <= 90){
 	 	printf("\nGrade B");
-	 } else if(marks > 50 && marks <= 75){
+	 } else if(total > 50 && total <= 75){
 	 	printf("\nGrade C");
-	 } else if(marks <= 50){
+	 } else if(total <= 50){
 	 	printf("\nGrade D");
 	 }
 	 

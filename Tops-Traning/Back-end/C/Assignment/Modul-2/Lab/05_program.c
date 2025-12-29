@@ -17,6 +17,7 @@ int main(){
 	
 	
 	printf("Using While loop \n");
+	
 	i = 1;
 	while(i <= 10){
 		printf("%d \n", i);
@@ -31,8 +32,6 @@ int main(){
 		printf("%d \n", i);
 		i++;
 	}while(i <= 10);
-	
-	
 	
 	return 0;
 }
