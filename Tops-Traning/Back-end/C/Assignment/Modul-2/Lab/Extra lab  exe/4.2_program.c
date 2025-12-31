@@ -11,48 +11,48 @@ int main(){
 	int a[2][2],b[2][2],c[2][2],i,j;
 	int d[3][3],e[3][3],f[3][3];
 	
-//	printf("For A \n");
-//	for(i = 0;i < 2; i++){
-//		for(j = 0; j< 2; j++){
-//			printf("Enter Row: %d and Col: %d \n", i, j);
-//			scanf("%d", &a[i][j]);
-//		}
-//	}
-//	for(i = 0; i < 2; i++){
-//		for(j = 0; j < 2; j++){
-//			printf("a[%d][%d] : %d \n", i , j , a[i][j]);
-//		}
-//	}
-//	
-//	printf("For B \n");
-//	for(i = 0; i < 2; i++){
-//		for(j = 0; j < 2; j++){
-//			printf("Enter Row: %d and Col: %d", i,j);
-//			scanf("%d", &b[i][j]);
-//		}
-//	}
-//	
-//	for(i = 0; i < 2; i++){
-//		for(j = 0;j < 2; j++){
-//			printf("b[%d][%d]: %d \n", i, j , b[i][j]);
-//		}
-//	}
-////	for sum
-//	for(i = 0; i < 2; i++){
-//		for(j = 0; j < 2; j++){
-//			c[i][j] = a[i][j] + b[i][j]; 
-//		}
-//	}
-//	
-//	for(i = 0; i < 2; i++){
-//		for(j = 0; j < 2; j++){
-//			printf("The sum is %d\n", c[i][j]);
-//		}
-//	}
+	printf("For A 2x2 \n");
+	for(i = 0;i < 2; i++){
+		for(j = 0; j< 2; j++){
+			printf("Enter Row: %d and Col: %d \n", i, j);
+			scanf("%d", &a[i][j]);
+		}
+	}
+	for(i = 0; i < 2; i++){
+		for(j = 0; j < 2; j++){
+			printf("a[%d][%d] : %d \n", i , j , a[i][j]);
+		}
+	}
+	
+	printf("For B 2x2 \n");
+	for(i = 0; i < 2; i++){
+		for(j = 0; j < 2; j++){
+			printf("Enter Row: %d and Col: %d\n", i,j);
+			scanf("%d", &b[i][j]);
+		}
+	}
+	
+	for(i = 0; i < 2; i++){
+		for(j = 0;j < 2; j++){
+			printf("b[%d][%d]: %d \n", i, j , b[i][j]);
+		}
+	}
+//	for sum
+	for(i = 0; i < 2; i++){
+		for(j = 0; j < 2; j++){
+			c[i][j] = a[i][j] + b[i][j]; 
+		}
+	}
+	
+	for(i = 0; i < 2; i++){
+		for(j = 0; j < 2; j++){
+			printf("The sum is %d\n", c[i][j]);
+		}
+	}
 //	3x3 matrices and matrix multiplication.
 
 //	for d
-	printf("For d\n");
+	printf("For d 3x3\n");
 	for(i = 0; i < 3; i++){
 		for(j = 0; j < 3;j++){
 			printf("Enter Row: %d and Col: %d\n", i, j);
@@ -66,7 +66,7 @@ int main(){
 		}
 	}
 //	for e
-	printf("For e\n");	
+	printf("For e 3x3\n");	
 	for(i = 0; i < 3; i++){
 		for(j = 0; j < 3;j++){
 			printf("Enter Row: %d and Col: %d\n", i, j);

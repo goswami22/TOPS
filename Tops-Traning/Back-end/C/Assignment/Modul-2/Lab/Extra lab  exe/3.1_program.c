@@ -9,7 +9,7 @@
 
 int main() {
 
-    int n, i, j, count;
+    int n, i, j, count = 0;
 
     printf("Enter a number: ");
     scanf("%d", &n);
