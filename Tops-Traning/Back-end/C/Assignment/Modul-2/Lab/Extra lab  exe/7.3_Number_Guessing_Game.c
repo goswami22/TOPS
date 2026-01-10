@@ -14,20 +14,21 @@
  	int i, num , onum= 30;
  	
  	
+ 	printf("Enter number between 1 to 100\n");
  	
  	for(i = 1; i <= 5; i++){
- 	printf("Enter number between 1 to 100\n");
+ 	printf("Guess Number \n");
  	scanf("%d", &num);
  	
- 	if(num > onum){
- 		printf("choose larger number, to high\n");
- 		
+ 	if(num == onum){
+ 		printf("Right Guess\n");
+ 		break;
 	  } else if(num < onum){
-	  	printf("choose smaller number,to low\n");
+	  	printf("To low, try again\n");
 	  	
-	  } else if(num == onum) {
-	  	printf("You right\n");
-	  	break;
+	  } else if(num > onum) {
+	  	printf("To hight, Try again\n");
+	  	
 	  } 		 
 	}
  	
