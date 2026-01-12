@@ -1,4 +1,30 @@
-// Create a lecture management System 
+/* 
+	Create a lecture management System 
+	
+	Define a class to represent lecture details. Include the following members and the
+	program should handle at least details of 5 lecturers.
+	
+	Data members:
+	a) Name of the lecturer
+	b) Name of the subject
+	c) Name of course
+	d) Number of lecturers
+	
+	Data functions:
+	a) To assign initial values
+	b) To add a lecture details
+	c) To display name and lecture details
+	
+	Make sure you have to use constructor concept in it
+	Make sure all naming conversion properly mention in this project work
+	Make sure all method name
+	
+	Use class and object concepts
+	
+	Upload all features in develop branch after completion all features
+	merge it with the main branch.
+	
+*/
 
 #include <iostream>
 using namespace std;
