@@ -1,4 +1,6 @@
-/* 
+/* 	
+	Module - 4 -Introduction to OOPS Programming
+	
 	Create a lecture management System 
 	
 	Define a class to represent lecture details. Include the following members and the
