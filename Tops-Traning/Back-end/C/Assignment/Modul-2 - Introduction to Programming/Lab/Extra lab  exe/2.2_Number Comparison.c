@@ -26,7 +26,7 @@
 		printf("A is Largest Numbar \n");
 	} else if( b > a && b > c){
 		printf("B is Largest Numbar \n");
-	} else if(c > a && c > b){
+	} else {
 		printf("C is Largest Numbar \n");
 	}
 
@@ -35,7 +35,7 @@
 		printf("A is Smallest Numbar \n");
 	} else if( b < a && b < c){
 		printf("B is Smallest Numbar \n");
-	} else if(c < a && c < b){
+	} else {
 		printf("C is Smallest Numbar \n");
 	}
 	

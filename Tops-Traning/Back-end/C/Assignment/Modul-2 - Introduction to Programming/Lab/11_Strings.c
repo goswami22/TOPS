@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <string.h>
+
 int main(){
 	
 	char fname[10], lname[10];

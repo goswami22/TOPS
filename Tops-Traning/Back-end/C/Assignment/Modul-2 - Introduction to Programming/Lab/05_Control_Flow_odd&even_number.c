@@ -11,7 +11,7 @@ name based on the user’s input (1 for January, 2 for February, etc.).
 
 int main(){
 	
-	int i, j; 
+	int i, choice; 
 	printf("Enter your number: \n");
 	scanf("%d",&i);
 	
@@ -21,10 +21,10 @@ int main(){
 		printf("This is odd number \n");
 	}
 	
-	printf("Enter The number: \n");
-	scanf("%d", &j);
+	printf("Choose Month number: \n");
+	scanf("%d", &choice);
 	
-	switch(j){
+	switch(choice){
 		case 1: 
 			printf("January\n");
 			break;
