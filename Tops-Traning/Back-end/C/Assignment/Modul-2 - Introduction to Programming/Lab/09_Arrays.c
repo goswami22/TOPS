@@ -1,8 +1,6 @@
  /*
- 	Write a C program that stores 5 integers in a one-dimensional array and prints
-	them. 
-	Extend this to handle a two-dimensional array (3x3 matrix) and
-	calculate the sum of all elements
+ 	Write a C program that stores 5 integers in a one-dimensional array and prints them. 
+	Extend this to handle a two-dimensional array (3x3 matrix) and calculate the sum of all elements
  
  */
  
