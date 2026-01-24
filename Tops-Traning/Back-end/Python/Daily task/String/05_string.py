@@ -27,4 +27,6 @@ print(s.count('s'))                          # count charecter in the string
 
 print(s.isalnum())                          # for string contain only alphabets and number no space and special character use to condition - true and false 
 
-print(len(s))                                     # for find lenght of string 
+print(len(s))                               # for find lenght of string 
+
+print(s.isspace())
