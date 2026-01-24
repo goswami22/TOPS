@@ -1,29 +1,30 @@
-s = ('Bhavesh Goswamsi')
+s = ('Bhavesh Goswamsi123')
 
-print(s.upper())                    
+print(s.upper())                        # for upper case  
 
-print(s.lower())
+print(s.lower())                            #for lower case
 
-print(s.capitalize())
+print(s.capitalize())                   # for capitalize - only first word is capital 
 
-print(s.title())
+print(s.title())                            # for title - all first letter capital
 
-print(s.casefold())
+print(s.casefold())                     #for lower case
 
-print(s.center(40, "="))
+print(s.center(40, "="))            # use to center text and add left and right something 
 
-print(s.endswith("ami"))
+print(s.endswith("ami"))            # use to condition - true and false 
 
-print(s.startswith("Go"))
+print(s.startswith("Go"))             # use to condition - true and false 
 
-print(s.find('ve'))
+print(s.find('ve'))                         #find index number - 0 to n
 
-print(s.islower())
+print(s.islower())                        #for lowsercase -  use to condition - true and false 
+print(s.isupper())                          # for Uppercase -  use to condition - true and false 
 
-print(s.isupper())
+print(s.istitle())                              #for title formate - use to condition - true and false 
 
-print(s.istitle())
+print(s.count('s'))                          # count charecter in the string
 
-print(s.count('s'))
+print(s.isalnum())                          # for string contain only alphabets and number no space and special character use to condition - true and false 
 
-print(s.isalnum())
+print(len(s))                                     # for find lenght of string 
