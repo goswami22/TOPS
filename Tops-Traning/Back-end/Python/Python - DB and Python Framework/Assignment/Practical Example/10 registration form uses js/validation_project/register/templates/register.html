@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <script>
+        function validateForm() {
+            let email = document.forms["regForm"]["email"].value;
+            let phone = document.forms["regForm"]["phone"].value;
+
+            // Email validation
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert("Enter a valid Email!");
+                return false;
+            }
+
+            // Phone validation (10 digits only)
+            let phonePattern = /^[0-9]{10}$/;
+            if (!phone.match(phonePattern)) {
+                alert("Enter a valid 10-digit Phone Number!");
+                return false;
+            }
+
+            alert("Form Submitted Successfully!");
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+    <h2>Registration Form</h2>
+
+    <form name="regForm" method="post" onsubmit="return validateForm()">
+        {% csrf_token %}
+
+        <label>Email:</label><br>
+        <input type="text" name="email"><br><br>
+
+        <label>Phone Number:</label><br>
+        <input type="text" name="phone"><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+{% extends 'header.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+</head>
+<body>
+    <center>
+    <h1 class="my-5">Contact us</h1>
+
+    <div class="container">
+        {% if msg %}
+            <b style="color: blue;">{{msg}}</b>
+        {% endif %}
+        <form action="{% url 'contact' %}" method="post" name="contact">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td><label for="name" class="form-label">full name: </label></td>
+                    <td><input type="text" name="name" class="form-control" id="name"></td>
+                </tr>
+                <tr>
+                    <td><label for="email" class="form-label">Email: </label></td>
+                    <td><input type="email" name="email" class="form-control" id="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="mobile" class="form-label">Mobile: </label></td>
+                    <td><input type="mobile" name="mobile" class="form-control" id="mobile"></td>
+                </tr>
+                <tr>
+                    <td><label for="message" class="form-label">Message: </label></td>
+                    <td><textarea name="message" rows="5" cols="30" class="form-control" id="message"></textarea></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="SUBMIT" name="submit" class="btn btn-primary">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    </center>
+
+    <h2>Recent Views </h2>
+    <hr>
+    {% for i in contacts %}
+        Name= {{i.name}}<br>
+        Message = {{i.message}}<br><hr>
+    {% endfor %}
+</body>
+</html>
+{% endblock %}

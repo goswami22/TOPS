@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile - {{ doctor.name|default:"Doctor Name" }}</title>
+    <!-- Include FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #005f9e;
+            --light-blue: #e6f2fb;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --white: #ffffff;
+            --bg-color: #f7f9fc;
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+            gap: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        /* Header Section */
+        .doctor-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .doctor-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--light-blue);
+        }
+
+        .doctor-info h1 {
+            font-size: 26px;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .doctor-info .department {
+            font-size: 18px;
+            color: var(--text-gray);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .doctor-tags {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Section Headings */
+        .section-title {
+            font-size: 20px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* List Items */
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: var(--text-gray);
+            font-size: 16px;
+        }
+
+        .info-list li i {
+            color: var(--primary-blue);
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Button */
+        .btn-book {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn-book:hover {
+            background-color: #004473;
+            transform: translateY(-2px);
+        }
+
+        /* Contact Section */
+        .contact-details {
+            background-color: var(--light-blue);
+            padding: 18px;
+            border-radius: var(--border-radius);
+            margin-top: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .doctor-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .doctor-tags {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        
+        <!-- Header Section -->
+        <div class="card doctor-header">
+            <img src="{{ doctor.photo_url|default:'https://via.placeholder.com/150/005f9e/ffffff?text=Doctor+Photo' }}" alt="Doctor Photo" class="doctor-photo">
+            <div class="doctor-info">
+                <h1>{{ doctor.name|default:"Dr. Amit Patel" }}</h1>
+                <div class="department">{{ doctor.department|default:"Cardiology" }}</div>
+                <div class="doctor-tags">
+                    <span class="tag"><i class="fas fa-user-graduate"></i> {{ doctor.qualification|default:"MBBS, MD" }}</span>
+                    <span class="tag"><i class="fas fa-stethoscope"></i> {{ doctor.experience|default:"10" }}+ Years Experience</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="card">
+            <h2 class="section-title"><i class="fas fa-user-md"></i> About Doctor</h2>
+            <p style="color: var(--text-gray); font-size: 16px;">
+                {{ doctor.about|default:"Dr. Amit Patel is a highly experienced and dedicated Cardiologist committed to providing the best cardiovascular care. He specializes in diagnosing and treating a wide range of heart conditions. Known for his compassionate approach, he ensures that every patient receives personalized and comprehensive treatment." }}
+            </p>
+            <br>
+            <p style="color: var(--text-gray); font-size: 16px;">
+                <strong>Specialization:</strong> {{ doctor.specialization|default:"Interventional Cardiology, Heart Failure Management, Preventive Cardiology" }}
+            </p>
+        </div>
+
+        <!-- Information Section -->
+        <div class="card">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> Consultation Information</h2>
+            <ul class="info-list">
+                <li><i class="fas fa-rupee-sign"></i> <strong>Consultation Fee:</strong> ₹{{ doctor.consultation_fee|default:"500" }}</li>
+                <li><i class="fas fa-calendar-alt"></i> <strong>Available Days:</strong> {{ doctor.days|default:"Mon – Sat" }}</li>
+                <li><i class="fas fa-clock"></i> <strong>Available Time:</strong> {{ doctor.time|default:"10:00 AM – 2:00 PM" }}</li>
+                <li><i class="fas fa-language"></i> <strong>Languages Spoken:</strong> {{ doctor.languages|default:"English, Hindi, Gujarati" }}</li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="card">
+            <h2 class="section-title"><i class="fas fa-hospital"></i> Hospital Details</h2>
+            <div class="contact-details">
+                <ul class="info-list" style="margin-bottom: 0;">
+                    <li><i class="fas fa-building"></i> <strong>{{ doctor.hospital_name|default:"City Care Hospital" }}</strong></li>
+                    <li><i class="fas fa-map-marker-alt"></i> {{ doctor.hospital_address|default:"123 Health Avenue, Medical Zone, City Center, 400001" }}</li>
+                    <li><i class="fas fa-phone-alt"></i> {{ doctor.contact_number|default:"+91 98765 43210" }}</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Appointment Section -->
+        <div style="margin-top: 10px;">
+            <a href="#" class="btn-book"><i class="fas fa-calendar-check" style="margin-right: 8px;"></i> Book Appointment</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

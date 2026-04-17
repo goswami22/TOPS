@@ -1,0 +1,361 @@
+{% extends 'header.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Tips & Medical Insights</title>
+</head>
+
+<body class="blog_page">
+
+    <!-- Section 1: Hero Banner Section -->
+    <section class="hero-section text-center position-relative">
+        <div class="hero-overlay"></div>
+        <div class="container position-relative z-1 hero-content">
+            <h1 class="hero-title text-white">Health Tips & Medical Insights</h1>
+            <p class="hero-subtitle text-white">Stay informed with expert healthcare advice from our specialists.</p>
+            <button class="btn-primary-custom">Book Appointment</button>
+        </div>
+    </section>
+
+    <!-- Section 2: Blog Categories Filter Section -->
+    <section class="blog-filter-section container pt-50 pb-50">
+        <div class="row mb-4 align-items-center g-3">
+            <div class="col-lg-8">
+                <div class="d-flex flex-wrap gap-2 category-buttons">
+                    <button class="btn category-btn active">Health Tips</button>
+                    <button class="btn category-btn">Medical News</button>
+                    <button class="btn category-btn">Doctor Advice</button>
+                    <button class="btn category-btn">Patient Stories</button>
+                    <button class="btn category-btn">Hospital Updates</button>
+                    <button class="btn category-btn">Wellness Guide</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="search-input-wrapper position-relative">
+                    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                    <input type="text" class="form-control" placeholder="Search blog by title or keyword">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Featured Blog Section -->
+    <section class="featured-blog-section container mb-50">
+        <div class="glass-card p-0 overflow-hidden featured-blog-card position-relative">
+            <div class="row g-0 align-items-center">
+                <div class="col-lg-7 position-relative featured-image-col">
+                    <div class="featured-overlay"></div>
+                    <img src="{% static '../static/img/post/blog_banner_2.jpg' %}" class="w-100 featured-img" alt="Featured Blog">
+                    <div class="featured-badge position-absolute top-0 start-0 m-4">
+                        <span class="badge bg-primary px-3 py-2">Featured</span>
+                    </div>
+                </div>
+                <div class="col-lg-5 p-5 featured-content">
+                    <span class="text-primary fw-bold small"><i class="bi bi-calendar-event me-2"></i>Oct 24,
+                        2026</span>
+                    <h2 class="text-dark">The Future of Telemedicine: Breaking the Boundaries in
+                        Healthcare</h2>
+                    <p class="text-muted mb-4 featured-desc">Discover how modern hospitals are integrating remote
+                        healthcare solutions to provide instant patient care and what it means for ongoing medical
+                        practice.</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="author-info d-flex align-items-center">
+                            <i class="bi bi-person-circle fs-4 text-primary me-2"></i>
+                            <span class="text-dark fw-bold">Dr. James Wilson</span>
+                        </div>
+                        <button class="btn admin-btn-action read-full-btn">Read Full Article</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Blog Posts Grid Section -->
+    <section class="blog-grid-section container mb-50">
+        <h3 class="mb-4 fw-bold text-center">Latest Articles</h3>
+        <div class="title-underline mx-auto mb-50"></div>
+        <div class="row g-4 mb-4">
+            <!-- Blog Card 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="blog-card glass-card h-100 position-relative">
+                    <div class="blog-img-wrapper position-relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1498837167922-41c3732ce683?q=80&w=600&auto=format&fit=crop"
+                            class="w-100 blog-img" alt="Blog Post">
+                        <span class="badge bg-secondary position-absolute top-0 end-0 m-3 categ-badge">Health
+                            Tips</span>
+                    </div>
+                    <div class="blog-card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2 small text-muted">
+                            <span><i class="bi bi-calendar3 me-1"></i> Oct 20, 2026</span>
+                            <span><i class="bi bi-clock me-1"></i> 5 min read</span>
+                        </div>
+                        <h4 class="blog-title fw-bold mb-3">10 Superfoods to Boost Your Immune System</h4>
+                        <p class="blog-desc text-muted mb-4">A strong immune system is essential. Here are ten easily
+                            available superfoods you must include in your daily diet.</p>
+                        <hr class="border border-muted opacity-100">
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="author fw-bold text-dark small"><i class="bi bi-person me-1 text-primary"></i>
+                                Admin</span>
+                            <a href="#" class="read-more-link fw-bold text-primary">Read More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Card 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="blog-card glass-card h-100 position-relative">
+                    <div class="blog-img-wrapper position-relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1584362917165-526a968579e8?q=80&w=600&auto=format&fit=crop"
+                            class="w-100 blog-img" alt="Blog Post">
+                        <span class="badge bg-secondary position-absolute top-0 end-0 m-3 categ-badge">Medical
+                            News</span>
+                    </div>
+                    <div class="blog-card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2 small text-muted">
+                            <span><i class="bi bi-calendar3 me-1"></i> Oct 18, 2026</span>
+                            <span><i class="bi bi-clock me-1"></i> 8 min read</span>
+                        </div>
+                        <h4 class="blog-title fw-bold mb-3">New Breakthrough in Cardiology Research</h4>
+                        <p class="blog-desc text-muted mb-4">Researchers have discovered a unique approach to managing
+                            early-stage heart conditions without aggressive surgery.</p>
+                        <hr class="border border-muted opacity-100">
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="author fw-bold text-dark small"><i class="bi bi-person me-1 text-primary"></i>
+                                Dr. Sarah Jenkins</span>
+                            <a href="#" class="read-more-link fw-bold text-primary">Read More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Card 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="blog-card glass-card h-100 position-relative">
+                    <div class="blog-img-wrapper position-relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=600&auto=format&fit=crop"
+                            class="w-100 blog-img" alt="Blog Post">
+                        <span class="badge bg-secondary position-absolute top-0 end-0 m-3 categ-badge">Wellness
+                            Guide</span>
+                    </div>
+                    <div class="blog-card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2 small text-muted">
+                            <span><i class="bi bi-calendar3 me-1"></i> Oct 15, 2026</span>
+                            <span><i class="bi bi-clock me-1"></i> 4 min read</span>
+                        </div>
+                        <h4 class="blog-title fw-bold mb-3">Mental Health: Managing Everyday Stress</h4>
+                        <p class="blog-desc text-muted mb-4">Learn practically proven exercises and psychological
+                            strategies to manage your everyday stress and maintain mental peace.</p>
+                        <hr class="border border-muted opacity-100">
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="author fw-bold text-dark small"><i class="bi bi-person me-1 text-primary"></i>
+                                Dr. Michael Chen</span>
+                            <a href="#" class="read-more-link fw-bold text-primary">Read More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Card 4 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="blog-card glass-card h-100 position-relative">
+                    <div class="blog-img-wrapper position-relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542884748-2b87b36c6b90?q=80&w=600&auto=format&fit=crop"
+                            class="w-100 blog-img" alt="Blog Post">
+                        <span class="badge bg-secondary position-absolute top-0 end-0 m-3 categ-badge">Doctor
+                            Advice</span>
+                    </div>
+                    <div class="blog-card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2 small text-muted">
+                            <span><i class="bi bi-calendar3 me-1"></i> Oct 10, 2026</span>
+                            <span><i class="bi bi-clock me-1"></i> 6 min read</span>
+                        </div>
+                        <h4 class="blog-title fw-bold mb-3">Why You Shouldn't Ignore Joint Pains</h4>
+                        <p class="blog-desc text-muted mb-4">Early detection of arthritis and bone degeneration can
+                            substantially improve your quality of life. Discover the key symptoms.</p>
+                        <hr class="border border-muted opacity-100">
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="author fw-bold text-dark small"><i class="bi bi-person me-1 text-primary"></i>
+                                Dr. Emily Davis</span>
+                            <a href="#" class="read-more-link fw-bold text-primary">Read More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Card 5 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="blog-card glass-card h-100 position-relative">
+                    <div class="blog-img-wrapper position-relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?q=80&w=600&auto=format&fit=crop"
+                            class="w-100 blog-img" alt="Blog Post">
+                        <span class="badge bg-secondary position-absolute top-0 end-0 m-3 categ-badge">Health
+                            Tips</span>
+                    </div>
+                    <div class="blog-card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2 small text-muted">
+                            <span><i class="bi bi-calendar3 me-1"></i> Oct 05, 2026</span>
+                            <span><i class="bi bi-clock me-1"></i> 3 min read</span>
+                        </div>
+                        <h4 class="blog-title fw-bold mb-3">The Power of Staying Hydrated</h4>
+                        <p class="blog-desc text-muted mb-4">Drinking adequate water positively affects your skin,
+                            energy levels, and organ function. Explore the daily requirements.</p>
+                        <hr class="border border-muted opacity-100">
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="author fw-bold text-dark small"><i class="bi bi-person me-1 text-primary"></i>
+                                Admin</span>
+                            <a href="#" class="read-more-link fw-bold text-primary">Read More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Card 6 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="blog-card glass-card h-100 position-relative">
+                    <div class="blog-img-wrapper position-relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=600&auto=format&fit=crop"
+                            class="w-100 blog-img" alt="Blog Post">
+                        <span class="badge bg-secondary position-absolute top-0 end-0 m-3 categ-badge">Hospital
+                            Updates</span>
+                    </div>
+                    <div class="blog-card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2 small text-muted">
+                            <span><i class="bi bi-calendar3 me-1"></i> Sep 28, 2026</span>
+                            <span><i class="bi bi-clock me-1"></i> 2 min read</span>
+                        </div>
+                        <h4 class="blog-title fw-bold mb-3">Opening of Our New Pediatric Wing</h4>
+                        <p class="blog-desc text-muted mb-4">We are thrilled to announce the opening of a fully equipped
+                            pediatric wing to serve the younger members of our community.</p>
+                        <hr class="border border-muted opacity-100">
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="author fw-bold text-dark small"><i class="bi bi-person me-1 text-primary"></i>
+                                Admin</span>
+                            <a href="#" class="read-more-link fw-bold text-primary">Read More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link glass-element text-muted" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link glass-element text-primary fw-bold" href="#">1</a></li>
+                <li class="page-item"><a class="page-link glass-element text-dark" href="#">2</a></li>
+                <li class="page-item"><a class="page-link glass-element text-dark" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link glass-element text-primary" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- Section 5: Health Awareness Tips Section -->
+    <section class="health-tips-section bg-light-blue py-5 mb-5 rounded-4 mx-3 mx-md-5">
+        <div class="container py-4">
+            <div class="text-center mb-50">
+                <h2 class="fw-bold">Quick Health Awareness Tips</h2>
+                <div class="title-underline mx-auto"></div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="tip-card text-center p-3 h-100">
+                        <div class="tip-icon-wrapper mx-auto mb-3 text-primary">
+                            <i class="bi bi-droplet-fill"></i>
+                        </div>
+                        <h6 class="fw-bold">Hydration</h6>
+                        <p class="small text-muted mb-0">Drink enough water daily</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="tip-card text-center p-3 h-100">
+                        <div class="tip-icon-wrapper mx-auto mb-3 text-success">
+                            <i class="bi bi-apple"></i>
+                        </div>
+                        <h6 class="fw-bold">Healthy Diet</h6>
+                        <p class="small text-muted mb-0">Maintain balanced nutrition</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="tip-card text-center p-3 h-100">
+                        <div class="tip-icon-wrapper mx-auto mb-3 text-warning">
+                            <i class="bi bi-bicycle"></i>
+                        </div>
+                        <h6 class="fw-bold">Exercise</h6>
+                        <p class="small text-muted mb-0">Workout 30 mins regularly</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="tip-card text-center p-3 h-100">
+                        <div class="tip-icon-wrapper mx-auto mb-3 text-info">
+                            <i class="bi bi-moon-stars-fill"></i>
+                        </div>
+                        <h6 class="fw-bold">Sleep Well</h6>
+                        <p class="small text-muted mb-0">Get at least 7 hours sleep</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="tip-card text-center p-3 h-100">
+                        <div class="tip-icon-wrapper mx-auto mb-3 text-danger">
+                            <i class="bi bi-clipboard2-pulse-fill"></i>
+                        </div>
+                        <h6 class="fw-bold">Checkups</h6>
+                        <p class="small text-muted mb-0">Regular health screening</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Newsletter Subscription Section -->
+    <section class="newsletter-section container mb-5">
+        <div class="newsletter-box text-center text-white rounded-custom p-5 position-relative overflow-hidden">
+            <div class="newsletter-overlay"></div>
+            <div class="position-relative z-1 row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="fw-bold mb-3 text-white">Subscribe for Health Updates</h2>
+                    <p class="mb-4 text-white">Get the latest medical news, wellness tips, and hospital updates delivered straight
+                        to your inbox.</p>
+                    <form
+                        class="d-flex gap-2 justify-content-center max-w-lg mx-auto bg-white p-2 rounded-pill shadow-sm">
+                        <input type="email" class="form-control border-0 shadow-none rounded-pill bg-transparent"
+                            placeholder="Enter email address" required>
+                        <button type="submit" class="btn btn-primary rounded-pill px-4 m-1 fw-bold">Subscribe
+                            Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Call-to-Action Section -->
+    <section class="cta-section pt-50 pb-50 text-center">
+        <div class="container cta-content py-3">
+            <h2 class="mb-4 text-white fw-bold">Need expert medical consultation?</h2>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <button class="btn admin-btn-action btn-lg px-5 border-0">Book Appointment</button>
+                <button class="btn-primary-custom px-5">Contact Support</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+{% endblock %}

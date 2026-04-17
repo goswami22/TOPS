@@ -1,0 +1,390 @@
+{% extends 'header.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body class="doctors_page">
+
+    <!-- Section 1: Hero Banner -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container position-relative hero-content">
+            <h1 class="hero-title">Our Doctors</h1>
+            <p class="hero-subtitle">Meet our experienced specialists dedicated to your health.</p>
+            <button class="btn-primary-custom">Book Appointment</button>
+        </div>
+    </section>
+
+    <!-- Section 2: Department Filter -->
+    <section class="filter-section container py-5">
+        <div class="row g-3 justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="search-input-wrapper position-relative">
+                    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                    <input type="text" class="form-control rounded-pill glass-input"
+                        placeholder="Search doctor by name...">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <select class="form-select rounded-pill glass-input px-4">
+                    <option value="">Filter by Department</option>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Orthopedics">Orthopedics</option>
+                    <option value="Pediatrics">Pediatrics</option>
+                    <option value="Dermatology">Dermatology</option>
+                    <option value="General Medicine">General Medicine</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Doctors Grid -->
+    <section class="doctors-grid-section container mb-5">
+        <div class="row g-4">
+            <!-- Doctor 1 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="doc-card glass-card">
+                    <div class="doc-header position-relative">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=600&auto=format&fit=crop"
+                            alt="Dr. Sarah Jenkins" class="doc-img">
+                        <span
+                            class="badge bg-success availability-badge position-absolute top-0 end-0 m-3">Available</span>
+                    </div>
+                    <div class="doc-body p-4 text-center">
+                        <h5 class="doc-name mb-2">Dr. Sarah Jenkins</h5>
+                        <p class="doc-qualification text-muted small mb-2">MBBS, MD</p>
+                        <div class="d-flex align-items-center justify-content-center gap-2 mb-3 doc-dept-badge">
+                            <i class="bi bi-heart-pulse text-primary"></i> <span class="fw-bold">Cardiology</span>
+                        </div>
+                        <p class="doc-exp"><i class="bi bi-clock-history me-1 text-primary fs-4"></i> 8+ Years
+                            Experience</p>
+                        <div class="d-grid gap-2 mt-4">
+                            <button class="p-3 btn-outline-primary rounded-pill fw-medium" data-bs-toggle="modal"
+                                data-bs-target="#doctorModal">View Profile</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Doctor 2 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="doc-card glass-card">
+                    <div class="doc-header position-relative">
+                        <img src="https://images.unsplash.com/photo-1594824436951-7f12bc41c6e6?q=80&w=600&auto=format&fit=crop"
+                            alt="Dr. Michael Chen" class="doc-img">
+                        <span
+                            class="badge bg-warning text-dark availability-badge position-absolute top-0 end-0 m-3">Busy</span>
+                    </div>
+                    <div class="doc-body p-4 text-center">
+                        <h5 class="doc-name mb-1">Dr. Michael Chen</h5>
+                        <p class="doc-qualification text-muted small mb-2">MBBS, MS</p>
+                        <div class="d-flex align-items-center justify-content-center gap-2 mb-3 doc-dept-badge">
+                            <i class="bi bi-diagram-3 text-primary fs-5"></i> <span class="fw-bold">Neurology</span>
+                        </div>
+                        <p class="doc-exp"><i class="bi bi-clock-history me-1 text-primary fs-4"></i> 12+ Years
+                            Experience</p>
+                        <div class="d-grid gap-2 mt-4">
+                            <button class="p-3 btn-outline-primary rounded-pill fw-medium" data-bs-toggle="modal"
+                                data-bs-target="#doctorModal">View Profile</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Doctor 3 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="doc-card glass-card">
+                    <div class="doc-header position-relative">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=crop"
+                            alt="Dr. Emily Davis" class="doc-img">
+                        <span class="badge bg-danger availability-badge position-absolute top-0 end-0 m-3">On
+                            Leave</span>
+                    </div>
+                    <div class="doc-body p-4 text-center">
+                        <h5 class="doc-name mb-1">Dr. Emily Davis</h5>
+                        <p class="doc-qualification text-muted small mb-2">MBBS, MD</p>
+                        <div class="d-flex align-items-center justify-content-center gap-2 mb-3 doc-dept-badge">
+                            <i class="bi bi-person-hearts text-primary"></i> <span class="fw-bold">Pediatrics</span>
+                        </div>
+                        <p class="doc-exp"><i class="bi bi-clock-history me-1 text-primary fs-4"></i> 10+ Years
+                            Experience</p>
+                        <div class="d-grid gap-2 mt-4">
+                            <button class="p-3 btn-outline-primary rounded-pill fw-medium" data-bs-toggle="modal"
+                                data-bs-target="#doctorModal">View Profile</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Doctor 4 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="doc-card glass-card">
+                    <div class="doc-header position-relative">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=600&auto=format&fit=crop"
+                            alt="Dr. James Wilson" class="doc-img">
+                        <span
+                            class="badge bg-success availability-badge position-absolute top-0 end-0 m-3">Available</span>
+                    </div>
+                    <div class="doc-body p-4 text-center">
+                        <h5 class="doc-name mb-1">Dr. James Wilson</h5>
+                        <p class="doc-qualification text-muted small mb-2">MBBS, MS</p>
+                        <div class="d-flex align-items-center justify-content-center gap-2 mb-3 doc-dept-badge">
+                            <i class="bi bi-person-wheelchair text-primary"></i> <span
+                                class="fw-bold">Orthopedics</span>
+                        </div>
+                        <p class="doc-exp"><i class="bi bi-clock-history me-1 text-primary fs-4"></i> 15+ Years
+                            Experience</p>
+                        <div class="d-grid gap-2 mt-4">
+                            <button class="p-3 btn-outline-primary rounded-pill fw-medium" data-bs-toggle="modal"
+                                data-bs-target="#doctorModal">View Profile</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Doctor 5 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="doc-card glass-card">
+                    <div class="doc-header position-relative">
+                        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=600&auto=format&fit=crop"
+                            alt="Dr. Olivia Martinez" class="doc-img">
+                        <span
+                            class="badge bg-success availability-badge position-absolute top-0 end-0 m-3">Available</span>
+                    </div>
+                    <div class="doc-body p-4 text-center">
+                        <h5 class="doc-name mb-1">Dr. Olivia Martinez</h5>
+                        <p class="doc-qualification text-muted small mb-2">MBBS, MD</p>
+                        <div class="d-flex align-items-center justify-content-center gap-2 mb-3 doc-dept-badge">
+                            <i class="bi bi-bandaid text-primary"></i> <span class="fw-bold">Dermatology</span>
+                        </div>
+                        <p class="doc-exp"><i class="bi bi-clock-history me-1 text-primary fs-4"></i> 6+ Years
+                            Experience</p>
+                        <div class="d-grid gap-2 mt-4">
+                            <button class="p-3 btn-outline-primary rounded-pill fw-medium" data-bs-toggle="modal"
+                                data-bs-target="#doctorModal">View Profile</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Doctor 6 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="doc-card glass-card">
+                    <div class="doc-header position-relative">
+                        <img src="https://images.unsplash.com/photo-1594824436951-7f12bc41c6e6?q=80&w=600&auto=format&fit=crop"
+                            alt="Dr. Robert Kim" class="doc-img"> <!-- Placeholder from unsplash for another doctor -->
+                        <span
+                            class="badge bg-warning text-dark availability-badge position-absolute top-0 end-0 m-3">Busy</span>
+                    </div>
+                    <div class="doc-body p-4 text-center">
+                        <h5 class="doc-name mb-1">Dr. Robert Kim</h5>
+                        <p class="doc-qualification text-muted small mb-2">MBBS, MD</p>
+                        <div class="d-flex align-items-center justify-content-center gap-2 mb-3 doc-dept-badge">
+                            <i class="bi bi-capsule text-primary"></i> <span class="fw-bold">Gen. Medicine</span>
+                        </div>
+                        <p class="doc-exp"><i class="bi bi-clock-history me-1 text-primary fs-4"></i> 20+ Years
+                            Experience</p>
+                        <div class="d-grid gap-2 mt-4">
+                            <button class="p-3 btn-outline-primary rounded-pill fw-medium" data-bs-toggle="modal"
+                                data-bs-target="#doctorModal">View Profile</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Doctor 7 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="doc-card glass-card">
+                    <div class="doc-header position-relative">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=crop"
+                            alt="Dr. William Taylor" class="doc-img">
+                        <span
+                            class="badge bg-success availability-badge position-absolute top-0 end-0 m-3">Available</span>
+                    </div>
+                    <div class="doc-body p-4 text-center">
+                        <h5 class="doc-name mb-1">Dr. William Taylor</h5>
+                        <p class="doc-qualification text-muted small mb-2">MBBS, MS</p>
+                        <div class="d-flex align-items-center justify-content-center gap-2 mb-3 doc-dept-badge">
+                            <i class="bi bi-heart-pulse text-primary"></i> <span class="fw-bold">Cardiology</span>
+                        </div>
+                        <p class="doc-exp"><i class="bi bi-clock-history me-1 text-primary fs-4"></i> 14+ Years
+                            Experience</p>
+                        <div class="d-grid gap-2 mt-4">
+                            <button class="p-3 btn-outline-primary rounded-pill fw-medium" data-bs-toggle="modal"
+                                data-bs-target="#doctorModal">View Profile</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Doctor 8 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="doc-card glass-card">
+                    <div class="doc-header position-relative">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=600&auto=format&fit=crop"
+                            alt="Dr. Sophia Patel" class="doc-img">
+                        <span class="badge bg-danger availability-badge position-absolute top-0 end-0 m-3">On
+                            Leave</span>
+                    </div>
+                    <div class="doc-body p-4 text-center">
+                        <h5 class="doc-name mb-1">Dr. Sophia Patel</h5>
+                        <p class="doc-qualification text-muted small mb-2">MBBS, MD</p>
+                        <div class="d-flex align-items-center justify-content-center gap-2 mb-3 doc-dept-badge">
+                            <i class="bi bi-person-hearts text-primary"></i> <span class="fw-bold">Pediatrics</span>
+                        </div>
+                        <p class="doc-exp"><i class="bi bi-clock-history me-1 text-primary fs-4"></i> 11+ Years
+                            Experience</p>
+                        <div class="d-grid gap-2 mt-4">
+                            <button class="p-3 btn-outline-primary rounded-pill fw-medium" data-bs-toggle="modal"
+                                data-bs-target="#doctorModal">View Profile</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Why Choose Our Doctors Section -->
+    <section class="why-choose-section py-5 bg-light-blue mt-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Why Choose Our Doctors</h2>
+                <div class="title-underline mx-auto"></div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card glass-card h-100 p-4 text-center">
+                        <div class="feature-icon mb-3 mx-auto">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <h4 class="h5 fw-bold mb-2 text-dark">Experienced Specialists</h4>
+                        <p class="text-muted small mb-0">Our team consists of highly qualified doctors with years of
+                            clinical experience.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card glass-card h-100 p-4 text-center">
+                        <div class="feature-icon mb-3 mx-auto">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <h4 class="h5 fw-bold mb-2 text-dark">Modern Treatment Methods</h4>
+                        <p class="text-muted small mb-0">We utilize the latest medical technology and advanced treatment
+                            methodologies.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card glass-card h-100 p-4 text-center">
+                        <div class="feature-icon mb-3 mx-auto">
+                            <i class="bi bi-person-hearts"></i>
+                        </div>
+                        <h4 class="h5 fw-bold mb-2 text-dark">Patient-Centered Care</h4>
+                        <p class="text-muted small mb-0">We focus on personalized care, ensuring comfort and clear
+                            communication.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card glass-card h-100 p-4 text-center">
+                        <div class="feature-icon mb-3 mx-auto">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <h4 class="h5 fw-bold mb-2 text-dark">24/7 Medical Support</h4>
+                        <p class="text-muted small mb-0">Round-the-clock medical assistance for emergencies and
+                            continuous care.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Call-to-Action Section -->
+    <section class="cta-section py-5 text-center px-3">
+        <div class="container cta-content py-4">
+            <h2 class="mb-3">Need expert consultation?</h2>
+            <p class="mb-5 text-white">Schedule a visit with our top specialists today and take the first step towards
+                better health.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <button class="admin-btn-action btn btn-lg">Book Appointment</button>
+                <button class="btn-primary-custom">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Doctor Details Modal -->
+    <div class="modal fade" id="doctorModal" tabindex="-1" aria-labelledby="doctorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content glass-card border-0">
+                <div class="modal-header border-0 pb-0  position-relative z-3">
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 pt-0">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-md-5 text-center">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=600&auto=format&fit=crop"
+                                alt="Doctor Profile" class="img-fluid rounded-custom shadow-sm modal-doc-img mb-3">
+                        </div>
+                        <div class="col-md-7">
+                            <h3 class="fw-bold mb-1 text-dark" id="doctorModalLabel">Dr. Sarah Jenkins</h3>
+                            <p class="text-primary fw-semibold mb-3 fs-4 d-flex align-items-center"><i
+                                    class="bi bi-heart-pulse me-2"></i>Cardiology</p>
+
+                            <div class="doc-details-list mb-4">
+                                <div class="d-flex mb-3 align-items-center">
+                                    <div class="detail-icon text-primary me-3 fs-5"><i
+                                            class="bi bi-mortarboard-fill"></i></div>
+                                    <div>
+                                        <div class="fw-semibold text-dark">Education</div>
+                                        <div class="text-muted small">MBBS, MD</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-3 align-items-center">
+                                    <div class="detail-icon text-secondary me-3 fs-5"
+                                        style="color: var(--secondary-color) !important"><i class="bi bi-stars"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-semibold text-dark">Specialization</div>
+                                        <div class="text-muted small">Interventional Cardiology, Heart Failure</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-3 align-items-center">
+                                    <div class="detail-icon text-primary me-3 fs-5"><i class="bi bi-clock-history"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-semibold text-dark">Experience</div>
+                                        <div class="text-muted small">8+ Years Experience</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-3 align-items-center">
+                                    <div class="detail-icon text-secondary me-3 fs-5"
+                                        style="color: var(--secondary-color) !important"><i
+                                            class="bi bi-calendar-check-fill"></i></div>
+                                    <div>
+                                        <div class="fw-semibold text-dark">Consultation Timing</div>
+                                        <div class="text-muted small">Mon - Fri, 09:00 AM - 04:00 PM</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-grid mt-4">
+                                <button class="btn admin-btn-action w-100 fs-4">Book Appointment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+{% endblock %}

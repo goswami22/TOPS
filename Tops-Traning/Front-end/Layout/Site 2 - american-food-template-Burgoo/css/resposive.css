@@ -1,0 +1,140 @@
+/* FOT LARGER SCREEN */
+@media only screen and (max-width:1199px) {
+    #Statistics .card-area .card {
+        min-width: 228px;
+        height: 228px;
+    }
+
+    #Package .row {
+        gap: 30px;
+    }
+        .main-btn {
+        padding: 17px 37px;
+        white-space: nowrap;
+    }
+}
+
+/* FOR LAPTOP */
+@media only screen and (max-width:992px) {
+
+    #banner-btn {
+        padding: 100px 0;
+    }
+
+    #subscribe .subscribe-from .main-btn {
+        padding: 20px 10px;
+        font-size: 14px;
+    }
+
+    #subscribe {
+        padding-block: 70px;
+    }
+
+    #banner-btn p {
+        margin-block-end: 30px;
+    }
+
+    #Package .card img {
+        margin-block: 20px;
+    }
+
+    #Package .card {
+        padding: 15px;
+    }
+
+}
+
+/* FOR TABLTE */
+@media only screen and (max-width:768px) {
+    header .top-header .search a.toggle-btn {
+        display: block;
+    }
+
+    header .top-header .search a.search-btn {
+        display: none;
+    }
+
+    header .top-header .memu {
+        display: none;
+    }
+
+    header .header-content h1,
+    header .header-content p {
+        width: 100%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .image-text2 .row {
+        flex-direction: column;
+    }
+
+    .section-header h2 {
+        margin-block-end: 20px;
+    }
+
+    #team {
+        padding-block: 50px;
+    }
+
+    #team .card-area {
+        padding-block: 40px;
+    }
+
+    header .header-content {
+        padding: 20px 0 20px;
+    }
+
+    header .header-content h1 {
+        margin-block-end: 10px;
+    }
+
+    header .header-content p {
+        margin-block-end: 26px;
+    }
+
+    #image-text .row .col {
+        width: 100%;
+    }
+
+    #image-text .content p {
+        margin-block: 20px;
+    }
+
+    #image-text .image-box {
+        text-align: center;
+    }
+
+    #banner-btn {
+        padding: 130px 0;
+    }
+
+    #banner-btn p {
+        margin-block-end: 30px;
+        width: auto;
+    }
+
+    footer {
+        padding: 50px 0;
+    }
+
+    footer .col-4,
+    footer .col-6 {
+        width: 100%;
+    }
+
+
+}
+
+/* FOR MOBILE  */
+@media only screen and (max-width:576px) {
+    footer .col-6 {
+        flex-direction: column;
+    }
+
+    footer .col-6 .f-card {
+        width: 100%;
+    }
+}

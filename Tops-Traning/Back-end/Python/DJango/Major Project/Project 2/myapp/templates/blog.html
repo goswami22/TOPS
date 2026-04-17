@@ -1,0 +1,560 @@
+{% extends 'header.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+  <main class="collation-content   blog-content">
+    <section class="breadcrumb-wrapper">
+      <div class="breakcrumb-content">
+        <h2 class="breadcrumb-title">news</h2>
+        <nav aria-label="breadcrumb">
+          <div class="container-fluid px-0 overflow-hidden">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">news</li>
+            </ol>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <div class="container-fluid container-fluid-1500">
+      <div class="product-collation">
+        <div class="mobile-sidebar d-block d-md-none">
+          <a class="mobile-filter-btn" data-bs-toggle="offcanvas" href="#mobile-sidebar" role="button"
+            aria-controls="mobile-sidebar">
+            <i class="fa-solid fa-sliders"></i> <span>filter</span>
+          </a>
+          <!-- offcanvas start -->
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="mobile-sidebar"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class="product-sidebar-content">
+                <div class="sidebar-block">
+                  <h2 class="filter-heading">category</h2>
+                  <div class="category-content">
+                    <div class="accordion" id="accordionExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <li>starting & charging</li>
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                          data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <ul class="category-option">
+                              <li><a href="#">Spark Plug</a></li>
+                              <li><a href="#">Brake Stabiliser</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <li>Hardware</li>
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                          data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <ul class="category-option">
+                              <li><a href="#">Break Disc</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <li>spares</li>
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                          data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <ul class="category-option">
+                              <li><a href="#">Alloy Wheel</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sidebar-block">
+                  <h2 class="filter-heading">tags</h2>
+                  <div class="tag-wrapper">
+                    <ul>
+                      <li><a href="#">Batteries</a></li>
+                      <li><a href="#">Car Engine</a></li>
+                      <li><a href="#">Engine oil</a></li>
+                      <li><a href="#">spare parts</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="sidebar-block">
+                  <h2 class="filter-heading">recent articles</h2>
+                  <div class="articles-wrapper">
+                    <div class="articles-block">
+                      <div class="img-box">
+                        <a href="#">
+                          <img src="{% static './image/blog-1.webp' %}" alt="blog1">
+                        </a>
+                      </div>
+                      <div class="content">
+                        <h3><a href="#">Why care spare parts are more important</a></h3>
+                        <p>Aeas congue, sapien sed mollis accumsan, justo...</p>
+                      </div>
+                    </div>
+                    <div class="articles-block">
+                      <div class="img-box">
+                        <a href="#">
+                          <img src="{% static './image/BLOG_5.webp' %}" alt="blog1">
+                        </a>
+                      </div>
+                      <div class="content">
+                        <h3><a href="#">Qualities required for best customer ...</a></h3>
+                        <p>Aeas congue, sapien sed mollis accumsan, justo...</p>
+                      </div>
+                    </div>
+                    <div class="articles-block">
+                      <div class="img-box">
+                        <a href="#">
+                          <img src="{% static './image/BLOG_2.webp' %}" alt="blog1">
+                        </a>
+                      </div>
+                      <div class="content">
+                        <h3><a href="#">Required equipment for car industry</a></h3>
+                        <p>Aeas congue, sapien sed mollis accumsan, justo...</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sidebar-block hot-deal-wrapper">
+                  <h2 class="filter-heading">hot deals</h2>
+                  <div class="hot-deal-wrapper-slider">
+                    <div class="product-item">
+                      <div class="card">
+                        <div class="img-box">
+                          <img src="{% static './image/p4.webp' %}" alt="product" class="card-img-top">
+                          <a href="#" class="main-btn">add to cart</a>
+                        </div>
+                        <div class="product-content">
+                          <h6 class="product-subtitle">Passional</h6>
+                          <h4 class="product-title"><a href="#">break disk</a></h4>
+                          <p class="current-price"><span>Rs.</span> 12,000.00</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-item">
+                      <div class="card">
+                        <div class="img-box">
+                          <img src="{% static './image/p5.webp' %}" alt="product" class="card-img-top">
+                          <a href="#" class="main-btn">add to cart</a>
+                        </div>
+                        <div class="product-content">
+                          <h6 class="product-subtitle">Specter</h6>
+                          <h4 class="product-title"><a href="#">clutch plate</a></h4>
+                          <p class="current-price"><span>form Rs.</span> 400.00</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-item">
+                      <div class="card">
+                        <div class="img-box">
+                          <img src="{% static './image/p6.webp' %}" alt="product" class="card-img-top">
+                          <a href="#" class="main-btn">add to cart</a>
+                          <div class="badge">OFF 12%</div>
+                        </div>
+                        <div class="product-content">
+                          <h6 class="product-subtitle">Myst</h6>
+                          <h4 class="product-title"><a href="#">car battery</a></h4>
+                          <p class="current-price"><span>Rs.</span> 5,000.00</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-item">
+                      <div class="card">
+                        <div class="img-box">
+                          <img src="{% static './image/p7.webp' %}" alt="product" class="card-img-top">
+                          <a href="javascript:void(0)" class="main-btn sold-out-btn">sold out</a>
+                          <div class="badge">sold out</div>
+                        </div>
+                        <div class="product-content">
+                          <h6 class="product-subtitle">Minotaur</h6>
+                          <h4 class="product-title"><a href="#">moter oil</a></h4>
+                          <p class="current-price"><span>Rs.</span>1,700.00</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sidebar-block">
+                  <h2 class="filter-heading">new arrival</h2>
+                  <div class="sidebar-new-arrival-wrapper">
+                    <div class="product-item">
+                      <div class="card">
+                        <div class="img-box">
+                          <img src="{% static './image/p4.webp' %}" alt="product" class="card-img-top">
+                        </div>
+                        <div class="product-content">
+                          <h4 class="product-title"><a href="#">break disk</a></h4>
+                          <p class="current-price"><span>Rs.</span> 12,000.00</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-item">
+                      <div class="card">
+                        <div class="img-box">
+                          <img src="{% static './image/p1.webp' %}" alt="product" class="card-img-top">
+                        </div>
+                        <div class="product-content">
+                          <h4 class="product-title"><a href="#">break disk</a></h4>
+                          <p class="current-price"><span>Rs.</span> 12,000.00</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- offcanvas end -->
+        <div class="product-sidebar  d-none d-md-block">
+          <div class="product-sidebar-content">
+            <div class="sidebar-block">
+              <h2 class="filter-heading">category</h2>
+              <div class="category-content">
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <li>starting & charging</li>
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul class="category-option">
+                          <li><a href="#">Spark Plug</a></li>
+                          <li><a href="#">Brake Stabiliser</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <li>Hardware</li>
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul class="category-option">
+                          <li><a href="#">Break Disc</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <li>spares</li>
+                      </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul class="category-option">
+                          <li><a href="#">Alloy Wheel</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sidebar-block">
+              <h2 class="filter-heading">tags</h2>
+              <div class="tag-wrapper">
+                <ul>
+                  <li><a href="#">Batteries</a></li>
+                  <li><a href="#">Car Engine</a></li>
+                  <li><a href="#">Engine oil</a></li>
+                  <li><a href="#">spare parts</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="sidebar-block">
+              <h2 class="filter-heading">recent articles</h2>
+              <div class="articles-wrapper">
+                <div class="articles-block">
+                  <div class="img-box">
+                    <a href="#">
+                      <img src="{% static './image/blog-1.webp' %}" alt="blog1">
+                    </a>
+                  </div>
+                  <div class="content">
+                    <h3><a href="#">Why care spare parts are more important</a></h3>
+                    <p>Aeas congue, sapien sed mollis accumsan, justo...</p>
+                  </div>
+                </div>
+                <div class="articles-block">
+                  <div class="img-box">
+                    <a href="#">
+                      <img src="{% static './image/BLOG_5.webp' %}" alt="blog1">
+                    </a>
+                  </div>
+                  <div class="content">
+                    <h3><a href="#">Qualities required for best customer ...</a></h3>
+                    <p>Aeas congue, sapien sed mollis accumsan, justo...</p>
+                  </div>
+                </div>
+                <div class="articles-block">
+                  <div class="img-box">
+                    <a href="#">
+                      <img src="{% static './image/BLOG_2.webp' %}" alt="blog1">
+                    </a>
+                  </div>
+                  <div class="content">
+                    <h3><a href="#">Required equipment for car industry</a></h3>
+                    <p>Aeas congue, sapien sed mollis accumsan, justo...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sidebar-block hot-deal-wrapper">
+              <h2 class="filter-heading">hot deals</h2>
+              <div class="hot-deal-wrapper-slider">
+                <div class="product-item">
+                  <div class="card">
+                    <div class="img-box">
+                      <img src="{% static './image/p4.webp' %}" alt="product" class="card-img-top">
+                      <a href="#" class="main-btn">add to cart</a>
+                    </div>
+                    <div class="product-content">
+                      <h6 class="product-subtitle">Passional</h6>
+                      <h4 class="product-title"><a href="#">break disk</a></h4>
+                      <p class="current-price"><span>Rs.</span> 12,000.00</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-item">
+                  <div class="card">
+                    <div class="img-box">
+                      <img src="{% static './image/p5.webp' %}" alt="product" class="card-img-top">
+                      <a href="#" class="main-btn">add to cart</a>
+                    </div>
+                    <div class="product-content">
+                      <h6 class="product-subtitle">Specter</h6>
+                      <h4 class="product-title"><a href="#">clutch plate</a></h4>
+                      <p class="current-price"><span>form Rs.</span> 400.00</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-item">
+                  <div class="card">
+                    <div class="img-box">
+                      <img src="{% static './image/p6.webp' %}" alt="product" class="card-img-top">
+                      <a href="#" class="main-btn">add to cart</a>
+                      <div class="badge">OFF 12%</div>
+                    </div>
+                    <div class="product-content">
+                      <h6 class="product-subtitle">Myst</h6>
+                      <h4 class="product-title"><a href="#">car battery</a></h4>
+                      <p class="current-price"><span>Rs.</span> 5,000.00</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-item">
+                  <div class="card">
+                    <div class="img-box">
+                      <img src="{% static './image/p7.webp' %}" alt="product" class="card-img-top">
+                      <a href="javascript:void(0)" class="main-btn sold-out-btn">sold out</a>
+                      <div class="badge">sold out</div>
+                    </div>
+                    <div class="product-content">
+                      <h6 class="product-subtitle">Minotaur</h6>
+                      <h4 class="product-title"><a href="#">moter oil</a></h4>
+                      <p class="current-price"><span>Rs.</span>1,700.00</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sidebar-block">
+              <h2 class="filter-heading">new arrival</h2>
+              <div class="sidebar-new-arrival-wrapper">
+                <div class="product-item">
+                  <div class="card">
+                    <div class="img-box">
+                      <img src="{% static './image/p4.webp' %}" alt="product" class="card-img-top">
+                    </div>
+                    <div class="product-content">
+                      <h4 class="product-title"><a href="#">break disk</a></h4>
+                      <p class="current-price"><span>Rs.</span> 12,000.00</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-item">
+                  <div class="card">
+                    <div class="img-box">
+                      <img src="{% static './image/p1.webp' %}" alt="product" class="card-img-top">
+                    </div>
+                    <div class="product-content">
+                      <h4 class="product-title"><a href="#">break disk</a></h4>
+                      <p class="current-price"><span>Rs.</span> 12,000.00</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="blog-grid-container">
+          <div class="blog-wrapper">
+            <div class="item">
+              <div class="card">
+                <div class="img-box">
+                  <img src="{% static './image/blog-1.webp' %}" alt="blog 1" class="img-fluid">
+                  <div class="badge"><span class="date">30</span><span class="month">jan</span></div>
+                </div>
+                <div class="content">
+                  <div class="icon"><i class="fa-regular fa-user"></i><span class="username">John Mathew</span></div>
+                  <h4 class="title"><a href="#">Required equipment for car industry</a></h4>
+                  <p class="discription">Vestibulum eleifend, dui in acinia scelerisque, quam nunc hendrerit lectus,
+                    ac
+                    tristique ligula eos vel orci. Cras congue, sapien sed...</p>
+                  <hr>
+                  <a href="#" class="arrow-btn"><span>read more</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="card">
+                <div class="img-box">
+                  <img src="{% static './image/BLOG_5.webp' %}" alt="blog 1" class="img-fluid">
+                  <div class="badge"><span class="date">30</span><span class="month">jan</span></div>
+                </div>
+                <div class="content">
+                  <div class="icon"><i class="fa-regular fa-user"></i><span class="username">John Mathew</span></div>
+                  <h4 class="title"><a href="#">Required equipment for car industry</a></h4>
+                  <p class="discription">Vestibulum eleifend, dui in acinia scelerisque, quam nunc hendrerit lectus,
+                    ac
+                    tristique ligula eos vel orci. Cras congue, sapien sed...</p>
+                  <hr>
+                  <a href="#" class="arrow-btn"><span>read more</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="card">
+                <div class="img-box">
+                  <img src="{% static './image/BLOG_3.webp' %}" alt="blog 1" class="img-fluid">
+                  <div class="badge"><span class="date">30</span><span class="month">jan</span></div>
+                </div>
+                <div class="content">
+                  <div class="icon"><i class="fa-regular fa-user"></i><span class="username">John Mathew</span></div>
+                  <h4 class="title"><a href="#">Required equipment for car industry</a></h4>
+                  <p class="discription">Vestibulum eleifend, dui in acinia scelerisque, quam nunc hendrerit lectus,
+                    ac
+                    tristique ligula eos vel orci. Cras congue, sapien sed...</p>
+                  <hr>
+                  <a href="#" class="arrow-btn"><span>read more</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="card">
+                <div class="img-box">
+                  <img src="{% static './image/BLOG_4.webp' %}" alt="blog 1" class="img-fluid">
+                  <div class="badge"><span class="date">30</span><span class="month">jan</span></div>
+                </div>
+                <div class="content">
+                  <div class="icon"><i class="fa-regular fa-user"></i><span class="username">John Mathew</span></div>
+                  <h4 class="title"><a href="#">Required equipment for car industry</a></h4>
+                  <p class="discription">Vestibulum eleifend, dui in acinia scelerisque, quam nunc hendrerit lectus,
+                    ac
+                    tristique ligula eos vel orci. Cras congue, sapien sed...</p>
+                  <hr>
+                  <a href="#" class="arrow-btn"><span>read more</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="card">
+                <div class="img-box">
+                  <img src="{% static './image/blog-1.webp' %}" alt="blog 1" class="img-fluid">
+                  <div class="badge"><span class="date">30</span><span class="month">jan</span></div>
+                </div>
+                <div class="content">
+                  <div class="icon"><i class="fa-regular fa-user"></i><span class="username">John Mathew</span></div>
+                  <h4 class="title"><a href="#">Required equipment for car industry</a></h4>
+                  <p class="discription">Vestibulum eleifend, dui in acinia scelerisque, quam nunc hendrerit lectus,
+                    ac
+                    tristique ligula eos vel orci. Cras congue, sapien sed...</p>
+                  <hr>
+                  <a href="#" class="arrow-btn"><span>read more</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- subscribe start -->
+    <section class="subscribe">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-box">
+            <i class="fa-solid fa-envelope"></i>
+            <p><a href="#">info@example.com</a></p>
+            <p><a href="#">support@example.com</a></p>
+          </div>
+          <div class="contact-box">
+            <i class="fa-solid fa-phone"></i>
+            <p><a href="#">000 - 123 - 456789</a></p>
+            <p><a href="#">000 - 123 - 446789</a></p>
+          </div>
+          <div class="contact-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>No: 58 A, East Madison</p>
+            <p>Street, Baltimore, USA</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- subscription end -->
+
+  </main>
+</body>
+
+
+</html>
+
+{% endblock %}

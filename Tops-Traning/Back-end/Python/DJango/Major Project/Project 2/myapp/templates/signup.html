@@ -1,0 +1,113 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+  <main class="account-content">
+    <section class="breadcrumb-wrapper">
+      <div class="breakcrumb-content">
+        <h2 class="breadcrumb-title">create account</h2>
+        <nav aria-label="breadcrumb">
+          <div class="container-fluid px-0 overflow-hidden">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">create account</li>
+            </ol>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <!-- login start -->
+    <section class="user-account">
+      <div class="container">
+        <div class="singup-wrapper">
+          <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2 class="title">sign up</h2>
+            <p class="text-center mb-4 message">Already have an account? <a href="{%  url 'login' %}">Sign In</a></p>
+            {% if msg %}
+            <div class="alert alert-success" role="alert">
+              {{ msg }}
+            </div>
+            {% endif %}
+            <div class="form-top">
+              <div>
+                <input type="text" class="form-control" placeholder="First name">
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="last name">
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div>
+                <input type="number" class="form-control" placeholder="Phone">
+              </div>
+              <div>
+                <select class="form-select" aria-label="Gender select">
+                  <option selected disabled>Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <div>
+                <textarea name="address" class="form-control" placeholder="Address" rows="4"></textarea>
+              </div>
+              <div>
+                <input type="file" name="profile_picture" class="form-control">
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password">
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Confirm Password">
+              </div>
+              <div class="text-center">
+                <a href="#" class="main-btn">create account</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- login end -->
+
+    <!-- subscribe start -->
+    <section class="subscribe">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-box">
+            <i class="fa-solid fa-envelope"></i>
+            <p><a href="#">info@example.com</a></p>
+            <p><a href="#">support@example.com</a></p>
+          </div>
+          <div class="contact-box">
+            <i class="fa-solid fa-phone"></i>
+            <p><a href="#">000 - 123 - 456789</a></p>
+            <p><a href="#">000 - 123 - 446789</a></p>
+          </div>
+          <div class="contact-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>No: 58 A, East Madison</p>
+            <p>Street, Baltimore, USA</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- subscription end -->
+  </main>
+
+</body>
+
+</html>
+
+{% endblock %}

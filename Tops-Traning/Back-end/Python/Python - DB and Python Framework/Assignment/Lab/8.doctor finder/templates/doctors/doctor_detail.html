@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dr. {{ doctor.name }} - Doctor Finder{% endblock %}
+
+{% block extra_css %}
+{% if doctor.latitude and doctor.longitude %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container detail-container">
+    <a href="{% url 'doctor_list' %}" class="back-link"><i class="fas fa-arrow-left"></i> Back to Doctors</a>
+
+    <div class="detail-layout">
+        <!-- Left Column -->
+        <div class="detail-sidebar">
+            <div class="detail-card">
+                <div class="detail-avatar">
+                    {% if doctor.photo %}
+                        <img src="{{ doctor.photo.url }}" alt="Dr. {{ doctor.name }}">
+                    {% else %}
+                        <div class="avatar-big">{{ doctor.name|first }}</div>
+                    {% endif %}
+                </div>
+                <div class="availability-badge {{ doctor.availability }} centered">
+                    <span class="status-dot"></span>
+                    {{ doctor.get_availability_display }}
+                </div>
+                {% if doctor.is_verified %}
+                <div class="verified-badge centered"><i class="fas fa-check-circle"></i> Verified Doctor</div>
+                {% endif %}
+                <h1 class="detail-name">Dr. {{ doctor.name }}</h1>
+                <p class="detail-specialty">{{ doctor.specialty }}</p>
+
+                <div class="detail-stats">
+                    <div class="d-stat">
+                        <strong>{{ doctor.experience_years }}+</strong>
+                        <span>Years Exp.</span>
+                    </div>
+                    <div class="d-stat">
+                        <strong>{{ doctor.rating }}</strong>
+                        <span>Rating ⭐</span>
+                    </div>
+                    <div class="d-stat">
+                        <strong>{{ doctor.total_reviews }}</strong>
+                        <span>Reviews</span>
+                    </div>
+                </div>
+
+                <div class="detail-info">
+                    <div class="info-row"><i class="fas fa-hospital"></i> {{ doctor.hospital }}</div>
+                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> {{ doctor.address }}, {{ doctor.city }}</div>
+                    <div class="info-row"><i class="fas fa-phone"></i> {{ doctor.phone }}</div>
+                    {% if doctor.email %}<div class="info-row"><i class="fas fa-envelope"></i> {{ doctor.email }}</div>{% endif %}
+                    <div class="info-row"><i class="fas fa-language"></i> {{ doctor.languages }}</div>
+                </div>
+
+                <div class="fee-box">
+                    <span>Consultation Fee</span>
+                    <strong class="fee-amount">₹{{ doctor.consultation_fee }}</strong>
+                </div>
+
+                <a href="{% url 'book_appointment' doctor.pk %}" class="btn btn-primary btn-full">
+                    <i class="fas fa-calendar-plus"></i> Book Appointment
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="detail-main">
+            {% if doctor.bio %}
+            <div class="detail-section">
+                <h2><i class="fas fa-user-md"></i> About Dr. {{ doctor.name }}</h2>
+                <p>{{ doctor.bio }}</p>
+            </div>
+            {% endif %}
+
+            {% if doctor.education %}
+            <div class="detail-section">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <p>{{ doctor.education }}</p>
+            </div>
+            {% endif %}
+
+            <!-- Map -->
+            {% if doctor.latitude and doctor.longitude %}
+            <div class="detail-section">
+                <h2><i class="fas fa-map-marker-alt"></i> Location</h2>
+                <div id="doctor-map" class="detail-map"></div>
+                <p style="font-size:0.78rem;color:var(--text-dim);margin-top:0.5rem;"><i class="fas fa-map-marker-alt"></i> {{ doctor.address }}, {{ doctor.city }}</p>
+            </div>
+            {% endif %}
+
+            <!-- Related Doctors -->
+            {% if related_doctors %}
+            <div class="detail-section">
+                <h2><i class="fas fa-user-md"></i> Other {{ doctor.specialty }} Doctors</h2>
+                <div class="related-grid">
+                    {% for rel in related_doctors %}
+                    <a href="{% url 'doctor_detail' rel.pk %}" class="related-card">
+                        <div class="related-avatar">{{ rel.name|first }}</div>
+                        <div class="related-info">
+                            <strong>Dr. {{ rel.name }}</strong>
+                            <span>⭐ {{ rel.rating }} • {{ rel.city }}</span>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+{% if doctor.latitude and doctor.longitude %}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var lat = {{ doctor.latitude }};
+    var lng = {{ doctor.longitude }};
+    var map = L.map('doctor-map').setView([lat, lng], 15);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+    var icon = L.divIcon({
+      html: '<div style="background:#6366f1;width:20px;height:20px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(99,102,241,0.6);"></div>',
+      iconSize: [20, 20], iconAnchor: [10, 10], className: ''
+    });
+    L.marker([lat, lng], { icon: icon })
+      .addTo(map)
+      .bindPopup('<strong>Dr. {{ doctor.name }}</strong><br>{{ doctor.hospital }}<br>{{ doctor.city }}')
+      .openPopup();
+  });
+</script>
+{% endif %}
+{% endblock %}

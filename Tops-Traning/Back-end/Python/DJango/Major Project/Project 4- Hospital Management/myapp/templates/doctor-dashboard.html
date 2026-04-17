@@ -1,0 +1,560 @@
+{% extends 'header.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body class="doctor-dashboard-body">
+
+<div class="doctor-dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="sidebar-logo">
+                <i class="bi bi-heart-pulse-fill"></i>
+                <span>MedCare</span>
+            </a>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="#dashboard" class="active" onclick="switchTab('dashboard', this)">
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#appointments" onclick="switchTab('appointments', this)">
+                        <i class="bi bi-calendar-check-fill"></i>
+                        <span>My Appointments</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#patients" onclick="switchTab('patients', this)">
+                        <i class="bi bi-people-fill"></i>
+                        <span>My Patients</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#records" onclick="switchTab('records', this)">
+                        <i class="bi bi-file-medical-fill"></i>
+                        <span>Medical Records</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#prescriptions" onclick="switchTab('prescriptions', this)">
+                        <i class="bi bi-capsule"></i>
+                        <span>Prescriptions</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#schedule" onclick="switchTab('schedule', this)">
+                        <i class="bi bi-calendar-week-fill"></i>
+                        <span>Schedule</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#messages" onclick="switchTab('messages', this)">
+                        <i class="bi bi-chat-dots-fill"></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#profile" onclick="switchTab('profile', this)">
+                        <i class="bi bi-person-gear"></i>
+                        <span>Profile Settings</span>
+                    </a>
+                </li>
+                <li style="margin-top: auto; padding-top: 20px;">
+                    <a href="#" class="text-danger">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header Bar -->
+
+        <header class="top-header glass-panel">
+                <div class="d-flex align-items-center">
+                    <button class="admin-btn admin-btn-link toggle-sidebar-btn" id="toggleSidebarBtn">
+                        <i class="bi bi-list"></i>
+                    </button>
+
+                    <!-- Search -->
+                    <div class="search-bar d-none d-md-flex">
+                        <i class="bi bi-search"></i>
+                        <input type="text" class="form-control" placeholder="Search patients, doctors...">
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <!-- Messages -->
+                    <div class="dropdown">
+                        <button type="button" class="icon-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="badge-indicator"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end glass-dropdown mt-2 shadow-sm border-0" style="">
+                            <li>
+                                <h6 class="dropdown-header">Messages</h6>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Dr. Smith (2 new)</a></li>
+                            <li><a class="dropdown-item" href="#">Reception</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-center text-primary" href="#">View All</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Notifications -->
+                    <div class="dropdown">
+                        <button type="button" class="icon-btn position-relative" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-bell"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light">
+                                3
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end glass-dropdown mt-2 shadow-sm border-0" style="">
+                            <li>
+                                <h6 class="dropdown-header">Notifications</h6>
+                            </li>
+                            <li><a class="dropdown-item" href="#">New Appointment: John Doe</a></li>
+                            <li><a class="dropdown-item" href="#">System Update Scheduled</a></li>
+                            <li><a class="dropdown-item" href="#">Lab Results Ready: Patient #402</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-center text-primary" href="#">Mark all read</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Profile -->
+                    <div class="dropdown ms-2">
+                        <button type="button" class="profile-dropdown-btn dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">
+                            <img src="https://i.pravatar.cc/150?img=32" alt="Admin" class="profile-img">
+                            <div class="profile-info d-none d-md-block text-start">
+                                <span class="name">Sarah Admin</span>
+                                <span class="role">Super Administrator</span>
+                            </div>
+                            <i class="bi bi-chevron-down d-none d-md-block fs-7 text-muted"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end glass-dropdown mt-2 shadow-sm border-0 show" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 48.8px, 0px);" data-popper-placement="bottom-end">
+                            <li><a class="dropdown-item" href="#" data-view-target="settings"><i class="bi bi-person me-2"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="#" data-view-target="settings"><i class="bi bi-gear me-2"></i> Settings</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i>
+                                    Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+        <!-- Dashboard Content Area -->
+        <div class="content-area" id="mainContent">
+            
+            <!-- Dashboard View -->
+            <div id="dashboard-view" class="view-section active">
+                <h2 class="page-title">Welcome back, Dr. Smith! 👋</h2>
+                
+                <!-- Overview Cards -->
+                <div class="row g-4 mb-4">
+                    <div class="col-xl-3 col-lg-6">
+                        <div class="stat-card">
+                            <div class="stat-icon blue">
+                                <i class="bi bi-calendar-event"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>12</h3>
+                                <p>Today's Appointments</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6">
+                        <div class="stat-card">
+                            <div class="stat-icon teal">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>1,405</h3>
+                                <p>Total Patients</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6">
+                        <div class="stat-card">
+                            <div class="stat-icon purple">
+                                <i class="bi bi-capsule"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>8</h3>
+                                <p>Pending Prescriptions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6">
+                        <div class="stat-card">
+                            <div class="stat-icon orange">
+                                <i class="bi bi-calendar-check"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>24</h3>
+                                <p>Upcoming Appointments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Row -->
+                <div class="row">
+                    <!-- Today's Appointments -->
+                    <div class="col-xl-8 col-12 mb-4">
+                        <div class="custom-card h-100">
+                            <div class="custom-card-header">
+                                <h3 class="custom-card-title">Today's Appointments</h3>
+                                <a href="#appointments" class="action-btn text-decoration-none">View All</a>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table custom-table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Patient Name</th>
+                                            <th>Time</th>
+                                            <th>Department</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="patient-cell">
+                                                    <img src="https://ui-avatars.com/api/?name=Emma+Watson&background=random" class="patient-avatar" alt="Patient">
+                                                    <div>
+                                                        <div class="patient-name">Emma Watson</div>
+                                                        <div class="patient-id">ID: #PT-1045</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>09:00 AM</td>
+                                            <td>Cardiology</td>
+                                            <td><span class="status-badge pending">Pending</span></td>
+                                            <td>
+                                                <button class="action-btn me-2" title="View"><i class="bi bi-eye"></i></button>
+                                                <button class="action-btn text-primary" title="Start Consultation"><i class="bi bi-camera-video"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="patient-cell">
+                                                    <img src="https://ui-avatars.com/api/?name=James+Smith&background=random" class="patient-avatar" alt="Patient">
+                                                    <div>
+                                                        <div class="patient-name">James Smith</div>
+                                                        <div class="patient-id">ID: #PT-1088</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>10:30 AM</td>
+                                            <td>Cardiology</td>
+                                            <td><span class="status-badge completed">Completed</span></td>
+                                            <td>
+                                                <button class="action-btn me-2" title="View"><i class="bi bi-eye"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="patient-cell">
+                                                    <img src="https://ui-avatars.com/api/?name=Michael+Brown&background=random" class="patient-avatar" alt="Patient">
+                                                    <div>
+                                                        <div class="patient-name">Michael Brown</div>
+                                                        <div class="patient-id">ID: #PT-1102</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>11:45 AM</td>
+                                            <td>Checkup</td>
+                                            <td><span class="status-badge pending">Pending</span></td>
+                                            <td>
+                                                <button class="action-btn me-2" title="View"><i class="bi bi-eye"></i></button>
+                                                <button class="action-btn text-primary" title="Start Consultation"><i class="bi bi-camera-video"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chart Container -->
+                    <div class="col-xl-4 col-12 mb-4">
+                        <div class="custom-card h-100">
+                            <div class="custom-card-header">
+                                <h3 class="custom-card-title">Patient Visits Trend</h3>
+                            </div>
+                            <div class="p-4" style="position: relative; height: 300px; width: 100%;">
+                                <canvas id="visitsChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Views (Placeholders that look like the design) -->
+            <div id="appointments-view" class="view-section" style="display: none;">
+                <h2 class="page-title">My Appointments</h2>
+                <div class="custom-card">
+                    <div class="custom-card-header">
+                        <h3 class="custom-card-title">All Appointments</h3>
+                    </div>
+                    <!-- Sample Data -->
+                    <div class="p-4 text-center text-muted">Use the same table structure as Dashboard here.</div>
+                </div>
+            </div>
+
+            <div id="patients-view" class="view-section" style="display: none;">
+                <h2 class="page-title">Patient List</h2>
+                <div class="custom-card">
+                    <div class="custom-card-header">
+                        <h3 class="custom-card-title">Patients Directory</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table custom-table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Patient Name</th>
+                                    <th>Age/Gender</th>
+                                    <th>Last Visit</th>
+                                    <th>Medical History</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="patient-cell">
+                                            <img src="https://ui-avatars.com/api/?name=Olivia+Davis&background=random" class="patient-avatar" alt="Patient">
+                                            <div>
+                                                <div class="patient-name">Olivia Davis</div>
+                                                <div class="patient-id">ID: #PT-2291</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>28 / F</td>
+                                    <td>12 Oct 2026</td>
+                                    <td>Asthma</td>
+                                    <td><button class="btn-primary-custom">View Details</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="records-view" class="view-section" style="display: none;">
+                 <h2 class="page-title">Medical Records</h2>
+                 <!-- Content goes here -->
+                 <div class="custom-card"><div class="p-4">Records Table</div></div>
+            </div>
+
+            <div id="prescriptions-view" class="view-section" style="display: none;">
+                 <div class="d-flex justify-content-between align-items-center mb-4">
+                     <h2 class="page-title mb-0">Prescriptions</h2>
+                     <button class="btn-primary-custom"><i class="bi bi-plus-lg me-2"></i>Create New Prescription</button>
+                 </div>
+                 <div class="custom-card">
+                    <div class="table-responsive">
+                        <table class="table custom-table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Patient Name</th>
+                                    <th>Medicine</th>
+                                    <th>Dosage / Duration</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="patient-name">John Doe</td>
+                                    <td>Amoxicillin 500mg</td>
+                                    <td>1x3 / 5 days</td>
+                                    <td>15 Mar 2026</td>
+                                    <td><button class="action-btn"><i class="bi bi-printer"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                 </div>
+            </div>
+
+            <div id="schedule-view" class="view-section" style="display: none;">
+                 <h2 class="page-title">Schedule</h2>
+                 <div class="custom-card"><div class="p-4">Calendar Widget Placement</div></div>
+            </div>
+
+            <div id="messages-view" class="view-section" style="display: none;">
+                 <h2 class="page-title">Messages</h2>
+                 <div class="custom-card"><div class="p-4">Messages / Inbox Layout</div></div>
+            </div>
+
+            <div id="profile-view" class="view-section" style="display: none;">
+                 <h2 class="page-title">Profile Settings</h2>
+                 <div class="custom-card">
+                    <div class="p-4">
+                        <div class="row">
+                            <div class="col-md-3 text-center mb-4">
+                                <img src="https://ui-avatars.com/api/?name=Dr.+Smith&background=0D8ABC&color=fff&size=120" class="rounded-circle mb-3">
+                                <div><button class="btn-primary-custom w-100">Upload Photo</button></div>
+                            </div>
+                            <div class="col-md-9">
+                                <form>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Full Name</label>
+                                            <input type="text" class="form-control" value="Dr. Sarah Smith">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Email</label>
+                                            <input type="email" class="form-control" value="sarah.smith@medcare.com">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Phone</label>
+                                            <input type="tel" class="form-control" value="+1 234 567 8900">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Department</label>
+                                            <input type="text" class="form-control" value="Cardiology">
+                                        </div>
+                                        <div class="col-12 mt-4">
+                                            <button type="button" class="btn-primary-custom">Save Changes</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Sidebar Toggle
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('toggleSidebarBtn');
+    
+    sidebarToggle.addEventListener('click', () => {
+        if(window.innerWidth <= 991) {
+            sidebar.classList.toggle('mobile-open');
+        } else {
+            sidebar.classList.toggle('collapsed');
+        }
+    });
+
+    // Simple Tab Switching Logic
+    function switchTab(tabId, element) {
+        // Remove active class from all links
+        document.querySelectorAll('.sidebar-menu a').forEach(el => el.classList.remove('active'));
+        // Add active class to clicked
+        element.classList.add('active');
+        
+        // Hide all views
+        document.querySelectorAll('.view-section').forEach(el => el.style.display = 'none');
+        // Show target view
+        document.getElementById(tabId + '-view').style.display = 'block';
+
+        // On mobile, close sidebar after clicking
+        if(window.innerWidth <= 991) {
+            sidebar.classList.remove('mobile-open');
+        }
+    }
+
+    // Initialize Chart.js
+    document.addEventListener("DOMContentLoaded", function() {
+        const ctx = document.getElementById('visitsChart').getContext('2d');
+        
+        // Gradient fill
+        let gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(0, 97, 242, 0.4)');
+        gradient.addColorStop(1, 'rgba(0, 97, 242, 0.05)');
+
+        window.myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                datasets: [{
+                    label: 'Patient Visits',
+                    data: [42, 58, 48, 65, 50, 68],
+                    backgroundColor: gradient,
+                    borderColor: '#0061f2',
+                    borderWidth: 3,
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#0061f2',
+                    pointBorderWidth: 2,
+                    pointRadius: 4,
+                    pointHoverRadius: 6,
+                    fill: true,
+                    tension: 0.4 // Soft curve
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#1e1e1e',
+                        titleFont: { family: 'Inter', size: 13 },
+                        bodyFont: { family: 'Inter', size: 14 },
+                        padding: 12,
+                        cornerRadius: 8,
+                        displayColors: false,
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)',
+                            drawBorder: false,
+                        },
+                        ticks: {
+                            font: { family: 'Inter', size: 12 }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false,
+                            drawBorder: false,
+                        },
+                        ticks: {
+                            font: { family: 'Inter', size: 12 }
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Appointment Confirmed! - Doctor Finder{% endblock %}
+
+{% block content %}
+<div class="container success-container">
+    <div class="success-card">
+        <div class="success-icon">✅</div>
+        <h1>Appointment Booked!</h1>
+        <p class="success-subtitle">Your appointment has been submitted successfully. We'll confirm it shortly.</p>
+
+        <div class="appointment-summary">
+            <div class="summary-row">
+                <span><i class="fas fa-user-md"></i> Doctor</span>
+                <strong>Dr. {{ appointment.doctor.name }}</strong>
+            </div>
+            <div class="summary-row">
+                <span><i class="fas fa-stethoscope"></i> Specialty</span>
+                <strong>{{ appointment.doctor.specialty }}</strong>
+            </div>
+            <div class="summary-row">
+                <span><i class="fas fa-user"></i> Patient</span>
+                <strong>{{ appointment.patient_name }}</strong>
+            </div>
+            <div class="summary-row">
+                <span><i class="fas fa-calendar"></i> Date</span>
+                <strong>{{ appointment.appointment_date }}</strong>
+            </div>
+            <div class="summary-row">
+                <span><i class="fas fa-clock"></i> Time</span>
+                <strong>{{ appointment.appointment_time }}</strong>
+            </div>
+            <div class="summary-row">
+                <span><i class="fas fa-info-circle"></i> Status</span>
+                <strong class="status-pending">Pending Confirmation</strong>
+            </div>
+        </div>
+
+        <div class="success-actions">
+            <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+            <a href="{% url 'doctor_list' %}" class="btn btn-outline">Find More Doctors</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Book Appointment - Dr. {{ doctor.name }}{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 2rem 1rem; max-width: 700px;">
+    <a href="{% url 'doctor_detail' doctor.pk %}" class="back-link"><i class="fas fa-arrow-left"></i> Back to Profile</a>
+
+    <div class="booking-card">
+        <div class="booking-header">
+            <div class="booking-doc-info">
+                <div class="avatar-small">{{ doctor.name|first }}</div>
+                <div>
+                    <h2>Book with Dr. {{ doctor.name }}</h2>
+                    <p>{{ doctor.specialty }} • {{ doctor.hospital }}</p>
+                    <p class="fee-tag">Consultation: ₹{{ doctor.consultation_fee }}</p>
+                </div>
+            </div>
+        </div>
+
+        <form method="POST" class="booking-form">
+            {% csrf_token %}
+            <div class="form-grid">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Full Name *</label>
+                    <input type="text" name="patient_name" required placeholder="Your full name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-envelope"></i> Email *</label>
+                    <input type="email" name="patient_email" required placeholder="your@email.com" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-phone"></i> Phone *</label>
+                    <input type="text" name="patient_phone" required placeholder="+91 98765 43210" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-calendar"></i> Preferred Date *</label>
+                    <input type="date" name="appointment_date" required class="form-control" min="{{ today }}">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-clock"></i> Preferred Time *</label>
+                    <select name="appointment_time" required class="form-control">
+                        <option value="">Select a time slot</option>
+                        <option value="09:00">09:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="14:00">02:00 PM</option>
+                        <option value="15:00">03:00 PM</option>
+                        <option value="16:00">04:00 PM</option>
+                        <option value="17:00">05:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group full-width">
+                    <label><i class="fas fa-notes-medical"></i> Reason for Visit *</label>
+                    <textarea name="reason" required rows="4" placeholder="Briefly describe your symptoms or reason for visit..." class="form-control"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full btn-lg">
+                <i class="fas fa-calendar-check"></i> Confirm Appointment
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

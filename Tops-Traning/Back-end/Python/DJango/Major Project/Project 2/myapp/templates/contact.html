@@ -1,0 +1,238 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+    <main class="contact-content">
+        <section class="breadcrumb-wrapper">
+            <div class="breakcrumb-content">
+                <h2 class="breadcrumb-title">contact</h2>
+                <nav aria-label="breadcrumb">
+                    <div class="container-fluid px-0 overflow-hidden">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">contact</li>
+                        </ol>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+        <!-- grid banner start -->
+        <section class="grid-banner">
+            <div class="container-fluid container-fluid-1500 ">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <div class="grid-banner-image-box">
+                            <img src="{% static './image/contact-us-banner.webp' %}" alt="about us grid"
+                                class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-6  order-2 order-lg-1">
+                        <div class="grid-banner-content">
+                            <div class="contact-form">
+                                <h2 class="title">contact us</h2>
+                                {% if msg %}
+                                <div class="alert alert-success" role="alert">
+                                    {{ msg }}
+                                </div>
+                                {% endif %}
+                                <form action="{% url 'contact' %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="mb-4">
+                                        <input type="text" class="form-control" placeholder="name" name="name" required>
+                                    </div>
+                                    <div class="mb-4">
+                                        <input type="email" class="form-control" placeholder="email" name="email"
+                                            required>
+                                    </div>
+                                    <div class="mb-4">
+                                        <input type="tel" class="form-control" placeholder="mobile" name="mobile"
+                                            required>
+                                    </div>
+                                    <div class="mb-4">
+                                        <textarea name="message" class="form-control" cols="30" rows="5" name="message"
+                                            placeholder="message" required></textarea>
+                                    </div>
+                                    <div class="mb-4">
+                                        <input type="checkbox" class="me-2" required id="short-msg">
+                                        <label class="check-text" for="short-msg">
+                                            Save my name, email, and website in this browser.
+                                        </label>
+                                    </div>
+                                    <button class="main-btn" type="submit">submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- grid banner end -->
+
+        <!-- our branches start -->
+        <section class="our-branches">
+            <div class="container">
+                <h2 class="title">our branches at</h2>
+                <p class="description">Cras Dictum Odio Sed Aliquam Eleifend. Lorem Ipsum Dolor Sit Amet, Consecte
+                    Adipiscing Elit. Etiam Lorem Lectus Pellentesque Lacinia Sollicitudin Luctus Phas Pretium Porta Odio
+                    A Porta. Cras Fringilla Iaculis.</p>
+                <div class="our-branches-wrapper row justify-content-center">
+                    <div class="our-branches-block col-md-6 col-lg-4 mb-4 mb-lg-0">
+                        <div class="card">
+                            <div class="branch-content">
+                                <div class="icon">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="content">
+                                    <p>No: 58 A, East Madison Street, Baltimore, MD, USA 4508</p>
+                                </div>
+                            </div>
+                            <div class="branch-content">
+                                <div class="icon">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="content">
+                                    <p><a href="#">info@example.com</a></p>
+                                </div>
+                            </div>
+                            <div class="branch-content">
+                                <div class="icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="content">
+                                    <p><a href="#">000 - 123 - 456789</a></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="our-branches-block col-md-6 col-lg-4 mb-4 mb-lg-0">
+                        <div class="card">
+                            <div class="branch-content">
+                                <div class="icon">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="content">
+                                    <p>3401 Silverado Dr, Ontario, Canada, L5A 3W5</p>
+                                </div>
+                            </div>
+                            <div class="branch-content">
+                                <div class="icon">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="content">
+                                    <p><a href="#">support@example.com</a></p>
+                                </div>
+                            </div>
+                            <div class="branch-content">
+                                <div class="icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="content">
+                                    <p><a href="#">000 - 123 - 456789</a></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="our-branches-block col-md-6 col-lg-4 mb-4 mb-lg-0">
+                        <div class="card">
+                            <div class="branch-content">
+                                <div class="icon">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="content">
+                                    <p>#8768 St. Park, New York, NY 11375</p>
+                                </div>
+                            </div>
+                            <div class="branch-content">
+                                <div class="icon">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="content">
+                                    <p><a href="#">contact@example.com</a></p>
+                                </div>
+                            </div>
+                            <div class="branch-content">
+                                <div class="icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="content">
+                                    <p><a href="#">+2323242323</a></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- our branches end -->
+
+        <div class="map-wrapper">
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3523.826992327732!2d153.41293507632557!3d-27.96858423814823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b910ff2ac66af07%3A0xf02a35bd7229af0!2sAustralia%20Fair%20Shopping%20Centre!5e0!3m2!1sen!2sin!4v1696574464702!5m2!1sen!2sin"
+                    width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <!-- subscribe start -->
+        <section class="subscribe">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-box">
+                        <i class="fa-solid fa-envelope"></i>
+                        <p><a href="#">info@example.com</a></p>
+                        <p><a href="#">support@example.com</a></p>
+                    </div>
+                    <div class="contact-box">
+                        <i class="fa-solid fa-phone"></i>
+                        <p><a href="#">000 - 123 - 456789</a></p>
+                        <p><a href="#">000 - 123 - 446789</a></p>
+                    </div>
+                    <div class="contact-box">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>No: 58 A, East Madison</p>
+                        <p>Street, Baltimore, USA</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- subscription end -->
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="search-box-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mobile-search-box">
+                        <div class="input-group-search">
+                            <input type="text" class="form-control" placeholder="search" aria-label="search-modal">
+                            <button><i class="fa-solid fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+{% endblock %}

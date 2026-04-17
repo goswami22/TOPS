@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Registration</title>
+    <script src="{% static 'js/validation.js' %}"></script>
+</head>
+<body>
+
+<h2>Patient Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+    Name: <input type="text" id="name"><br><br>
+    Email: <input type="text" id="email"><br><br>
+    Age: <input type="number" id="age"><br><br>
+    Password: <input type="password" id="password"><br><br>
+
+    <input type="submit" value="Register">
+</form>
+
+<p id="error" style="color:red;"></p>
+
+</body>
+</html>

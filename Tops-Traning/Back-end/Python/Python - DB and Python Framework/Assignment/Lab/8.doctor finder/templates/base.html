@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Doctor Finder{% endblock %}</title>
+    <meta name="description" content="{% block description %}Find the best doctors near you. Book appointments instantly.{% endblock %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="{% url 'home' %}" class="nav-brand">
+            <span class="brand-icon">🏥</span>
+            <span class="brand-text">Doctor<span class="brand-accent">Finder</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}" class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a></li>
+            <li><a href="{% url 'doctor_list' %}" class="nav-link {% if request.resolver_match.url_name == 'doctor_list' %}active{% endif %}">Find Doctors</a></li>
+            <li><a href="{% url 'map_view' %}" class="nav-link {% if request.resolver_match.url_name == 'map_view' %}active{% endif %}">Map View</a></li>
+        </ul>
+        <a href="{% url 'doctor_list' %}" class="btn btn-primary nav-cta">
+            <i class="fas fa-search"></i> Find a Doctor
+        </a>
+        <button class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Messages -->
+{% if messages %}
+<div class="messages-container">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        <i class="fas fa-check-circle"></i> {{ message }}
+        <button class="alert-close" onclick="this.parentElement.remove()">×</button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- Main Content -->
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <div class="brand-logo">🏥 DoctorFinder</div>
+            <p>Connecting patients with the best doctors. Your health, our priority.</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'doctor_list' %}">Find Doctors</a></li>
+                <li><a href="{% url 'map_view' %}">Map View</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Specialties</h4>
+            <ul>
+                <li><a href="#">Cardiology</a></li>
+                <li><a href="#">Dermatology</a></li>
+                <li><a href="#">Neurology</a></li>
+                <li><a href="#">Orthopedics</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h4>Contact</h4>
+            <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+            <p><i class="fas fa-envelope"></i> support@doctorfinder.in</p>
+            <p><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 DoctorFinder. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>

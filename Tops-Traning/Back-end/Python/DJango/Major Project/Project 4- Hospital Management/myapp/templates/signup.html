@@ -1,0 +1,233 @@
+{% extends 'header.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <div class="split-container signup-page w-100 min-vh-100 d-flex flex-column flex-lg-row">
+        <!-- Left Section -->
+        <div
+            class="left-section position-relative d-flex flex-column justify-content-center align-items-center text-white p-4 p-md-5">
+            <div class="bg-overlay position-absolute w-100 h-100 top-0 start-0"></div>
+            <div class="glass-content">
+                <div class="logo">
+                    <i class="bi bi-hospital"></i> Medical.
+                </div>
+                <h1 class="fw-bold text-white">Capturing Moments, Creating Memories</h1>
+                <p class="lead mb-0 text-white-50">Create, innovate, and build amazing experiences with our modern
+                    platform.</p>
+            </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section d-flex align-items-center justify-content-center p-md-5">
+            <div class="form-container w-100 fade-in">
+                <div class="text-center text-lg-start mb-4 mb-md-5">
+                    <h2 class="fw-bold mb-2">Create an Account</h2>
+                    <p class="text-muted">Already have an account? <a href="{% url 'login' %}"
+                            class="text-decoration-none fw-semibold login-link">Login</a></p>
+                </div>
+                {% if msg %}
+                <p class="text-success">{{ msg }}</p>
+                {% endif %}
+                <form id="signupForm" method="POST" action="{% url 'signup' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row mb-3">
+                        <div class="col">
+                            <!-- Category Dropdown -->
+                            <div class="input-group-custom">
+                                <select class="form-select custom-input" name="usertype" id="usertype" required>
+                                    <option value="" disabled selected>Select Category</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="doctor">Doctor</option>
+                                    <option value="patient">Patient</option>
+                                </select>
+                                <i class="bi bi-person-badge input-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3" id="adminKeyField" style="display: none;">
+                        <div class="input-group-custom">
+                            <i class="bi bi-key input-icon"></i>
+                            <input type="password" class="form-control custom-input" name="admin_key" id="admin_key"
+                                placeholder="Admin Secret Key">
+                            <i class="bi bi-eye-slash toggle-admin-key"
+                                style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #a0aec0;"
+                                onclick="const input = document.getElementById('admin_key'); if (input.type === 'password') { input.type = 'text'; this.classList.remove('bi-eye-slash'); this.classList.add('bi-eye'); } else { input.type = 'password'; this.classList.remove('bi-eye'); this.classList.add('bi-eye-slash'); }"></i>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <div class="input-group-custom">
+                                <i class="bi bi-person input-icon"></i>
+                                <input type="text" class="form-control custom-input" name="fname"
+                                    placeholder="First Name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group-custom">
+                                <i class="bi bi-person input-icon"></i>
+                                <input type="text" class="form-control custom-input" name="lname"
+                                    placeholder="Last Name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="input-group-custom">
+                            <i class="bi bi-envelope input-icon"></i>
+                            <input type="email" class="form-control custom-input" name="email"
+                                placeholder="Email Address" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="input-group-custom">
+                            <i class="bi bi-telephone input-icon"></i>
+                            <input type="tel" class="form-control custom-input" name="mobile"
+                                placeholder="Phone Number">
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-4">
+                            <div class="input-group-custom select-wrapper">
+                                <i class="bi bi-gender-ambiguous input-icon"></i>
+                                <select class="form-select custom-input text-muted" name="gender" required
+                                    onchange="this.classList.remove('text-muted')">
+                                    <option value="" disabled selected>Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="input-group-custom">
+                                <i class="bi bi-calendar input-icon"></i>
+                                <input type="text" name="date" class="form-control custom-input text-muted"
+                                    placeholder="Date of Birth" onfocus="(this.type='date')"
+                                    onblur="(this.type=this.value?'date':'text')" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="input-group-custom">
+                                <input type="number" name="age" class="form-control custom-input ps-3" placeholder="Age"
+                                    min="13" max="150" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="input-group-custom">
+                            <i class="bi bi-person-bounding-box input-icon"></i>
+                            <input type="file" class="form-control custom-input text-muted" name="profile_picture"
+                                accept="image/*" style="padding-top: 0.6rem;">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="input-group-custom align-items-start pt-2">
+                            <i class="bi bi-geo-alt input-icon mt-2"></i>
+                            <textarea class="form-control custom-input" name="address" rows="2"
+                                placeholder="Address"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="input-group-custom">
+                                <i class="bi bi-lock input-icon"></i>
+                                <input type="password" name="password" class="form-control custom-input" id="password"
+                                    placeholder="Password" required>
+                                <i class="bi bi-eye-slash toggle-password" data-target="#password"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group-custom">
+                                <i class="bi bi-lock input-icon"></i>
+                                <input type="password" name="c_password" class="form-control custom-input"
+                                    id="confirmPassword" placeholder="Confirm Password" required>
+                                <i class="bi bi-eye-slash toggle-password" data-target="#confirmPassword"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary-custom w-100">Create Account</button>
+
+                    <div class="divider">
+                        <span>Or sign up with</span>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <button type="button"
+                                class="btn-social w-100 py-3 d-flex align-items-center justify-content-center gap-2">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                    alt="Google" width="20">
+                                <span>Google</span>
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button"
+                                class="btn-social w-100 py-3 d-flex align-items-center justify-content-center gap-2">
+                                <i class="bi bi-apple fs-4"></i>
+                                <span>Apple</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // jQuery ($) is loaded at the bottom of the page, so we use pure JavaScript here.
+        // The nice-select plugin creates custom child elements '.option' to act as choices.
+        // We listen for clicks on those options, then determine if Admin was selected.
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('option')) {
+                // Use a short delay so nice-select finishes updating the real <select> element's value
+                setTimeout(function () {
+                    const usertypeSelect = document.getElementById('usertype');
+                    if (usertypeSelect) {
+                        const adminKeyField = document.getElementById('adminKeyField');
+                        const adminKeyInput = document.getElementById('admin_key');
+
+                        if (usertypeSelect.value === 'admin') {
+                            adminKeyField.style.display = 'block';
+                            adminKeyInput.setAttribute('required', 'required');
+                        } else {
+                            adminKeyField.style.display = 'none';
+                            adminKeyInput.removeAttribute('required');
+                            adminKeyInput.value = ''; // clear the input
+                        }
+                    }
+                }, 50);
+            }
+        });
+
+        // Ensure proper display when the page loads (e.g., after a submission error)
+        document.addEventListener('DOMContentLoaded', function () {
+            const usertypeSelect = document.getElementById('usertype');
+            if (usertypeSelect && usertypeSelect.value === 'admin') {
+                document.getElementById('adminKeyField').style.display = 'block';
+                document.getElementById('admin_key').setAttribute('required', 'required');
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+{% endblock %}

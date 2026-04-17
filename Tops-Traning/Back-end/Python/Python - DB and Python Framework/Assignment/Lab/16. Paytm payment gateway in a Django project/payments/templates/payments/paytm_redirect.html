@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting to Paytm...</title>
+</head>
+<body onload="document.paytmform.submit();">
+    <div style="text-align: center; margin-top: 50px;">
+        <h1>Please wait...</h1>
+        <p>Redirecting you to the Paytm Payment Gateway.</p>
+        <p>Do not refresh the page or press the back button.</p>
+    </div>
+    <form method="POST" action="{{ paytm_url }}" name="paytmform">
+        {% for key, value in params.items %}
+            <input type="hidden" name="{{ key }}" value="{{ value }}">
+        {% endfor %}
+    </form>
+</body>
+</html>

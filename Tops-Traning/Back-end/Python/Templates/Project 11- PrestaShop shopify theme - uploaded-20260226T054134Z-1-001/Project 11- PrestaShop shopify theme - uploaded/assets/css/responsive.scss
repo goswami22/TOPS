@@ -1,0 +1,42 @@
+@media screen and (max-width: 991px) {
+    footer {
+        .top-foorer-wrapper {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+
+            .left-footer {
+                &::after {
+                    display: none;
+                }
+
+                @media screen and (max-width: 991px) {
+                    max-width: 100%;
+                }
+                h2.title {
+                    margin-right: 12px;
+                }
+            }
+
+            .right-footer {
+                padding-left: 0;
+            }
+        }
+
+        h2.title {
+            &::after {
+                content: '\f107';
+                font-family: FontAwesome;
+                position: absolute;
+                right: 0;
+                top: 0px;
+            }
+        }
+        h2.title.active {
+            &::after {
+                content: '\f106';
+            }
+        }
+    }
+}

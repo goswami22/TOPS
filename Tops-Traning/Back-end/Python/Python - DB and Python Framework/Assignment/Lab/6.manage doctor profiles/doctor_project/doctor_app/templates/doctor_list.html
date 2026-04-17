@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctors</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Doctor Profiles</h1>
+
+    <a href="/add/" class="btn">Add Doctor</a>
+
+    {% for doctor in doctors %}
+    <div class="card">
+        {% if doctor.image %}
+            <img src="{{ doctor.image.url }}">
+        {% endif %}
+        <h3>{{ doctor.name }}</h3>
+        <p>{{ doctor.specialization }}</p>
+        <p>{{ doctor.experience }} years</p>
+        <p>{{ doctor.hospital }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

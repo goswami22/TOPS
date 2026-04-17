@@ -1,0 +1,199 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+   
+</style>
+
+<section class="account-section space-top space-bottom">
+    <div class="container">
+
+        <div class="account-wrapper">
+
+            <div class="row">
+
+                <!-- Sidebar -->
+                <div class="col-lg-3">
+
+                    <div class="nav flex-column nav-pills account-menu" id="v-pills-tab" role="tablist">
+
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#dashboard">
+                            <i class="bi bi-speedometer2"></i> Dashboard
+                        </button>
+
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#orders">
+                            <i class="bi bi-bag"></i> Orders
+                        </button>
+
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#wishlist">
+                            <i class="bi bi-heart"></i> Wishlist
+                        </button>
+
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#address">
+                            <i class="bi bi-geo-alt"></i> Address
+                        </button>
+
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#password">
+                            <i class="bi bi-lock"></i> Change Password
+                        </button>
+
+                        <a href="{% url 'logout' %}" class="nav-link">
+                            <i class="bi bi-box-arrow-right"></i> Logout
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Content -->
+                <div class="col-lg-9">
+
+                    <div class="tab-content account-content">
+
+                        <!-- Dashboard -->
+                        <div class="tab-pane fade show active" id="dashboard">
+
+                            <h4 class="mb-3">Dashboard</h4>
+
+                            <p>
+                                Hello <strong>{{request.session.email}}</strong>
+                            </p>
+
+                            <p>
+                                From your account dashboard you can view your recent orders,
+                                manage your shipping and billing addresses and edit your password.
+                            </p>
+
+                            <div class="row mt-4">
+
+                                <div class="col-md-4 mb-3">
+                                    <div class="account-card">
+                                        <i class="bi bi-bag"></i>
+                                        <h6>Orders</h6>
+                                        <p>View your orders</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 mb-3">
+                                    <div class="account-card">
+                                        <i class="bi bi-heart"></i>
+                                        <h6>Wishlist</h6>
+                                        <p>Your favourite products</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 mb-3">
+                                    <div class="account-card">
+                                        <i class="bi bi-geo-alt"></i>
+                                        <h6>Address</h6>
+                                        <p>Manage address</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Orders -->
+                        <div class="tab-pane fade" id="orders">
+
+                            <h4 class="mb-3">My Orders</h4>
+
+                            <table class="table">
+
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Total</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+                                        <td>#1021</td>
+                                        <td>12 May 2026</td>
+                                        <td>Delivered</td>
+                                        <td>$120</td>
+                                        <td><a href="#">View</a></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>#1020</td>
+                                        <td>08 May 2026</td>
+                                        <td>Processing</td>
+                                        <td>$85</td>
+                                        <td><a href="#">View</a></td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+
+                        <!-- Wishlist -->
+                        <div class="tab-pane fade" id="wishlist">
+
+                            <h4 class="mb-3">Wishlist</h4>
+
+                            <p>Your saved products will appear here.</p>
+
+                        </div>
+
+
+                        <!-- Address -->
+                        <div class="tab-pane fade" id="address">
+
+                            <h4 class="mb-3">Address</h4>
+
+                            <p>You can manage your shipping address here.</p>
+
+                        </div>
+
+                        <!-- Change Password -->
+                        <div class="tab-pane fade" id="password">
+
+                            <h4 class="mb-3">Change Password</h4>
+                            {% if msg %}
+                                <p class="text-danger my-2">{{ msg }}</p>
+                            {% endif %}
+                            <form method="post" action="{% url 'change-password' %}">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <input type="password" name="old_password" class="form-control" placeholder="Current Password">
+                                </div>
+
+                                <div class="mb-3">
+                                    <input type="password" name="new_password" class="form-control" placeholder="New Password">
+                                </div>
+
+                                <div>
+                                    <input type="password" name="c_password" class="form-control" placeholder="Confirm Password">
+                                </div>
+
+                                <button class="main-btn">Change Password</button>
+
+                            </form>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

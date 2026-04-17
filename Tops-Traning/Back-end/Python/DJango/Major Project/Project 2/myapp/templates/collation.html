@@ -1,0 +1,816 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+
+
+    <main class="collation-content">
+        <section class="breadcrumb-wrapper">
+            <div class="breakcrumb-content">
+                <h2 class="breadcrumb-title">break disc</h2>
+                <nav aria-label="breadcrumb">
+                    <div class="container-fluid px-0 overflow-hidden">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{url 'all-collation'}">all collations</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">break disc</li>
+                        </ol>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+        <div class="container-fluid container-fluid-1500">
+            <div class="product-collation">
+                <div class="product-sidebar">
+                    <div class="product-sidebar-content">
+                        <div class="sidebar-block">
+                            <h2 class="title">filter:</h2>
+                        </div>
+                        <div class="sidebar-block">
+                            <div class="accordion" id="sidebar-dropdown">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="availability-heading">
+                                        <button class="accordion-button filter-heading" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#availability"
+                                            aria-expanded="true" aria-controls="availability">
+                                            Availability
+                                        </button>
+                                    </h2>
+                                    <div id="availability" class="accordion-collapse collapse show"
+                                        aria-labelledby="availability-heading" data-bs-parent="#sidebar-dropdown">
+                                        <div class="accordion-body">
+                                            <ul class="sidebar-dropdown">
+                                                <li><a href="#">in stock <span>(10)</span></a></li>
+                                                <li><a href="#">out of stock <span>(1)</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar-block">
+                            <div class="accordion" id="sidebar-dropdown">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="price-heading">
+                                        <button class="accordion-button filter-heading" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#price" aria-expanded="true"
+                                            aria-controls="price">
+                                            price
+                                        </button>
+                                    </h2>
+                                    <div id="price" class="accordion-collapse collapse show"
+                                        aria-labelledby="price-heading" data-bs-parent="#sidebar-dropdown">
+                                        <div class="accordion-body">
+                                            <ul class="sidebar-dropdown">
+                                                <p>The highest price is Rs. 25,750.00</p>
+                                                <div class="price-box">
+                                                    <span>₹</span>
+                                                    <div class="price-input-box">
+                                                        <label for="from">from</label>
+                                                        <input type="number" value="0.00" placeholder="0.00">
+                                                    </div>
+                                                    <div class="price-input-box">
+                                                        <label for="to">to</label>
+                                                        <input type="number" value="25,000.00" placeholder="25,000.00">
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar-block">
+                            <h2 class="filter-heading">category</h2>
+                            <div class="category-content">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                aria-expanded="false" aria-controls="collapseOne">
+                                                <li>starting & charging</li>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <ul class="category-option">
+                                                    <li><a href="#">Spark Plug</a></li>
+                                                    <li><a href="#">Brake Stabiliser</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                <li>Hardware</li>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <ul class="category-option">
+                                                    <li><a href="#">Break Disc</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                <li>spares</li>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <ul class="category-option">
+                                                    <li><a href="#">Alloy Wheel</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar-block">
+                            <h2 class="filter-heading">Best Sellers</h2>
+                            <div class="img-box">
+                                <a href="#"><img src="./imag{% static 'e/sidebar-img.webp" al' %}t="sidebar img" class="
+                                    img-fluid"></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="product-grid-container">
+                    <div class="sort-wrapper">
+                        <div class="left-sort">
+                            <div class="dropdown">
+                                <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    short
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Featured</a></li>
+                                    <li><a class="dropdown-item" href="#">By selling</a></li>
+                                    <li><a class="dropdown-item" href="#">price, low to high</a></li>
+                                    <li><a class="dropdown-item" href="#">price, high to low</a></li>
+                                    <li><a class="dropdown-item" href="#">Date, old to new</a></li>
+                                    <li><a class="dropdown-item" href="#">Date, new to old</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right-sort">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                                        aria-selected="true"><img src="{% static './image/horizontal-bars.svg' %}" alt="icon"></button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-profile" type="button" role="tab"
+                                        aria-controls="pills-profile" aria-selected="false"><img
+                                            src="{% static './image/two-bars.svg' %} " alt="icon"></button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-contact" type="button" role="tab"
+                                        aria-controls="pills-contact" aria-selected="false"><img
+                                            src="{% static './image/vartical.svg' %} " alt="icon"></button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-disabled" type="button" role="tab"
+                                        aria-controls="pills-disabled" aria-selected="false"><img
+                                            src="{% static './image/four-bars.svg' %} " alt="icon"></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-grid">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade  grid-one" id="pills-home" role="tabpanel"
+                                aria-labelledby="pills-home-tab" tabindex="0">
+                                <div class="product-container">
+                                    <div class="product-wrapper">
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/product1.webp' %}" alt="product image"
+                                                    class="img1 card-img-top">
+                                                <img src="{% static './image/product2.webp' %}" alt="product image"
+                                                    class="img2 card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="{% url 'product-detail' %}">SPARK PLUG</a>
+                                                </h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation10.webp' %}" alt="product image"
+                                                    class="img1 hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation4.webp' %}" alt="product image"
+                                                    class="img1 hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="{% url 'product-detail' %}">SPARK PLUG</a>
+                                                </h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation3.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="{% url 'product-detail' %}">SPARK PLUG</a>
+                                                </h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation5.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/p8.webp' %}" alt="product image"
+                                                    class="img1 card-img-top">
+                                                <img src="{% static './image/p1.webp' %}" alt="product image"
+                                                    class="img2 card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="{% url 'product-detail' %}">SPARK PLUG</a>
+                                                </h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/p5.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <img src="{% static './image/p4.webp' %}" alt="product image"
+                                                    class="img2 card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4 mb-lg-0">
+                                            <div class="img-box">
+                                                <img src="{% static './image/p7.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show active grid-two" id="pills-profile" role="tabpanel"
+                                aria-labelledby="pills-profile-tab" tabindex="0">
+                                <div class="product-container">
+                                    <div class="product-wrapper">
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/product1.webp' %}" alt="product image"
+                                                    class="img1 card-img-top">
+                                                <img src="{% static './image/product2.webp' %}" alt="product image"
+                                                    class="img2 card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="{% url 'product-detail' %}">SPARK PLUG</a>
+                                                </h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation10.webp' %}" alt="product image"
+                                                    class="img1 hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation4.webp' %}" alt="product image"
+                                                    class="img1 hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="{% url 'product-detail' %}">SPARK PLUG</a>
+                                                </h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation3.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="{% url 'product-detail' %}">SPARK PLUG</a>
+                                                </h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation5.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/p8.webp' %}" alt="product image"
+                                                    class="img1 card-img-top">
+                                                <img src="{% static './image/p1.webp' %}" alt="product image"
+                                                    class="img2 card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="{% url 'product-detail' %}">SPARK PLUG</a>
+                                                </h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4 mb-lg-0">
+                                            <div class="img-box">
+                                                <img src="{% static './image/p5.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <img src="{% static './image/p4.webp' %}" alt="product image"
+                                                    class="img2 card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4 mb-lg-0">
+                                            <div class="img-box">
+                                                <img src="{% static './image/p7.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade grid-three" id="pills-contact" role="tabpanel"
+                                aria-labelledby="pills-contact-tab" tabindex="0">
+                                <div class="product-container">
+                                    <div class="product-wrapper">
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/product1.webp' %}" alt="product image"
+                                                    class="img1 card-img-top">
+                                                <img src="{% static './image/product2.webp' %}" alt="product image"
+                                                    class="img2 card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation10.webp' %}" alt="product image"
+                                                    class="img1 hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation4.webp' %}" alt="product image"
+                                                    class="img1 hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation3.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation5.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/p8.webp' %}" alt="product image"
+                                                    class="img1 card-img-top">
+                                                <img src="{% static './image/p1.webp' %}" alt="product image"
+                                                    class="img2 card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4 mb-lg-0">
+                                            <div class="img-box">
+                                                <img src="{% static './image/p5.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <img src="{% static './image/p4.webp' %}" alt="product image"
+                                                    class="img2 card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4 mb-lg-0">
+                                            <div class="img-box">
+                                                <img src="{% static './image/p7.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade grid-four" id="pills-disabled" role="tabpanel"
+                                aria-labelledby="pills-disabled-tab" tabindex="0">
+                                <div class="product-container">
+                                    <div class="product-wrapper">
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/product1.webp' %}" alt="product image"
+                                                    class="img1 card-img-top">
+                                                <img src="{% static './image/product2.webp' %}" alt="product image"
+                                                    class="img2 card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation10.webp' %}" alt="product image"
+                                                    class="img1 hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation4.webp' %}" alt="product image"
+                                                    class="img1 hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation3.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4 mb-lg-0">
+                                            <div class="img-box">
+                                                <img src="{% static './image/collation5.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4 mb-lg-0">
+                                            <div class="img-box">
+                                                <img src="{% static './image/p8.webp' %}" alt="product image"
+                                                    class="img1 card-img-top">
+                                                <img src="{% static './image/p1.webp' %}" alt="product image"
+                                                    class="img2 card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4 mb-lg-0">
+                                            <div class="img-box">
+                                                <img src="{% static './image/p5.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <img src="{% static './image/p4.webp' %}" alt="product image"
+                                                    class="img2 card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="product-item card mb-4 mb-lg-0">
+                                            <div class="img-box">
+                                                <img src="{% static './image/p7.webp' %}" alt="product image"
+                                                    class="img1  hover-img card-img-top">
+                                                <a href="#" class="main-btn">add to cart</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <span class="vendor">Specter</span>
+                                                <h5 class="product-title"><a href="">SPARK PLUG</a></h5>
+                                                <div class="price">
+                                                    <span>Form Rs.</span>
+                                                    <span class="current-price">240.00</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- subscribe start -->
+        <section class="subscribe">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-box">
+                        <i class="fa-solid fa-envelope"></i>
+                        <p><a href="#">info@example.com</a></p>
+                        <p><a href="#">support@example.com</a></p>
+                    </div>
+                    <div class="contact-box">
+                        <i class="fa-solid fa-phone"></i>
+                        <p><a href="#">000 - 123 - 456789</a></p>
+                        <p><a href="#">000 - 123 - 446789</a></p>
+                    </div>
+                    <div class="contact-box">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>No: 58 A, East Madison</p>
+                        <p>Street, Baltimore, USA</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- subscription end -->
+
+    </main>
+
+</body>
+
+
+</html>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Register | WriteSphere{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center" style="min-height: 70vh;">
+    <div class="col-md-6 col-lg-5">
+        <div class="glass-card p-5">
+            <div class="text-center mb-4">
+                <i class="bi bi-feather fs-1 text-primary"></i>
+                <h2 class="fw-bold mt-2">Join WriteSphere</h2>
+                <p class="text-secondary">Create an account to start writing and reading.</p>
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg rounded-pill">Sign Up</button>
+                </div>
+            </form>
+            <div class="text-center mt-4">
+                <p class="small text-muted">Already have an account? <a href="{% url 'blog:login' %}" class="fw-bold text-decoration-none text-primary">Log In</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

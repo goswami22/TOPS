@@ -1,0 +1,57 @@
+{% extends 'header.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+</head>
+<body>
+    <h1>Sign up</h1>
+    {% if msg %}
+        <p style="color: Green; font-size:  18px; text-align: center; text-transform: capitalize;">{{msg}}</p>
+    {% endif %}
+    <center>
+    <div class="signup-form">
+        <form action="{% url 'signup' %}" method="post" name="signup">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td class="form-label" for="fname">First Name:</td>
+                    <td><input type="text" class="form-control" id="fname" name="fname" ></td>
+                </tr>
+                <tr>
+                    <td class="form-label" for="lname">Last name:</td>
+                    <td><input type="lname" class="form-control" id="lname" name="lname"></td>
+                </tr>
+                <tr>
+                    <td class="form-label" for="email">Email:</td>
+                    <td><input type="text" id="email" class="form-control" name="email"></td>
+                </tr>
+                <tr>
+                    <td class="form-label" for="mobile">mobile:</td>
+                    <td><input type="text" id="mobile" class="form-control" name="mobile"></td>
+                </tr>
+                <tr>
+                    <td class="form-label" for="address">address:</td>
+                    <td><input type="text" id="address" class="form-control" name="address"></td>
+                </tr>
+                <tr>
+                    <td class="form-label" for="password">password:</td>
+                    <td><input type="password" id="password" class="form-control" name="password"></td>
+                </tr>
+                <tr>
+                    <td class="form-label" for="cpassword">Confirm password:</td>
+                    <td><input type="password" id="cpassword" class="form-control" name="cpassword"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" class="btn btn-primary" value="SIGNUP"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}

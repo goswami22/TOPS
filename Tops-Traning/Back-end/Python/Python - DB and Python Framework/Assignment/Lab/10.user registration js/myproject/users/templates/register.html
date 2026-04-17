@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <script>
+        function validateForm() {
+            let name = document.forms["regForm"]["name"].value;
+            let email = document.forms["regForm"]["email"].value;
+            let password = document.forms["regForm"]["password"].value;
+
+            // Name validation
+            if (name == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+
+            // Email validation
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert("Enter a valid email");
+                return false;
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+    <h2>User Registration</h2>
+
+    <form name="regForm" onsubmit="return validateForm()" method="post">
+        {% csrf_token %}
+
+        <label>Name:</label><br>
+        <input type="text" name="name"><br><br>
+
+        <label>Email:</label><br>
+        <input type="text" name="email"><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" name="password"><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

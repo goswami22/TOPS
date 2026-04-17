@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Doctor Finder - Find the Best Doctors Near You{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <div class="hero-badge">🏥 India's #1 Doctor Discovery Platform</div>
+        <h1 class="hero-title">Find the <span class="gradient-text">Right Doctor</span><br>for Your Health</h1>
+        <p class="hero-subtitle">Connect with {{ total_doctors }}+ verified doctors across {{ total_specialties }}+ specialties. Book appointments instantly.</p>
+
+        <!-- Search Bar -->
+        <form action="{% url 'doctor_list' %}" method="GET" class="hero-search">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" name="q" placeholder="Search doctors, specialties, hospitals..." class="search-input">
+            </div>
+            <div class="search-box">
+                <i class="fas fa-map-marker-alt search-icon"></i>
+                <input type="text" name="city" placeholder="City (e.g. Mumbai, Delhi)" class="search-input">
+            </div>
+            <button type="submit" class="btn btn-primary search-btn">
+                <i class="fas fa-search"></i> Search
+            </button>
+        </form>
+
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">{{ total_doctors }}+</span>
+                <span class="stat-label">Verified Doctors</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-number">{{ total_specialties }}+</span>
+                <span class="stat-label">Specialties</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-number">50K+</span>
+                <span class="stat-label">Happy Patients</span>
+            </div>
+        </div>
+    </div>
+    <div class="hero-visual">
+        <div class="hero-card floating">
+            <div class="hero-card-icon">👨‍⚕️</div>
+            <div class="hero-card-info">
+                <strong>Dr. Sarah Johnson</strong>
+                <span>Cardiologist • ⭐ 4.9</span>
+            </div>
+        </div>
+        <div class="hero-card floating-delay">
+            <div class="hero-card-icon">🎯</div>
+            <div class="hero-card-info">
+                <strong>Appointment Booked!</strong>
+                <span>Today at 3:00 PM</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Specialties Section -->
+<section class="section specialties-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Our Specialties</span>
+            <h2 class="section-title">Browse by <span class="gradient-text">Specialty</span></h2>
+            <p class="section-subtitle">Find specialists for every medical need</p>
+        </div>
+        <div class="specialties-grid">
+            {% for specialty in specialties %}
+            <a href="{% url 'doctor_list' %}?specialty={{ specialty.id }}" class="specialty-card">
+                <div class="specialty-icon">{{ specialty.icon }}</div>
+                <div class="specialty-name">{{ specialty.name }}</div>
+                <div class="specialty-count">{{ specialty.doctors.count }} Doctors</div>
+            </a>
+            {% empty %}
+            <div class="empty-state">No specialties added yet.</div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Featured Doctors -->
+<section class="section doctors-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Top Rated</span>
+            <h2 class="section-title">Featured <span class="gradient-text">Doctors</span></h2>
+            <p class="section-subtitle">Highly rated doctors trusted by thousands of patients</p>
+        </div>
+        <div class="doctors-grid">
+            {% for doctor in featured_doctors %}
+            <div class="doctor-card">
+                <div class="doctor-card-header">
+                    <div class="doctor-avatar">
+                        {% if doctor.photo %}
+                            <img src="{{ doctor.photo.url }}" alt="Dr. {{ doctor.name }}">
+                        {% else %}
+                            <div class="avatar-placeholder">{{ doctor.name|first }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="availability-badge {{ doctor.availability }}">
+                        <span class="status-dot"></span>
+                        {{ doctor.get_availability_display }}
+                    </div>
+                </div>
+                <div class="doctor-card-body">
+                    {% if doctor.is_verified %}
+                    <div class="verified-badge"><i class="fas fa-check-circle"></i> Verified</div>
+                    {% endif %}
+                    <h3 class="doctor-name">Dr. {{ doctor.name }}</h3>
+                    <p class="doctor-specialty">{{ doctor.specialty }}</p>
+                    <p class="doctor-hospital"><i class="fas fa-hospital"></i> {{ doctor.hospital }}</p>
+                    <p class="doctor-city"><i class="fas fa-map-marker-alt"></i> {{ doctor.city }}</p>
+                    <div class="doctor-meta">
+                        <div class="doctor-rating">
+                            <span class="stars">⭐</span>
+                            <strong>{{ doctor.rating }}</strong>
+                            <span class="reviews">({{ doctor.total_reviews }} reviews)</span>
+                        </div>
+                        <div class="doctor-exp">{{ doctor.experience_years }} yrs exp</div>
+                    </div>
+                    <div class="doctor-fee">
+                        <span>Consultation</span>
+                        <strong>₹{{ doctor.consultation_fee }}</strong>
+                    </div>
+                </div>
+                <div class="doctor-card-footer">
+                    <a href="{% url 'doctor_detail' doctor.pk %}" class="btn btn-outline btn-sm">View Profile</a>
+                    <a href="{% url 'book_appointment' doctor.pk %}" class="btn btn-primary btn-sm">Book Now</a>
+                </div>
+            </div>
+            {% empty %}
+            <div class="empty-state">
+                <p>No doctors added yet. <a href="/admin">Add doctors from admin panel.</a></p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="section-cta">
+            <a href="{% url 'doctor_list' %}" class="btn btn-primary btn-lg">
+                View All Doctors <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section class="section how-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Simple Process</span>
+            <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <div class="step-icon">🔍</div>
+                <h3>Search</h3>
+                <p>Search for doctors by specialty, name, or location</p>
+            </div>
+            <div class="step-connector">→</div>
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <div class="step-icon">👨‍⚕️</div>
+                <h3>Choose</h3>
+                <p>View profiles, ratings, and reviews to pick the best</p>
+            </div>
+            <div class="step-connector">→</div>
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <div class="step-icon">📅</div>
+                <h3>Book</h3>
+                <p>Book an appointment in seconds, get instant confirmation</p>
+            </div>
+            <div class="step-connector">→</div>
+            <div class="step-card">
+                <div class="step-number">04</div>
+                <div class="step-icon">💊</div>
+                <h3>Get Well</h3>
+                <p>Visit your doctor and start your journey to health</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

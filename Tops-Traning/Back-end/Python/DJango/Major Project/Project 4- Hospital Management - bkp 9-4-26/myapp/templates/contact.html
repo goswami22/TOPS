@@ -1,0 +1,106 @@
+{% extends 'header.html' %}
+
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+    <main class="contact-page split-layout">
+        <!-- Left Section -->
+        <section class="left-section">
+            <div class="overlay"></div>
+            <div class="glass-card left-glass-card">
+                <div class="logo">
+                    <i class="bi bi-hospital"></i> Medical.
+                </div>
+                <h1 class="glow-text">Get in Touch</h1>
+                <p class="subtitle glow-text-soft">We are here to help you. Contact our team for support, appointments, or queries.</p>
+            </div>
+        </section>
+
+        <!-- Right Section -->
+        <section class="right-section">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Contact Us</h2>
+                    <p>We'd love to hear from you!</p>
+                </div>
+                {% if msg %}
+                    <p class="text-success">{{msg}}</p>
+                {% endif %}
+                <form method="POST" action="{% url 'contact' %}" name="contact">
+                    {% csrf_token %}
+                    <!-- Category Dropdown -->
+                    <!-- <div class="input-group-custom">
+                        <select class="form-select custom-input" required>
+                            <option value="" disabled selected>Select Category</option>
+                            <option value="admin">Admin</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="patient">Patient</option>
+                        </select>
+                        <i class="bi bi-person-badge input-icon"></i>
+                        
+                    </div> -->
+
+                    <!-- Name Inputs (Row) -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group-custom">
+                                <input type="text" class="form-control custom-input" name="fname" placeholder="First Name" required>
+                                <i class="bi bi-person input-icon"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group-custom">
+                                <input type="text" class="form-control custom-input" name="lname" placeholder="Last Name" required>
+                                <i class="bi bi-person input-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Input -->
+                    <div class="input-group-custom">
+                        <input type="email" class="form-control custom-input" name="email" placeholder="Email Address" required>
+                        <i class="bi bi-envelope input-icon"></i>
+                    </div>
+
+                    <!-- Mobile Number Input -->
+                    <div class="input-group-custom">
+                        <input type="tel" class="form-control custom-input" name="mobile" placeholder="Mobile Number" required>
+                        <i class="bi bi-telephone input-icon"></i>
+                    </div>
+
+                    <!-- Message Textarea -->
+                    <div class="input-group-custom">
+                        <textarea class="form-control custom-input custom-textarea" name="message" rows="4" placeholder="Your Message (Optional)"></textarea>
+                        <i class="bi bi-chat-text input-icon textarea-icon"></i>
+                    </div>
+
+                    <!-- Primary Button -->
+                    <button type="submit" class="btn btn-primary-custom w-100">Send Message</button>
+                    
+                    <!-- Secondary Option -->
+                    <div class="text-center mt-3">
+                        <a href="/" class="back-link"><i class="bi bi-arrow-left me-1"></i> Back to Home</a>
+                    </div>
+                </form>
+                <!-- {% for i in contacts %}
+                    {{i.fname}} 
+                    {{ i.lname }}
+                    <br>
+                    {{i.email}} 
+                    <hr>
+                {% endfor %} -->
+            </div>
+        </section>
+    </main>
+
+    
+</html>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX CRUD</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h2>Add Student</h2>
+
+<form id="studentForm">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+<hr>
+
+<h2>Student List</h2>
+
+<table border="1" id="studentTable">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Action</th>
+    </tr>
+
+    {% for s in students %}
+    <tr id="row{{ s.id }}">
+        <td>{{ s.name }}</td>
+        <td>{{ s.email }}</td>
+        <td>{{ s.phone }}</td>
+        <td>
+            <button onclick="deleteStudent(s.id)">Delete</button>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<script>
+$("#studentForm").submit(function(e){
+    e.preventDefault();
+
+    $.ajax({
+        url: "/create/",
+        type: "POST",
+        data: $(this).serialize(),
+        success: function(data){
+            $("#studentTable").append(
+                `<tr id="row${data.id}">
+                    <td>${data.name}</td>
+                    <td>${data.email}</td>
+                    <td>${data.phone}</td>
+                    <td>
+                        <button onclick="deleteStudent(${data.id})">Delete</button>
+                    </td>
+                </tr>`
+            );
+            $("#studentForm")[0].reset();
+        }
+    });
+});
+
+
+function deleteStudent(id){
+    $.ajax({
+        url: "/delete/" + id + "/",
+        type: "POST",
+        data: {
+            csrfmiddlewaretoken: '{{ csrf_token }}'
+        },
+        success: function(){
+            $("#row" + id).remove();
+        }
+    });
+}
+</script>
+
+</body>
+</html>

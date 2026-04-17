@@ -1,0 +1,177 @@
+<!-- https://depot.qodeinteractive.com/cart/ -->
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <!-- breadcrumb start -->
+    <div class="page-breadcrumb">
+        <div class="container container-width">
+            <div class="breadcrumb-wrapper">
+                <div class="breadcrumb-list">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="/" class="transition"><i class="bi bi-house"></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="cart py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table cart-table align-middle">
+
+                            <!-- Table Head -->
+                            {% if carts %}
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>product</th>
+                                    <th class="text-center">price</th>
+                                    <th class="text-center">quntity</th>
+                                    <th class="text-end">subtotal</th>
+                                </tr>
+                            </thead>
+
+                            
+                            <tbody>
+                                <!-- {% if request.session.email %} -->
+
+                                {% for i in carts %}
+                                <tr class="cart-row">
+
+                                    {% if cart_flag == true %}
+                                    <td class="remove-col">
+                                        <a href="{% url 'remove-form-cart' pk=i.product.pk %}" class="remove-btn">×</a>
+                                    </td>
+                                    {% endif %}
+
+                                    <td class="product-col">
+                                        <div class="product-box">
+                                            <img src="{{ i.product.profile_pricture.url }}" class="cart-img">
+                                            <div>
+                                                <span class="product-name">
+                                                    {{i.product.product_name}}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td class="text-center desktop-only">
+                                        <div class="product-price">$ {{i.product.product_price}}</div>
+                                    </td>
+                                    <!-- sir content -->
+                                    <!-- <td class="text-center">
+                                        <div class="qty-box d-flex justify-content-center align-items-center gap-3">
+                                            <form action="{% url 'change-qty' %}" method="post" name="change_qty">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="id" value="{{ i.pk }}">
+                                                <input type="number" name="product_qut" value="{{i.product_qut}}" min="1" max="100" onchange="this.form.submit()">
+                                            </form>
+                                        </div>
+                                    </td> -->
+
+                                    <td class="text-center">
+                                        <div
+                                            class="qty-container d-flex justify-content-center align-items-center gap-1">
+
+                                            <!-- Decrease Button -->
+                                            <form action="{% url 'change-qty' %}" method="post">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="id" value="{{ i.pk }}">
+                                                <input type="hidden" name="action" value="decrease">
+                                                <button type="submit" class="qty-btn">−</button>
+                                            </form>
+
+                                            <!-- Quantity Display -->
+                                            <span class="qty-box text-center">
+                                                {{ i.product_qut }}
+                                            </span>
+
+                                            <!-- Increase Button -->
+                                            <form action="{% url 'change-qty' %}" method="post">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="id" value="{{ i.pk }}">
+                                                <input type="hidden" name="action" value="increase">
+                                                <button type="submit" class="qty-btn">+</button>
+                                            </form>
+
+                                        </div>
+                                    </td>
+
+                                    <td class="text-end desktop-only">
+                                        <div class="total-price">
+                                            $ {{i.total_price}}
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                                {% endfor %}
+                                <!-- {% endif %} -->
+                                {% else %}
+                                <h2>No product available</h2>
+                            </tbody>
+                            {% endif %}
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+  <div class="container space-bottom">
+    <div class="row mt-5 justify-content-end">
+        <div class="col-12 col-md-6 col-lg-4">
+
+            <div class="cart-summary-card">
+
+                <h4 class="summary-title mb-4">Cart Totals</h4>
+                <!-- {% for i in carts %} -->
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>$ {{i.total_price}}</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>Free</span>
+                </div>
+
+                <div class="summary-row total-row">
+                    <span>Total</span>
+                    <span>$ 550</span>
+                </div>
+                <!-- {% endfor %} -->
+                <div class="cart-btn-area text-center">
+                    <a href="#" class="main-btn mt-4">
+                        Proceed to Checkout
+                    </a>                    
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+{% endblock %}
+

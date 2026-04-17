@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg fixed-top glass-nav">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-4" href="{% url 'blog:home' %}">
+            <span class="text-gradient"><i class="bi bi-feather"></i> WriteSphere</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'blog:home' %}">Home</a>
+                </li>
+                {% if user.is_authenticated %}
+                    {% if user.role == 'author' or user.role == 'admin' %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blog:post_create' %}"><i class="bi bi-pencil-square"></i> Write Post</a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item dropdown ms-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            {% if user.profile_picture %}
+                                <img src="{{ user.profile_picture.url }}" alt="Profile" class="rounded-circle" width="30" height="30" style="object-fit: cover;">
+                            {% else %}
+                                <i class="bi bi-person-circle fs-5"></i>
+                            {% endif %}
+                            <span class="ms-1">{{ user.username }}</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+                            <li><a class="dropdown-item" href="{% url 'blog:profile' user.username %}">My Profile</a></li>
+                            {% if user.is_staff %}
+                            <li><a class="dropdown-item" href="/admin/">Admin Panel</a></li>
+                            {% endif %}
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form action="{% url 'blog:logout' %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="dropdown-item text-danger">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <li class="nav-item ms-2">
+                        <a class="nav-link" href="{% url 'blog:login' %}">Login</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-primary rounded-pill px-4" href="{% url 'blog:register' %}">Get Started</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

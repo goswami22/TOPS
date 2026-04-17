@@ -1,0 +1,48 @@
+{% extends 'header.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+</head>
+<body>
+    <h1>Sign up</h1>
+    {% if msg %}
+        <p style="color: Green; font-size:  18px; text-align: center; text-transform: capitalize;">{{msg}}</p>
+    {% endif %}
+    <center>
+    <div class="User Profile">
+        <form action="{% url 'profile' %}" method="post" name="profile">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td class="form-label" for="fname">First Name:</td>
+                    <td><input type="text" class="form-control" id="fname" name="fname" value="{{user.fname}}"></td>
+                </tr>
+                <tr>
+                    <td class="form-label" for="lname">Last name:</td>
+                    <td><input type="text" class="form-control" id="lname" name="lname" value="{{user.lname}}"></td>
+                </tr>
+                <tr>
+                    <td class="form-label" for="email">Email:</td>
+                    <td><input type="text" id="email" class="form-control" name="email" readonly value="{{user.email}}"></td>
+                </tr>
+                <tr>
+                    <td class="form-label" for="mobile">mobile:</td>
+                    <td><input type="text" id="mobile" class="form-control" name="mobile" value="{{user.mobile}}"></td>
+                </tr>
+                <tr>
+                    <td class="form-label" for="address">address:</td>
+                    <td><textarea name="address" id="address" class="form-control" rows="5" cols="20">{{user.address}}</textarea></td>
+                </tr>
+                    <td><input type="submit" class="btn btn-primary" value="Update Profile"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}

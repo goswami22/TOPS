@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Find Doctors - Doctor Finder{% endblock %}
+
+{% block content %}
+<div class="page-hero mini-hero">
+    <div class="container">
+        <h1>Find <span class="gradient-text">Doctors</span></h1>
+        <p>Discover verified doctors near you</p>
+    </div>
+</div>
+
+<div class="container doctor-list-container">
+    <!-- Filters -->
+    <form method="GET" class="filter-bar">
+        <div class="filter-group">
+            <i class="fas fa-search"></i>
+            <input type="text" name="q" value="{{ query }}" placeholder="Search name, hospital..." class="filter-input">
+        </div>
+        <div class="filter-group">
+            <i class="fas fa-stethoscope"></i>
+            <select name="specialty" class="filter-select">
+                <option value="">All Specialties</option>
+                {% for sp in specialties %}
+                <option value="{{ sp.id }}" {% if selected_specialty == sp.id|stringformat:"s" %}selected{% endif %}>
+                    {{ sp.name }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="filter-group">
+            <i class="fas fa-city"></i>
+            <select name="city" class="filter-select">
+                <option value="">All Cities</option>
+                {% for c in cities %}
+                <option value="{{ c }}" {% if selected_city == c %}selected{% endif %}>{{ c }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="filter-group">
+            <i class="fas fa-circle"></i>
+            <select name="availability" class="filter-select">
+                <option value="">Any Availability</option>
+                <option value="available" {% if selected_availability == 'available' %}selected{% endif %}>Available Now</option>
+                <option value="busy" {% if selected_availability == 'busy' %}selected{% endif %}>Busy</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-filter"></i> Filter
+        </button>
+        <a href="{% url 'doctor_list' %}" class="btn btn-outline">Clear</a>
+    </form>
+
+    <div class="results-header">
+        <p class="results-count"><strong>{{ doctors.count }}</strong> doctors found</p>
+        <a href="{% url 'map_view' %}" class="btn btn-outline btn-sm">
+            <i class="fas fa-map"></i> View on Map
+        </a>
+    </div>
+
+    <!-- Doctor Cards -->
+    <div class="doctors-grid">
+        {% for doctor in doctors %}
+        <div class="doctor-card">
+            <div class="doctor-card-header">
+                <div class="doctor-avatar">
+                    {% if doctor.photo %}
+                        <img src="{{ doctor.photo.url }}" alt="Dr. {{ doctor.name }}">
+                    {% else %}
+                        <div class="avatar-placeholder">{{ doctor.name|first }}</div>
+                    {% endif %}
+                </div>
+                <div class="availability-badge {{ doctor.availability }}">
+                    <span class="status-dot"></span>
+                    {{ doctor.get_availability_display }}
+                </div>
+            </div>
+            <div class="doctor-card-body">
+                {% if doctor.is_verified %}
+                <div class="verified-badge"><i class="fas fa-check-circle"></i> Verified</div>
+                {% endif %}
+                <h3 class="doctor-name">Dr. {{ doctor.name }}</h3>
+                <p class="doctor-specialty">{{ doctor.specialty }}</p>
+                <p class="doctor-hospital"><i class="fas fa-hospital"></i> {{ doctor.hospital }}</p>
+                <p class="doctor-city"><i class="fas fa-map-marker-alt"></i> {{ doctor.city }}</p>
+                <div class="doctor-meta">
+                    <div class="doctor-rating">
+                        <span class="stars">⭐</span>
+                        <strong>{{ doctor.rating }}</strong>
+                        <span class="reviews">({{ doctor.total_reviews }})</span>
+                    </div>
+                    <div class="doctor-exp">{{ doctor.experience_years }} yrs</div>
+                </div>
+                <div class="doctor-fee">
+                    <span>Consultation</span>
+                    <strong>₹{{ doctor.consultation_fee }}</strong>
+                </div>
+            </div>
+            <div class="doctor-card-footer">
+                <a href="{% url 'doctor_detail' doctor.pk %}" class="btn btn-outline btn-sm">Profile</a>
+                <a href="{% url 'book_appointment' doctor.pk %}" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+        </div>
+        {% empty %}
+        <div class="empty-state full-width">
+            <div class="empty-icon">🔍</div>
+            <h3>No doctors found</h3>
+            <p>Try adjusting your filters or search term.</p>
+            <a href="{% url 'doctor_list' %}" class="btn btn-primary">Clear Filters</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

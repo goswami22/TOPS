@@ -1,0 +1,54 @@
+@media screen and (max-width:1199px){
+.navbar-expand-lg .navbar-nav .nav-link{font-size:13px}
+.grid-product-container .product-detail .product-title a,.list-product-container .product-detail .product-title a,.new-product .product-detail .product-title a,.single-product .product-detail .product-title a{font-size:14px}
+.product-tabs .tab-content p{margin-bottom:10px}
+.grid-product-container .product-detail .cart-area a,.list-product-container .product-detail .cart-area a,.new-product .product-detail .cart-area a,.single-product .product-detail .cart-area a{font-size:12px}
+.company-policy .single-policy-content h5.title{font-size:14px}
+.client-testimonial .card p a{font-size:16px}
+header .navbar .navbar-nav .dropdown-menu.megamenu{left:0;padding:55px;width:100%;transform:unset;-webkit-transform:unset;-moz-transform:unset;-ms-transform:unset;-o-transform:unset}
+}
+@media screen and (max-width:991px){
+.navbar ul.navbar-nav.center-menu li.nav-item{padding:5px 0}
+.navbar .navbar-nav .dropdown-menu.megamenu{padding:20px 16px 10px}
+.navbar ul li.nav-item.position-relative span{left:16px;right:auto}
+.banner{margin-bottom:40px}
+.about-area,.blog,.brand,.login-content,.multiple-banner,.product-detail-wrapper,.product-tabs,.single-product,footer .top-footer{padding-bottom:40px}
+.new-product .card.d-flex{flex-direction:column}
+.company-policy{padding:10px 0 40px}
+.new-latter{padding:20px 0 40px}
+.new-latter h2.title{font-size:25px;line-height:24px}
+footer .footer-title{margin-bottom:10px}
+.breadcrumb-area{padding:40px 0}
+.about-bottom h3.about-title,.about-content h3.about-title{margin-bottom:10px}
+.about-content .about-des{margin-bottom:10px;font-size:14px}
+.about-area ul li a,.about-area ul li a::after,.about-bottom p{font-size:14px}
+.product-detail-wrapper .review ul span{font-size:14px}
+.product-detail-wrapper .price,.product-detail-wrapper .stock{font-size:14px;margin-bottom:10px}
+.product-detail-wrapper .poroduct-des{font-size:14px;line-height:1.5;margin-bottom:20px}
+a.main-btn{font-size:14px;padding:5.7px 13px}
+.product-tabs .tab-content p{font-size:14px}
+.product-tabs #pills-shpping ul li{font-size:14px}
+.list-product-container .price-box{margin-bottom:10px}
+.list-product-container .product-des{margin-bottom:20px}
+.list-product-container .card{padding:20px 0}
+}
+@media screen and (max-width:767px){
+.banner .banner-content h4.subtitle{font-size:26px}
+.breadcrumb-area .breadcrumb li{font-size:14px}
+.banner .banner-content h1.title{font-size:28px;line-height:30px;margin:8px 0 10px}
+.top-header{display:none}
+.breadcrumb-area{padding:40px 0}
+.payment-method{margin-bottom:30px}
+a.main-btn{padding:4px 9px;font-size:12px}
+.product-tabs .nav-tabs .nav-link{padding:8px 7px;font-size:9px;margin-right:6px}
+.product-tabs .nav-tabs .nav-item:last-child .nav-link{margin-right:0}
+.product-tabs .table td,.product-tabs .table th{font-size:12px}
+.tab-content h4.tab-title{font-size:18px;margin-bottom:10px}
+.new-latter h2.title{font-size:18px}
+.new-latter .input-group-text,.top-header .search-bar .input-group-text{padding:10px;font-size:14px}
+footer .footer-bottom-content{flex-direction:column;text-align:center;font-size:14px}
+.new-product-slider{margin-bottom:40px}
+.product-detail-wrapper .count input[type=number]{font-size:12px}
+.cart-content h2.section-title{margin-bottom:10px;font-size:25px}
+.cart-content h2.cart-footer-header{font-size:25px;margin-bottom:15px}
+}

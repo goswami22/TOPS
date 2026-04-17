@@ -1,0 +1,742 @@
+<!-- ref:- https://toolkits-3.myshopify.com/ -->
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toolkits - Product detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./css/jquery.fancybox.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+
+<body>
+    <header>
+        <!-- top header start -->
+        <div class="top-header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 col-lg-4">
+                        <div class="phone">
+                            <img src="./image/call-header.png" alt="call headerphone image" class="img-fluid">
+                            <span>call us:
+                            </span> +11 222 3333
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-lg-4">
+                        <div class="search-bar">
+                            <div class="input-group">
+                                <input type="text" placeholder="Search your project" class="form-control">
+                                <a href="#" class="search-btn input-group-text"><i
+                                        class="fa-solid fa-magnifying-glass"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4">
+                        <div class="currency">
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle currency-btn" data-bs-toggle="dropdown">usd</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">usd</a></li>
+                                    <li><a href="#">eur</a></li>
+                                    <li><a href="#">gbp</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top header end -->
+        <!-- main navbar start -->
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./image/logo.png" alt="logo" class="img-fluid">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 center-menu">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us.html">about us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">product</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="product-detail.html" class="dropdown-item">simple product</a></li>
+                                <li><a href="" class="dropdown-item">variable product</a></li>
+                                <li><a href="" class="dropdown-item">affiliate product</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="category.html" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                shop
+                            </a>
+                            <ul class="dropdown-menu megamenu">
+                                <div class="row align-items-center">
+                                    <li class="col-sm-12 col-md-3">
+                                        <h5 class="menu-title">Drill bits</h5>
+                                        <ul>
+                                            <li><a href="#">metal bit</a></li>
+                                            <li><a href="#">security bit</a></li>
+                                            <li><a href="#">masonry bit</a></li>
+                                            <li><a href="#">wire cutters</a></li>
+                                            <li><a href="#">scalpel</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-12 col-md-3">
+                                        <h5 class="menu-title">toolbox</h5>
+                                        <ul>
+                                            <li><a href="#">metal bit</a></li>
+                                            <li><a href="#">security bit</a></li>
+                                            <li><a href="#">masonry bit</a></li>
+                                            <li><a href="#">wire cutters</a></li>
+                                            <li><a href="#">scalpel</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-12 col-md-3">
+                                        <h5 class="menu-title">hand tools</h5>
+                                        <ul>
+                                            <li><a href="#">metal bit</a></li>
+                                            <li><a href="#">security bit</a></li>
+                                            <li><a href="#">masonry bit</a></li>
+                                            <li><a href="#">wire cutters</a></li>
+                                            <li><a href="#">scalpel</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-12 col-md-3">
+                                        <a href="category.html"><img src="./image/menu-image.avif" alt="menu image" class="img-fluid"></a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">contact us</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><i
+                                    class="fa-solid fa-gear"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="login.html" class="dropdown-item">login</a></li>
+                                <li><a href="register.html" class="dropdown-item">regester</a></li>
+                                <li><a href="login.html" class="dropdown-item">my account</a></li>
+                                <li><a href="" class="dropdown-item">wishlist</a></li>
+                                <li><a href="cart.html" class="dropdown-item">cart page</a></li>
+                                <li><a href="" class="dropdown-item">checkout</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-regular fa-heart"></i></a>
+                        </li>
+                        <li class="nav-item position-relative">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <span>0</span>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <!-- main navbar end -->
+    </header>
+
+
+    <main class="product-datail-container">
+        <div class="breadcrumb-area">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">simple product</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <section class="product-detail-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-5 mb-4 mb-md-0">
+                        <div class="product-image-area">
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="product1" role="tabpanel" aria-labelledby="product1-tab" tabindex="0">
+                                    <a href="./image/image-th1.webp" class="fancybox" ><img src="./image/image-th1.webp" alt="product image" class="img-fluid"></a>
+                                </div>
+                                <div class="tab-pane fade" id="product2" role="tabpanel" aria-labelledby="product2-tab" tabindex="0">
+                                    <a href="./image/image-th2.webp" class="fancybox"><img src="./image/image-th2.webp" alt="product image" class="img-fluid"></a>
+                                </div>
+                                <div class="tab-pane fade" id="product3" role="tabpanel" aria-labelledby="product3-tab" tabindex="0">
+                                    <a href="./image/image-th3.webp" class="fancybox"><img src="./image/image-th3.webp" alt="product image" class="img-fluid"></a>
+                                </div>
+                                <div class="tab-pane fade" id="product4" role="tabpanel" aria-labelledby="product4-tab" tabindex="0">
+                                    <a href="./image/image-th4.webp" class="fancybox"><img src="./image/image-th4.webp" alt="product image" class="img-fluid"></a>
+                                </div>
+                              </div>
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                              <button class="nav-link active" id="product1-tab" data-bs-toggle="tab" data-bs-target="#product1" type="button" role="tab" aria-controls="product1" aria-selected="true">
+                                <div class="image-thumbnail-box">
+                                    <img src="./image/image-thumbnail1.webp" alt="image" class="img-fluid">
+                                </div>
+                              </button>
+                              <button class="nav-link" id="product2-tab" data-bs-toggle="tab" data-bs-target="#product2" type="button" role="tab" aria-controls="product2" aria-selected="false">
+                                <div class="image-thumbnail-box">
+                                    <img src="./image/image-thumbnail2.webp" alt="image" class="img-fluid">
+                                </div>
+                              </button>
+                              <button class="nav-link" id="product3-tab" data-bs-toggle="tab" data-bs-target="#product3" type="button" role="tab" aria-controls="product3" aria-selected="false">
+                                <div class="image-thumbnail-box">
+                                    <img src="./image/image-thumbnail3.webp" alt="image" class="img-fluid">
+                                </div>
+                              </button>
+                              <button class="nav-link" id="product4-tab" data-bs-toggle="tab" data-bs-target="#product4" type="button" role="tab" aria-controls="product4" aria-selected="false">
+                                <div class="image-thumbnail-box">
+                                    <img src="./image/image-thumbnail4.webp" alt="image" class="img-fluid">
+                                </div>
+                              </button>
+                            </div>
+                          </nav>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 col-lg-7">
+                        <div class="product-datail">
+                            <h4 class="product-title">simple product</h4>
+                            <div class="review">
+                                <ul>
+                                    <li><i class="fa-regular fa-star"></i></li>
+                                    <li><i class="fa-regular fa-star"></i></li>
+                                    <li><i class="fa-regular fa-star"></i></li>
+                                    <li><i class="fa-regular fa-star"></i></li>
+                                    <li><i class="fa-regular fa-star"></i></li>
+                                    <span>no review</span>
+                                </ul>
+                            </div>
+                            <div class="price">$220.00</div>
+                            <div class="stock">Out of stock</div>
+                            <p class="poroduct-des">En el valle, la vivienda en la vigilancia específica, el reemplazo o
+                                la consolidación de la cama, un hombre obsesionado con la reducción de opciones de
+                                apuestas ilegales. Wow, mercado muy atractivo, de mis visitantes. Tiempo de desarrollo
+                                reciente para odiar, un bar beef tiempo.</p>
+                            <div class="product-detail-bottom">
+                                <div class="count">
+                                    <input type="number" min="0" value="0">
+                                </div>
+                                <a href="#" class="main-btn">add to cart</a>
+                                <a href="#" class="main-btn">add to wishlist</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-tabs">
+            <div class="container">
+                <ul class="nav nav-tabs" id="tabs-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                            aria-selected="true">description</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                            aria-selected="false">renews</button>
+                    </li>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-size-cart-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-size-cart" type="button" role="tab" aria-controls="pills-size-cart"
+                            aria-selected="false">size cart</button>
+                    </li>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-shpping-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-shpping" type="button" role="tab" aria-controls="pills-shpping"
+                            aria-selected="false">shipping policy</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab" tabindex="0">
+                        <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Mañana,
+                            a partir de los botones de opción, sino un poco de dolor. Escribir en el freno ahora. No hay
+                            comentarios eran, en el mejor, pero el financiamiento de la atención de la salud o la risa.
+                            Bienvenido a aprender más acerca de la cultura popular, y el tiempo, no, ni a crecer fuerte.
+                            Miramos a los miembros de televisión por cable de televisión.</p>
+                        <p>Por otra parte, denunciamos con indignación a los hombres que son engañados y desmoralizados
+                            por los encantos del placer del momento, tan cegados por el deseo, que no pueden prever el
+                            dolor y la molestia que se va a producir, y la misma culpa es de los que faltan a su deber
+                            por debilidad de la voluntad, que es lo mismo que decir que fallan por la fatiga y el dolor.
+                            Estos casos son muy simples y fácil de distinguir. En una hora libre, sin las trabas de
+                            nuestro poder de elección y cuando nada impida que seamos capaces de hacer lo que más nos
+                            gusta, todo placer es de agradecer y cada dolor se puede evitar. Pero en ciertas
+                            circunstancias y debido a las exigencias del deber o de las obligaciones de la empresa,
+                            estos placeres tienen que ser repudiados y sus molestias aceptadas .El hombre sabio, por lo
+                            tanto, siempre tiene en estos asuntos una elección: rechaza placeres para asegurar otros
+                            placeres mayores, o de lo contrario evita los dolores para evitar dolores peores.</p>
+                    </div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+                        tabindex="0">
+                        <h4 class="tab-title">customer reviews</h4>
+                        <div class="review-status">
+                            <div class="review-btn">
+                                <p>no review yet</p>
+                                <a href="javascript:void(0)">write a review</a>
+                            </div>
+                            <hr>
+                            <div class="write-review">
+                                <form action="">
+                                    <h6 class="review-title">write a review</h6>
+                                    <div class="mb-3">
+                                        <label for="name">name</label>
+                                        <input type="text" id="name" class="form-control" placeholder="enter your name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email">email</label>
+                                        <input type="email" id="email" class="form-control" placeholder="enter your name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="rating">rating</label>
+                                        <ul class="star">
+                                            <li><i class="fa-regular fa-star"></i></li>
+                                            <li><i class="fa-regular fa-star"></i></li>
+                                            <li><i class="fa-regular fa-star"></i></li>
+                                            <li><i class="fa-regular fa-star"></i></li>
+                                            <li><i class="fa-regular fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="review">review title</label>
+                                        <input type="text" id="review" class="form-control" placeholder="give your review a title">
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" name="comment" id="comment" cols="30" rows="10" placeholder="write your comment here"></textarea>
+                                    </div>
+                                    <div class="text-end">
+                                        <a href="#" class="main-btn" type="submit">submit review</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-size-cart" role="tabpanel"
+                        aria-labelledby="pills-size-cart-tab" tabindex="0">
+                        <h4 class="tab-title">size chart</h4>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th>uk</th>
+                                    <td>18</td>
+                                    <td>20</td>
+                                    <td>22</td>
+                                    <td>24</td>
+                                    <td>26</td>
+                                </tr>
+                                <tr>
+                                    <th>European</th>
+                                    <td>46</td>
+                                    <td>48</td>
+                                    <td>50</td>
+                                    <td>52</td>
+                                    <td>54</td>
+                                </tr>
+                                <tr>
+                                    <th>USA</th>
+                                    <td>14</td>
+                                    <td>16</td>
+                                    <td>18</td>
+                                    <td>20</td>
+                                    <td>22</td>
+                                </tr>
+                                <tr>
+                                    <th>Australia</th>
+                                    <td>28</td>
+                                    <td>10</td>
+                                    <td>12</td>
+                                    <td>16</td>
+                                    <td>18</td>
+                                </tr>
+                                <tr>
+                                    <th>canada</th>
+                                    <td>24</td>
+                                    <td>18</td>
+                                    <td>22</td>
+                                    <td>28</td>
+                                    <td>26</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="pills-shpping" role="tabpanel" aria-labelledby="pills-shpping-tab"
+                        tabindex="0">
+                        <h4 class="tab-title">Shoping policy</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ullam, repudiandae quia earum
+                            sequi architecto deserunt nesciunt voluptatum iusto dolores.</p>
+                        <ul>
+                            <li>1-2 business days (Typically by end of day)</li>
+                            <li>30 days money back guaranty</li>
+                            <li>24/7 live support</li>
+                            <li>odio dignissim qui blandit praesent</li>
+                            <li>luptatum zzril delenit augue duis dolore</li>
+                            <li>te feugait nulla facilisi.</li>
+                        </ul>
+                        <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim
+                            placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis
+                            qui facit eorum</p>
+                        <p>claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.
+                            Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum
+                            est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum
+                            formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc
+                            nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="single-product">
+            <div class="container">
+                <section class="section-header">upsell product</section>
+                <div class="single-product-slider product-sale-slider owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="card">
+                            <div class="image-box">
+                                <img src="./image/p1.avif" alt="product image" class="top-image img-fluid">
+                                <img src="./image/p-2.avif" alt="product image" class="bottom-image ">
+                                <span class="discount-sale">sale</span>
+                                <span class="discount-tag">-8%</span>
+                            </div>
+                            <div class="product-detail">
+                                <div class="review">
+                                    <ul>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                    </ul>
+                                </div>
+                                <p class="product-title"><a href="#">simple product</a></p>
+                                <div class="price-box">
+                                    <span class="current-price">$220.00</span>
+                                </div>
+                                <div class="cart-area">
+                                    <a href="#"><i class="fa-solid fa-heart"></i></a>
+                                    <a href="#">Add To cart</a>
+                                    <a href="#"><i class="fa-regular fa-eye"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card">
+                            <div class="image-box">
+                                <img src="./image/p1.avif" alt="product image" class="top-image img-fluid">
+                                <img src="./image/p-2.avif" alt="product image" class="bottom-image ">
+                                <span class="discount-sale">sale</span>
+                                <span class="discount-tag">-4%</span>
+                            </div>
+                            <div class="product-detail">
+                                <div class="review">
+                                    <ul>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                    </ul>
+                                </div>
+                                <p class="product-title"><a href="#">simple product</a></p>
+                                <div class="price-box">
+                                    <span class="current-price">$220.00</span>
+                                </div>
+                                <div class="cart-area">
+                                    <a href="#"><i class="fa-solid fa-heart"></i></a>
+                                    <a href="#">Add To cart</a>
+                                    <a href="#"><i class="fa-regular fa-eye"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card">
+                            <div class="image-box">
+                                <img src="./image/p1.avif" alt="product image" class="top-image img-fluid">
+                                <img src="./image/p-2.avif" alt="product image" class="bottom-image ">
+                            </div>
+                            <div class="product-detail">
+                                <div class="review">
+                                    <ul>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                    </ul>
+                                </div>
+                                <p class="product-title"><a href="#">simple product</a></p>
+                                <div class="price-box">
+                                    <span class="current-price">$210.00</span>
+                                    <span class="old-price">$240.00</span>
+                                </div>
+                                <div class="cart-area">
+                                    <a href="#"><i class="fa-solid fa-heart"></i></a>
+                                    <a href="#">Add To cart</a>
+                                    <a href="#"><i class="fa-regular fa-eye"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card">
+                            <div class="image-box">
+                                <img src="./image/p1.avif" alt="product image" class="top-image img-fluid">
+                                <img src="./image/p-2.avif" alt="product image" class="bottom-image ">
+                                <span class="discount-sale">sale</span>
+                                <span class="discount-tag">-5%</span>
+                            </div>
+                            <div class="product-detail">
+                                <div class="review">
+                                    <ul>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                    </ul>
+                                </div>
+                                <p class="product-title"><a href="#">simple product</a></p>
+                                <div class="price-box">
+                                    <span class="current-price">$220.00</span>
+                                </div>
+                                <div class="cart-area">
+                                    <a href="#"><i class="fa-solid fa-heart"></i></a>
+                                    <a href="#">Add To cart</a>
+                                    <a href="#"><i class="fa-regular fa-eye"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card">
+                            <div class="image-box">
+                                <img src="./image/p1.avif" alt="product image" class="top-image img-fluid">
+                                <img src="./image/p-2.avif" alt="product image" class="bottom-image ">
+                                <span class="discount-sale">sale</span>
+                                <span class="discount-tag">-12%</span>
+                            </div>
+                            <div class="product-detail">
+                                <div class="review">
+                                    <ul>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                    </ul>
+                                </div>
+                                <p class="product-title"><a href="#">simple product</a></p>
+                                <div class="price-box">
+                                    <span class="current-price">$220.00</span>
+                                </div>
+                                <div class="cart-area">
+                                    <a href="#"><i class="fa-solid fa-heart"></i></a>
+                                    <a href="#">Add To cart</a>
+                                    <a href="#"><i class="fa-regular fa-eye"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card">
+                            <div class="image-box">
+                                <img src="./image/p1.avif" alt="product image" class="top-image img-fluid">
+                                <img src="./image/p-2.avif" alt="product image" class="bottom-image ">
+                                <span class="discount-sale">sale</span>
+                                <span class="discount-tag">-10%</span>
+                            </div>
+                            <div class="product-detail">
+                                <div class="review">
+                                    <ul>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-solid fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                        <li><i class="fa-regular fa-star"></i></li>
+                                    </ul>
+                                </div>
+                                <p class="product-title"><a href="#">simple product</a></p>
+                                <div class="price-box">
+                                    <span class="current-price">$220.00</span>
+                                </div>
+                                <div class="cart-area">
+                                    <a href="#"><i class="fa-solid fa-heart"></i></a>
+                                    <a href="#">Add To cart</a>
+                                    <a href="#"><i class="fa-regular fa-eye"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="brand">
+            <div class="container">
+                <div class="brand-slider owl-carousel owl-theme">
+                    <div class="item">
+                        <img src="./image/brand1.webp" alt="brand" class="img-fluid">
+                    </div>
+                    <div class="item">
+                        <img src="./image/brand2.webp" alt="brand" class="img-fluid">
+                    </div>
+                    <div class="item">
+                        <img src="./image/brand3.webp" alt="brand" class="img-fluid">
+                    </div>
+                    <div class="item">
+                        <img src="./image/brand4.webp" alt="brand" class="img-fluid">
+                    </div>
+                    <div class="item">
+                        <img src="./image/brand5.webp" alt="brand" class="img-fluid">
+                    </div>
+                    <div class="item">
+                        <img src="./image/brand6.webp" alt="brand" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="new-latter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mx-auto">
+                        <h2 class="title">sing up for newslatters</h2>
+                        <p>Get e-mail updates about our latest shop and special offers.</p>
+                        <div>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="your email address">
+                                <a href="#" class="search-btn input-group-text">subscribe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="top-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-7 col-sm-6">
+                        <h3 class="footer-title">Contact us</h3>
+                        <div class="footer-content">
+                            <div class="address-loc">
+                                <span><i class="fa-solid fa-location-dot"></i>your address goes here</span>
+                                <span><i class="fa-regular fa-envelope"></i>mail us: info@example.com</span>
+                                <span><i class="fa-solid fa-phone"></i>phone : +91 5631561515</span>
+                            </div>
+                            <div class="payment-method">
+                                <a href="#"><img src="./image/paymenrt.avif" alt="payment" class="img-fluid w-auto"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-5 col-sm-6">
+                        <h3 class="footer-title">Information</h3>
+                        <ul class="footer-menu">
+                            <li><a href="#">site map</a></li>
+                            <li><a href="#">specials</a></li>
+                            <li><a href="#">jobs</a></li>
+                            <li><a href="#">devilvery information</a></li>
+                            <li><a href="#">order history</a></li>
+                            <li><a href="#">privacy policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <h3 class="footer-title">My account</h3>
+                        <ul class="footer-menu">
+                            <li><a href="login.html">login</a></li>
+                            <li><a href="login.html">my account</a></li>
+                            <li><a href="#">checkout</a></li>
+                            <li><a href="#">address</a></li>
+                            <li><a href="#">order status</a></li>
+                            <li><a href="#">site map</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <h3 class="footer-title">customer services</h3>
+                        <ul class="footer-menu">
+                            <li><a href="#">My account</a></li>
+                            <li><a href="#">news</a></li>
+                            <li><a href="#">gift cards</a></li>
+                            <li><a href="#">return policy</a></li>
+                            <li><a href="#">your orders</a></li>
+                            <li><a href="#">subway</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <h3 class="footer-title">let us help you</h3>
+                        <ul class="footer-menu">
+                            <li><a href="#">my account</a></li>
+                            <li><a href="#">my orders</a></li>
+                            <li><a href="#">shipping</a></li>
+                            <li><a href="#">amezon prime</a></li>
+                            <li><a href="#">replacements</a></li>
+                            <li><a href="#">manage</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>Copyright © Toolkits All Rights Reserved.</p>
+                    <ul>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-solid fa-wifi"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-google-plus-g"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="top-move"><i class="fa-solid fa-angle-up"></i></a>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/owl.carousel.min.js"></script>
+    <script src="./js/jquery.fancybox.js"></script>
+    <script src="./js/jquery.fancybox.pack.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

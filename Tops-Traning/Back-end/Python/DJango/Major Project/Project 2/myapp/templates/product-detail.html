@@ -1,0 +1,452 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+    <main class="collation-content">
+        <section class="breadcrumb-wrapper">
+            <div class="breakcrumb-content">
+                <h2 class="breadcrumb-title">SPARK PLUG</h2>
+                <nav aria-label="breadcrumb">
+                    <div class="container-fluid px-0 overflow-hidden">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="all-collation.html">all collations</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">SPARK PLUG</li>
+                        </ol>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+
+
+        <div class="container-fluid container-fluid-1500">
+            <div class="product-detail">
+                <div class="main-product-info">
+                    <div class="product-media-wrapper">
+                        <div class="slider slider-single">
+                            <div>
+                                <div class="image-box">
+                                    <img src="{% static ' ./image/main-slider1.webp '%}" alt="image1" class="img-fluid">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="image-box">
+                                    <img src="{% static ' ./image/main-slider2.webp '%}" alt="image1" class="img-fluid">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="image-box">
+                                    <img src="{% static ' ./image/main-slider3.webp '%}" alt="image1" class="img-fluid">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="image-box">
+                                    <img src="{% static ' ./image/main-slider4.webp '%}" alt="image1" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider slider-nav">
+                            <div>
+                                <div class="thumbnail-img">
+                                    <im{% static ' g src="./image/thumbnail1 '%}.webp" alt="thambnail" class="img-fluid">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="thumbnail-img">
+                                    <im{% static ' g src="./image/thumbnail2 '%}.webp" alt="thambnail" class="img-fluid">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="thumbnail-img">
+                                    <im{% static ' g src="./image/thumbnail3 '%}.webp" alt="thambnail" class="img-fluid">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="thumbnail-img">
+                                    <im{% static ' g src="./image/thumbnail4 '%}.webp" alt="thambnail" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-info-wrapper">
+                            <h2 class="product-info-title">SPARK PLUG</h2>
+                            <h5 class="regular-price">Rs. 240.00</h5>
+                            <div class="review-box">
+                                <ul>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <p class="shot-info">Nunc vehicula quam semper odio varius tincidunt. Vestibulum ante ipsum
+                                primis in faucibus orci luctus et ultrices posue.</p>
+                            <div class="vehicle-type">
+                                <h6 class="title">Vehicle Service Type</h6>
+                                <span class="tabs">moter cycle</span>
+                            </div>
+                            <div class="material-type">
+                                <h6 class="title">Top Material Type</h6>
+                                <span class="tabs">alloy steel</span>
+                                <span class="tabs">ceramic</span>
+                            </div>
+                            <div class="core-material">
+                                <h6 class="title">Core Material</h6>
+                                <span class="tabs">nickel</span>
+                            </div>
+                            <div class="availability">
+                                <h6 class="title">availability</h6>
+                                <span>16 in stock</span>
+                            </div>
+                            <div class="sub-total">
+                                <h6 class="title">sub total</h6>
+                                <span>Rs.240.00</span>
+                            </div>
+                            <div class="vendor">
+                                <h6 class="title">vendor</h6>
+                                <a href=""><span>Specter</span></a>
+                            </div>
+                            <div class="icon-text-box">
+                                <div class="icon-with-text">
+                                    <i class="fa-regular fa-heart"></i><span>add to wishlist</span>
+                                </div>
+                                <div class="icon-with-text">
+                                    <i class="fa-solid fa-retweet"></i><span>add to compare</span>
+                                </div>
+                                <div class="icon-with-text">
+                                    <i class="fa-solid fa-share-nodes"></i><span>share</span>
+                                </div>
+                            </div>
+                            <div class="button-area">
+                                <div class="quantity-box">
+                                    <a href="#">+</a>
+                                    <input type="number" value="1" min="0">
+                                    <a href="#">-</a>
+                                </div>
+                                <a href="#" class="main-btn">ad to cart</a>
+                            </div>
+                            <a href="#" class="main-btn">buy it now</a>
+                            <hr>
+                            <div class="shopping">
+                                <i></i>
+                                <span><img src="{% static './image/shopping.svg' %}" alt="shopping"><strong>Estimated
+                                        delivery:</strong></span>
+                                <span> 5-7 Days from order date.</span>
+                            </div>
+                            <div class="shopping">
+                                <i></i>
+                                <span><img src="{% static './image/shopping-card.svg' %}" alt="shopping card"><strong>Free Shipping &
+                                        Returns:</strong></span>
+                                <span> On orders above $79</span>
+                            </div>
+                            <div class="product-payment">
+                                <ul>
+                                    <li><img src="{% static './image/f-1visa-electron-svgrepo-com.svg' %}" alt="visa card"
+                                            class="img-fluid"></li>
+                                    <li><img src="{% static './image/f-3amex-svgrepo-com.svg' %}" alt="visa card" class="img-fluid">
+                                    </li>
+                                    <li><img src="{% static './image/f-4paypal-svgrepo-com.svg' %}" alt="visa card" class="img-fluid">
+                                    </li>
+                                    <li><img src="{% static './image/f-5dinersclub-credit-card-svgrepo-com.svg' %}" alt="visa card"
+                                            class="img-fluid"></li>
+                                    <li><img src="{% static './image/f-6discover-svgrepo-com.svg' %}" alt="visa card"
+                                            class="img-fluid"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info-bottom-tabs">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-description-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-description" type="button" role="tab"
+                                aria-controls="pills-description" aria-selected="true">description</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-shopping-information-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-shopping-information" type="button" role="tab"
+                                aria-controls="pills-shopping-information" aria-selected="false">shopping
+                                information</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-reviews-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-reviews" type="button" role="tab" aria-controls="pills-reviews"
+                                aria-selected="false">reviews</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-description" role="tabpanel"
+                            aria-labelledby="pills-description-tab" tabindex="0">
+                            <div class="product-info-bottom-content">
+                                <p>Amet mauris commodo quis imperdiet massa. Magna etiam tempor orci eu lobortis. In
+                                    egestas erat imperdiet sed. Diam in arcu cursus euismod quis viverra nibh. Justo nec
+                                    ultrices dui sapien eget mi proin sed libero. Proin nibh nisl condimentum id. Eros
+                                    in cursus turpis massa tincidunt dui ut ornare lectus. Consectetur libero id
+                                    faucibus nisl tincidunt. Sed odio morbi quis commodo. Dignissim enim sit amet
+                                    venenatis urna cursus. Pellentesque nec nam aliquam sem et. Elementum sagittis vitae
+                                    et leo. Fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Tristique
+                                    senectus et netus et malesuada fames. Risus commodo viverra maecenas accumsan lacus
+                                    vel facilisis.</p>
+                                <p>Vel pretium lectus quam id leo in vitae turpis. Vulputate odio ut enim blandit
+                                    volutpat maecenas volutpat blandit aliquam. Semper viverra nam libero justo laoreet
+                                    sit. Mattis pellentesque id nibh tortor id. Maecenas volutpat blandit aliquam etiam
+                                    erat. Hac habitasse platea dictumst quisque. Feugiat sed lectus vestibulum mattis
+                                    ullamcorper velit sed. Vestibulum lectus mauris ultrices eros. Donec ac odio tempor
+                                    orci dapibus ultrices in iaculis nunc. Massa massa ultricies mi quis hendrerit.
+                                    Ultrices gravida dictum fusce ut placerat orci nulla. Adipiscing diam donec
+                                    adipiscing tristique. Pellentesque eu tincidunt tortor aliquam nulla facilisi cras
+                                    fermentum odio. Semper feugiat nibh sed pulvinar proin. Et tortor at risus viverra
+                                    adipiscing at in. Turpis in eu mi bibendum. Ultrices neque ornare aenean euismod.
+                                    Eros in cursus turpis massa. Cursus eget nunc scelerisque viverra.</p>
+                                <p>Turpis in eu mi bibendum neque. Ac tincidunt vitae semper quis lectus nulla at. Nibh
+                                    nisl condimentum id venenatis a condimentum vitae sapien pellentesque. Bibendum ut
+                                    tristique et egestas quis ipsum suspendisse ultrices. Morbi enim nunc faucibus a
+                                    pellentesque sit amet porttitor eget. Orci phasellus egestas tellus rutrum tellus
+                                    pellentesque eu tincidunt tortor. Pellentesque diam volutpat commodo sed egestas
+                                    egestas. Luctus accumsan tortor posuere ac ut consequat semper viverra nam. Erat
+                                    pellentesque adipiscing commodo elit. Quam quisque id diam vel. Morbi tincidunt
+                                    augue interdum velit euismod in. Aliquet porttitor lacus luctus accumsan tortor.
+                                    Sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur.
+                                    Hendrerit dolor magna eget est.</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-shopping-information" role="tabpanel"
+                            aria-labelledby="pills-shopping-information-tab" tabindex="0">
+                            <div class="product-info-bottom-content">
+                                <h5>returns policy</h5>
+                                <p>You may return most new, unopened items within 30 days of delivery for a full refund.
+                                    We'll also pay the return shipping costs if the return is a result of our error (you
+                                    received an incorrect or defective item, etc.).
+                                </p>
+                                <p>You should expect to receive your refund within four weeks of giving your package to
+                                    the return shipper, however, in many cases you will receive a refund more quickly.
+                                    This time period includes the transit time for us to receive your return from the
+                                    shipper (5 to 10 business days), the time it takes us to process your return once we
+                                    receive it (3 to 5 business days), and the time it takes your bank to process our
+                                    refund request (5 to 10 business days).</p>
+                                <p>If you need to return an item, simply login to your account, view the order using the
+                                    'Complete Orders' link under the My Account menu and click the Return Item(s)
+                                    button. We'll notify you via e-mail of your refund once we've received and processed
+                                    the returned item.</p>
+                                <h5>shopping</h5>
+                                <p>You may return most new, unopened items within 30 days of delivery for a full refund.
+                                    We'll also pay the return shipping costs if the return is a result of our error (you
+                                    received an incorrect or defective item, etc.).
+                                </p>
+                                <p>You should expect to receive your refund within four weeks of giving your package to
+                                    the return shipper, however, in many cases you will receive a refund more quickly.
+                                    This time period includes the transit time for us to receive your return from the
+                                    shipper (5 to 10 business days), the time it takes us to process your return once we
+                                    receive it (3 to 5 business days), and the time it takes your bank to process our
+                                    refund request (5 to 10 business days).</p>
+                                <p>If you need to return an item, simply login to your account, view the order using the
+                                    'Complete Orders' link under the My Account menu and click the Return Item(s)
+                                    button. We'll notify you via e-mail of your refund once we've received and processed
+                                    the returned item.</p>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-reviews" role="tabpanel"
+                            aria-labelledby="pills-reviews-tab" tabindex="0">
+                            <div class="product-info-bottom-content">
+                                <div class="reviews-wrapper">
+                                    <div class="review-top">
+                                        <h2 class="title">customer reviews</h2>
+                                        <div class="rating">
+                                            <div class="rating-left">
+                                                <ul>
+                                                    <li><i class="fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-solid fa-star"></i></li>
+                                                </ul>
+                                                <span>Based on 1 review</span>
+                                            </div>
+                                            <div class="rating-right">
+                                                <button class="btn toggle-btn">write a review</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-form">
+                                        <h3 class="form-title">write a review</h3>
+                                        <div class="mb-3">
+                                            <label for="firstname" class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="firstname"
+                                                placeholder="Enter your name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">email</label>
+                                            <input type="email" class="form-control" id="email"
+                                                placeholder="john.smith@example.com">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="text" class="form-label">rating</label>
+                                            <ul>
+                                                <li><i class="fa-regular fa-star"></i></li>
+                                                <li><i class="fa-regular fa-star"></i></li>
+                                                <li><i class="fa-regular fa-star"></i></li>
+                                                <li><i class="fa-regular fa-star"></i></li>
+                                                <li><i class="fa-regular fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="text" class="form-label">review title</label>
+                                            <input type="text" class="form-control" id="text"
+                                                placeholder="Give your review a title">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="text" class="form-label">body of review(1500)</label>
+                                            <textarea name="" id="" class="form-control"
+                                                placeholder="Write your comment here"></textarea>
+                                        </div>
+                                        <button type="submit" class="main-btn">submit review</button>
+                                    </div>
+                                    <div class="client-review">
+                                        <div class="star">
+                                            <ul>
+                                                <li><i class="fa-solid fa-star"></i></li>
+                                                <li><i class="fa-solid fa-star"></i></li>
+                                                <li><i class="fa-solid fa-star"></i></li>
+                                                <li><i class="fa-solid fa-star"></i></li>
+                                                <li><i class="fa-solid fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <h3 class="client-name"></h3>
+                                        <div class="review-date">
+                                            <p><i>Danial <span>on</span> Jul 29, 2023</i></p>
+                                        </div>
+                                        <div class="review-info">
+                                            <p>Convallis tellus id interdum velit laoreet. Et tortor at risus viverra
+                                                adipiscing at in tellus. In nulla posuere sollicitudin aliquam. Amet
+                                                tellus cras adipiscing enim eu. Eu nisl nunc mi ipsum. Phasellus egestas
+                                                tellus rutrum tellus pellentesque eu tincidunt. Integer eget aliquet
+                                                nibh praesent tristique magna sit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <section class="recommanded-product">
+            <div class="container-fluid container-fluid-1500">
+                <h2 class="title">recommanded product</h2>
+                <div class="recommanded-product-slider owl-carousel owl-theme">
+                    <div class="product-item">
+                        <div class="card">
+                            <div class="img-box">
+                                <im{% static ' g src="./image/p1 '%}.webp" alt="product" class="card-img-top">
+                                <a href="#" class="main-btn">add to cart</a>
+                            </div>
+                            <div class="product-content">
+                                <h6 class="product-subtitle">Minotaur</h6>
+                                <h4 class="product-title"><a href="#">break pads</a></h4>
+                                <p class="current-price"><span>Rs.</span>950.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="card">
+                            <div class="img-box">
+                                <im{% static ' g src="./image/p2 '%}.webp" alt="product" class="card-img-top">
+                                <a href="#" class="main-btn">add to cart</a>
+                            </div>
+                            <div class="product-content">
+                                <h6 class="product-subtitle">Minotaur</h6>
+                                <h4 class="product-title"><a href="#">break pads</a></h4>
+                                <p class="current-price"><span>Rs.</span>950.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="card">
+                            <div class="img-box">
+                                <im{% static ' g src="./image/p3 '%}.webp" alt="product" class="card-img-top">
+                                <a href="#" class="main-btn">add to cart</a>
+                            </div>
+                            <div class="product-content">
+                                <h6 class="product-subtitle">Minotaur</h6>
+                                <h4 class="product-title"><a href="#">break pads</a></h4>
+                                <p class="current-price"><span>Rs.</span>950.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="card">
+                            <div class="img-box">
+                                <im{% static ' g src="./image/p4 '%}.webp" alt="product" class="card-img-top">
+                                <a href="#" class="main-btn">add to cart</a>
+                            </div>
+                            <div class="product-content">
+                                <h6 class="product-subtitle">Minotaur</h6>
+                                <h4 class="product-title"><a href="#">break pads</a></h4>
+                                <p class="current-price"><span>Rs.</span>950.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="card">
+                            <div class="img-box">
+                                <im{% static ' g src="./image/p5 '%}.webp" alt="product" class="card-img-top">
+                                <a href="#" class="main-btn">add to cart</a>
+                            </div>
+                            <div class="product-content">
+                                <h6 class="product-subtitle">Minotaur</h6>
+                                <h4 class="product-title"><a href="#">break pads</a></h4>
+                                <p class="current-price"><span>Rs.</span>950.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- subscribe start -->
+        <section class="subscribe">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-box">
+                        <i class="fa-solid fa-envelope"></i>
+                        <p><a href="#">info@example.com</a></p>
+                        <p><a href="#">support@example.com</a></p>
+                    </div>
+                    <div class="contact-box">
+                        <i class="fa-solid fa-phone"></i>
+                        <p><a href="#">000 - 123 - 456789</a></p>
+                        <p><a href="#">000 - 123 - 446789</a></p>
+                    </div>
+                    <div class="contact-box">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>No: 58 A, East Madison</p>
+                        <p>Street, Baltimore, USA</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- subscription end -->
+
+    </main>
+</body>
+
+
+</html>
+
+{% endblock %}

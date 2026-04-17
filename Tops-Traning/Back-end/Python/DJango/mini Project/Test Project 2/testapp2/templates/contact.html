@@ -1,0 +1,52 @@
+{% extends 'header.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact us</title>
+</head>
+<body>
+    <h1>Contact us</h1>
+    {% if msg %}
+        <p style="color: Green; font-size:  18px; text-align: center; text-transform: capitalize;">{{msg}}</p>
+    {% endif %}
+    <center>
+    <div class="contact-form">
+        <form action="{% url 'contact' %}" method="post" name="contact">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td class="form-label">Name:</td>
+                    <td><input type="text" class="form-control" name="name" ></td>
+                </tr>
+                <tr>
+                    <td class="form-label">email:</td>
+                    <td><input type="email" class="form-control" name="email"></td>
+                </tr>
+                <tr>
+                    <td class="form-label">mobile:</td>
+                    <td><input type="text" class="form-control" name="mobile"></td>
+                </tr>
+                <tr>
+                    <td class="form-label">remark:</td>
+                    <td><input type="text" class="form-control" name="remark"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" class="btn btn-primary" value="SUBMIT"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    </center>
+    <h2>Recent views</h2>
+    <hr>
+    {% for i in contacts %}
+        name={{i.name}}<br>
+        remark={{i.remark}}<br><hr>
+    {% endfor %}
+</body>
+</html>
+{% endblock %}

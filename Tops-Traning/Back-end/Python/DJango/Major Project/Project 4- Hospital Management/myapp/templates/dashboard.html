@@ -1,0 +1,1102 @@
+{% extends 'header.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <!-- Main Parent Wrapper for Scoped CSS -->
+    <div class="main-deshbord">
+
+        <!-- Sidebar -->
+        <nav class="sidebar glass-panel" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i class="bi bi-hospital"></i></div>
+                <span class="logo-text">MediAdmin</span>
+                <button class="btn btn-link text-white d-lg-none ms-auto p-0" id="closeSidebarBtn">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-menu-container">
+                <ul class="sidebar-menu">
+                    <li class="menu-label">Main Menu</li>
+                    <li class="menu-item active" data-view="dashboard">
+                        <a href="#"><i class="bi bi-grid-1x2"></i> <span>Dashboard</span></a>
+                    </li>
+                    <li class="menu-item" data-view="doctors">
+                        <a href="#"><i class="bi bi-person-badge"></i> <span>Doctors</span></a>
+                    </li>
+                    <li class="menu-item" data-view="patients">
+                        <a href="#"><i class="bi bi-people"></i> <span>Patients</span></a>
+                    </li>
+                    <li class="menu-item" data-view="appointments">
+                        <a href="#"><i class="bi bi-calendar-check"></i> <span>Appointments</span></a>
+                    </li>
+                    <li class="menu-item" data-view="departments">
+                        <a href="#"><i class="bi bi-building"></i> <span>Departments</span></a>
+                    </li>
+                    <li class="menu-item" data-view="records">
+                        <a href="#"><i class="bi bi-journal-medical"></i> <span>Medical Records</span></a>
+                    </li>
+                    <li class="menu-item" data-view="prescriptions">
+                        <a href="#"><i class="bi bi-capsule"></i> <span>Prescriptions</span></a>
+                    </li>
+                    <li class="menu-item" data-view="billing">
+                        <a href="#"><i class="bi bi-receipt"></i> <span>Billing & Payments</span></a>
+                    </li>
+
+                    <li class="menu-label mt-4">System</li>
+                    <li class="menu-item" data-view="settings">
+                        <a href="#"><i class="bi bi-gear"></i> <span>Settings</span></a>
+                    </li>
+                    <li class="menu-item text-danger">
+                        <a href="#"><i class="bi bi-box-arrow-right"></i> <span>Logout</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Wrapper -->
+        <div class="main-wrapper" id="mainWrapper">
+
+            <!-- Header -->
+            <header class="top-header glass-panel">
+                <div class="d-flex align-items-center">
+                    <button class="admin-btn admin-btn-link toggle-sidebar-btn" id="toggleSidebarBtn">
+                        <i class="bi bi-list"></i>
+                    </button>
+
+                    <!-- Search -->
+                    <div class="search-bar d-none d-md-flex">
+                        <i class="bi bi-search"></i>
+                        <input type="text" class="form-control" placeholder="Search patients, doctors...">
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <button class="btn-primary-custom">
+                        <i class="bi bi-plus-lg me-1"></i> Add Patient
+                    </button>
+
+                    <!-- Messages -->
+                    <div class="dropdown">
+                        <button type="button" class="icon-btn" data-bs-toggle="dropdown">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="badge-indicator"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end glass-dropdown mt-2 shadow-sm border-0">
+                            <li>
+                                <h6 class="dropdown-header">Messages</h6>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Dr. Smith (2 new)</a></li>
+                            <li><a class="dropdown-item" href="#">Reception</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-center text-primary" href="#">View All</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Notifications -->
+                    <div class="dropdown">
+                        <button type="button" class="icon-btn position-relative" data-bs-toggle="dropdown">
+                            <i class="bi bi-bell"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light">
+                                3
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end glass-dropdown mt-2 shadow-sm border-0">
+                            <li>
+                                <h6 class="dropdown-header">Notifications</h6>
+                            </li>
+                            <li><a class="dropdown-item" href="#">New Appointment: John Doe</a></li>
+                            <li><a class="dropdown-item" href="#">System Update Scheduled</a></li>
+                            <li><a class="dropdown-item" href="#">Lab Results Ready: Patient #402</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-center text-primary" href="#">Mark all read</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Profile -->
+                    <div class="dropdown ms-2">
+                        <button type="button" class="profile-dropdown-btn dropdown-toggle" data-bs-toggle="dropdown">
+                            <img src="https://i.pravatar.cc/150?img=32" alt="Admin" class="profile-img">
+                            <div class="profile-info d-none d-md-block text-start">
+                                <span class="name">Sarah Admin</span>
+                                <span class="role">Super Administrator</span>
+                            </div>
+                            <i class="bi bi-chevron-down d-none d-md-block fs-7 text-muted"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end glass-dropdown mt-2 shadow-sm border-0">
+                            <li><a class="dropdown-item" href="#" data-view-target="settings"><i
+                                        class="bi bi-person me-2"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="#" data-view-target="settings"><i
+                                        class="bi bi-gear me-2"></i> Settings</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i>
+                                    Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="content-area pt-4 pb-5 px-3 px-md-4">
+
+                <!-- Dashboard View -->
+                <div id="view-dashboard" class="view-section active">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="page-title mb-0">Dashboard Overview</h4>
+                        <span class="text-muted"><i class="bi bi-calendar3 me-1"></i> Today: <span
+                                id="currentDate"></span></span>
+                    </div>
+
+                    <!-- Stat Cards -->
+                    <div class="row g-4 mb-4">
+                        <!-- Card 1 -->
+                        <div class="col-xl-3 col-sm-6">
+                            <div class="stat-card glass-card">
+                                <div class="stat-card-inner">
+                                    <div class="stat-info">
+                                        <h6 class="stat-label">Total Doctors</h6>
+                                        <h3 class="stat-value">124</h3>
+                                        <div class="stat-trend text-success">
+                                            <i class="bi bi-arrow-up-right"></i> +4.5% This Month
+                                        </div>
+                                    </div>
+                                    <div class="stat-icon bg-primary-subtle">
+                                        <i class="bi bi-person-badge text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="col-xl-3 col-sm-6">
+                            <div class="stat-card glass-card">
+                                <div class="stat-card-inner">
+                                    <div class="stat-info">
+                                        <h6 class="stat-label">Total Patients</h6>
+                                        <h3 class="stat-value">5,842</h3>
+                                        <div class="stat-trend text-success">
+                                            <i class="bi bi-arrow-up-right"></i> +12% This Month
+                                        </div>
+                                    </div>
+                                    <div class="stat-icon bg-success-subtle">
+                                        <i class="bi bi-people text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="col-xl-3 col-sm-6">
+                            <div class="stat-card glass-card">
+                                <div class="stat-card-inner">
+                                    <div class="stat-info">
+                                        <h6 class="stat-label">Appointments Today</h6>
+                                        <h3 class="stat-value">284</h3>
+                                        <div class="stat-trend text-warning">
+                                            <i class="bi bi-dash"></i> Steady
+                                        </div>
+                                    </div>
+                                    <div class="stat-icon bg-warning-subtle">
+                                        <i class="bi bi-calendar-check text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="col-xl-3 col-sm-6">
+                            <div class="stat-card glass-card">
+                                <div class="stat-card-inner">
+                                    <div class="stat-info">
+                                        <h6 class="stat-label">Total Revenue</h6>
+                                        <h3 class="stat-value">$84.5k</h3>
+                                        <div class="stat-trend text-success">
+                                            <i class="bi bi-arrow-up-right"></i> +8.2% This Month
+                                        </div>
+                                    </div>
+                                    <div class="stat-icon bg-info-subtle">
+                                        <i class="bi bi-currency-dollar text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="row g-4 mb-4">
+                        <div class="col-xl-8">
+                            <div class="dashboard-card glass-card h-100">
+                                <div
+                                    class="card-header border-0 bg-transparent pb-0 mt-2 mx-2 d-flex justify-content-between align-items-center">
+                                    <h5 class="card-title mb-0">Patient Registration Growth</h5>
+                                    <div class="dropdown">
+                                        <button
+                                            class="btn btn-sm btn-secondary dropdown-toggle rounded-pill"
+                                            type="button" data-bs-toggle="dropdown">
+                                            This Year
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">This Week</a></li>
+                                            <li><a class="dropdown-item" href="#">This Month</a></li>
+                                            <li><a class="dropdown-item" href="#">This Year</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="patientGrowthChart" height="100"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="dashboard-card glass-card h-100">
+                                <div class="card-header border-0 bg-transparent pb-0 mt-2 mx-2">
+                                    <h5 class="card-title mb-0">Department Distribution</h5>
+                                </div>
+                                <div class="card-body d-flex justify-content-center align-items-center">
+                                    <div style="height: 250px; width: 100%;">
+                                        <canvas id="departmentChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tables Row -->
+                    <div class="row g-4">
+                        <!-- Recent Appointments -->
+                        <div class="col-xl-8">
+                            <div class="dashboard-card glass-card">
+                                <div
+                                    class="card-header border-0 bg-transparent mt-2 mx-2 d-flex justify-content-between align-items-center">
+                                    <h5 class="card-title mb-0">Recent Appointments</h5>
+                                    <button class="btn-sm border-0 btn-link text-decoration-none"
+                                        onclick="switchView('appointments')">View All</button>
+                                </div>
+                                <div class="card-body px-0 pt-0">
+                                    <div class="table-responsive">
+                                        <table class="table align-middle modern-table mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th class="ps-4">Patient</th>
+                                                    <th>Doctor</th>
+                                                    <th>Department</th>
+                                                    <th>Date & Time</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="ps-4">
+                                                        <div class="d-flex align-items-center">
+                                                            <div
+                                                                class="avatar-sm me-2 bg-primary-subtle text-primary rounded-circle d-flex justify-content-center align-items-center fw-bold">
+                                                                JD</div>
+                                                            <div>
+                                                                <div class="fw-semibold">John Doe</div>
+                                                                <div class="text-xs text-muted">ID: #PT-001</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Dr. Sarah Lee</td>
+                                                    <td>Cardiology</td>
+                                                    <td>
+                                                        <div class="fw-medium">Today</div>
+                                                        <div class="text-xs text-muted">10:30 AM</div>
+                                                    </td>
+                                                    <td><span
+                                                            class="badge bg-success-subtle text-success rounded-pill px-3 py-2">Approved</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ps-4">
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://i.pravatar.cc/150?img=1" alt=""
+                                                                class="avatar-sm me-2 rounded-circle">
+                                                            <div>
+                                                                <div class="fw-semibold">Emma Watson</div>
+                                                                <div class="text-xs text-muted">ID: #PT-002</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Dr. Mark Owen</td>
+                                                    <td>Neurology</td>
+                                                    <td>
+                                                        <div class="fw-medium">Today</div>
+                                                        <div class="text-xs text-muted">11:15 AM</div>
+                                                    </td>
+                                                    <td><span
+                                                            class="badge bg-warning-subtle text-warning rounded-pill px-3 py-2">Pending</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ps-4">
+                                                        <div class="d-flex align-items-center">
+                                                            <div
+                                                                class="avatar-sm me-2 bg-info-subtle text-info rounded-circle d-flex justify-content-center align-items-center fw-bold">
+                                                                MS</div>
+                                                            <div>
+                                                                <div class="fw-semibold">Michael Smith</div>
+                                                                <div class="text-xs text-muted">ID: #PT-003</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Dr. Emily Chen</td>
+                                                    <td>Orthopedics</td>
+                                                    <td>
+                                                        <div class="fw-medium">Tomorrow</div>
+                                                        <div class="text-xs text-muted">09:00 AM</div>
+                                                    </td>
+                                                    <td><span
+                                                            class="badge bg-success-subtle text-success rounded-pill px-3 py-2">Approved</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ps-4">
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://i.pravatar.cc/150?img=5" alt=""
+                                                                class="avatar-sm me-2 rounded-circle">
+                                                            <div>
+                                                                <div class="fw-semibold">Olivia Jones</div>
+                                                                <div class="text-xs text-muted">ID: #PT-004</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Dr. Sarah Lee</td>
+                                                    <td>Cardiology</td>
+                                                    <td>
+                                                        <div class="fw-medium">Tomorrow</div>
+                                                        <div class="text-xs text-muted">02:30 PM</div>
+                                                    </td>
+                                                    <td><span
+                                                            class="badge bg-success-subtle text-success rounded-pill px-3 py-2">Approved</span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Doctor Availability -->
+                        <div class="col-xl-4">
+                            <div class="dashboard-card glass-card h-100">
+                                <div class="card-header border-0 bg-transparent mt-2 mx-2">
+                                    <h5 class="card-title mb-0">Doctor Availability</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="widget-list">
+                                        <div
+                                            class="widget-item d-flex align-items-center justify-content-between p-3 mb-2 rounded glass-inner">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="https://i.pravatar.cc/150?img=60" alt=""
+                                                        class="avatar-md rounded-circle me-3">
+                                                    <span
+                                                        class="status-indicator bg-success position-absolute bottom-0 end-0 translate-middle border border-2 border-white rounded-circle p-1"></span>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold">Dr. Sarah Lee</h6>
+                                                    <span class="text-xs text-muted">Cardiology</span>
+                                                </div>
+                                            </div>
+                                            <span
+                                                class="badge bg-success-subtle text-success rounded-pill">Available</span>
+                                        </div>
+                                        <div
+                                            class="widget-item d-flex align-items-center justify-content-between p-3 mb-2 rounded glass-inner">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="https://i.pravatar.cc/150?img=50" alt=""
+                                                        class="avatar-md rounded-circle me-3">
+                                                    <span
+                                                        class="status-indicator bg-warning position-absolute bottom-0 end-0 translate-middle border border-2 border-white rounded-circle p-1"></span>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold">Dr. Mark Owen</h6>
+                                                    <span class="text-xs text-muted">Neurology</span>
+                                                </div>
+                                            </div>
+                                            <span class="badge bg-warning-subtle text-warning rounded-pill">Busy</span>
+                                        </div>
+                                        <div
+                                            class="widget-item d-flex align-items-center justify-content-between p-3 mb-2 rounded glass-inner">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="https://i.pravatar.cc/150?img=40" alt=""
+                                                        class="avatar-md rounded-circle me-3">
+                                                    <span
+                                                        class="status-indicator bg-danger position-absolute bottom-0 end-0 translate-middle border border-2 border-white rounded-circle p-1"></span>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold">Dr. Emily Chen</h6>
+                                                    <span class="text-xs text-muted">Orthopedics</span>
+                                                </div>
+                                            </div>
+                                            <span class="badge bg-danger-subtle text-danger rounded-pill">On
+                                                Leave</span>
+                                        </div>
+                                        <div
+                                            class="widget-item d-flex align-items-center justify-content-between p-3 rounded glass-inner">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <div
+                                                        class="avatar-md rounded-circle me-3 bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold">
+                                                        JW</div>
+                                                    <span
+                                                        class="status-indicator bg-success position-absolute bottom-0 end-0 translate-middle border border-2 border-white rounded-circle p-1"></span>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold">Dr. James Wilson</h6>
+                                                    <span class="text-xs text-muted">Pediatrics</span>
+                                                </div>
+                                            </div>
+                                            <span
+                                                class="badge bg-success-subtle text-success rounded-pill">Available</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- End Dashboard View -->
+
+                <!-- Other Views Placeholders -->
+                <div id="view-doctors" class="view-section">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="page-title mb-0">Doctors</h4>
+                        <button class="btn-primary-custom"><i class="bi bi-plus-lg me-1"></i> Add Doctor</button>
+                    </div>
+
+                    <div class="dashboard-card glass-card">
+                        <div
+                            class="card-header border-0 bg-transparent mt-2 mx-2 d-flex justify-content-between align-items-center">
+                            <div class="search-bar w-50">
+                                <i class="bi bi-search"></i>
+                                <input type="text" class="form-control bg-light border-0"
+                                    placeholder="Search doctors...">
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary rounded-pill dropdown-toggle"
+                                    type="button" data-bs-toggle="dropdown">
+                                    <i class="bi bi-funnel me-1"></i> Filter
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">All Departments</a></li>
+                                    <li><a class="dropdown-item" href="#">Cardiology</a></li>
+                                    <li><a class="dropdown-item" href="#">Neurology</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body px-0 pt-0">
+                            <div class="table-responsive">
+                                <table class="table align-middle modern-table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="ps-4">Doctor Name</th>
+                                            <th>Department</th>
+                                            <th>Contact</th>
+                                            <th>Experience</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ps-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://i.pravatar.cc/150?img=60" alt=""
+                                                        class="avatar-md me-3 rounded-circle border border-2 border-white shadow-sm">
+                                                    <div>
+                                                        <div class="fw-semibold text-primary">Dr. Sarah Lee</div>
+                                                        <div class="text-xs text-muted">ID: #DOC-01</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>Cardiology</td>
+                                            <td>
+                                                <div><i class="bi bi-envelope text-muted me-1"></i> sarah.l@hospital.com
+                                                </div>
+                                                <div class="text-xs text-muted"><i
+                                                        class="bi bi-telephone text-muted me-1"></i> +1 234 567 890
+                                                </div>
+                                            </td>
+                                            <td>12 Years</td>
+                                            <td><span
+                                                    class="badge bg-success-subtle text-success rounded-pill px-3">Active</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn-sm btn-icon text-primary"><i
+                                                        class="bi bi-eye"></i></button>
+                                                <button class="btn-sm btn-icon text-secondary"><i
+                                                        class="bi bi-pencil-square"></i></button>
+                                                <button class="btn-sm btn-icon text-danger"><i
+                                                        class="bi bi-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ps-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://i.pravatar.cc/150?img=50" alt=""
+                                                        class="avatar-md me-3 rounded-circle border border-2 border-white shadow-sm">
+                                                    <div>
+                                                        <div class="fw-semibold text-primary">Dr. Mark Owen</div>
+                                                        <div class="text-xs text-muted">ID: #DOC-02</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>Neurology</td>
+                                            <td>
+                                                <div><i class="bi bi-envelope text-muted me-1"></i> mark.o@hospital.com
+                                                </div>
+                                                <div class="text-xs text-muted"><i
+                                                        class="bi bi-telephone text-muted me-1"></i> +1 987 654 321
+                                                </div>
+                                            </td>
+                                            <td>8 Years</td>
+                                            <td><span class="badge bg-warning-subtle text-warning rounded-pill px-3">On
+                                                    Leave</span></td>
+                                            <td>
+                                                <button class="btn-sm btn-icon text-primary"><i
+                                                        class="bi bi-eye"></i></button>
+                                                <button class="btn-sm btn-icon text-secondary"><i
+                                                        class="bi bi-pencil-square"></i></button>
+                                                <button class="btn-sm btn-icon text-danger"><i
+                                                        class="bi bi-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-patients" class="view-section">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="page-title mb-0">Patients</h4>
+                        <button class="btn-primary-custom"><i
+                                class="bi bi-plus-lg me-1"></i> Add
+                            Patient</button>
+                    </div>
+
+                    <div class="dashboard-card glass-card">
+                        <div class="card-header border-0 bg-transparent mt-2 mx-2">
+                            <div class="search-bar w-100 mb-3">
+                                <i class="bi bi-search"></i>
+                                <input type="text" class="form-control bg-light border-0"
+                                    placeholder="Search by name, ID, or phone number...">
+                            </div>
+                        </div>
+                        <div class="card-body px-0 pt-0">
+                            <div class="table-responsive">
+                                <table class="table align-middle modern-table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="ps-4">Patient Name</th>
+                                            <th>Age/Gender</th>
+                                            <th>Contact</th>
+                                            <th>Address</th>
+                                            <th>Last Visit</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ps-4">
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="avatar-md bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center fw-bold me-3 shadow-sm">
+                                                        JD</div>
+                                                    <div>
+                                                        <div class="fw-semibold text-primary">John Doe</div>
+                                                        <div class="text-xs text-muted">ID: #PT-001</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>45 / Male</td>
+                                            <td>+1 555-0198</td>
+                                            <td><span class="text-truncate d-inline-block" style="max-width: 150px;">123
+                                                    Main St, New York</span></td>
+                                            <td>Oct 24, 2023</td>
+                                            <td>
+                                                <button
+                                                    class="btn btn-sm btn-primary px-3">View
+                                                    Record</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ps-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://i.pravatar.cc/150?img=5" alt=""
+                                                        class="avatar-md me-3 rounded-circle shadow-sm">
+                                                    <div>
+                                                        <div class="fw-semibold text-primary">Olivia Jones</div>
+                                                        <div class="text-xs text-muted">ID: #PT-004</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>28 / Female</td>
+                                            <td>+1 555-0234</td>
+                                            <td><span class="text-truncate d-inline-block" style="max-width: 150px;">456
+                                                    Park Blvd, Boston</span></td>
+                                            <td>Nov 02, 2023</td>
+                                            <td>
+                                                <button
+                                                    class="btn btn-sm btn-primary px-3">View
+                                                    Record</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-appointments" class="view-section">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="page-title mb-0">Appointments</h4>
+                        <button class="btn-primary-custom"><i
+                                class="bi bi-plus-lg me-1"></i> New
+                            Appointment</button>
+                    </div>
+
+                    <div class="dashboard-card glass-card">
+                        <div class="card-body px-0 pt-0 mt-3">
+                            <div class="table-responsive">
+                                <table class="table align-middle modern-table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="ps-4">Patient</th>
+                                            <th>Doctor</th>
+                                            <th>Department</th>
+                                            <th>Date & Time</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ps-4 fw-medium text-primary">John Doe</td>
+                                            <td>Dr. Sarah Lee</td>
+                                            <td>Cardiology</td>
+                                            <td>Today, 10:30 AM</td>
+                                            <td><span
+                                                    class="badge bg-success-subtle text-success rounded-pill px-3">Approved</span>
+                                            </td>
+                                            <td>
+                                                <button
+                                                    class="btn btn-sm btn-icon"><i
+                                                        class="bi bi-pencil text-primary"></i></button>
+                                                <button
+                                                    class="btn btn-sm btn-icon"><i
+                                                        class="bi bi-x-lg text-danger"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ps-4 fw-medium text-primary">Emma Watson</td>
+                                            <td>Dr. Mark Owen</td>
+                                            <td>Neurology</td>
+                                            <td>Today, 11:15 AM</td>
+                                            <td><span
+                                                    class="badge bg-warning-subtle text-warning rounded-pill px-3">Pending</span>
+                                            </td>
+                                            <td>
+                                                <button
+                                                    class="btn btn-sm btn-icon bg-success"><i
+                                                        class="bi bi-check-lg text-white"></i></button>
+                                                <button
+                                                    class="btn btn-sm btn-icon"><i
+                                                        class="bi bi-x-lg text-danger"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-departments" class="view-section">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="page-title mb-0">Departments</h4>
+                        <button class="btn-primary-custom"><i
+                                class="bi bi-plus-lg me-1"></i> Add
+                            Department</button>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-card p-4">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div
+                                        class="avatar-md bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center fs-5">
+                                        <i class="bi bi-heart-pulse"></i>
+                                    </div>
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-icon border-0"
+                                            data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical text-dark"></i></button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                                            <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5 class="fw-bold mb-1">Cardiology</h5>
+                                <p class="text-muted text-xs mb-3">Heart and cardiovascular system</p>
+                                <div
+                                    class="d-flex justify-content-between align-items-center mb-0 border-top pt-3 border-light">
+                                    <div class="text-sm"><strong>12</strong> Doctors</div>
+                                    <button class="btn-primary-custom">View
+                                        Staff</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-card p-4">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div
+                                        class="avatar-md bg-info-subtle text-info rounded-circle d-flex align-items-center justify-content-center fs-5">
+                                        <i class="bi bi-bandaid"></i>
+                                    </div>
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-icon border-0"
+                                            data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical text-dark"></i></button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                                            <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5 class="fw-bold mb-1">Orthopedics</h5>
+                                <p class="text-muted text-xs mb-3">Bones, muscles and joints</p>
+                                <div
+                                    class="d-flex justify-content-between align-items-center mb-0 border-top pt-3 border-light">
+                                    <div class="text-sm"><strong>8</strong> Doctors</div>
+                                    <button class="btn-primary-custom">View
+                                        Staff</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-card p-4">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div
+                                        class="avatar-md bg-warning-subtle text-warning rounded-circle d-flex align-items-center justify-content-center fs-5">
+                                        <i class="bi bi-ear"></i>
+                                    </div>
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-icon border-0"
+                                            data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical text-dark"></i></button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                                            <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5 class="fw-bold mb-1">Neurology</h5>
+                                <p class="text-muted text-xs mb-3">Nervous system disorders</p>
+                                <div
+                                    class="d-flex justify-content-between align-items-center mb-0 border-top pt-3 border-light">
+                                    <div class="text-sm"><strong>5</strong> Doctors</div>
+                                    <button class="btn-primary-custom">View
+                                        Staff</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-records" class="view-section">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="page-title mb-0">Medical Records</h4>
+                        <button class="btn-primary-custom"><i
+                                class="bi bi-plus-lg me-1"></i> Add
+                            Record</button>
+                    </div>
+
+                    <div class="dashboard-card glass-card">
+                        <div class="card-body px-0 pt-0 mt-3">
+                            <div class="table-responsive">
+                                <table class="table align-middle modern-table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="ps-4">Patient</th>
+                                            <th>Doctor</th>
+                                            <th>Diagnosis</th>
+                                            <th>Date</th>
+                                            <th>Report File</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ps-4 fw-medium text-primary">John Doe</td>
+                                            <td>Dr. Sarah Lee</td>
+                                            <td>Hypertension</td>
+                                            <td>Oct 24, 2023</td>
+                                            <td><a href="#" class="text-decoration-none d-flex">
+                                                <i class="bi bi-file-earmark-pdf text-danger me-1 btn-icon"></i>
+                                                    report_001.pdf</a></td>
+                                            <td>
+                                                <button
+                                                    class="btn-sm btn-icon text-primary"><i
+                                                        class="bi bi-eye"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ps-4 fw-medium text-primary">Emma Watson</td>
+                                            <td>Dr. Mark Owen</td>
+                                            <td>Migraine</td>
+                                            <td>Nov 02, 2023</td>
+                                            <td><a href="#" class="text-decoration-none d-flex">
+                                                <i class="bi bi-file-earmark-medical text-primary me-1 btn-icon"></i>
+                                                    mri_scan.jpg</a></td>
+                                            <td>
+                                                <button
+                                                    class="btn-sm btn-icon text-primary"><i
+                                                        class="bi bi-eye"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-prescriptions" class="view-section">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="page-title mb-0">Prescriptions</h4>
+                        <button class="btn-primary-custom"><i
+                                class="bi bi-plus-lg me-1"></i> New
+                            Prescription</button>
+                    </div>
+
+                    <div class="dashboard-card glass-card">
+                        <div class="card-body px-0 pt-0 mt-3">
+                            <div class="table-responsive">
+                                <table class="table align-middle modern-table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="ps-4">Patient</th>
+                                            <th>Doctor</th>
+                                            <th>Medicine</th>
+                                            <th>Dosage & Duration</th>
+                                            <th>Date</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ps-4 fw-medium text-primary">John Doe</td>
+                                            <td>Dr. Sarah Lee</td>
+                                            <td>Lisinopril 10mg</td>
+                                            <td>1 pill daily, 30 days</td>
+                                            <td>Today</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-icon"><i
+                                                        class="bi bi-printer text-primary"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-billing" class="view-section">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="page-title mb-0">Billing & Payments</h4>
+                        <button class="btn-primary-custom"><i
+                                class="bi bi-plus-lg me-1"></i>
+                            Create Invoice</button>
+                    </div>
+
+                    <div class="dashboard-card glass-card">
+                        <div class="card-body px-0 pt-0 mt-3">
+                            <div class="table-responsive">
+                                <table class="table align-middle modern-table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="ps-4">Invoice ID</th>
+                                            <th>Patient</th>
+                                            <th>Date</th>
+                                            <th>Total Amount</th>
+                                            <th>Payment Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ps-4 fw-semibold text-muted">#INV-2023001</td>
+                                            <td class="fw-medium text-primary">John Doe</td>
+                                            <td>Oct 24, 2023</td>
+                                            <td class="fw-bold">$150.00</td>
+                                            <td><span
+                                                    class="badge bg-success-subtle text-success rounded-pill px-3">Paid</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-sm btn-icon"><i
+                                                        class="bi bi-file-earmark-arrow-down text-primary"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ps-4 fw-semibold text-muted">#INV-2023002</td>
+                                            <td class="fw-medium text-primary">Emma Watson</td>
+                                            <td>Today</td>
+                                            <td class="fw-bold">$85.00</td>
+                                            <td><span
+                                                    class="badge bg-warning-subtle text-warning rounded-pill px-3">Pending</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-sm btn-icon"><i
+                                                        class="bi bi-file-earmark-arrow-down text-primary"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-settings" class="view-section">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="page-title mb-0">Settings</h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="glass-card p-4">
+                                <h5 class="mb-4">Admin Profile Settings</h5>
+
+                                <form>
+                                    <div class="row align-items-center mb-4">
+                                        <div class="col-auto">
+                                            <img src="https://i.pravatar.cc/150?img=32" alt="Admin"
+                                                class="avatar-lg rounded-circle border border-3 border-white shadow-sm">
+                                        </div>
+                                        <div class="col">
+                                            <button type="button"
+                                                class="btn-primary-custom">Change
+                                                Picture</button>
+                                            <button type="button"
+                                                class="btn remove-btn btn-link text-danger btn-sm text-decoration-none">Remove</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="row g-3 mb-4">
+                                        <div class="col-md-6">
+                                            <label
+                                                class="form-label text-muted text-xs text-uppercase fw-semibold">First
+                                                Name</label>
+                                            <input type="text" class="form-control bg-light border-0" value="Sarah">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label text-muted text-xs text-uppercase fw-semibold">Last
+                                                Name</label>
+                                            <input type="text" class="form-control bg-light border-0" value="Admin">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label
+                                                class="form-label text-muted text-xs text-uppercase fw-semibold">Email
+                                                Address</label>
+                                            <input type="email" class="form-control bg-light border-0"
+                                                value="admin@hospital.com">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label
+                                                class="form-label text-muted text-xs text-uppercase fw-semibold">Phone
+                                                Number</label>
+                                            <input type="text" class="form-control bg-light border-0"
+                                                value="+1 (555) 123-4567">
+                                        </div>
+                                    </div>
+
+                                    <h6 class="mb-3">Change Password</h6>
+                                    <div class="row g-3 mb-4">
+                                        <div class="col-md-12">
+                                            <input type="password" class="form-control bg-light border-0"
+                                                placeholder="Current Password">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="password" class="form-control bg-light border-0"
+                                                placeholder="New Password">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="password" class="form-control bg-light border-0"
+                                                placeholder="Confirm New Password">
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-end">
+                                        <button type="button"
+                                            class="cancel-btn rounded-pill px-4 me-2">Cancel</button>
+                                        <button type="button"
+                                            class="btn-primary-custom">Save
+                                            Changes</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 mt-4 mt-lg-0">
+                            <div class="glass-card p-4 h-100">
+                                <h5 class="mb-4">System Preferences</h5>
+
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="emailNotif"
+                                        checked>
+                                    <label class="form-check-label" for="emailNotif">Email Notifications</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="smsNotif">
+                                    <label class="form-check-label" for="smsNotif">SMS Alerts</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="autoBackup"
+                                        checked>
+                                    <label class="form-check-label" for="autoBackup">Automated Daily Backup</label>
+                                </div>
+                                <div class="form-check form-switch mb-4">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="twoFactor">
+                                    <label class="form-check-label" for="twoFactor">Enable 2FA</label>
+                                </div>
+
+                                <div class="alert alert-info bg-info-subtle border-0 rounded-3 mt-auto">
+                                    <div class="d-flex">
+                                        <i class="bi bi-info-circle-fill text-info me-3 fs-5"></i>
+                                        <div class="text-sm">
+                                            <strong>System Version:</strong> v2.4.1<br>
+                                            <strong>Last Update:</strong> 2 days ago
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div> <!-- End Main Wrapper -->
+    </div> <!-- End .main-deshbord -->
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+{% endblock %}

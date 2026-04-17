@@ -1,0 +1,611 @@
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Medical </title>
+    <meta name="description" content="Medical Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static '/img/favicon.ico' %}">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static '/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static '/css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static '/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/animated-headline.css' %}">
+    <link rel="stylesheet" href="{% static '/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static '/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static '/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static '/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <style>
+        /* mobile adjustments */
+        @media (max-width:1199px) {
+
+            .header-area .header-right .auth-btn {
+                background: transparent;
+                color: transparent;
+                min-width: auto;
+                height: 45px;
+            }
+
+            .header-area .header-right .auth-btn .icon-area {
+                border-radius: 50%;
+            }
+
+            .header-area .header-right .icon-area::after {
+                display: none;
+            }
+
+            .header-area .header-right .auth-btn .text {
+                display: none;
+            }
+
+            .header-area .header-right {
+                margin-right: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="{% static '/img/logo/loder.png' %}" alt="Logo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Top Header -->
+        <div class="top-header bg-custom text-white py-3">
+            <div class="container d-flex flex-column flex-md-row justify-content-between text-center text-md-left">
+                <div>Welcome to Your Trusted <strong>Medical</strong> Partner</div>
+                <div>Opening Hours : Monday to Saturday - 8am to 10pm <span class="divider">|</span>
+                    Contact : <strong>+12-823-611-8721</strong></div>
+            </div>
+        </div>
+        <!--? Header Start -->
+        <div class="header-area">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-6 col-lg-2">
+                            <div class="logo">
+                                <a href="/"><img src="{% static '/img/logo/logo.png' %}" alt="Logo"></a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-10 text-right">
+                            <div class="menu-main d-flex flex-wrap align-items-center justify-content-end">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="/" aria-label="home">Home</a></li>
+                                            <li><a href="{% url 'about' %}">About</a></li>
+                                            <li><a href="{% url 'doctors' %}">Doctors</a></li>
+                                            <li><a href="{% url 'departments' %}">Department</a></li>
+                                            <li><a href="{% url 'blog' %}">Blog</a>
+                                                <ul class="submenu">
+                                                    <li><a href="blog_details.html">Blog Details</a></li>
+                                                    <li><a href="elements.html">Element</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="header-right d-flex align-items-center gap-2">
+                                    {% if request.session.email %}
+                                    <a href="{% url 'logout' %}" class="auth-btn mr-2">
+                                        <span class="icon-area">
+                                            <i class="bi bi-box-arrow-in-right"></i>
+                                        </span>
+                                        <span class="text">LOGOUT</span>
+                                    </a>
+                                    {% else %}
+                                    <a href="{% url 'login' %}" class="auth-btn mr-2">
+                                        <span class="icon-area">
+                                            <i class="bi bi-box-arrow-in-right"></i>
+                                        </span>
+                                        <span class="text">LOGIN</span>
+                                    </a>
+
+                                    <a href="{% url 'signup' %}" class="auth-btn">
+                                        <span class="icon-area">
+                                            <i class="bi bi-person-plus"></i>
+                                        </span>
+                                        <span class="text">SIGN UP</span>
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="footer-section py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand mb-3">
+                        <i class="bi bi-hospital"></i> Medical.
+                    </div>
+                    <p class="text-white">Providing world-class healthcare solutions with compassion and advanced
+                        technology. Your health is our priority.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="#">Departments</a></li>
+                        <li><a href="#">Doctors</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Services</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Emergency Care</a></li>
+                        <li><a href="#">Heart Disease</a></li>
+                        <li><a href="#">Dental Care</a></li>
+                        <li><a href="#">Eye Care</a></li>
+                        <li><a href="#">Orthopedics</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Contact Info</h5>
+                    <ul class="list-unstyled footer-contact">
+                        <li><i class="bi bi-geo-alt"></i> 123 Health Ave, Medical City, NY 10001</li>
+                        <li><i class="bi bi-telephone"></i> +1 234 567 8900</li>
+                        <li><i class="bi bi-envelope"></i> info@hospital.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 border-secondary">
+            <div class="text-center copyright mt-3">
+                <small>&copy; 2026 Hospital Management System. All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll Up -->
+    <div id="back-top">
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+    <!-- JS here -->
+
+    <script src="{% static './js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="{% static './js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static './js/popper.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="{% static './js/jquery.slicknav.min.js' %}"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="{% static './js/owl.carousel.min.js' %}"></script>
+    <script src="{% static './js/slick.min.js' %}"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="{% static './js/wow.min.js' %}"></script>
+    <script src="{% static './js/animated.headline.js' %}"></script>
+    <script src="{% static './js/jquery.magnific-popup.js' %}"></script>
+
+    <!-- Date Picker -->
+    <script src="{% static './js/gijgo.min.js' %}"></script>
+    <!-- Nice-select, sticky -->
+    <script src="{% static './js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static './js/jquery.sticky.js' %}"></script>
+
+    <!-- counter , waypoint -->
+    <script src="{% static './js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static './js/waypoints.min.js' %}"></script>
+    <script src="{% static './js/jquery.countdown.min.js' %}"></script>
+    <!-- contact js -->
+    <script src="{% static './js/contact.js' %}"></script>
+    <script src="{% static './js/jquery.form.js' %}"></script>
+    <script src="{% static './js/jquery.validate.min.js' %}"></script>
+    <script src="{% static './js/mail-script.js' %}"></script>
+    <script src="{% static './js/jquery.ajaxchimp.min.js' %}"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="{% static './js/plugins.js' %}"></script>
+    <script src="{% static './js/main.js' %}"></script>
+    <script>
+        // Password toggle logic
+        document.querySelectorAll('.toggle-password').forEach(icon => {
+            icon.addEventListener('click', function () {
+                const targetId = this.getAttribute('data-target');
+                const targetInput = document.querySelector(targetId);
+
+                if (targetInput.type === 'password') {
+                    targetInput.type = 'text';
+                    this.classList.remove('bi-eye-slash');
+                    this.classList.add('bi-eye');
+                } else {
+                    targetInput.type = 'password';
+                    this.classList.remove('bi-eye');
+                    this.classList.add('bi-eye-slash');
+                }
+            });
+        });
+
+        // Form Focus animation logic
+        const inputs = document.querySelectorAll('.custom-input');
+        inputs.forEach(input => {
+            // Apply focus class on click/focus
+            input.addEventListener('focus', function () {
+                this.parentElement.classList.add('focused');
+            });
+            // Remove focus class on blur
+            input.addEventListener('blur', function () {
+                this.parentElement.classList.remove('focused');
+            });
+
+            // Check initial state (e.g. autofill)
+            if (document.activeElement === input) {
+                input.parentElement.classList.add('focused');
+            }
+        });
+
+        // signup password eye icon classes
+        document.addEventListener('DOMContentLoaded', () => {
+            const togglePassword = document.querySelector('#togglePassword');
+            const passwordInput = document.querySelector('#password');
+
+            if (togglePassword && passwordInput) {
+                togglePassword.addEventListener('click', function () {
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+
+                    // Toggle the eye icon classes
+                    this.classList.toggle('bi-eye-slash');
+                    this.classList.toggle('bi-eye');
+                });
+            }
+        });
+
+        // Include specific OTP logic here if script.js does not contain it globally
+        document.addEventListener('DOMContentLoaded', () => {
+            const otpInputs = document.querySelectorAll('.otp-input-group input');
+            const form = document.getElementById('otp-form');
+            const resendLink = document.querySelector('.resend-link');
+            const timerSpan = document.getElementById('timer');
+
+            // Make inputs only accept numbers
+            otpInputs.forEach((input) => {
+                input.addEventListener('input', function (e) {
+                    this.value = this.value.replace(/[^0-9]/g, '');
+                });
+            });
+
+            // Auto Focus functionality
+            otpInputs.forEach((input, index) => {
+                input.addEventListener('keyup', (e) => {
+                    const currentInput = input;
+                    const nextInput = input.nextElementSibling;
+                    const prevInput = input.previousElementSibling;
+
+                    if (currentInput.value.length === 1 && nextInput) {
+                        nextInput.focus();
+                    }
+
+                    if (e.key === 'Backspace' && prevInput) {
+                        if (currentInput.value === '') {
+                            prevInput.focus();
+                        } else {
+                            currentInput.value = '';
+                        }
+                    }
+                });
+
+                // Allow arrow keys navigation
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight' && input.nextElementSibling) {
+                        input.nextElementSibling.focus();
+                    }
+                    if (e.key === 'ArrowLeft' && input.previousElementSibling) {
+                        input.previousElementSibling.focus();
+                    }
+                });
+            });
+
+            // Handle Paste Support
+            otpInputs[0].addEventListener('paste', (e) => {
+                e.preventDefault();
+                const pastedData = (e.clipboardData || window.clipboardData).getData('text');
+                const numbersMatch = pastedData.match(/[0-9]/g);
+                if (!numbersMatch) return;
+                const numbers = numbersMatch.join('').slice(0, 6);
+                numbers.split('').forEach((num, index) => {
+                    if (otpInputs[index]) {
+                        otpInputs[index].value = num;
+                    }
+                });
+                const nextEmptyIndex = numbers.length < 6 ? numbers.length : 5;
+                if (otpInputs[nextEmptyIndex]) {
+                    otpInputs[nextEmptyIndex].focus();
+                } else {
+                    otpInputs[5].focus();
+                }
+            });
+
+            // Timer functionality
+            let timeLeft = 30;
+            let timerId;
+
+            function updateTimer() {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    timerSpan.textContent = '(00:' + (timeLeft < 10 ? '0' + timeLeft : timeLeft) + ')';
+                    resendLink.classList.add('disabled');
+                    resendLink.style.pointerEvents = 'none';
+                    resendLink.style.opacity = '0.6';
+                } else {
+                    timerSpan.textContent = '';
+                    resendLink.classList.remove('disabled');
+                    resendLink.style.pointerEvents = 'auto';
+                    resendLink.style.opacity = '1';
+                    clearInterval(timerId);
+                }
+            }
+
+            timerId = setInterval(updateTimer, 1000);
+
+            // Handle Resend Link
+            resendLink.addEventListener('click', (e) => {
+                if (resendLink.classList.contains('disabled')) return;
+                e.preventDefault();
+                timeLeft = 30;
+                updateTimer();
+                clearInterval(timerId);
+                timerId = setInterval(updateTimer, 1000);
+                otpInputs.forEach(input => input.value = '');
+                otpInputs[0].focus();
+                timerSpan.textContent = ' (Sent!)';
+                setTimeout(() => { timerSpan.textContent = '(00:30)'; }, 1500);
+            });
+        });
+
+        // otp page script
+        document.addEventListener('DOMContentLoaded', () => {
+            const otpInputs = document.querySelectorAll('.otp-input');
+            const form = document.getElementById('otp-form');
+            const resendLink = document.querySelector('.resend-link');
+            const timerSpan = document.getElementById('timer');
+
+            // Make inputs only accept numbers
+            otpInputs.forEach((input) => {
+                input.addEventListener('input', function (e) {
+                    // Remove non-numeric characters
+                    this.value = this.value.replace(/[^0-9]/g, '');
+                });
+            });
+
+            // Auto Focus functionality
+            otpInputs.forEach((input, index) => {
+                input.addEventListener('keyup', (e) => {
+                    const currentInput = input;
+                    const nextInput = input.nextElementSibling;
+                    const prevInput = input.previousElementSibling;
+
+                    // if value is entered and next input exists, focus next
+                    if (currentInput.value.length === 1 && nextInput) {
+                        nextInput.focus();
+                    }
+
+                    // if backspace pressed and prev input exists, focus prev
+                    if (e.key === 'Backspace' && prevInput) {
+                        if (currentInput.value === '') {
+                            prevInput.focus();
+                        } else {
+                            currentInput.value = '';
+                        }
+                    }
+                });
+
+                // Allow arrow keys navigation
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight' && input.nextElementSibling) {
+                        input.nextElementSibling.focus();
+                    }
+                    if (e.key === 'ArrowLeft' && input.previousElementSibling) {
+                        input.previousElementSibling.focus();
+                    }
+                });
+            });
+
+            // Handle Paste Support
+            otpInputs[0].addEventListener('paste', (e) => {
+                e.preventDefault();
+
+                // Get pasted text
+                const pastedData = (e.clipboardData || window.clipboardData).getData('text');
+
+                // Extract only numbers
+                const numbersMatch = pastedData.match(/[0-9]/g);
+
+                if (!numbersMatch) return;
+
+                const numbers = numbersMatch.join('').slice(0, 6);
+
+                // Distribute numbers to input fields
+                numbers.split('').forEach((num, index) => {
+                    if (otpInputs[index]) {
+                        otpInputs[index].value = num;
+                    }
+                });
+
+                // Focus on the next empty input or the last one
+                const nextEmptyIndex = numbers.length < 6 ? numbers.length : 5;
+                if (otpInputs[nextEmptyIndex]) {
+                    otpInputs[nextEmptyIndex].focus();
+                } else {
+                    otpInputs[5].focus();
+                }
+            });
+
+            // Add shaking animation style dynamically
+            const style = document.createElement('style');
+            style.innerHTML = `
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+    `;
+            document.head.appendChild(style);
+
+            // Handle Form Submit
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                let otp = '';
+                otpInputs.forEach(input => {
+                    otp += input.value;
+                });
+
+                if (otp.length === 6) {
+                    // Here you would typically send the OTP to your server
+                    const btn = form.querySelector('.primary-btn');
+                    const originalText = btn.innerHTML;
+
+                    // Loading state
+                    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><span>Verifying...</span>';
+                    btn.disabled = true;
+
+                    // Simulate API call
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fa-solid fa-check"></i><span>Verified Successfully</span>';
+                        btn.style.backgroundColor = '#10b981'; // Green color
+
+                        // Add success animation to inputs
+                        otpInputs.forEach(input => {
+                            input.style.borderColor = '#10b981';
+                            input.style.backgroundColor = 'rgba(16, 185, 129, 0.1)';
+                        });
+
+                        // Reset after 2 seconds
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                            btn.disabled = false;
+                            btn.style.backgroundColor = '';
+                            otpInputs.forEach(input => {
+                                input.style.borderColor = '';
+                                input.style.backgroundColor = '';
+                                input.value = '';
+                            });
+                            otpInputs[0].focus();
+                        }, 2000);
+                    }, 1500);
+                } else {
+                    // Shake animation for error
+                    const glassCard = document.querySelector('.glass-card');
+                    glassCard.style.animation = 'none';
+                    glassCard.offsetHeight; /* trigger reflow */
+                    glassCard.style.animation = 'shake 0.5s ease-in-out';
+
+                    // Highlight empty fields
+                    otpInputs.forEach(input => {
+                        if (!input.value) {
+                            input.style.borderColor = '#ef4444';
+                            setTimeout(() => {
+                                input.style.borderColor = '';
+                            }, 2000);
+                        }
+                    });
+                }
+            });
+
+            // Timer functionality
+            let timeLeft = 30;
+            let timerId;
+
+            function updateTimer() {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    timerSpan.textContent = '(00:' + (timeLeft < 10 ? '0' + timeLeft : timeLeft) + ')';
+                    resendLink.classList.add('disabled');
+                } else {
+                    timerSpan.textContent = '';
+                    resendLink.classList.remove('disabled');
+                    clearInterval(timerId);
+                }
+            }
+
+            timerId = setInterval(updateTimer, 1000);
+
+            // Handle Resend Link
+            resendLink.addEventListener('click', (e) => {
+                if (resendLink.classList.contains('disabled')) {
+                    e.preventDefault();
+                    return;
+                }
+
+                e.preventDefault();
+
+                // Reset timer
+                timeLeft = 30;
+                updateTimer();
+                clearInterval(timerId);
+                timerId = setInterval(updateTimer, 1000);
+
+                // Clear inputs
+                otpInputs.forEach(input => input.value = '');
+                otpInputs[0].focus();
+
+                // Show brief success toast/message (optional)
+                timerSpan.textContent = ' (Sent!)';
+                setTimeout(() => {
+                    timerSpan.textContent = '(00:30)';
+                }, 1500);
+            });
+        });
+
+        // Bootstrap dropdown init fallback for all templates
+        document.addEventListener('DOMContentLoaded', function () {
+            var dropdownTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="dropdown"]'));
+            dropdownTriggerList.forEach(function (dropdownToggleEl) {
+                if (typeof bootstrap !== 'undefined' && bootstrap.Dropdown) {
+                    new bootstrap.Dropdown(dropdownToggleEl);
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Status - Paytm Gateway</title>
+    <style>
+        :root {
+            --primary: #00BAF2;
+            --secondary: #002970;
+            --success: #28a745;
+            --danger: #dc3545;
+            --bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .status-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 450px;
+        }
+
+        .icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .success { color: var(--success); }
+        .failure { color: var(--danger); }
+
+        h2 { margin-top: 0; }
+
+        .details {
+            text-align: left;
+            margin: 20px 0;
+            padding: 15px;
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        .details p {
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-home {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .btn-home:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <div class="status-card">
+        {% if transaction.status == 'SUCCESS' %}
+            <div class="icon success">✔</div>
+            <h2 class="success">Payment Successful!</h2>
+        {% else %}
+            <div class="icon failure">✘</div>
+            <h2 class="failure">Payment Failed!</h2>
+        {% endif %}
+
+        <p>{{ msg }}</p>
+
+        <div class="details">
+            <p><strong>Order ID:</strong> <span>{{ transaction.order_id|truncatechars:15 }}</span></p>
+            <p><strong>Amount:</strong> <span>₹{{ transaction.amount }}</span></p>
+            <p><strong>Transaction ID:</strong> <span>{{ transaction.transaction_id|default:"N/A" }}</span></p>
+            <p><strong>Email:</strong> <span>{{ transaction.user_email }}</span></p>
+        </div>
+
+        <a href="/" class="btn-home">Return to Home</a>
+    </div>
+</body>
+</html>

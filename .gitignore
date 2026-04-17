@@ -1,0 +1,9 @@
+client_secret*.json
+*.exe
+myvenv/
+__pycache__/
+db.sqlite3
+.env
+*.zip
+*.mp4
+*.exe

@@ -1,0 +1,77 @@
+{% extends 'header.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Email</title>
+</head>
+<body>
+
+    <main class="otp-page split-layout">
+        <!-- Left Section -->
+        <section class="left-section">
+            <div class="overlay"></div>
+            <div class="glass-card">
+                <div class="logo">
+                    <i class="bi bi-hospital"></i> Medical.
+                </div>
+                <h1 class="glow-text">Secure Verification</h1>
+                <p class="subtitle glow-text-soft">We use industry-standard security measures to protect your account and data.</p>
+            </div>
+        </section>
+
+        <!-- Right Section -->
+        <section class="right-section">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Verify Your OTP</h2>
+                    <p>Enter the 6-digit verification code sent to your email.</p>
+                </div>
+
+                <form method="post" action="{% url 'verify-otp' %}" id="otpForm">
+                    {% csrf_token %}
+                    <input type="hidden" name="otp" id="hiddenOtp">
+                    <!-- OTP Input Group -->
+                    <div class="otp-input-group d-flex justify-content-between mb-4 gap-2">
+                        <input type="text" class="form-control custom-input text-center fs-4 fw-bold" maxlength="1" pattern="[0-9]" inputmode="numeric" required autofocus>
+                        <input type="text" class="form-control custom-input text-center fs-4 fw-bold" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+                        <input type="text" class="form-control custom-input text-center fs-4 fw-bold" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+                        <input type="text" class="form-control custom-input text-center fs-4 fw-bold" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+                        <input type="text" class="form-control custom-input text-center fs-4 fw-bold" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+                        <input type="text" class="form-control custom-input text-center fs-4 fw-bold" maxlength="1" pattern="[0-9]" inputmode="numeric" required>
+                    </div>
+
+                    <!-- Verify Button -->
+                    <button type="submit" class="btn btn-primary-custom w-100 mb-3">
+                        <span>Verify Code</span>
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </button>
+                    
+                    <div class="form-footer text-center mt-3">
+                        <p class="mb-1 text-muted">Didn't receive the code?</p>
+                        <a href="#" class="resend-link signup-link text-decoration-none fw-bold">Resend OTP <span id="timer">(00:30)</span></a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        document.getElementById('otpForm').addEventListener('submit', function(e) {
+            const inputs = document.querySelectorAll('.otp-input-group input[type="text"]');
+            let otpValue = '';
+            inputs.forEach(input => otpValue += input.value);
+            document.getElementById('hiddenOtp').value = otpValue;
+        });
+    </script>
+</body>
+</html>
+
+{% endblock %}

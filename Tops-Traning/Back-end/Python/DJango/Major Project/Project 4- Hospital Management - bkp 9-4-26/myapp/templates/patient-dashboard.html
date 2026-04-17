@@ -1,0 +1,578 @@
+{% extends 'header.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body class="patient-dashboard-body">
+
+    <div class="patient-dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="sidebar-logo">
+                    <i class="bi bi-heart-pulse-fill"></i>
+                    <span>MedCare</span>
+                </a>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="#dashboard" class="active" onclick="switchTab('dashboard', this)">
+                            <i class="bi bi-grid-fill"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#book-appointment" onclick="switchTab('book-appointment', this)">
+                            <i class="bi bi-calendar-plus-fill"></i>
+                            <span>Book Appointment</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#appointments" onclick="switchTab('appointments', this)">
+                            <i class="bi bi-calendar-check-fill"></i>
+                            <span>My Appointments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#records" onclick="switchTab('records', this)">
+                            <i class="bi bi-file-medical-fill"></i>
+                            <span>Medical Records</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#prescriptions" onclick="switchTab('prescriptions', this)">
+                            <i class="bi bi-capsule"></i>
+                            <span>Prescriptions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#billing" onclick="switchTab('billing', this)">
+                            <i class="bi bi-credit-card-fill"></i>
+                            <span>Billing & Payments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#messages" onclick="switchTab('messages', this)">
+                            <i class="bi bi-chat-dots-fill"></i>
+                            <span>Messages</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#profile" onclick="switchTab('profile', this)">
+                            <i class="bi bi-person-gear"></i>
+                            <span>Profile Settings</span>
+                        </a>
+                    </li>
+                    <li style="margin-top: auto; padding-top: 20px;">
+                        <a href="#" class="text-danger">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header Bar -->
+            <header class="top-header glass-panel">
+                <div class="d-flex align-items-center">
+                    <button class="admin-btn admin-btn-link toggle-sidebar-btn" id="toggleSidebarBtn">
+                        <i class="bi bi-list"></i>
+                    </button>
+
+                    <!-- Search -->
+                    <div class="search-bar d-none d-md-flex">
+                        <i class="bi bi-search"></i>
+                        <input type="text" class="form-control" placeholder="Search patients, doctors...">
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <!-- Messages -->
+                    <div class="dropdown">
+                        <button type="button" class="icon-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-chat-dots"></i>
+                            <span class="badge-indicator"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end glass-dropdown mt-2 shadow-sm border-0" style="">
+                            <li>
+                                <h6 class="dropdown-header">Messages</h6>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Dr. Smith (2 new)</a></li>
+                            <li><a class="dropdown-item" href="#">Reception</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-center text-primary" href="#">View All</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Notifications -->
+                    <div class="dropdown">
+                        <button type="button" class="icon-btn position-relative" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="bi bi-bell"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light">
+                                3
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end glass-dropdown mt-2 shadow-sm border-0" style="">
+                            <li>
+                                <h6 class="dropdown-header">Notifications</h6>
+                            </li>
+                            <li><a class="dropdown-item" href="#">New Appointment: John Doe</a></li>
+                            <li><a class="dropdown-item" href="#">System Update Scheduled</a></li>
+                            <li><a class="dropdown-item" href="#">Lab Results Ready: Patient #402</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-center text-primary" href="#">Mark all read</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Profile -->
+                    <div class="dropdown ms-2">
+                        <button type="button" class="profile-dropdown-btn dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="https://i.pravatar.cc/150?img=32" alt="Admin" class="profile-img">
+                            <div class="profile-info d-none d-md-block text-start">
+                                <span class="name">Sarah Admin</span>
+                                <span class="role">Super Administrator</span>
+                            </div>
+                            <i class="bi bi-chevron-down d-none d-md-block fs-7 text-muted"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end glass-dropdown mt-2 shadow-sm border-0" style="">
+                            <li><a class="dropdown-item" href="#" data-view-target="settings"><i
+                                        class="bi bi-person me-2"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="#" data-view-target="settings"><i
+                                        class="bi bi-gear me-2"></i> Settings</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i>
+                                    Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Area -->
+            <div class="content-area" id="mainContent">
+
+                <!-- Dashboard View -->
+                <div id="dashboard-view" class="view-section active">
+                    <h2 class="page-title">Good Morning, Emma! 👋</h2>
+
+                    <!-- Overview Cards -->
+                    <div class="row g-4 mb-4">
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="stat-card">
+                                <div class="stat-icon blue">
+                                    <i class="bi bi-calendar-check"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>2</h3>
+                                    <p>Upcoming Appointments</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="stat-card">
+                                <div class="stat-icon teal">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>14</h3>
+                                    <p>Total Visits</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="stat-card">
+                                <div class="stat-icon purple">
+                                    <i class="bi bi-file-medical"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>5</h3>
+                                    <p>Medical Reports</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="stat-card">
+                                <div class="stat-icon orange">
+                                    <i class="bi bi-credit-card"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>$120</h3>
+                                    <p>Pending Payments</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content Row -->
+                    <div class="row">
+                        <!-- Upcoming Appointments -->
+                        <div class="col-xl-8 col-12 mb-4">
+                            <div class="custom-card h-100 glass-card">
+                                <div class="custom-card-header">
+                                    <h3 class="custom-card-title">Next Appointments</h3>
+                                    <button class="btn-primary-custom"
+                                        onclick="switchTab('book-appointment', document.querySelector('[href=\'#book-appointment\']'))">Book
+                                        New</button>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table custom-table mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Doctor Name</th>
+                                                <th>Department</th>
+                                                <th>Date & Time</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="doctor-cell">
+                                                        <img src="https://ui-avatars.com/api/?name=Dr.+Sarah+Smith&background=random"
+                                                            class="doctor-avatar" alt="Doctor">
+                                                        <div>
+                                                            <div class="doctor-name">Dr. Sarah Smith</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>Cardiology</td>
+                                                <td>
+                                                    <div>Tomorrow</div>
+                                                    <small class="text-muted">09:00 AM</small>
+                                                </td>
+                                                <td><span class="status-badge pending">Upcoming</span></td>
+                                                <td>
+                                                    <button class="action-btn me-2" title="View Details"><i
+                                                            class="bi bi-eye"></i></button>
+                                                    <button class="action-btn cancel text-danger"
+                                                        title="Cancel Appointment"><i
+                                                            class="bi bi-x-circle"></i></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Health Chart Container -->
+                        <div class="col-xl-4 col-12 mb-4">
+                            <div class="custom-card h-100 glass-card">
+                                <div class="custom-card-header">
+                                    <h3 class="custom-card-title">Blood Pressure History</h3>
+                                </div>
+                                <div class="p-4" style="position: relative; height: 300px; width: 100%;">
+                                    <canvas id="healthChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Appointment View -->
+                <div id="book-appointment-view" class="view-section" style="display: none;">
+                    <h2 class="page-title">Book New Appointment</h2>
+                    <div class="custom-card p-4 glass-card">
+                        <p class="text-muted text-center pt-5 pb-5">Booking Wizard Placeholder</p>
+                    </div>
+                </div>
+
+                <!-- My Appointments View -->
+                <div id="appointments-view" class="view-section" style="display: none;">
+                    <h2 class="page-title">My Appointments</h2>
+                    <div class="custom-card glass-card">
+                        <div class="custom-card-header">
+                            <h3 class="custom-card-title">Appointment History</h3>
+                        </div>
+                        <div class="p-4 text-center text-muted">Use the same table structure here.</div>
+                    </div>
+                </div>
+
+                <div id="records-view" class="view-section" style="display: none;">
+                    <h2 class="page-title">Medical Records</h2>
+                    <div class="custom-card glass-card">
+                        <div class="table-responsive">
+                            <table class="table custom-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Doctor</th>
+                                        <th>Diagnosis</th>
+                                        <th>Treatment</th>
+                                        <th>Date</th>
+                                        <th>Download</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="doctor-name">Dr. Mark Owen</td>
+                                        <td>Mild Asthma</td>
+                                        <td>Inhaler Prescribed</td>
+                                        <td>12 Oct 2023</td>
+                                        <td><button class="action-btn"><i class="bi bi-download"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="prescriptions-view" class="view-section" style="display: none;">
+                    <h2 class="page-title mb-4">Prescriptions</h2>
+                    <div class="custom-card glass-card">
+                        <div class="table-responsive">
+                            <table class="table custom-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Doctor</th>
+                                        <th>Medicine</th>
+                                        <th>Dosage / Duration</th>
+                                        <th>Instructions</th>
+                                        <th>Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="doctor-name">Dr. Sarah Lee</td>
+                                        <td>Amoxicillin 500mg</td>
+                                        <td>1x3 / 5 days</td>
+                                        <td>After meal</td>
+                                        <td>15 Mar 2026</td>
+                                        <td><button class="action-btn"><i class="bi bi-printer"></i> Download</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="billing-view" class="view-section" style="display: none;">
+                    <h2 class="page-title">Billing & Payments</h2>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="custom-card p-4 glass-card bg-primary text-white"
+                                style="background: linear-gradient(135deg, var(--primary-blue), #3685ff);">
+                                <h5 class="mb-3 text-white-50">Total Balance Due</h5>
+                                <h2 class="mb-0 fw-bold">$120.00</h2>
+                                <button class="btn btn-light mt-3 px-4">Pay Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-card glass-card">
+                        <div class="custom-card-header">
+                            <h3 class="custom-card-title">Invoice History</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table custom-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Invoice ID</th>
+                                        <th>Service</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#INV-2041</td>
+                                        <td>Cardiology Consultation</td>
+                                        <td>$120.00</td>
+                                        <td><span class="status-badge pending">Pending</span></td>
+                                        <td>10 Mar 2026</td>
+                                        <td><button class="action-btn"><i class="bi bi-download"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="messages-view" class="view-section" style="display: none;">
+                    <h2 class="page-title">Messages</h2>
+                    <div class="custom-card glass-card">
+                        <div class="p-4">Messages / Inbox Layout Placeholder</div>
+                    </div>
+                </div>
+
+                <div id="profile-view" class="view-section" style="display: none;">
+                    <h2 class="page-title">Profile Settings</h2>
+                    <div class="custom-card glass-card">
+                        <div class="p-4">
+                            <div class="row">
+                                <div class="col-md-3 text-center mb-4">
+                                    <img src="https://ui-avatars.com/api/?name=Emma+Watson&background=0D8ABC&color=fff&size=120"
+                                        class="rounded-circle mb-3">
+                                    <div><button class="btn-primary-custom w-100">Upload Photo</button></div>
+                                </div>
+                                <div class="col-md-9">
+                                    <form>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Full Name</label>
+                                                <input type="text" class="form-control" value="Emma Watson">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Email</label>
+                                                <input type="email" class="form-control" value="emma.w@example.com">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Phone</label>
+                                                <input type="tel" class="form-control" value="+1 555 123 4567">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Gender</label>
+                                                <select class="form-select">
+                                                    <option selected>Female</option>
+                                                    <option>Male</option>
+                                                    <option>Other</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12 mt-4">
+                                                <button type="button" class="btn-primary-custom">Save Changes</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Sidebar Toggle
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('toggleSidebarBtn');
+
+        sidebarToggle.addEventListener('click', () => {
+            if (window.innerWidth <= 991) {
+                sidebar.classList.toggle('mobile-open');
+            } else {
+                sidebar.classList.toggle('collapsed');
+            }
+        });
+
+        // Simple Tab Switching Logic
+        function switchTab(tabId, element) {
+            // Remove active class from all links
+            document.querySelectorAll('.sidebar-menu a').forEach(el => el.classList.remove('active'));
+            // Add active class to clicked
+            if (element) element.classList.add('active');
+
+            // Hide all views
+            document.querySelectorAll('.view-section').forEach(el => el.style.display = 'none');
+            // Show target view
+            document.getElementById(tabId + '-view').style.display = 'block';
+
+            // On mobile, close sidebar after clicking
+            if (window.innerWidth <= 991) {
+                sidebar.classList.remove('mobile-open');
+            }
+        }
+
+        // Initialize Chart.js
+        document.addEventListener("DOMContentLoaded", function () {
+            const ctx = document.getElementById('healthChart');
+            if (ctx) {
+                const context = ctx.getContext('2d');
+
+                // Gradient fill
+                let gradient = context.createLinearGradient(0, 0, 0, 400);
+                gradient.addColorStop(0, 'rgba(32, 201, 151, 0.4)');
+                gradient.addColorStop(1, 'rgba(32, 201, 151, 0.05)');
+
+                new Chart(context, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        datasets: [{
+                            label: 'Systolic BP',
+                            data: [120, 118, 122, 119, 120, 118],
+                            backgroundColor: gradient,
+                            borderColor: '#20C997',
+                            borderWidth: 3,
+                            pointBackgroundColor: '#fff',
+                            pointBorderColor: '#20C997',
+                            pointBorderWidth: 2,
+                            pointRadius: 4,
+                            pointHoverRadius: 6,
+                            fill: true,
+                            tension: 0.4 // Soft curve
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                backgroundColor: '#1e1e1e',
+                                titleFont: { family: 'Inter', size: 13 },
+                                bodyFont: { family: 'Inter', size: 14 },
+                                padding: 12,
+                                cornerRadius: 8,
+                                displayColors: false,
+                            }
+                        },
+                        scales: {
+                            y: {
+                                min: 100,
+                                max: 140,
+                                grid: {
+                                    color: 'rgba(0, 0, 0, 0.05)',
+                                    drawBorder: false,
+                                },
+                                ticks: {
+                                    font: { family: 'Inter', size: 12 }
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false,
+                                    drawBorder: false,
+                                },
+                                ticks: {
+                                    font: { family: 'Inter', size: 12 }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+{% endblock %}

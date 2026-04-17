@@ -1,0 +1,381 @@
+
+{% extends 'header.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body class="departments_page">
+
+    <!-- Section 1: Hero Banner -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container position-relative hero-content">
+            <h1 class="hero-title">Our Departments</h1>
+            <p class="hero-subtitle">Explore specialized medical departments with expert doctors.</p>
+            <button class="btn admin-btn-action">Book Appointment</button>
+        </div>
+    </section>
+
+    <!-- Section 2: Departments Grid Section -->
+    <section class="departments-grid-section py-5 mt-4">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Cardiology -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="dept-card glass-card text-center">
+                        <div class="dept-icon mb-4">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <h4 class="mb-2">Cardiology</h4>
+                        <p class="text-muted small mb-3">Comprehensive care for heart and cardiovascular conditions.</p>
+                        <p class="text-primary fw-semibold small mb-4">12 Doctors Available</p>
+                        <div class="d-grid gap-2">
+                            <button class="btn-outline-primary fw-medium p-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#departmentModal">View Doctors</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Neurology -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="dept-card glass-card text-center">
+                        <div class="dept-icon mb-4">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+                        <h4 class="mb-2">Neurology</h4>
+                        <p class="text-muted small mb-3">Expert diagnosis and treatment of nervous system disorders.</p>
+                        <p class="text-primary fw-semibold small mb-4">8 Doctors Available</p>
+                        <div class="d-grid gap-2">
+                            <button class="btn-outline-primary fw-medium p-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#departmentModal">View Doctors</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Orthopedics -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="dept-card glass-card text-center">
+                        <div class="dept-icon mb-4">
+                            <i class="bi bi-person-wheelchair"></i>
+                        </div>
+                        <h4 class="mb-2">Orthopedics</h4>
+                        <p class="text-muted small mb-3">Advanced solutions for bones, joints, and musculoskeletal issues.</p>
+                        <p class="text-primary fw-semibold small mb-4">10 Doctors Available</p>
+                        <div class="d-grid gap-2">
+                            <button class="btn-outline-primary fw-medium p-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#departmentModal">View Doctors</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pediatrics -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="dept-card glass-card text-center">
+                        <div class="dept-icon mb-4">
+                            <i class="bi bi-person-hearts"></i>
+                        </div>
+                        <h4 class="mb-2">Pediatrics</h4>
+                        <p class="text-muted small mb-3">Compassionate healthcare exclusively designed for infants and children.</p>
+                        <p class="text-primary fw-semibold small mb-4">14 Doctors Available</p>
+                        <div class="d-grid gap-2">
+                            <button class="btn-outline-primary fw-medium p-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#departmentModal">View Doctors</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dermatology -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="dept-card glass-card text-center">
+                        <div class="dept-icon mb-4">
+                            <i class="bi bi-bandaid"></i>
+                        </div>
+                        <h4 class="mb-2">Dermatology</h4>
+                        <p class="text-muted small mb-3">Specialized treatment for skin, hair, and nail health.</p>
+                        <p class="text-primary fw-semibold small mb-4">6 Doctors Available</p>
+                        <div class="d-grid gap-2">
+                            <button class="btn-outline-primary fw-medium p-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#departmentModal">View Doctors</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- General Medicine -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="dept-card glass-card text-center">
+                        <div class="dept-icon mb-4">
+                            <i class="bi bi-capsule"></i>
+                        </div>
+                        <h4 class="mb-2">General Medicine</h4>
+                        <p class="text-muted small mb-3">Primary continuous care and preventive medical solutions.</p>
+                        <p class="text-primary fw-semibold small mb-4">20 Doctors Available</p>
+                        <div class="d-grid gap-2">
+                            <button class="btn-outline-primary fw-medium p-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#departmentModal">View Doctors</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Radiology -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="dept-card glass-card text-center">
+                        <div class="dept-icon mb-4">
+                            <i class="bi bi-activity"></i>
+                        </div>
+                        <h4 class="mb-2">Radiology</h4>
+                        <p class="text-muted small mb-3">State-of-the-art medical imaging and diagnostic services.</p>
+                        <p class="text-primary fw-semibold small mb-4">5 Doctors Available</p>
+                        <div class="d-grid gap-2">
+                            <button class="btn-outline-primary fw-medium p-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#departmentModal">View Doctors</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Emergency Care -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="dept-card glass-card text-center">
+                        <div class="dept-icon mb-4 text-danger border-danger">
+                            <i class="bi bi-hospital"></i>
+                        </div>
+                        <h4 class="mb-2">Emergency Care</h4>
+                        <p class="text-muted small mb-3">24/7 rapid response for acute illnesses and critical injuries.</p>
+                        <p class="text-primary fw-semibold small mb-4">15 Doctors Available</p>
+                        <div class="d-grid gap-2">
+                            <button class="btn-outline-primary fw-medium p-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#departmentModal">View Doctors</button>
+                            <button class="btn admin-btn-action">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Department Services Section -->
+    <section class="services-section py-5 bg-light-blue">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Department Services</h2>
+                <div class="title-underline mx-auto"></div>
+                <p class="text-muted">A comprehensive range of specialized medical treatments and tests.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card glass-card h-100 p-4 d-flex align-items-center gap-4">
+                        <div class="feature-icon mb-0 flex-shrink-0">
+                            <i class="bi bi-heart-pulse text-danger"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1 text-dark fs-2">Heart Checkup</h5>
+                            <p class="text-muted small mb-0">Detailed ECG, ECHO, and complete cardiovascular assessment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card glass-card h-100 p-4 d-flex align-items-center gap-4">
+                        <div class="feature-icon mb-0 flex-shrink-0">
+                            <i class="bi bi-diagram-3 text-info"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1 text-dark fs-2">Brain Scan</h5>
+                            <p class="text-muted small mb-0">Advanced MRI, CT scanning, and neurological profiling.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card glass-card h-100 p-4 d-flex align-items-center gap-4">
+                        <div class="feature-icon mb-0 flex-shrink-0">
+                            <i class="bi bi-x-diamond text-warning"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1 text-dark fs-2">Bone Treatment</h5>
+                            <p class="text-muted small mb-0">Fracture recovery, joint replacements, and physiotherapy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card glass-card h-100 p-4 d-flex align-items-center gap-4">
+                        <div class="feature-icon mb-0 flex-shrink-0">
+                            <i class="bi bi-emoji-smile text-success"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1 text-dark fs-2">Child Care</h5>
+                            <p class="text-muted small mb-0">Vaccinations, growth monitoring, and pediatric consultations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card glass-card h-100 p-4 d-flex align-items-center gap-4">
+                        <div class="feature-icon mb-0 flex-shrink-0">
+                            <i class="bi bi-sun text-warning"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1 text-dark fs-2">Skin Treatment</h5>
+                            <p class="text-muted small mb-0">Acne solutions, laser therapies, and anti-aging treatments.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card glass-card h-100 p-4 d-flex align-items-center gap-4">
+                        <div class="feature-icon mb-0 flex-shrink-0">
+                            <i class="bi bi-file-medical text-primary"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1 text-dark fs-2">Gen. Health Checkup</h5>
+                            <p class="text-muted small mb-0">Full body profiles, blood tests, and immunity screening.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Why Choose Our Departments Section -->
+    <section class="why-choose-section py-5 my-3">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Why Choose Our Departments</h2>
+                <div class="title-underline mx-auto"></div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card glass-card h-100 p-4 text-center">
+                        <div class="feature-icon mb-3 mx-auto">
+                            <i class="bi bi-tools"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2 text-dark fs-2">Advanced Equipment</h5>
+                        <p class="text-muted small mb-0">State-of-the-art machines ensuring precise diagnostics and testing accuracy.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card glass-card h-100 p-4 text-center">
+                        <div class="feature-icon mb-3 mx-auto">
+                            <i class="bi bi-person-badge"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2 text-dark fs-2">Specialist Doctors</h5>
+                        <p class="text-muted small mb-0">An elite board of internationally recognized physicians and surgeons.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card glass-card h-100 p-4 text-center">
+                        <div class="feature-icon mb-3 mx-auto">
+                            <i class="bi bi-telephone-plus"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2 text-dark fs-2">Emergency Support</h5>
+                        <p class="text-muted small mb-0">Dedicated 24/7 ambulances and trauma center for immediate assistance.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card glass-card h-100 p-4 text-center">
+                        <div class="feature-icon mb-3 mx-auto">
+                            <i class="bi bi-cloud-arrow-up"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2 text-dark fs-2">Digital Records</h5>
+                        <p class="text-muted small mb-0">Fully encrypted online patient history accessible across all departments.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card glass-card h-100 p-4 text-center">
+                        <div class="feature-icon mb-3 mx-auto">
+                            <i class="bi bi-calendar-check-fill"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2 text-dark fs-2">Online Appointment</h5>
+                        <p class="text-muted small mb-0">Book direct slots with preferred doctors quickly and without waiting lines.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card glass-card h-100 p-4 text-center">
+                        <div class="feature-icon mb-3 mx-auto">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2 text-dark fs-2">Modern Facilities</h5>
+                        <p class="text-muted small mb-0">Hygienic, spacious rooms equipped with air purification and monitoring.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Call-to-Action Section -->
+    <section class="cta-section py-5 text-center px-3">
+        <div class="container cta-content py-4">
+            <h2 class="mb-3">Need specialized medical consultation?</h2>
+            <p class="mb-5 text-white">Connect with the right department to begin your journey toward recovery and optimal health.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <button class="admin-btn-action btn btn-lg">Book Appointment</button>
+                <button class="btn-primary-custom">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Department Details Modal -->
+    <div class="modal fade" id="departmentModal" tabindex="-1" aria-labelledby="departmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content glass-card border-0">
+                <div class="modal-header border-0 pb-0  position-relative z-3">
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 pt-0">
+                    <div class="row g-4 border-bottom pb-4 mb-4">
+                        <div class="col-md-12 text-center">
+                            <div class="modal-dept-icon mb-3 mt-1"><i class="bi bi-heart-pulse"></i></div>
+                            <h2 class="fw-bold mb-2 text-dark fs-2" id="departmentModalLabel">Cardiology Department</h2>
+                            <p class="text-muted px-lg-5 mb-0">Comprehensive care covering all aspects of cardiovascular health, providing diagnostic, preventive, and surgical services under one advanced facility.</p>
+                        </div>
+                    </div>
+                    <div class="row g-4 mt-0">
+                        <div class="col-md-6">
+                            <div class="p-4 bg-light-blue rounded-custom h-100">
+                                <h5 class="fw-bold fs-2 mb-4 d-flex align-items-center"><i class="bi bi-people-fill text-primary me-2 fs-2"></i> Available Doctors</h5>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-3 d-flex justify-content-between align-items-center">
+                                        <span class="fw-semibold text-dark">Dr. Sarah Jenkins</span>
+                                        <span class="badge bg-white text-dark shadow-sm px-2 py-1">Head</span>
+                                    </li>
+                                    <li class="mb-3 d-flex justify-content-between align-items-center">
+                                        <span class="fw-semibold text-dark">Dr. William Taylor</span>
+                                        <span class="badge bg-white text-dark shadow-sm px-2 py-1">Surgeon</span>
+                                    </li>
+                                    <li class="mb-3 d-flex justify-content-between align-items-center">
+                                        <span class="fw-semibold text-dark">Dr. Robert Chen</span>
+                                        <span class="badge bg-white text-dark shadow-sm px-2 py-1">Consultant</span>
+                                    </li>
+                                    <li class="text-primary small fw-semibold mt-4"><i class="bi bi-plus-circle me-1"></i> 9 more specialists</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="doc-details-list h-100 d-flex flex-column justify-content-center">
+                                <div class="d-flex mb-4 align-items-start">
+                                    <div class="detail-icon text-primary me-3 fs-3"><i class="bi bi-clock-history"></i></div>
+                                    <div>
+                                        <div class="fw-bold text-dark mb-1">Consultation Timing</div>
+                                        <div class="text-muted small">Daily: 08:00 AM - 08:00 PM<br>Emergency: 24/7</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-4 align-items-start">
+                                    <div class="detail-icon text-secondary me-3 fs-3" style="color: var(--secondary-color) !important"><i class="bi bi-building"></i></div>
+                                    <div>
+                                        <div class="fw-bold text-dark mb-1">Facilities</div>
+                                        <div class="text-muted small">
+                                            • 4D Echocardiography<br>
+                                            • Cardiac Catheterization Lab<br>
+                                            • Intensive Coronary Care Unit
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4 pt-2">
+                        <div class="col-12">
+                            <button class="btn admin-btn-action w-100 fs-3">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

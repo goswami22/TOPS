@@ -1,0 +1,364 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<body>
+
+
+  <main class="about-content">
+    <section class="breadcrumb-wrapper">
+      <div class="breakcrumb-content">
+        <h2 class="breadcrumb-title">about us</h2>
+        <nav aria-label="breadcrumb">
+          <div class="container-fluid px-0 overflow-hidden">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">about us</li>
+            </ol>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <!-- grid banner start -->
+    <section class="grid-banner">
+      <div class="container-fluid container-fluid-1500 px-xxl-0 overflow-hidden">
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <div class="grid-banner-image-box">
+              <img src="{% static './image/about-us-banner' %}.webp" alt="about us grid" class="img-fluid">
+            </div>
+          </div>
+          <div class="col-lg-6  order-2 order-lg-1">
+            <div class="grid-banner-content">
+              <h5 class="subtitle">about us</h5>
+              <h2 class="title">Come To Us For Quality Auto Repairs.</h2>
+              <p class="discription">
+                Felis eget velit aliquet sagittis. Imperdiet dui accumsan sit amet nulla facilisi morbi
+                tempus iaculis. Massa enim nec dui nunc mattis enim ut tellus elementum. Proin libero
+                nunc consequat interdum varius. Eget velit aliquet sagittis id consectetur purus ut
+                faucibus. Nullam eget felis eget nunc lobortis mattis aliquam faucibus. Nibh tortor id
+                aliquet lectus proin. Id aliquet risus feugiat in ante metus. Nulla at volutpat diam ut
+                venenatis tellus in metus. Eget gravida cum sociis natoque.
+              </p>
+              <div class="author">
+                <img src="{% static './image/signature.webp"' %} alt="signature" class="img-fluid">
+                <p class="auther-text">Patric Stone - Manager</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- grid banner end -->
+
+    <!-- company overview start -->
+    <section class="company-overview">
+      <div class="container-fluid container-fluid-1500">
+        <div class="company-overview-wrapper">
+          <div class="company-left">
+            <h2 class="title">company overview</h2>
+            <p class="short-des">Est Placerat In Egestas Erat. Libero Justo Laoreet Sit Amet Cursus Sit
+              Amet. Accumsan Lacus Vel Facilisis Volutpat Est Velit Egestas. Euismod Lacinia At Quis Risus
+              Sed Vulputate.</p>
+            <div class="company-block-wrappper">
+              <div class="company-service-block">
+                <div class="card">
+                  <div class="img-box">
+                    <img src="{% static './image/company-block1.webp' %}" alt="block1" class="card-img-top">
+                  </div>
+                  <div class="content">
+                    <p>best services</p>
+                  </div>
+                </div>
+              </div>
+              <div class="company-service-block">
+                <div class="card">
+                  <div class="img-box">
+                    <img src="{% static './image/company-block2.webp' %}" alt="block2" class="card-img-top">
+                  </div>
+                  <div class="content">
+                    <p>best services</p>
+                  </div>
+                </div>
+              </div>
+              <div class="company-service-block">
+                <div class="card">
+                  <div class="img-box">
+                    <img src="{% static './image/company-block3.webp' %}" alt="block3" class="card-img-top">
+                  </div>
+                  <div class="content">
+                    <p>best services</p>
+                  </div>
+                </div>
+              </div>
+              <div class="company-service-block">
+                <div class="card">
+                  <div class="img-box">
+                    <img src="{% static './image/company-block4.webp' %}" alt="block4" class="card-img-top">
+                  </div>
+                  <div class="content">
+                    <p>best services</p>
+                  </div>
+                </div>
+              </div>
+              <div class="company-service-block">
+                <div class="card">
+                  <div class="img-box">
+                    <img src="{% static './image/company-block5.webp' %}" alt="block5" class="card-img-top">
+                  </div>
+                  <div class="content">
+                    <p>best services</p>
+                  </div>
+                </div>
+              </div>
+              <div class="company-service-block">
+                <div class="card">
+                  <div class="img-box">
+                    <img src="{% static './image/company-block6.webp' %}" alt="block6" class="card-img-top">
+                  </div>
+                  <div class="content">
+                    <p>best services</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="company-right">
+            <div class="company-right-wrapper">
+              <div class="img-box">
+                <img src="{% static './image/company-block7.webp' %}" alt="company right image" class="img-fluid">
+                <img src="{% static './image/company-block8.webp' %}" alt="company right image" class="img-fluid">
+              </div>
+              <div class="content">
+                <h6>Call us 24/7</h6>
+                <a href="" class="call-us">(+000) 123-456-789</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- company overview end -->
+
+    <!-- our-client-comments start -->
+    <section class="our-client-comments">
+      <div class="container">
+        <h2 class="title">Our Clients Comments</h2>
+        <div class="quote">
+          <img src="{% static './image/double-quotes-svgrepo-com.svg' %}" alt="quote" class="img-fluid">
+        </div>
+        <div class="our-client-comments-slider">
+          <div class="item">
+            <div class="card">
+              <p>Etiam sollicitudin sollicitudin nisl ac ultrices. Phasellus nec volutpat velit. Nulla
+                facilisi. Aenean eu ex nisl. Aenean efficitur in nisi ac vulputate. Donec quis varius
+                lacus. Donec in malesuada ligula. In fermentum erat ut nunc lobortis, ut posuere magna
+                luctus. In sodales eleifend interdum. Vivamus fringilla quam sed erat blandit venenatis.
+                Praesent dignissim tincidunt mauris, eu egestas lorem pretium et. Integer blandit tortor
+                non.</p>
+              <div class="client-image">
+                <img src="{% static './image/client-1.webp' %}" alt="client image" class="img-fluid">
+              </div>
+              <p class="client-name">Patric Stone - Manager</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card">
+              <p>Iurnrm dignissim tincidunt mauris, eu egestas lorem pretium et. Integer blandit tortor
+                non. Etiam sollicitudin sollicitudin nisl ac ultrices. Phasellus nec volutpat velit.
+                Nulla facilisi. Aenean eu ex nisl. Aenean efficitur in nisi ac vulputate. Donec quis
+                varius lacus. Donec in malesuada ligula. In fermentum erat ut nunc lobortis, ut posuere
+                magna luctus. In sodales eleifend interdum. Vivamus fringilla quam sed erat blandit
+                venenatis. </p>
+              <div class="client-image">
+                <img src="{% static './image/client-2.webp' %}" alt="client image" class="img-fluid">
+              </div>
+              <p class="client-name">James - Artist</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card">
+              <p>Donec quis varius lacus. Etiam sollicitudin sollicitudin nisl ac ultrices. Phasellus nec
+                volutpat velit. Nulla facilisi. Aenean eu ex nisl. Aenean efficitur in nisi ac
+                vulputate. Donec in malesuada ligula. In fermentum erat ut nunc lobortis, ut posuere
+                magna luctus. In sodales eleifend interdum. Vivamus fringilla quam sed erat blandit
+                venenatis. Praesent dignissim tincidunt mauris, eu egestas lorem pretium et. Integer
+                blandit tortor non.</p>
+              <div class="client-image">
+                <img src="{% static './image/client-3.webp' %}" alt="client image" class="img-fluid">
+              </div>
+              <p class="client-name">John Cabriel - Professor</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- our-client-comments end -->
+
+    <!-- our gallary start -->
+    <section class="our-gallary">
+      <div class="container-fluid container-fluid-1500">
+        <div class="company-overview-wrapper">
+          <div class="company-left">
+            <h2 class="title">Our Gallery</h2>
+            <p class="short-des">Praesent Elementum Facilisis Leo Vel Fringilla Est Ullamcorper. In Vitae Turpis Massa
+              Sed Elementum. Vel Pharetra Vel Turpis Nunc Eget Lorem. Lectus Magna Fringilla Urna Porttitor Rhoncus. Sem
+              Et Tortor Consequat Id Porta. Faucibus Pulvinar Elementum Integer Enim.</p>
+            <div class="gallary-block-wrappper">
+              <div class="gallary-service-block">
+                <div class="img-box">
+                  <img src="{% static './image/gallry1.webp' %}" alt="block1" class="card-img-top">
+                </div>
+                <div class="icon-box">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+              </div>
+              <div class="gallary-service-block">
+                <div class="img-box">
+                  <img src="{% static './image/gallry2.webp' %}" alt="block2" class="card-img-top">
+                </div>
+                <div class="icon-box">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+              </div>
+              <div class="gallary-service-block">
+                <div class="img-box">
+                  <img src="{% static './image/gallry3.webp' %}" alt="block3" class="card-img-top">
+                </div>
+                <div class="icon-box">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+              </div>
+              <div class="gallary-service-block">
+                <div class="img-box">
+                  <img src="{% static './image/gallry4.webp' %}" alt="block4" class="card-img-top">
+                </div>
+                <div class="icon-box">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+              </div>
+              <div class="gallary-service-block">
+                <div class="img-box">
+                  <img src="{% static './image/gallry5.webp' %}" alt="block5" class="card-img-top">
+                </div>
+                <div class="icon-box">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+              </div>
+              <div class="gallary-service-block">
+                <div class="img-box">
+                  <img src="{% static './image/gallry6.webp' %}" alt="block6" class="card-img-top">
+                </div>
+                <div class="icon-box">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="company-right">
+            <div class="gallary-right-wrapper">
+              <div class="contact-form">
+                <h2 class="title">Book your appontments</h2>
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Name">
+                </div>
+                <div class="mb-3">
+                  <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="mb-3">
+                  <input type="number" class="form-control" placeholder="Phone number">
+                </div>
+                <div class="">
+                  <textarea name="comment" class="form-control" cols="10" rows="5" placeholder="Comment"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- our gallary end -->
+
+    <!-- support-block start -->
+    <section class="support-block">
+      <div class="container-fluid container-fluid-1500">
+        <div class="support-block-wrapper support-block-slider owl-carousel owl-theme">
+          <div class="support-block-area d-flex">
+            <div class="icon flex-shrink-0">
+              <img src="{% static './image/s1.png' %}" alt="support block img" class="img-fluid">
+            </div>
+            <div class="content flex-grow-1 ms-3">
+              <h4 class="title">premium products</h4>
+              <p class="discription">Etiam actempor lacus. Nuncvehser vehicula exeget varius.</p>
+            </div>
+          </div>
+          <div class="support-block-area d-flex">
+            <div class="icon flex-shrink-0">
+              <img src="{% static './image/s2.png' %}" alt="support  block img">
+            </div>
+            <div class="content flex-grow-1 ms-3">
+              <h4 class="title">secure payments</h4>
+              <p class="discription">Duis lacinia vestibulum turp sodales enim blandit at. Proin sodales.</p>
+            </div>
+          </div>
+          <div class="support-block-area d-flex">
+            <div class="icon flex-shrink-0">
+              <img src="{% static './image/s3.webp' %}" alt="support block img" class="img-fluid">
+            </div>
+            <div class="content flex-grow-1 ms-3">
+              <h4 class="title">Easy returns</h4>
+              <p class="discription">Integer tincidunt diam utsemtris tique tempor leo suscipit.</p>
+            </div>
+          </div>
+          <div class="support-block-area d-flex">
+            <div class="icon flex-shrink-0">
+              <img src="{% static './image/s4.webp' %}" alt="support block img" class="img-fluid">
+            </div>
+            <div class="content flex-grow-1 ms-3">
+              <h4 class="title">free delivery</h4>
+              <p class="discription">Risus atnisl placerat, in vehicula metus dictum uiseu egestas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- support-block end -->
+
+    <!-- subscribe start -->
+    <section class="subscribe">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-box">
+            <i class="fa-solid fa-envelope"></i>
+            <p><a href="#">info@example.com</a></p>
+            <p><a href="#">support@example.com</a></p>
+          </div>
+          <div class="contact-box">
+            <i class="fa-solid fa-phone"></i>
+            <p><a href="#">000 - 123 - 456789</a></p>
+            <p><a href="#">000 - 123 - 446789</a></p>
+          </div>
+          <div class="contact-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>No: 58 A, East Madison</p>
+            <p>Street, Baltimore, USA</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- subscription end -->
+  </main>
+
+
+</body>
+
+</html>
+
+{% endblock %}
