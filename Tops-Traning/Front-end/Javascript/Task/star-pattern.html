@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Pattern</title>
+</head>
+
+<body>
+
+
+
+
+
+    <script>
+        document.write("<h2>Pattren 1</h2>")
+        for (let r = 1; r <= 5; r++) {
+            for (let c = 1; c <= r; c++) {
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+        document.write("<h2>Pattren 2</h2>")
+        for (let r = 5; r >= 1; r--) {
+            for (let s = 1; s <= (5 - r); s++) {
+                document.write("&nbsp;&nbsp;&nbsp;");
+            }
+            for (let c = 1; c <= r; c++) {
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<h2>Pattren 3</h2>")
+        for (let r = 5; r >= 1; r--) {
+            for (let c = 1; c <= r; c++) {
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+        document.write("<h2>Pattren 4</h2>")
+        for (let r = 1; r <= 5; r++) {
+            for (let s = 5; s >= (5 - r); s--) {
+                document.write(" &nbsp;");
+            }
+            for (let c = 5; c >= r; c--) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<h2>Pattren 5</h2>")
+        for (let r = 1; r <= 5; r++) {
+            for (let c = 1; c <= 5; c++) {
+                document.write(" ", r);
+            }
+            document.write('<br>');
+        }
+
+        document.write("<h2>Pattren 6</h2>")
+        for (let r = 1; r <= 5; r++) {
+            for (let c = 1; c <= r; c++) {
+                document.write(" ", c);
+            }
+            document.write("<br>");
+        }
+
+        document.write("<h2>Pattren 7</h2>")
+        for (let r = 1; r <= 5; r++) {
+            for (let c = 1; c <= r; c++) {
+                document.write(" ", r);
+            }
+            document.write("<br>");
+        }
+
+        document.write("<h2>Pattren 8</h2>")
+        for(let r=1;r<=5;r++){
+            for(let c = 5; c >= r  ;c--){
+                document.write('&nbsp;')
+            }
+            for(let s = 1; s <= r; s++){
+                document.write(r + '&nbsp;')
+            }
+            document.write('<br>')
+        }
+
+        document.write("<h2>Pattren 9</h2>")
+        for(let r=1;r<=5;r++){
+            for(let s = 5; s >= r;s--){
+                document.write('&nbsp;')
+            }
+            for(let c = 1; c <= r  ;c++){
+                document.write( c + '&nbsp;')
+            }
+            document.write('<br>')
+        }
+
+        
+
+
+
+    </script>
+
+
+</body>
+
+</html>

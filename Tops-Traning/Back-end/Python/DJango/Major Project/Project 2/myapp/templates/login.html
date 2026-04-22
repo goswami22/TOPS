@@ -28,17 +28,23 @@
         <section class="user-account">
             <div class="container">
                 <div class="login-wrapper">
-                    <form action="">
-                        <h2 class="title">sign in</h2>
+                    {% if msg %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ msg }}
+                    </div>
+                    {% endif %}
+                    <form action="{% url 'login' %}" method="post">
+                        {% csrf_token  %}
+                        <h2 class="title">Login</h2>
                         <div class="form-top">
                             <div>
-                                <input type="email" class="form-control" placeholder="Email">
+                                <input type="email" class="form-control" placeholder="Email" name="email">
                             </div>
                             <div>
-                                <input type="password" class="form-control" placeholder="Email" value="123456">
+                                <input type="password" class="form-control" placeholder="password" name="password">
                             </div>
                             <div class="text-center">
-                                <a href="#" class="main-btn">sign in</a>
+                                <input type="submit" value="Login" class="btn btn-primary">
                             </div>
                         </div>
                         <div class="form-bottom">

@@ -1,0 +1,274 @@
+@media only screen and (max-width:1199px) {
+    .section-heading h2::after {
+        font-size: clamp(20px, 8.5vw, 76px);
+    }
+
+    #about {
+        padding-block: 50px;
+    }
+
+    .section-heading {
+        margin-block-end: 80px;
+    }
+
+    #services .our-items .item .content {
+        padding-inline-end: 30px;
+    }
+
+    .single-blog .blog-content p {
+        margin-block-start: 15px;
+    }
+
+    .single-blog .blog-content {
+        padding: 20px 30px;
+    }
+
+    .single-blog .blog-content .main-btn-area a.main-btn {
+        margin-block-start: 15px;
+    }
+
+    #blog .blog-wrapper .row {
+        gap: 20px;
+    }
+
+    #blog .blog-wrapper .row .col-3 {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media only screen and (max-width:991px) {
+    header .menu {
+        display: none;
+    }
+
+    header .header-content {
+        padding: 100px 0;
+    }
+
+    .main-btn-area a.main-btn {
+        margin-block-start: 20px;
+    }
+
+    .section-heading {
+        margin-block-end: 50px;
+    }
+
+    #about .about-video {
+        padding-inline-start: 50px;
+    }
+
+    #about .secound-about-row .about-content {
+        padding-inline-start: 50px;
+    }
+
+    #about .secound-about-row {
+        margin-block-start: 40px;
+    }
+
+    #about .secound-about-row .row {
+        flex-direction: column-reverse;
+    }
+
+    .main-btn-area a.main-btn .btn-text,
+    .main-btn-area a.main-btn .btn-icon {
+        padding: 14px 28px;
+    }
+
+    .discount1,
+    .discount2 {
+        padding-block: 30px;
+    }
+
+    .discount1 span,
+    .discount2 span {
+        margin-block-end: 10px;
+    }
+
+    .col-5 {
+        width: 100%;
+    }
+
+    #price,
+    #blog {
+        padding-block: 50px;
+    }
+
+    .our-package .price-header {
+        padding: 20px;
+    }
+
+    .our-package .package-content {
+        padding: 40px 20px 40px;
+    }
+
+    .price-packages .col {
+        width: calc(33.33% - 15px);
+    }
+
+    .price-packages .row {
+        gap: 15px;
+    }
+
+    #about .about-video {
+        padding-inline-start: 30px;
+        padding-block-start: 60px;
+    }
+
+    .single-blog .blog-content {
+        padding: 10px 15px;
+    }
+
+    .single-blog .blog-content .main-btn-area a.main-btn span.btn-text {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+    #blog .blog-wrapper .row {
+        gap: 16px;
+    }
+
+    #blog .blog-wrapper .row .col-3 {
+        width: calc(33.33% - 16px);
+    }
+}
+
+@media only screen and (max-width:767px) {
+    header .header-content .header-content-wrapper {
+        width: 100%;
+    }
+
+    header .top-nav .header-search {
+        display: none;
+    }
+
+    .main-btn-area a.main-btn {
+        margin-block-start: 20px;
+    }
+
+    header .header-content p {
+        margin-block-end: 0;
+    }
+
+    .section-heading h2 {
+        margin-block-end: 15px;
+    }
+
+    .section-heading h2::after {
+        font-size: clamp(20px, 8.5vw, 50px);
+    }
+
+    .section-heading {
+        margin-block-end: 30px;
+    }
+
+    #about .secound-about-row {
+        margin-block-start: 20px;
+    }
+
+    #about .secound-about-row .about-content {
+        padding-inline-start: 0;
+        padding-block-start: 30px;
+    }
+
+    #about .about-content h2 {
+        margin-block-end: 15px;
+    }
+
+    .mb-36 {
+        margin-block-end: 16px;
+    }
+
+    .col-6,
+    .col-4 {
+        width: 100%;
+    }
+
+    #services .our-items .item .item-image img {
+        width: 100%;
+    }
+
+    #services .our-items .item .content {
+        padding-inline-end: 0;
+        padding-block-end: 30px;
+    }
+
+    #services {
+        padding-block-end: 50px;
+    }
+
+    #services .our-items .item:last-child {
+        margin-block-end: 0;
+    }
+
+
+    .price-packages .col {
+        width: 100%;
+    }
+
+    .our-package {
+        display: flex;
+    }
+
+    .our-package .package-content {
+        padding: 20px 30px 20px;
+        flex: auto;
+        text-align: left;
+    }
+
+    #price .main-btn-area a {
+        justify-content: right;
+    }
+
+    .our-package .price-header {
+        padding: 70px;
+    }
+
+    #blog .blog-wrapper .row .col-3 {
+        width: calc(50% - 8px);
+    }
+
+    header .header-right a i {
+        display: block;
+    }
+
+    header .header-right a span {
+        display: none;
+    }
+    .discount1, .discount2 {
+        background-size: cover;
+        background-position: top;
+    }
+    header .logo a.toggle-btn {
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width:575px) {
+    header .header-content {
+        padding: 34px 0;
+    }
+
+    #blog .blog-wrapper .row .col-3 {
+        width: 100%;
+    }
+
+    .our-package .price-header {
+        padding: 20px;
+    }
+    .discount1 .subtitle, .discount2 .subtitle {
+        letter-spacing: 4px;
+    }
+    .discount1 h2, .discount2 h2 {
+        margin-bottom: 10px;
+    }
+    .section-heading h2 {
+        padding: 20px 110px;
+    }
+    header .top-nav .top-nav-data {
+        padding-inline: 28px;
+    }
+    footer {
+        padding-block: 50px;
+    }
+}

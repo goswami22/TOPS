@@ -12,11 +12,14 @@
     --green: #3d5f00;
     --lightgreen: #608b14;
     --white: #ffffff;
+    --lightwhite: #f1f1f1;
 }
+
 .img-fluid {
     max-width: 100%;
     height: auto;
 }
+
 .container {
     max-width: 1440px;
     margin: 0 auto;
@@ -29,9 +32,22 @@
     flex-wrap: wrap;
 }
 
+.col-3 {
+    width: 33.33%;
+}
+
 .col-5 {
     width: 50%;
 }
+
+.col-6 {
+    width: 60%;
+}
+
+.col-4 {
+    width: 40%;
+}
+
 .mb-36 {
     margin-block-end: 36px;
 }
@@ -55,7 +71,7 @@ header .top-nav .header-search input {
     background-color: transparent;
     border: none;
     color: var(--white);
-    font-size: 18px;
+    font-size: clamp(16px, 2vw, 18px);
     font-weight: 400;
     font-family: var(--font1);
 }
@@ -91,6 +107,7 @@ header .header-right .header-icon {
 
 header .header-right .header-icon a i {
     color: var(--white);
+    display: block;
 }
 
 header .header-right a {
@@ -98,19 +115,31 @@ header .header-right a {
     display: inline-block;
     text-decoration: none;
     text-transform: capitalize;
-    font-size: 25px;
+    font-size: clamp(16px, 2vw, 25px);
     font-family: var(--font1);
+}
+header .header-right a i {
+    display: none;
 }
 
 header .header-right .devider {
     margin-inline: 5px;
     color: var(--white);
-    font-size: 25px;
+    font-size: clamp(16px, 2vw, 25px);
     font-weight: bold;
 }
 
 header .header-right .icon {
     position: relative;
+}
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .logo a.toggle-btn {
+    color: var(--white);
+    display: none;
 }
 
 header .header-right .icon span {
@@ -147,7 +176,7 @@ header .header-content {
 header a {
     display: inline-block;
     text-decoration: none;
-    font-size: 24px;
+    font-size: clamp(16px, 2vw, 24px);
     color: var(--green);
     font-weight: 400;
     font-family: var(--font1);
@@ -159,7 +188,7 @@ header .header-content .header-content-wrapper {
 }
 
 header .header-content h1 {
-    font-size: 67px;
+    font-size: clamp(25px, 5vw, 67px);
     text-transform: uppercase;
     color: var(--green);
     font-weight: 800;
@@ -167,7 +196,7 @@ header .header-content h1 {
 }
 
 header .header-content h2 {
-    font-size: 54px;
+    font-size: clamp(20px, 4vw, 54px);
     color: var(--green);
     font-weight: 500;
     font-family: var(--font2);
@@ -181,13 +210,13 @@ header .header-content hr {
 }
 
 header .header-content p {
-    font-size: 21px;
+    font-size: clamp(16px, 1.8vw, 21px);
     letter-spacing: 0px;
     color: #3d5f00;
     font-weight: 400;
     font-family: "Roboto";
     width: 70%;
-    margin-block-end: 60px;
+    /* margin-block-end: 60px; */
 }
 
 .main-btn-area a.main-btn {
@@ -201,7 +230,7 @@ header .header-content p {
 
 .main-btn-area a.main-btn .btn-text,
 .main-btn-area a.main-btn .btn-icon {
-    font-size: 21px;
+    font-size: clamp(16px, 1.8vw, 21px);
     padding: 20px 50px;
     background: var(--green);
     color: var(--white);
@@ -212,14 +241,14 @@ header .header-content p {
 /* Anout us css */
 .section-heading {
     text-align: center;
-    margin-block-end: 50px;
+    margin-block-end: 144px;
 }
 
 .section-heading h2 {
-    font-size: 50px;
+    font-size: clamp(20px, 3.5vw, 50px);
     color: #3d5f00;
     font-weight: 600;
-    font-family: "Roboto";
+    font-family: var(--font1);
     position: relative;
     padding: 20px 150px;
     display: inline-block;
@@ -228,10 +257,10 @@ header .header-content p {
 }
 
 .section-heading p {
-    font-size: 25px;
+    font-size: clamp(16px, 2vw, 25px);
     color: #3d5f00;
     font-weight: 400;
-    font-family: "Roboto";
+    font-family: var(--font1);
     width: 50%;
     margin-inline: auto;
 }
@@ -248,45 +277,83 @@ header .header-content p {
     text-transform: uppercase;
 }
 
+#services .section-heading h2::after {
+    content: 'services';
+}
+
+#price .section-heading h2::after {
+    content: 'pricing';
+}
+
+#blog .section-heading h2::after {
+    content: 'blog';
+}
+
 /* About us css */
 #about {
     padding-block: 140px;
 }
 
 #about .about-content h2 {
-    font-size: 54px;
+    font-size: clamp(20px, 4vw, 54px);
     color: #3d5f00;
     font-weight: 400;
-    font-family: "Roboto";
+    font-family: var(--font1);
     margin-block-end: 30px;
 }
 
 #about .about-content p {
-    font-size: 25px;
+    font-size: clamp(16px, 2vw, 25px);
     color: #3d5f00;
     font-weight: 400;
-    font-family: "Roboto";
+    font-family: var(--font1);
 }
+
 #about .about-video {
     text-align: end;
     padding-inline-start: 70px;
 }
+
 #about .about-video .about-video-area .video-box {
     overflow: hidden;
+    position: relative;
 }
+
+#about .about-video .about-video-area .video-box::after {
+    content: '';
+    background-color: rgba(61, 95, 0, 0.5);
+    position: absolute;
+    inset: 0;
+}
+
 #about .about-video video {
     width: 100%;
     float: left;
 }
+
 #about .about-video .about-video-area {
     position: relative;
 }
-#about .about-video .about-video-area::after {
+
+#about .about-video .about-video-area::after,
+#about .about-video .about-video-area::before {
     content: '';
-    background-color: rgba(61,95,0,0.5);
+    background-color: var(--green);
     position: absolute;
-    inset: 0;
+    top: -25px;
+    left: -25px;
 }
+
+#about .about-video .about-video-area::after {
+    width: 5px;
+    height: 240px;
+}
+
+#about .about-video .about-video-area::before {
+    width: 240px;
+    height: 4px;
+}
+
 #about .about-video a.youtube-link {
     content: '';
     position: absolute;
@@ -295,3 +362,310 @@ header .header-content p {
     transform: translate(-50%, -50%);
     z-index: 1;
 }
+
+#about .secound-about-row {
+    margin-block-start: 210px;
+}
+
+#about .secound-about-row .about-content {
+    padding-inline-start: 70px;
+}
+
+/* services start */
+#services {
+    padding-block-end: 140px;
+}
+
+#services .our-items h2,
+#services .our-items .item .title-area .price {
+    font-size: clamp(20px, 3.5vw, 46px);
+    color: var(--green);
+    font-weight: 500;
+    font-family: var(--font1);
+    margin-block-end: 35px;
+}
+
+#services .our-items .item {
+    margin-block-end: 50px;
+}
+
+#services .our-items .item .title-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#services .our-items .item p {
+    font-size: clamp(16px, 2vw, 25px);
+    color: var(--green);
+    font-weight: 400;
+    font-family: var(--font1);
+}
+
+#services .our-items .item .content {
+    padding-inline-end: 132px;
+}
+
+#services .our-items .item .item-image {
+    text-align: end;
+    height: 100%;
+}
+
+#services .our-items .item .item-image img {
+    height: 100%;
+}
+
+/* services end */
+/* Discout start */
+.discount1,
+.discount2 {
+    background: url(../image/sale-banner.png) no-repeat;
+    background-size: 100% 100%;
+    padding-block: 80px;
+}
+
+.discount2 {
+    background: url(../image/sale-banner2.png) no-repeat;
+}
+
+.discount1 span,
+.discount2 span {
+    font-size: clamp(16px, 2.5vw, 33px);
+    color: var(--green);
+    font-weight: 400;
+    font-family: var(--font1);
+    margin-block-end: 20px;
+    display: inline-block;
+}
+
+.discount1 h2,
+.discount2 h2 {
+    font-size: clamp(20px, 5vw, 58px);
+    color: var(--green);
+    font-weight: 600;
+    font-family: var(--font1);
+}
+
+.discount1 .subtitle,
+.discount2 .subtitle {
+    font-size: clamp(16px, 2.5vw, 33px);
+    letter-spacing: 14px;
+    color: var(--green);
+    font-weight: 500;
+    font-family: var(--font1);
+    margin-block-end: 20px;
+}
+
+.discount1 p,
+.discount2 p {
+    font-size: clamp(16px, 2vw, 25px);
+    color: var(--green);
+    font-weight: 400;
+    font-family: var(--font1);
+}
+
+.discount1 .main-btn-area a.main-btn span.btn-text,
+.discount2 .main-btn-area a.main-btn span.btn-text {
+    color: #ffffff;
+}
+
+/* Discout end */
+/* pricing start */
+#price {
+    padding-block: 140px;
+}
+
+.our-package {
+    text-align: center;
+}
+
+.price-packages .row {
+    gap: 30px;
+}
+
+.price-packages .col {
+    width: calc(33.33% - 30px);
+}
+
+.our-package .price-header {
+    background-color: var(--lightgreen);
+    padding: 70px;
+    color: var(--white);
+}
+
+.our-package .package-content {
+    padding: 70px 50px 55px;
+    background-color: var(--lightwhite);
+}
+
+.our-package .package-content ul {
+    list-style: none;
+}
+
+.our-package .package-content ul li {
+    font-size: clamp(20px, 2.5vw, 30px);
+    color: var(--green);
+    font-weight: 400;
+    font-family: var(--font1);
+    margin-block-end: 20px;
+}
+
+.our-package .price-header h3 {
+    font-size: clamp(25px, 3.5vw, 42px);
+    color: var(--white);
+    font-weight: 300;
+    font-family: var(--font1);
+    margin-block-end: 10px;
+}
+
+.our-package .price-header .price {
+    font-size: clamp(30px, 4.8vw, 58px);
+    color: var(--white);
+    font-weight: 600;
+    font-family: var(--font1);
+}
+
+#price .main-btn-area a {
+    justify-content: center;
+}
+
+/* pricing end */
+/* blog start */
+#blog {
+    padding-block: 140px;
+}
+
+#blog .blog-wrapper .row {
+    gap: 30px;
+}
+
+#blog .blog-wrapper .row .col-3 {
+    width: calc(33.33% - 30px);
+}
+
+.single-blog {
+    position: relative;
+    overflow: hidden;
+}
+
+.single-blog .blog-img img {
+    width: 100%;
+}
+
+.single-blog .blog-content {
+    background-color: var(--lightwhite);
+    padding: 30px 40px;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 0.3s all linear;
+}
+
+.single-blog:hover .blog-content {
+    opacity: 1;
+}
+
+.single-blog .blog-content h3 a {
+    font-size: clamp(16px, 2vw, 33px);
+    color: var(--green);
+    font-weight: 500;
+    font-family: var(--font1);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.single-blog .blog-content p {
+    font-size: clamp(14px, 1.8vw, 25px);
+    color: var(--green);
+    font-weight: 300;
+    font-family: var(--font1);
+    margin-block-start: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.single-blog .blog-content p {
+    margin-block-start: 10px;
+}
+.single-blog .blog-content .main-btn-area a.main-btn span.btn-text {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+.single-blog .blog-content .main-btn-area a.main-btn {
+    margin-block-start: 30px;
+}
+
+.single-blog .blog-content .main-btn-area a.main-btn span.btn-text {
+    padding: 16px 35px;
+    font-size: 18px;
+}
+
+/* blog end */
+/* footer start */
+footer {
+    background: url(../image/f-bg.png) no-repeat;
+    background-size: 100% 100%;
+    padding-block: 100px;
+    text-align: center;
+}
+
+footer a img {
+    display: inline-block;
+    margin-block-end: 20px;
+}
+
+footer h2 {
+    font-size: clamp(20px, 3.5vw, 50px);
+    text-transform: uppercase;
+    color: var(--white);
+    font-weight: 600;
+    font-family: var(--font1);
+    margin-block-end: 10px;
+}
+
+footer p {
+    font-size: clamp(20px, 2vw,33px);
+    color: var(--white);
+    font-weight: 400;
+    font-family: var(--font1);
+}
+footer ul.social-link {
+    list-style: none;
+}
+footer ul.social-link li {
+    display: inline-block;
+    margin-inline: 5px;
+    width: 40px;
+    height: 40px;
+    background: var(--white);
+    line-height: 40px;
+    border-radius: 50%;
+    font-size: 16px;
+    margin-block: 10px;
+    border: 1px solid var(--green);
+    transition: 0.3s all linear;
+}
+footer ul.social-link li a {
+    color: var(--green);
+}
+footer ul.social-link li:hover {
+    background-color: transparent;
+    border: 1px solid var(--white);
+}
+footer ul.social-link li:hover a {
+    color: var(--white);
+}
+footer .creator {
+    font-size: clamp(20px, 2vw,33px);
+    color: var(--white);
+    font-weight: 400;
+    font-family: var(--font2);
+    text-decoration: none;
+    letter-spacing: 2px;
+    margin-block: 40px 10px;
+    display: inline-block;
+}
+
+/* footer end */
