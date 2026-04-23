@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript style</title>
+
+    <style>
+        .bg {
+            background-color: rebeccapurple !important;
+            color: #ffffff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <button onclick="change()" type="button">Change Me</button>
+    <button onclick="add()" type="button">add Me</button>
+    <button onclick="remove()" type="button">remove Me</button>
+    <button onclick="toggle()" type="button">toggle Me</button>
+
+    <h1 id="h1" class="bg2">Lorem ipsum dolor sit.</h1>
+
+
+    <script>
+
+        let h1 = document.getElementById("h1")
+
+        console.log(h1)
+
+        function change(){
+            h1.style.background = "red";
+            h1.innerHTML =  "I am Javascript"; 
+        }
+
+        function add(){
+            h1.classList.add("bg")
+        }
+        function remove(){
+            h1.classList.remove("bg")
+        }
+
+        function toggle(){
+            h1.classList.toggle('bg')
+            h1.className = "bg1"
+        }
+
+
+    </script>
+
+
+</body>
+</html>

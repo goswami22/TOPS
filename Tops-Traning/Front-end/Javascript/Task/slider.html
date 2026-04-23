@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+</head>
+<body>
+    
+
+
+    <img src="img/allcollation1.jpg" width="500" id="img1" height="500" alt="img">
+
+    <br><br>
+
+    <button onclick="slider()" id="nextbtn">Next</button>
+
+
+    <script>
+        let image = document.getElementById("img1");
+        console.log(image)
+        console.log(image.src)
+
+        function slider(){
+            if(image.src.match("img/allcollation1.jpg")){
+                image.src= "img/allcollation3.jpg";
+            }
+            else if(image.src.match("img/allcollation3.jpg")){
+                image.src= "img/category3.avif";
+            } 
+            else if(image.src.match("img/category3.avif")){
+                image.src  = "img/category4.avif"
+            } else {
+                image.src  = "img/category4.avif"
+            }
+        }
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    
+    <button onclick="data()">Click Here to chage text</button><br><br>
+
+    <input type="text" id="inp" placeholder="Enter Your name"><br><br>
+    <h1 class="textarea" id="text1">df</h1>
+
+    <textarea name="textarea" id="textarea"></textarea>
+
+
+    <script>
+
+        let inttext = document.getElementById('inp')
+        let text = document.getElementById('textarea')
+        let text1 = document.getElementById('text1')
+
+        function data(){
+            text.value = inttext.value;
+            text1.innerHTML = inttext.value; 
+
+        }
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+
+    <div class="calculator">
+            <h1 id="show-result"></h1>
+            <input type="text" placeholder="Enter Your number 1" id="num1">
+            <input type="text" placeholder="Enter Your number 2" id="num2">
+            <br>
+            
+            
+            <button onclick="1">1</button>
+            
+            <button id="sum" onclick="sum()">+</button>
+            <button id="sub" onclick="sub()">-</button>
+            <button id="multi" onclick="multi()">*</button>
+            <button id="div" onclick="div()">/</button>
+            <button id="mod" onclick="mod()">%</button>
+            <button>c</button>
+        </div>
+    <script>
+
+        let num1 = document.getElementById('num1');
+        let num2 = document.getElementById('num2');
+        
+        function sum(){
+            let sum = parseFloat(num1.value) + parseFloat(num2.value);
+            document.getElementById('show-result').innerHTML = `Sum : ${sum}`
+        }
+
+        function sub(){
+            let sub = parseFloat(num1.value) - parseFloat(num2.value);
+            document.getElementById('show-result').innerHTML = `Sub: ${sub}`
+        }
+
+        function multi(){
+            let multi = parseFloat(num1.value) * parseFloat(num2.value);
+            document.getElementById('show-result').innerHTML =`Multiplication : ${multi}`
+        }
+
+        function div(){
+            let div = parseFloat(num1.value) / parseFloat(num2.value);
+            document.getElementById('show-result').innerHTML = `Division : ${div}` 
+        }
+
+        function mod(){
+            
+        }
+
+    </script>
+
+
+</body>
