@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow p-4">
+                    <h3 class="text-center mb-4">Form Validation</h3>
+                    <form action="" onsubmit="return form_validation()">
+                        <div class="mb-3">
+                            <label class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="fname" placeholder="Enter First Name">
+                            <span id="ferr"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lname" placeholder="Enter Last Name">
+                            <span id="lerr"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                            <span id="eerr"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter Phone Number">
+                            <span id="pherr"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <textarea class="form-control" rows="4" id="address" placeholder="Enter Address"></textarea>
+                            <span id="adderr"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter password">
+                            <span id="pserr"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="cpassword" placeholder="Enter password">
+                            <span id="cpserr"></span>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- script -->
+    <!-- <script>
+        function form_validation() {
+            let fname_tag = document.getElementById("fname").value
+            let ferr_tag = document.getElementById("ferr")
+            let freg_ex = /^[a-zA-Z]*$/
+
+            let lname_tag = document.getElementById("lname").value
+            let lerr_tag = document.getElementById("lerr")
+            let lreg_ex = /^[a-zA-Z]*$/
+
+            let email_tag = document.getElementById("email").value
+            let eerr_tag = document.getElementById("eerr")
+            let ereg_ex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            let phone_tag = document.getElementById("phone").value
+            let pherr_tag = document.getElementById("pherr")
+            let pherg_ex = /^[0-9]{10}$/
+
+            let address_tag = document.getElementById("address").value
+            let adderr_tag = document.getElementById("adderr")
+
+            let password_tag = document.getElementById("password").value
+            let pserr_tag = document.getElementById("pserr")
+            let pserg_ex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+
+            let cpassword_tag = document.getElementById("cpassword").value
+
+            if (fname_tag == "" || fname_tag == null) {
+                ferr_tag.innerHTML = "Please Enter Your First name"
+                ferr_tag.style.color = 'red'
+                document.getElementById("fname_tag").style.border = '1px solid red'
+                return false
+            } else if (!freg_ex.value(fname_tag)) {
+                ferr_tag.innerHTML = "First name must contain only alphabetic characters (A–Z, a–z)."
+                ferr_tag.style.color = 'red'
+                document.getElementById("fname_tag").style.border = '1px solid red'
+                return false
+            }
+            else {
+                ferr_tag.innerHTML = ""
+                return false
+            }
+
+            if (lname_tag == "" || lname_tag == null) {
+                lerr_tag.innerHTML = "Please Enter Your Last name"
+                lerr_tag.style.color = 'red'
+                document.getElementById("lname_tag").style.border = '1px solid red'
+                return false
+            } else if (!lreg_ex.value(lname_tag)) {
+                lerr_tag.innerHTML = "First name must contain only alphabetic characters (A–Z, a–z)."
+                lerr_tag.style.color = 'red'
+                document.getElementById("lname_tag").style.border = '1px solid red'
+                return false
+            }
+            else {
+                lname_tag.innerHTML = ""
+                return false
+            }
+
+            if (email_tag == "" || email_tag == null) {
+                eerr_tag.innerHTML = "Please Enter Your Email"
+                eerr_tag.style.color = 'red'
+                email_tag.style.border = '1px solid red'
+                return false
+            } else if (!ereg_ex.value(email_tag)) {
+                eerr_tag.innerHTML = "Enter a valid email address (e.g., example@gmail.com)."
+                eerr_tag.style.color = 'red'
+                email.style.border = '1px solid red'
+                return false
+            }
+            else {
+                email_tag.innerHTML = ""
+                return false
+            }
+
+            if (phone_tag == "" || phone_tag == null) {
+                pherr_tag.innerHTML = "Please Enter Your Phone"
+                pherr_tag.style.color = "red"
+                phone_tag.style.border = '1px solid red'
+            } else if (!pherg_ex.test(phone_tag)) {
+                pherr_tag.innerHTML = "Alphabet not allowed"
+                eerr_tag.style.color = 'red'
+                phone_tag.style.border = '1px solid red'
+            }
+            else {
+                phone_tag.innerHTML = ""
+                return false
+            }
+
+            if (address_tag == " " || address_tag == null) {
+                adderr_tag.innerHTML = "Please fill up your address"
+                adderr_tag.style.color = "red"
+                adderr_tag.border = '1px solid red'
+                return false
+            } else {
+                adderr_tag.innerHTML = ""
+                return false
+            }
+
+            if (password_tag == "" || password_tag == null) {
+                pserr_tag.innerHTML = "Please Enter Password"
+                pserr_tag.style.color = "red"
+                password_tag.style.border = "1px solid red"
+                return false
+            } else {
+                pserr_tag.style.color = "red"
+                password_tag.style.border = "1px solid red"
+                return false
+            }
+
+            if(password_tag.value != cpassword_tag.value ){
+                alert("Your password & confirm password doesn't match")
+                return false
+            }
+
+        }
+
+
+
+    </script> -->
+
+    <script>
+function form_validation() {
+
+    let fname = document.getElementById("fname");
+    let lname = document.getElementById("lname");
+    let email = document.getElementById("email");
+    let phone = document.getElementById("phone");
+    let address = document.getElementById("address");
+    let password = document.getElementById("password");
+    let cpassword = document.getElementById("cpassword");
+
+    let ferr = document.getElementById("ferr");
+    let lerr = document.getElementById("lerr");
+    let eerr = document.getElementById("eerr");
+    let pherr = document.getElementById("pherr");
+    let adderr = document.getElementById("adderr");
+    let pserr = document.getElementById("pserr");
+    let cpserr = document.getElementById("cpserr");
+
+    let nameRegex = /^[a-zA-Z]+$/;
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let phoneRegex = /^[0-9]{10}$/;
+    let passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+
+    // First Name
+    if (fname.value == "") {
+        ferr.innerHTML = "First name is required";
+        ferr.style.color = "red"
+        return false;
+    } else if (!nameRegex.test(fname.value)) {
+        ferr.innerHTML = "Only letters allowed";
+        return false;
+    } else {
+        ferr.innerHTML = "";
+    }
+
+    // Last Name
+    if (lname.value == "") {
+        lerr.innerHTML = "Last name is required";
+        lerr.style.color = "red"
+        return false;
+    } else if (!nameRegex.test(lname.value)) {
+        lerr.innerHTML = "Only letters allowed";
+        return false;
+    } else {
+        lerr.innerHTML = "";
+    }
+
+    // Email
+    if (email.value == "") {
+        eerr.innerHTML = "Email is required";
+        eerr.style.color = "red"
+        return false;
+    } else if (!emailRegex.test(email.value)) {
+        eerr.innerHTML = "Invalid email";
+        return false;
+    } else {
+        eerr.innerHTML = "";
+    }
+
+    // Phone
+    if (phone.value == "") {
+        pherr.innerHTML = "Phone is required";
+        pherr.style.color = "red"
+        return false;
+    } else if (!phoneRegex.test(phone.value)) {
+        pherr.innerHTML = "Enter valid 10 digit number";
+        return false;
+    } else {
+        pherr.innerHTML = "";
+    }
+
+    // Address
+    if (address.value.trim() == "") {
+        adderr.innerHTML = "Address required";
+        adderr.style.color = "red"
+        return false;
+    } else {
+        adderr.innerHTML = "";
+    }
+
+    // Password
+    if (password.value == "") {
+        pserr.innerHTML = "Password required";
+        return false;
+    } else if (!passRegex.test(password.value)) {
+        pserr.innerHTML = "Weak password";
+        return false;
+    } else {
+        pserr.innerHTML = "";
+    }
+
+    // Confirm Password
+    if (cpassword.value == "") {
+        cpserr.innerHTML = "Confirm password required";
+        return false;
+    } else if (password.value != cpassword.value) {
+        cpserr.innerHTML = "Passwords do not match";
+        return false;
+    } else {
+        cpserr.innerHTML = "";
+    }
+
+    return true; // ✅ only here
+}
+</script>
+</body>
