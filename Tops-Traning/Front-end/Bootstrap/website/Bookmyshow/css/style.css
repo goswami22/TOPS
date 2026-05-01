@@ -1,0 +1,22 @@
+.logo-area img {
+    max-width: 115px;
+}
+.search-area input:focus-visible {
+    outline: none;
+}
+.modal .searchbox {
+    max-width: 500px;
+}
+.modal .btn-close {
+    right: 50px;
+}
+.modal .treding-search-wrapper {
+    max-width: 500px;
+}
+.modal .searchbox input {
+    padding-block: 15px;
+}
+.cities-wrapper .card-img-top {
+    width: 60px;
+    height: 60px;
+}
