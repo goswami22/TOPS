@@ -762,3 +762,13 @@ footer .instagram-wrapper .insta-img:hover::before {opacity: 1;}
         login page css end 
 
 ------------------------------ */
+.alert {max-width: 700px;margin: auto;}
+
+.middle-header .middle-header-content .user-box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.middle-header .middle-header-content .user-box .user-picture {
+    text-align: center;
+}

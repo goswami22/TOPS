@@ -22,7 +22,7 @@ def contact(request):
 def signup(request):
     if request.method == 'POST':
         try:
-            user=User.request.get(email=request.POST['email'])
+            User.objects.get(email=request.POST['email'])
             msg='Email already registred'
             return render(request, 'login.html', {'msg':msg})
         except:
@@ -52,7 +52,10 @@ def login(request):
             if user.password==request.POST['password']:
                 request.session['email']=user.email
                 request.session['fname']=user.fname
-                request.session['profile_picture']=user.profile_picture.url
+                try:
+                    request.session['profile_picture']=user.profile_picture.url
+                except ValueError:
+                    request.session['profile_picture']=""
                 return render(request, 'index.html')
             else:
                 msg='Password incorect'
@@ -63,4 +66,34 @@ def login(request):
     else:
         return render(request, 'login.html')
 
-
+def logout(request):
+    try:
+        del request.session['email']
+        del request.session['fname']
+        del request.session['profile_picture']
+    except:
+        pass
+    msg = "Logout Successfully"
+    return render(request, 'login.html', {'msg':msg})
+    
+def profile(request):
+    if 'email' in request.session:
+        user = User.objects.get(email=request.session['email'])
+        if request.method == 'POST':
+            user.fname = request.POST['fname']
+            user.lname = request.POST['lname']
+            user.phone = request.POST['phone']
+            user.gender = request.POST.get('gender', user.gender)
+            user.address = request.POST['address']
+            try:
+                user.profile_picture = request.FILES['profile_picture']
+            except:
+                pass
+            request.session['profile_picture'] = user.profile_picture.url     
+            user.save()    
+            msg = "Profile updated successfully"
+            return render(request, 'profile.html', {'msg': msg, 'user': user})
+        else:
+            return render(request, 'profile.html', {'user': user})
+    else:
+        return render(request, 'login.html')

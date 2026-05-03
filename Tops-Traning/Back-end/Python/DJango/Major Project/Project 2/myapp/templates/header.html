@@ -137,13 +137,27 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#">about</a>
                   </li>
-                   <li><a class="dropdown-item" href="#">blog</a></li>
+                  <li><a class="dropdown-item" href="#">blog</a></li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'contact' %}">contact</a>
                   </li>
                 </ul>
                 <ul class="navbar-nav sidebar-bottom">
+                  {% if request.session.email %}
+                  <a href="{% url 'profile' %}" class="user">
+                    {% if request.session.profile_picture %}
+                    <img src="{{ request.session.profile_picture }}" alt="Profile"
+                      onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"
+                      style="width: 25px; height: 25px; border-radius: 50%; object-fit: cover; margin-right: 5px; display: inline-block;">
+                    <i class="fa fa-user" style="display:none; margin-right: 5px;"></i>
+                    {% else %}
+                    <i class="fa fa-user"></i>
+                    {% endif %}
+                    {{ request.session.fname }}
+                  </a>
+                  {% else %}
                   <a href="{% url 'login' %}" class="user"><i class="fa fa-user"></i>Log in</a>
+                  {% endif %}
                   <div class="social-header-link">
                     <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -198,7 +212,23 @@
             </div>
           </div>
           <div class="user-box">
-            <a href="#"><i class="fa-solid fa-user"></i></a>
+            {% if request.session.email %}
+            <div class="user-picture" style="text-align: center; margin-right: 5px;">
+              <a href="{% url 'profile' %}">
+                {% if request.session.email %}
+                <img src="{{ request.session.profile_picture }}" alt="Profile"
+                  style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #030303;">
+                <i class="fa-solid fa-user" style="display:none;"></i>
+                {% else %}
+                <i class="fa-solid fa-user"></i>
+                {% endif %}
+              </a>
+              <br>
+              <span style="color: #030303; font-size: 14px;">{{ user.fname }}</span>
+            </div>
+            {% else %}
+            <a href="{% url 'login' %}"><i class="fa-solid fa-user"></i></a>
+            {% endif %}
             <a href="#"><i class="fa-sharp fa-solid fa-bag-shopping"></i></a>
           </div>
         </div>
@@ -299,7 +329,11 @@
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#"><i class="fa-brands fa-youtube"></i></a>
               </div>
-              <a href="{%  url 'login' %}" class="white-btn">appontments</a>
+              {% if request.session.email %}
+              <a href="{% url 'logout' %}" class="white-btn">Logout</a>
+              {% else %}
+              <a href="{% url 'login' %}" class="white-btn">Login</a>
+              {% endif %}
             </ul>
           </div>
         </div>
