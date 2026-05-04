@@ -145,16 +145,10 @@
                 <ul class="navbar-nav sidebar-bottom">
                   {% if request.session.email %}
                   <a href="{% url 'profile' %}" class="user">
-                    {% if request.session.profile_picture %}
                     <img src="{{ request.session.profile_picture }}" alt="Profile"
-                      onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"
                       style="width: 25px; height: 25px; border-radius: 50%; object-fit: cover; margin-right: 5px; display: inline-block;">
-                    <i class="fa fa-user" style="display:none; margin-right: 5px;"></i>
-                    {% else %}
-                    <i class="fa fa-user"></i>
-                    {% endif %}
-                    {{ request.session.fname }}
                   </a>
+                  {{ user.fname }}
                   {% else %}
                   <a href="{% url 'login' %}" class="user"><i class="fa fa-user"></i>Log in</a>
                   {% endif %}

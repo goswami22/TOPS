@@ -23,7 +23,7 @@ def signup(request):
     if request.method == 'POST':
         try:
             User.objects.get(email=request.POST['email'])
-            msg='Email already registred'
+            msg='Email already registered'
             return render(request, 'login.html', {'msg':msg})
         except:
             if request.POST['password']==request.POST['c_password']:
@@ -52,10 +52,7 @@ def login(request):
             if user.password==request.POST['password']:
                 request.session['email']=user.email
                 request.session['fname']=user.fname
-                try:
-                    request.session['profile_picture']=user.profile_picture.url
-                except ValueError:
-                    request.session['profile_picture']=""
+                request.session['profile_picture']=user.profile_picture.url
                 return render(request, 'index.html')
             else:
                 msg='Password incorect'
@@ -77,23 +74,21 @@ def logout(request):
     return render(request, 'login.html', {'msg':msg})
     
 def profile(request):
-    if 'email' in request.session:
-        user = User.objects.get(email=request.session['email'])
-        if request.method == 'POST':
-            user.fname = request.POST['fname']
-            user.lname = request.POST['lname']
-            user.phone = request.POST['phone']
-            user.gender = request.POST.get('gender', user.gender)
-            user.address = request.POST['address']
-            try:
-                user.profile_picture = request.FILES['profile_picture']
-            except:
-                pass
-            request.session['profile_picture'] = user.profile_picture.url     
-            user.save()    
-            msg = "Profile updated successfully"
-            return render(request, 'profile.html', {'msg': msg, 'user': user})
-        else:
-            return render(request, 'profile.html', {'user': user})
+
+    user = User.objects.get(email=request.session['email'])
+    if request.method == 'POST':
+        user.fname = request.POST['fname']
+        user.lname = request.POST['lname']
+        user.phone = request.POST['phone']
+        user.gender = request.POST.get('gender', user.gender)
+        user.address = request.POST['address']
+        try:
+            user.profile_picture = request.FILES['profile_picture']
+        except:
+            pass
+        user.save()    
+        request.session['profile_picture'] = user.profile_picture.url     
+        msg = "Profile updated successfully"
+        return render(request, 'profile.html', {'msg': msg, 'user': user})
     else:
-        return render(request, 'login.html')
+        return render(request, 'profile.html', {'user': user})
