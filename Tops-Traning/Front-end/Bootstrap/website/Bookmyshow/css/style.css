@@ -1,22 +1,64 @@
 .logo-area img {
     max-width: 115px;
 }
+
 .search-area input:focus-visible {
     outline: none;
 }
+
 .modal .searchbox {
     max-width: 500px;
 }
+
 .modal .btn-close {
-    right: 50px;
+    right: 20px;
+    top: 22px;
 }
+
 .modal .treding-search-wrapper {
     max-width: 500px;
 }
+
 .modal .searchbox input {
     padding-block: 15px;
 }
+
+.modal .modal-links {
+    transition: 0.3s all linear;
+}
+
+.modal .modal-links:hover {
+    border: 1px solid #f3f3f3;
+    background-color: #f3f3f3;
+}
+
 .cities-wrapper .card-img-top {
     width: 60px;
     height: 60px;
 }
+
+.cities-card .card-body a.card-link {
+    font-size: 14px;
+}
+
+.modal .modal-links img,
+.modal .modal-links i {
+    width: 16px;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal .number-area input:focus-visible {
+    outline: none;
+}
+
+.modal .number-area input::-webkit-outer-spin-button,
+.modal .number-area input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.modal .number-area input[type="number"] {
+    -moz-appearance: textfield;
+}
+/* RECOMANDED MOVIE CSS */
