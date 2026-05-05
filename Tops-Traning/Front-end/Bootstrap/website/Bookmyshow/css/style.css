@@ -38,7 +38,12 @@
 }
 
 .cities-card .card-body a.card-link {
-    font-size: 14px;
+    font-size: 13px;
+    color: #232323;
+    transition: 0.3S all linear;
+}
+.cities-card .card-body a.card-link:hover {
+    color: #000000;
 }
 
 .modal .modal-links img,
@@ -60,5 +65,8 @@
 }
 .modal .number-area input[type="number"] {
     -moz-appearance: textfield;
+}
+.cities-card.card.border-0.text-center {
+    flex: 60px;
 }
 /* RECOMANDED MOVIE CSS */

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Function</title>
+</head>
+<body>
+    <!-- 
+    -> arrow function same sa normal function but 
+    -> never create sanme name function
+    -> it give error   -->
+
+
+    <script>
+
+        function data(){
+            document.writeln('I am normal function' , '<br>')
+        }
+
+        function data(){
+            document.writeln('I am normal function' , '<br>')
+        }
+
+
+        data();
+        data();
+
+        const data1= (a, b)=>{
+            document.writeln('I am Javascript', '<br>')
+            document.writeln('Sum: :', a + b )
+        }
+        
+
+        data1(10, 30);
+        data1(35, 87);
+
+
+    </script>
+
+
+</body>
+</html>
