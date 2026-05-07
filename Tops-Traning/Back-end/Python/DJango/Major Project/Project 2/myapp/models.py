@@ -25,6 +25,7 @@ class User(models.Model):
     address=models.TextField()
     profile_picture=models.ImageField(upload_to='profile_picture/')
     password=models.CharField(max_length=100)
+    usertype=models.CharField(max_length=10, default='buyer')
     
     def __str__(self):
         return self.fname + " " + self.lname

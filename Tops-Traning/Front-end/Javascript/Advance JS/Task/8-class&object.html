@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class & objects</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+
+        // class Bank{
+
+        //     // memebr fucntion
+        //     x = function details(pin,balnce){
+
+        //         // data meber
+        //         let bankName = "HDFC"
+        //         let bankIFSC = "HDFC00014H"
+        //         let BankPin = pin;
+        //         let Bankblance = balnce
+
+        //         console.log("Bank Name :",bankName)
+        //         console.log("Bank IFSC :",bankIFSC)
+        //         console.log("Bank Pin :",BankPin)
+        //         console.log("Bank Blance :",Bankblance)
+
+        //     }
+        //     // memebr function
+        //     y = function deposit(){
+        //         console.log("Deposite function")
+        //     }
+        // }
+
+        // // console.log(Bank)
+
+        // const Umang = new Bank
+        // console.log(Umang)
+        // Umang.x(123,5000)
+        // Umang.x(123,6000)
+
+        // const user = new Bank
+        // console.log(user)
+        // user.x(234,8000)
+        // user.y()
+
+
+
+        let bankBalance = 0
+        class Bank {
+
+            // data member
+            userdetail = function userDetails(pin, amount) {
+                let bankName = 'HDFC'
+                let bankIFSC = 'HDFC00012'
+                let bankPin = pin
+                bankBalance = amount
+
+                console.log('Bank name :', bankName)
+                console.log('Bank IFSC :', bankIFSC)
+                console.log('Bank Pin :', bankPin)
+                console.log('Bank Amount :', bankBalance)
+            }
+
+            diposit = function depositAmount(damount){
+                bankBalance += damount
+
+                console.log('Diposit Amount is: ', damount)
+                console.log('Total Bank Amount is: ', bankBalance)
+            }
+
+            withdrawal = function withdrawalAmount(wamount){
+                if(bankBalance >= wamount){
+                    
+                    bankBalance -= wamount
+
+                    console.log('withdraw Amount is:', wamount)
+                    console.log('Remaining Balance is:', bankBalance)
+
+                }
+                else {
+                    console.log('insufficient balance! please add More Amount.')
+                }
+            }
+
+         
+
+
+        
+
+        }
+
+        const Bhavesh = new Bank
+        console.log(Bhavesh)
+        Bhavesh.userdetail(123, 60000)
+        Bhavesh.diposit(1000)
+        Bhavesh.withdrawal(50)
+ 
+
+       
+  
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

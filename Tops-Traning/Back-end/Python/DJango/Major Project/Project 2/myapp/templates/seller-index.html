@@ -1,0 +1,39 @@
+<!-- Ref link:- https://dt-cartrek.myshopify.com/ -->
+{% extends 'seller-header.html' %}
+{% load static %}
+{% block content %}
+<!doctype html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+  <main class="home-content">
+
+
+   
+  </main>
+
+  <!-- Modal -->
+  <div class="modal fade" id="search-box-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mobile-search-box">
+            <div class="input-group-search">
+              <input type="text" class="form-control" placeholder="search" aria-label="search-modal">
+              <button><i class="fa-solid fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock %}

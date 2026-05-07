@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        class Clc {
+
+            // With store function with parameter
+            
+             x = function sum(a, b){
+                console.log("Sum: " , a + b)
+            }
+
+
+            // With store function without parameter 
+
+            y = function sub(){
+                let a = 20
+                let b = 30
+                console.log("sub : " , a - b)
+            }
+
+
+            // Without store function with parameter 
+            mult(a, b){
+                console.log("Mult:" , a * b)
+            }
+
+            // Without store function without parameter 
+            div(){
+                let a = 20
+                let b = 10
+                console.log("Div: ", a / b )
+            }
+
+
+        }
+
+
+        const data = new Clc
+        console.log(data)
+
+        data.x(30, 40)
+        data.y()
+
+        data.mult(10,20)
+        data.div()
+
+
+
+
+
+
+
+
+
+
+        //     class Clc{
+
+        //     // 1) with store function with parmater 
+        //     x = function sum(a,b){
+        //         console.log("Sum :",a+b)
+        //     }
+
+        //     // 2) with store function without paramter
+        //     y = function sub(){
+        //         let a = 30
+        //         let b = 20
+        //         console.log("Sub :",a-b,)
+        //     } 
+
+        //     // 3) without store function with paramter
+        //     mul(a,b){
+        //         console.log("Mul :",a+b)
+        //     }
+
+        //     // 4) wihtout store function without parmater
+        //     divi(){
+        //         let a = 30
+        //         let b = 10
+        //         console.log("divi :",a/b)
+        //     }
+        // }
+
+        // const data = new Clc 
+        // console.log(data)
+    
+        // data.x(30,40)
+        // data.mul(30,20)
+        // data.y()
+        // data.divi()
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

@@ -4,7 +4,14 @@ from . models import Contact, User
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    try:
+        user=User.objects.get(email=request.session['email'])
+        if user.usertype== 'buyer':
+            return render(request, 'index.html')
+        else:
+            return render(request, 'seller-index.html')
+    except:    
+        return render(request, 'index.html')
 
 def contact(request):
     if request.method =="POST":
@@ -35,7 +42,8 @@ def signup(request):
                     gender=request.POST['gender'],
                     address=request.POST['address'],
                     profile_picture=request.FILES['profile_picture'],
-                    password=request.POST['password']
+                    password=request.POST['password'],
+                    usertype=request.POST['usertype']
                 )
                 msg="User signup sucessfully"
                 return render(request, 'signup.html',{'msg':msg} )
@@ -53,7 +61,11 @@ def login(request):
                 request.session['email']=user.email
                 request.session['fname']=user.fname
                 request.session['profile_picture']=user.profile_picture.url
-                return render(request, 'index.html')
+                if user.usertype == 'buyer':
+                    return render(request, 'index.html')
+                else:
+                    return render(request, 'seller-index.html')
+                    
             else:
                 msg='Password incorect'
                 return render(request,'login.html', {'msg':msg})
@@ -92,3 +104,7 @@ def profile(request):
         return render(request, 'profile.html', {'msg': msg, 'user': user})
     else:
         return render(request, 'profile.html', {'user': user})
+
+
+def add_product(request):
+    return render(request, 'add_product.html')

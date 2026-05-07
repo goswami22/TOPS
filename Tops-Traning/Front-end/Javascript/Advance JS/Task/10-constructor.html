@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- constr : when object will be create in class by defualt call 
+           : automaticall call  
+           : A class may only have one constructor
+           -->
+
+    <script>
+
+        class Data {
+
+            constructor() {
+                console.log('I am constructor')
+            }
+
+            x = function demo() {
+                console.log('Function X')
+            }
+
+            y = function demo2() {
+                console.log("Function Y")
+            }
+
+
+        }
+
+
+        const db = new Data
+        console.log(db)
+
+        db.x()
+        db.y()
+    
+// ======================================================================================
+
+        class Clc {
+
+            constructor(a, b){
+                this.a = a
+                this.b = b
+            }
+
+            sum(){
+                console.log(`sum : ${this.a + this.b}`)
+            }
+
+            sub(){
+                console.log(`Sub: ${this.a - this.b}`)
+            }
+            mult(){
+                console.log(`Mult: ${this.a * this.b}`)
+            }
+            Div(){
+                console.log(`Div: ${this.a / this.b}`)
+            }
+
+
+
+
+        }
+
+
+        const result = new Clc(20,30)
+        console.log(result)
+
+        result.sum()
+        result.sub()
+        result.mult()
+        result.Div()
+
+// ======================================================================================
+
+        class data1 {
+            constructor(c, d){
+                this.c = c
+                this.d = d
+                // console.log('I am Constructor')
+            }
+
+            sum(){
+                console.log(`Sum:  ${this.c + this.d}`)
+            }
+
+            sub(){
+                console.log(`Sub: ${this.c - this.d}`)
+            }
+
+
+
+        }
+
+
+        const re = new data1(50, 100)
+        re.sum()
+        re.sub()
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
