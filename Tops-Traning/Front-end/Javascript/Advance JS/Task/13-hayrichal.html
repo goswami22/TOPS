@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // hayrichal in
+
+        class A{
+            x = function data1() {
+                console.log('X function')
+            }
+        }
+        class B extends A {
+            y = function data2(){
+                console.log('Y function')
+            }
+        }
+        class C extends A {
+            z = function data3(){
+                console.log('Z function')
+            }
+        }
+
+        const db = new B
+        db.x()
+        db.y()
+
+        const db2= new C
+        db2.x()
+        db2.z()
+
+
+
+    </script>
+</body>
+</html>

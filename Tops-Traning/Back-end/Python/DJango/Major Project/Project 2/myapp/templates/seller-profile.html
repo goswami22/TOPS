@@ -1,0 +1,102 @@
+{% extends 'seller-header.html' %}
+{% load static %}
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+  <main class="account-content">
+    <section class="breadcrumb-wrapper">
+      <div class="breakcrumb-content">
+        <h2 class="breadcrumb-title">User Profile</h2>
+        <nav aria-label="breadcrumb">
+          <div class="container-fluid px-0 overflow-hidden">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+            </ol>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <!-- User Profile  start -->
+    <section class="user-account">
+      <div class="container">
+        <div class="singup-wrapper">
+          <form action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2 class="title">User profile</h2>
+            {% if msg %}
+              <div class="alert alert-success" role="alert">
+                {{ msg }}
+              </div>
+            {% endif %}
+            <div class="form-top">
+              <div>
+                <input type="text" class="form-control" placeholder="First name" name="fname" value="{{ user.fname }}">
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="last name" name="lname" value="{{ user.lname }}">
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="Email" name="email"  value="{{ user.email }}" readonly>
+              </div>
+              <div>
+                <input type="number" class="form-control" placeholder="Phone" name="phone"  value="{{ user.phone }}">
+              </div>
+              <div>
+                <textarea name="address" class="form-control" name="address" placeholder="Address" rows="4">{{ user.address }}</textarea>
+              </div>
+              <div>
+                <img src="{{user.profile_picture.url}}" alt="profile picture" class="" style="width: 100px;height: 100px;border-radius: 50%;object-fit: cover;">
+              </div>
+              <div>
+                <input type="file" class="form-control" placeholder="choose profile picture" name="profile_picture">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="main-btn">Update profile</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- User Profile end -->
+
+    <!-- subscribe start -->
+    <section class="subscribe">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-box">
+            <i class="fa-solid fa-envelope"></i>
+            <p><a href="#">info@example.com</a></p>
+            <p><a href="#">support@example.com</a></p>
+          </div>
+          <div class="contact-box">
+            <i class="fa-solid fa-phone"></i>
+            <p><a href="#">000 - 123 - 456789</a></p>
+            <p><a href="#">000 - 123 - 446789</a></p>
+          </div>
+          <div class="contact-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>No: 58 A, East Madison</p>
+            <p>Street, Baltimore, USA</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- subscription end -->
+  </main>
+
+</body>
+
+</html>
+
+{% endblock %}

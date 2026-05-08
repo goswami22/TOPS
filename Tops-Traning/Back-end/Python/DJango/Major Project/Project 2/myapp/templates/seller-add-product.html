@@ -1,0 +1,119 @@
+{% extends 'seller-header.html' %}
+{% load static %}
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+  <main class="account-content">
+    <section class="breadcrumb-wrapper">
+      <div class="breakcrumb-content">
+        <h2 class="breadcrumb-title">create account</h2>
+        <nav aria-label="breadcrumb">
+          <div class="container-fluid px-0 overflow-hidden">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Add to product</li>
+            </ol>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <!-- signup start -->
+    <section class="user-account add-to-product-section">
+      <div class="container">
+        <div class="singup-wrapper">
+          <form action="{% url 'seller-add-product' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2 class="title">Add to product</h2>
+            {% if msg %}
+              <div class="alert alert-success" role="alert">
+                {{ msg }}
+              </div>
+            {% endif %}
+            <div class="form-top">
+              <div>
+                <select name="product-category" class="form-select">
+                  <option value="select caterory" selected>Select Caterory</option>
+                  
+
+                </select>
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="First name" name="fname">
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="last name" name="lname">
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="Email" name="email">
+              </div>
+              <div>
+                <input type="number" class="form-control" placeholder="Phone" name="phone">
+              </div>
+              <div>
+                <select class="form-select" aria-label="Gender select" name="gender">
+                  <option selected disabled>Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <div>
+                <textarea name="address" class="form-control" name="address" placeholder="Address" rows="4"></textarea>
+              </div>
+              <div>
+                <input type="file" name="profile_picture" class="form-control" placeholder="Profile Picture">
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" name="password">
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Confirm Password" name="c_password">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="main-btn"> create account</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- signup end -->
+
+    <!-- subscribe start -->
+    <section class="subscribe">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-box">
+            <i class="fa-solid fa-envelope"></i>
+            <p><a href="#">info@example.com</a></p>
+            <p><a href="#">support@example.com</a></p>
+          </div>
+          <div class="contact-box">
+            <i class="fa-solid fa-phone"></i>
+            <p><a href="#">000 - 123 - 456789</a></p>
+            <p><a href="#">000 - 123 - 446789</a></p>
+          </div>
+          <div class="contact-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>No: 58 A, East Madison</p>
+            <p>Street, Baltimore, USA</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- subscription end -->
+  </main>
+
+</body>
+
+</html>
+
+{% endblock %}

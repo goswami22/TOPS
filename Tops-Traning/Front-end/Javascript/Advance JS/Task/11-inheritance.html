@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <!-- inheritance : one class to antoher class property inheritance  -->
+
+     <!-- 1) single :  
+     2) multi level 
+     3) multiple : jvascript allow 
+     4) hayrichal 
+     5) hybird : -->
+
+
+    <script>
+
+        // single inheritance
+        console.log('Single inheritance')
+
+        class A {
+            x = function data(){
+                console.log('X function')
+            } 
+        }
+
+        class B extends A {
+            y = function data2(){
+                console.log('Y Function')
+            }
+        }
+
+        const db = new B
+        console.log(db)
+
+        db.x()
+        db.y()
+        
+
+
+
+    </script>
+
+
+
+</body>
+</html>

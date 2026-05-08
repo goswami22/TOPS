@@ -741,6 +741,7 @@ footer .instagram-wrapper .insta-img:hover::before {opacity: 1;}
 ------------------------------ */
 .user-account form h2.title {font-size: 40px;line-height: 52px;font-weight: 700;text-transform: capitalize;text-align: center;margin-bottom: 20px;}
 .user-account form {max-width: 700px;margin: 10px auto 30px;background: #F3F3F3;padding: 40px;border-radius: 30px;}
+.user-account.add-to-product-section form {max-width: 900px;}
 .user-account form input.form-control, .user-account form select.form-select {border-radius: 0;margin-bottom: 30px;height: 50px;padding: 10px 20px;}
 .user-account form textarea.form-control {border-radius: 0;margin-bottom: 30px;padding: 10px 20px;text-transform: capitalize;}
 .user-account form input.form-control:focus,

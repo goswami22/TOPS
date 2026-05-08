@@ -101,10 +101,20 @@ def profile(request):
         user.save()    
         request.session['profile_picture'] = user.profile_picture.url     
         msg = "Profile updated successfully"
-        return render(request, 'profile.html', {'msg': msg, 'user': user})
+        if user.usertype == 'buyer':
+            return render(request, 'profile.html', {'user': user, 'msg':msg})
+        else:
+            return render(request, 'seller-profile.html', {'user': user, 'msg':msg})
     else:
-        return render(request, 'profile.html', {'user': user})
+        if user.usertype == 'buyer':
+            return render(request, 'profile.html', {'user': user})
+        else:
+            return render(request, 'seller-profile.html', {'user': user})
+            
+    
+    
+def seller_add_product(request):
+    return render(request, 'seller-add-product.html')
 
-
-def add_product(request):
-    return render(request, 'add_product.html')
+def forgot_password(request):
+    return render(request, 'forgot-password.html')    

@@ -55,8 +55,10 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item active" href="/">Home</a></li>
-                            <li><a class="dropdown-item" href="/">Add product</a></li>
-                            <li><a class="dropdown-item" href="/">view product</a></li>
+                            <li><a class="dropdown-item" href="#">shop</a></li>
+                            <li><a class="dropdown-item" href="all-collation.hhtml">most popular</a></li>
+                            <li><a class="dropdown-item" href="about.html">about</a></li>
+                            <li><a class="dropdown-item" href="#">blog</a></li>
                             <li><a class="dropdown-item" href="{% url 'contact' %}">contact</a></li>
                         </ul>
                     </div>
@@ -74,8 +76,71 @@
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" href="/">Add product</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/">view product</a></li>
+                                    <li class="nav-item dropdown position-static">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            shop
+                                        </a>
+                                        <ul class="dropdown-submenu">
+                                            <div class="megamenu">
+                                                <h4 class="menu-header"><a href="#">shop</a></h4>
+                                                <div class="megamenu-block">
+                                                    <h4 class="menutitle"><a href="collation.html">Wheels & Tires</a>
+                                                    </h4>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="#">Alloy Wheel</a></li>
+                                                        <li><a href="#">Wheel Caps</a></li>
+                                                        <li><a href="#">Tire Accessories</a></li>
+                                                        <li><a href="#">Wheel Simulators</a></li>
+                                                        <li><a href="#">Wheel Adapter</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="megamenu-block">
+                                                    <h4 class="menutitle"><a href="#">Headlights & Lighting</a></h4>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="#">Head Light Bulb</a></li>
+                                                        <li><a href="#">Off-Road Lights</a></li>
+                                                        <li><a href="#">Interior Lights</a></li>
+                                                        <li><a href="#">Tail Lights</a></li>
+                                                        <li><a href="#">Back Up Lights </a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="megamenu-block">
+                                                    <h4 class="menutitle"><a href="#">Auto Body Parts</a></h4>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="#">Bumpers &amp; Components </a></li>
+                                                        <li><a href="#">Fuel Tanks </a></li>
+                                                        <li><a href="#">Windows &amp; Mirrors</a></li>
+                                                        <li><a href="#">Door Handles &amp; Locks</a></li>
+                                                        <li><a href="#">Radiator Support</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="megamenu-block">
+                                                    <h4 class="menutitle"><a href="#">Engine</a></h4>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="#">Engine Starterl</a></li>
+                                                        <li><a href="#">Air Conditioning</a></li>
+                                                        <li><a href="#">Emission &amp; Components</a></li>
+                                                        <li><a href="#">Air Filters</a></li>
+                                                        <li><a href="#">Spark Plug</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="megamenu-block">
+                                                    <div class="megamnu-img-box">
+                                                        <img src="{% static './image/cartrek-megamenu.avif' %}"
+                                                            alt="megamenu image" class="img-fluid">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">most popular</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">about</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">blog</a></li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{% url 'contact' %}">contact</a>
                                     </li>
@@ -113,9 +178,10 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item active" href="/">Home</a></li>
-                                    <li><a class="dropdown-item" href="/">Add product</a></li>
-                                    <li><a class="dropdown-item" href="/">view product</a></li>
-                                    <li><a class="dropdown-item" href="#">contact</a></li>
+                                    {% if request.session.email %}
+                                        <li><a class="dropdown-item" href="{% url 'seller-add-product' %}">add to product</a></li>
+                                        <li><a class="dropdown-item" href="/">view product</a></li>
+                                    {% endif %}
                                 </ul>
                             </div>
                             <input type="text" class="form-control" placeholder="search"
@@ -179,12 +245,13 @@
                                 <a class="nav-link active" aria-current="page" href="/">Home</a>
                             </li>
                             {% if request.session.email %}
-                                <li class="nav-item"><a class="nav-link" href="{% add-product %}">Add product</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/">view product</a></li>
-                            {% endif %}
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'contact' %}">contact</a>
+                                <a class="nav-link" href="{% url 'seller-add-product' %}">add to product</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">View product</a>
+                            </li>
+                            {% endif %}
                         </ul>
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <div class="social-header-link">
@@ -231,8 +298,10 @@
                     <div class="footer-block  order-2 order-sm-3 order-xl-2">
                         <ul class="footer-menu">
                             <li><a href="/">Home</a></li>
-                            <li><a href="collation.html">product</a></li>
-                            <li><a href="#">collations</a></li>
+                            {% if request.session.email %}
+                            <li><a class="dropdown-item" href="{% url 'seller-add-product' %}">add to product</a></li>
+                            <li><a class="dropdown-item" href="/">view product</a></li>
+                            {% endif %} 
                         </ul>
                     </div>
                     <div class="footer-block  order-3 order-sm-4 order-xl-3">

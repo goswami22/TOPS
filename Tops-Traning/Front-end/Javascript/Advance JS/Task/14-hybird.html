@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        class A {
+            x = function data1() {
+                console.log('A function')
+            }
+        }
+
+        class B extends A {
+            y = function data2() {
+                console.log('B function')
+            }
+        }
+
+        class C extends A {
+            z = function data3() {
+                console.log('C function')
+            }
+        }
+
+        class D extends C {
+            e = function data3() {
+                console.log('D function')
+            }
+        }
+
+
+
+
+
+        const db3 = new D
+        db3.x()
+        db3.z()
+        db3.e()
+
+
+        const db = new C
+        db.x()
+        db.z()
+
+
+
+        const db2 = new B
+        db2.x()
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
