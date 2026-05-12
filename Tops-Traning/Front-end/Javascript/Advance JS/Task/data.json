@@ -1,0 +1,27 @@
+[
+    {
+        "id":1,
+        "name": "User1",
+        "Course": "Front-end",
+        "age": 23
+    },
+    {
+        "id":2,
+        "name": "User2",
+        "Course": "Back-end",
+        "age": 25
+    },
+    {
+        "id":3,
+        "name": "User3",
+        "Course": "Fullstack",
+        "age": 26
+    },
+    {
+        "id":4,
+        "name": "User4",
+        "Course": "Hardwere",
+        "age": 29
+    }
+
+]

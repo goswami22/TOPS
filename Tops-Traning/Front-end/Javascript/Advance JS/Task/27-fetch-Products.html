@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> featch Products </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+
+        </div>
+    </div>
+
+
+    <script>
+
+        fetch('https://dummyjson.com/products', {
+            method: 'GET'
+        })
+            .then((data) => {
+                return data.json()
+            })
+            .then((res) => {
+
+                let productsdata = res.products.map((product, index) => {
+                    console.log(product)
+
+                    return (
+                        `
+                        <div class="col-md-4  col-lg-3 col-6 mb-4">
+                            <div class="card h-100">
+                            <img src="${product.images}" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <span class="categoty text-uppercase fw-semibold mb-3 d-inline-block">${product.category}</span>
+                                <h5 class="card-title">${product.title}</h5>
+                                <p class="card-text">${product.description.slice(0,100)}...</p>
+                                <a href="#" class="btn btn-primary">Buy now</a>
+                            </div>
+                            </div>
+                        </div>
+                        `
+
+                    )
+
+                })
+                document.querySelector('.row').innerHTML += productsdata.join('')
+            })
+
+
+
+
+
+    </script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise API</title>
+</head>
+<body>
+    <!-- A Promise in JavaScript is an object that handles future results of asynchronous operations. 
+     
+        Promie : it's called object 
+            : Response ,reject
+    3 State 
+    1) peading : Api Data load runing 
+    2) Fullfield : Api Data Show Completed(resolve)
+    3) Rejected : Api net , data load ,error 
+
+    let p = new Promise(Function(res,rej){
+    
+    
+    -->
+
+    <script>
+
+        let p = new Promise((res, rej) => {
+            let x = 10
+            if(x != 10){
+                res('successfully')
+            } else {
+                rej('Reject')
+            }
+        })
+
+        console.log(p)
+
+
+    </script>
+
+
+</body>
+</html>

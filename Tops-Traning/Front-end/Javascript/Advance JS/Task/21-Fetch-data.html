@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch data</title>
+</head>
+<body>
+    
+      <!-- fetch : javascript inbuilt function json,text file read 
+    fetch : that called promise 
+
+    GET : Read mode 
+    POST : Create new Data 
+    Delete : Data delete mode 
+    put/patch : update mode 
+
+
+    fetch('url',{
+        method : "GET"
+    })
+    .then(text file conavry js)
+    .then(print data)
+    .catch(error)
+
+    =============================== chatgpt data =======================================
+    fetch() is used to get data from an API or server.
+
+    Simple meaning:
+
+    Fetch means “bring data”.
+
+    Why Fetch is Used?
+
+    Used for:
+
+    API calls
+    Getting JSON data
+    Sending data to server
+    Login systems
+    Weather apps
+    Database communication
+
+    Method	        Work
+    GET	            Read data
+    POST	        Send data
+    PUT	            Update data
+    DELETE	        Delete data
+
+
+     -->
+
+    <script>
+
+        fetch('data.txt', {
+            method: "GET"
+        })
+        .then((data)=> {
+            return data.text()
+        })
+        .then((res)=>{
+            console.log(res)
+            document.write(`<h2>${res}</h2>`)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+
+    </script>
+
+
+</body>
+</html>
