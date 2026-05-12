@@ -1,0 +1,54 @@
+<!-- 
+  Create a digital clock that updates every second using setInterval().
+
+
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation</title>
+  <style>
+    #clock {
+      font-size: clamp(20px, 5rem, 150px);
+      text-align: center;
+      margin-block: 250px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 id="clock"></h1>
+
+  <script>
+    setInterval(showTime, 1000)
+    
+    function showTime() {
+      let date = new Date()
+
+      let hour = date.getHours()
+
+      let minite = date.getMinutes()
+
+      let secound = date.getSeconds()
+
+      // let time = hour + ' : ' + minite + ' : ' + secound
+      let time = ` ${hour} : ${minite} : ${secound} `
+
+      document.getElementById('clock').innerHTML = time
+    }
+
+
+
+
+  </script>
+
+</body>
+
+</html>

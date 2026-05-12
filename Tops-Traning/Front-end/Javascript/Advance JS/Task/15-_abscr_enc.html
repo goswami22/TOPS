@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abscration encapsulation</title>
+</head>
+<body>
+    
+    <script>
+
+        function Person(name, age){
+            // abscr
+            let _name = name
+            let _age = age 
+
+            // encap
+            this.getName = () => {
+                return _name
+            }   
+
+            this.getAge = () => {
+                return _age
+            }
+
+            this.setAge = (newage) => {
+                if(newage > 0 ){
+                    return _age = newage
+                }else {
+                    console.log('Invalid age ')
+                }
+
+            }
+
+        }
+
+        const db = new Person('Bhavesh', 25)
+        console.log(db)
+
+        console.log(db._name)
+        console.log(db._age)
+
+        console.log(db.getName())
+        console.log(db.getAge())
+
+        let newage = (db.setAge(28))
+        console.log(`New age: ${newage}`)
+
+
+    </script>
+
+</body>
+</html>

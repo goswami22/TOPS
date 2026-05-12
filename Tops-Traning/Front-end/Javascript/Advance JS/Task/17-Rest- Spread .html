@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <!-- store value
+    ...rest : always store a value in function as parmater
+    ...spread : array/object for mearge -->
+    
+    <script>
+
+        // Rest Operator (...)
+        function data(...num){
+            let sum = 0
+            for(let demo in num){
+                sum += num[demo] 
+            }
+            return sum
+        }
+
+        console.log(data(10, 20, 30, 40))
+
+
+        // Spread Operator (...)
+        let total = 0
+        let a = [1,2,3,4]
+        let b = [6,7,8,9]
+
+        let c = [...a, ...b]
+        console.log(c)
+       
+        c.forEach((data)=> {
+             total += data
+        })
+
+        console.log(total)
+
+        
+
+
+    </script>
+
+
+</body>
+</html>

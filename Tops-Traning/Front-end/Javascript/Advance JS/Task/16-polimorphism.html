@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // 1) method overloading : Comiple error : same class have function name sa name but Deffernt parameter
+        // 2) method Overriding : runtime error : deffrenet class have function name as
+
+        // class Load{
+        //     display(a){
+        //         console.log("A :",a)
+        //     }
+        //     display(a,b){
+        //         console.log("Sum :",a+b)
+        //     }
+        //     display(a,b){
+        //         console.log("Sub :",a-b)
+        //     }
+        // }
+
+        // const data = new Load 
+        // console.log(data)
+        // data.display(20,10)
+
+        // overloading 
+
+        class data1 {
+
+            A(a) {
+                console.log(a)
+            }
+
+            A(a, b) {
+                console.log('sum:', a + b)
+            }
+
+            A(a, b) {
+                console.log('sub:', a - b)
+            }
+
+        }
+
+        const db1 = new data1
+        console.log(db1.A)
+
+        // overriding 
+
+
+
+        class A {
+             dispaly() {
+                console.log("A Function")
+            }
+        }
+        class B extends A {
+            dispaly() {
+                console.log("B Function")
+            }
+        }
+        class C extends B{
+            dispaly() {
+                console.log("C Function")
+            }
+        }
+        class D extends C{
+            dispaly() {
+                console.log("D Function")
+            }
+        }
+
+
+        const db2 = [new A, new B, new C, new D]
+        console.log(db2)
+        db2.forEach((data,i) => {
+           data.dispaly()
+        });
+
+
+
+    </script>
+
+
+</body>
+
+</html>

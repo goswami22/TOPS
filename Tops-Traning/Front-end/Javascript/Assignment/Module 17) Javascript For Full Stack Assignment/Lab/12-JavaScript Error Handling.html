@@ -1,0 +1,56 @@
+<!-- 
+  Write a JavaScript program that attempts to divide a number by zero. Use try catch to handle the error and display an appropriate error message
+
+
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation</title>
+  <style>
+    #clock {
+      font-size: clamp(20px, 5rem, 150px);
+      text-align: center;
+      margin-block: 250px;
+    }
+  </style>
+</head>
+
+<body>
+
+ 
+
+  <script>
+    
+    
+    try{
+
+      let a = 10
+
+      let b = 0
+
+      if(b == 0){
+        throw ("Can't devide by zero")
+      }
+
+      let ans = a / b
+
+      console.log(ans)
+
+    } catch(err){
+      console.log('Error : ', err)
+    } 
+
+
+
+  </script>
+
+</body>
+
+</html>

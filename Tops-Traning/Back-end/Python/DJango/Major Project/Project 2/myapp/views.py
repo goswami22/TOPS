@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from . models import Contact, User
+from django.core.mail import send_mail
+from django.conf import settings
+import random 
 
 # Create your views here.
 
@@ -117,4 +120,51 @@ def seller_add_product(request):
     return render(request, 'seller-add-product.html')
 
 def forgot_password(request):
-    return render(request, 'forgot-password.html')    
+    if request.method == 'POST':
+        try:
+            user=User.objects.get(email=request.POST['email'])
+            otp=random.randint(1000,9999)
+            subject = 'OTP for forgot password'
+            message= 'you OTP for forgot password is'+ str(otp)
+            send_mail(subject,message,settings.EMAIL_HOST_USER,[user.email,])
+            request.session['otp']= otp
+            request.session['to_email']=user.email
+            return render(request, 'otp.html')
+        except:    
+            msg= "Email Not Registerd"
+            return render(request, 'forgot-password.html',{'msg':msg})    
+    else:
+        return render(request, 'forgot-password.html')    
+    
+    
+def verify_otp(request):
+    otp1 = int(request.POST['otp'])
+    otp2 = int(request.session['otp'])
+    if otp1 == otp2 :
+        del request.session['otp']
+        msg="set your new password"
+        return render(request, 'new-password.html',{'msg':msg})
+    else:
+        msg= 'Invalid OTP'
+        return render(request, 'otp.html',{'msg':msg})
+    
+
+def new_password(request):
+    if request.POST['new-password']==request.POST['confirm-password']:
+        user=User.objects.get(email=request.session['to_email'])
+        if user.password !=request.POST['new-password']:
+            user.password = request.POST['new-password']
+            user.save()
+            del request.session['to_email']
+            msg= 'Password Update Successfully'
+            return render(request,'login.html',{'msg':msg})
+        else:
+            msg="your new password can't be your old password"
+            return render(request,'new-password.html', {'msg':msg})
+    else:
+        msg="Your new password and confirm password does not match"
+        return render(request,'new-password.html', {'msg':msg})
+    
+    
+    
+    

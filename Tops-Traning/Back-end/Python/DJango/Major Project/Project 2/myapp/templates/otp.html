@@ -1,0 +1,44 @@
+<!-- otp.html -->
+
+{% extends 'header.html' %}
+{% block content %}
+
+<section class="user-account py-5">
+    <div class="container">
+        <div class="login-wrapper">
+
+            {% if msg %}
+            <div class="alert alert-danger">
+                {{ msg }}
+            </div>
+            {% endif %}
+
+            <form method="post" action="{% url 'verify-otp' %}">
+                {% csrf_token %}
+
+                <h2 class="text-center mb-4">
+                    Verify OTP
+                </h2>
+
+                <div class="mb-3">
+                    <input type="text"
+                           name="otp"
+                           class="form-control"
+                           placeholder="Enter OTP"
+                           required>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit"
+                            class="btn btn-success">
+                        Verify OTP
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
