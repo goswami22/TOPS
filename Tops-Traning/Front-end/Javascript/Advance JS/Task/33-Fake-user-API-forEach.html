@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake User API</title>
+</head>
+<body>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>image</th>
+                <th>Name</th>
+                <th>Company</th>
+                <th>User Name</th>
+                <th>Eamil</th>
+                <th>Address</th>
+                <th>country</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+    </table>
+
+
+    <script>
+        fetch('https://fake-json-api.mock.beeceptor.com/users',{
+            method:'GET'
+        })
+        .then((data)=> {
+            return data.json()
+        })
+        .then((res)=>{
+
+            console.log(res)
+
+            res.forEach((user, index) => {
+
+                let tbody = document.querySelector('tbody')
+                let trow = tbody.insertRow()
+
+                let id = trow.insertCell(0)
+                let photo = trow.insertCell(1)
+                let name = trow.insertCell(2)
+                let company = trow.insertCell(3)
+                let username = trow.insertCell(4)
+                let email = trow.insertCell(5)
+                let address = trow.insertCell(6)
+                let country = trow.insertCell(7)
+                
+                id.textContent = user.id
+                name.textContent = user.name
+                company.textContent = user.company
+                username.textContent = user.username
+                email.textContent = user.email
+                address.textContent = user.address
+                country.textContent = user.country
+                photo.innerHTML = ` <img src="${user.photo}" width="100"> `
+
+            });
+
+
+
+        })
+        .catch((err)=>{
+            console.log('Reject')
+        })
+
+    </script>
+
+
+
+</body>
+</html>

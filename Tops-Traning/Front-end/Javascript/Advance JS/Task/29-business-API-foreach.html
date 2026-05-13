@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business API</title>
+</head>
+<body>
+    
+    <table cellspacin="0" cellpadding="10" border="1" style="border-collapse:collapse">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>company</th>
+                <th>industry</th>
+                <th>catchPhrase</th>
+                <th>address</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            
+        </tbody>
+    </table>
+
+
+    <script>
+        fetch('https://api.mydummyapi.com/categories/business',{
+            method: 'GET'
+        })
+        .then((data)=> {
+            return data.json()
+        })
+        .then((res)=>{
+            // console.log(res)
+
+            res.forEach((business,index) => {
+                
+                let tbody = document.querySelector('tbody')
+                let trow = tbody.insertRow()
+
+                let id = trow.insertCell(0)
+                let company = trow.insertCell(1)
+                let industry = trow.insertCell(2)
+                let catchPhrase = trow.insertCell(3)
+                let address = trow.insertCell(4)
+
+                id.textContent = business.id
+                company.textContent = business.company
+                industry.textContent = business.industry
+                catchPhrase.textContent = business.catchPhrase
+                address.textContent = business.address
+
+
+            });
+
+
+        })
+
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake company API</title>
+</head>
+<body>
+    
+    <table border="1" cellpadding="10" cellspacing="10" style="border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>name</th>
+                <th>address</th>
+                <th>country</th>
+                <th>industry</th>
+                <th>ceoName</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+
+        fetch('https://fake-json-api.mock.beeceptor.com/companies', {
+            method: 'GET'
+        })
+        .then((data)=>{
+            return data.json()
+        })
+        .then((res)=>{
+            console.log(res)
+
+            for(let company of res){
+                let companyData =
+                `
+                    <tr>
+                        <td>${company.id}</td>
+                        <td>${company.name}</td>
+                        <td>${company.address}</td>
+                        <td>${company.country}</td>
+                        <td>${company.industry}</td>
+                        <td>${company.ceoName}</td>
+                    </tr>    
+                
+                `
+                document.querySelector('tbody').innerHTML +=  companyData
+
+            }
+        })
+
+
+    </script>
+
+</body>
+</html>
