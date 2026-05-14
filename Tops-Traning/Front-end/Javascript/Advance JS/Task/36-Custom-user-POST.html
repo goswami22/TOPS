@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios@1.13.2/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, debitis.</p>
+
+    <script>
+
+        // let userData = async () => {
+        //     try {
+        //         let res = await axios.get('https://6a057850aa826ca75c09e2bd.mockapi.io/Users')
+        //         console.log(res)
+        //         console.log(res.data)
+        //     } catch (error) {
+        //         console.log('API not found', error)
+        //     }
+        // }
+        // userData()
+
+
+        // new Data 
+
+        // let person = {
+        //     name: 'Rahit',
+        //     email: 'rohit@gmail.com',
+        //     city: 'Surat',
+        //     image : 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/4.jpg'
+        // }
+
+        // const newUser = async ()=>{
+        //     let res = await axios.post('https://6a057850aa826ca75c09e2bd.mockapi.io/Users',person)
+        //     console.log(res)
+        // }
+
+        // newUser()
+
+
+        // let productData = async () => {
+        //     let res = await axios.get('https://6a057850aa826ca75c09e2bd.mockapi.io/Products')
+        //     console.log(res)
+        //     console.log(res.data)
+        // }
+        // productData()
+
+
+        let newitems = [
+            {
+                title: 'Product 1',
+                description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, debitis.',
+                category: 'Cat1',
+                price: 25.99
+            },
+            {
+                title: 'Product 2',
+                description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, debitis.',
+                category: 'Cat2',
+                price: 30.99
+            },
+            {
+                title: 'Product 3',
+                description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, debitis.',
+                category: 'Cat3',
+                price: 35.99
+            }
+        ]
+
+
+
+
+        let newProduct = async () => {
+
+            for (let item of newitems) {
+
+                let res = await axios.post('https://6a057850aa826ca75c09e2bd.mockapi.io/Products', item)
+            
+                console.log(res)
+                console.log(res.data)
+            }
+
+        }
+
+
+        newProduct()
+    </script>
+
+
+
+
+</body>
+
+</html>

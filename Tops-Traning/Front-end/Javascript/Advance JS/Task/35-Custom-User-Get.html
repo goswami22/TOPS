@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // GET METHOD
+        // fetch('https://6a057850aa826ca75c09e2bd.mockapi.io/Users',{
+        //     method: 'GET'
+        // })
+        // .then((data)=>{
+        //     return data.json() 
+        // })
+        // .then((res)=>{
+        //     console.log(res)
+        // })
+
+
+
+        // POST METHOD
+        fetch('https://6a057850aa826ca75c09e2bd.mockapi.io/Users', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                "Name": "Raj Yadav",
+                "Email": "raj@gmail.com",
+                "City": "Ahmedabad",
+                "image": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/1.jpg"
+
+            })
+        })
+        .then((data)=>{
+            return data.json()
+        })
+        .then((res)=>{
+            console.log(res)
+        })
+
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>business API Map</title>
+</head>
+
+<body>
+
+
+    <table cellspacin="0" cellpadding="10" border="1" style="border-collapse:collapse">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Company</th>
+            <th>Industry</th>
+            <th>catchPhrase</th>
+            <th>address</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
+
+<script>
+
+    fetch('https://api.mydummyapi.com/categories/business', {
+        method:'GET'
+    })
+    .then((data)=>{
+        return data.json()
+    })
+    .then((res)=>{
+        console.log(res)
+
+        for(let index in res){
+            let businessData =
+            `
+                <tr>
+                    <td>${res[index].id}</td>
+                    <td>${res[index].company}</td>
+                    <td>${res[index].industry}</td>
+                    <td>${res[index].catchPhrase}</td>
+                    <td>${res[index].address}</td>
+                </tr>
+            
+            `
+
+            document.querySelector('tbody').innerHTML += businessData
+        }
+
+
+
+
+    })
+
+</script>
+
+
+
+</body>
+
+</html>

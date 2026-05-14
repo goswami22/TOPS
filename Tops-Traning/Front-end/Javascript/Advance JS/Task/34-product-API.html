@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Product API</title>
+</head>
+
+<body>
+
+
+    <!-- <div class="container">
+        <div class="row">
+       
+        </div>
+    </div> -->
+
+    <table border="1" cellpadding="10" cellspacing="10" style="border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>images</th>
+                <th>category</th>
+                <th>title</th>
+                <th>description</th>
+                <th>price</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+    <script>
+        fetch('https://dummyjson.com/products', {
+            method: 'GET'
+        })
+            .then((data) => {
+                return data.json()
+            })
+            .then((res) => {
+                console.log(res)
+
+
+                // ForEach method
+
+                res.products.forEach((product, index) => {
+                    let tbody = document.querySelector('tbody')
+                    let trow = tbody.insertRow()
+
+                    let id = trow.insertCell(0)
+                    let images = trow.insertCell(1)
+                    let category = trow.insertCell(2)
+                    let title = trow.insertCell(3)
+                    let description = trow.insertCell(4)
+                    let price = trow.insertCell(5)
+
+                    id.textContent = product.id
+                    images.innerHTML = `<img src="${product.images}"  width="100">`
+                    category.textContent = product.category
+                    title.textContent = product.title
+                    description.textContent = product.description
+                    price.textContent = product.price
+
+                });
+
+                // Map method
+
+                // let productData = res.products.map((product, index)=>{
+                //     return(
+                //         `
+                //         <div class="col-md-6 col-lg-3">
+                //             <div class="card">
+                //                 <img src="${product.images}" alt="image">
+                //                 <div class="content">
+                //                     <span>${product.category}</span>
+                //                     <h3>${product.title}</h3>
+                //                     <p>${product.description}</p>
+                //                     <div class="price">${product.price}</div>
+                //                     <button type="button">Add To Cart</button>
+                //                 </div>
+                //             </div>
+                //         </div>
+
+                //         `
+                //     )
+                // })
+                // document.querySelector('.row').innerHTML += productData
+
+
+                // For of Method
+
+                // for(let product of res.products){
+
+                //     let productData = 
+                //     `
+                //         <div class="col-md-6 col-lg-3">
+                //             <div class="card">
+                //                 <img src="${product.images}" alt="image">
+
+                //                 <div class="content">
+                //                     <span>${product.category}</span>
+                //                     <h3>${product.title}</h3>
+                //                     <p>${product.description}</p>
+                //                     <div class="price">${product.price}</div>
+                //                     <button type="button">
+                //                         Add To Cart
+                //                     </button>
+                //                 </div>
+                //             </div>
+                //         </div>
+
+                //     `
+                //     document.querySelector('.row').innerHTML += productData
+
+
+                // }
+
+                // For in method
+
+                // for(let index in res.products){
+
+                //     let productData = 
+
+                //     `
+                //         <div class="col-md-6 col-lg-3">
+                //             <div class="card">
+                //                 <img src="${res.products[index].images}" alt="image">
+
+                //                 <div class="content">
+                //                     <h3>${res.products[index].title}</h3>
+
+                //                     <p>
+                //                         ${res.products[index].description.slice(0,100)}...
+                //                     </p>
+
+                //                     <div class="price">
+                //                        ${res.products[index].price}
+                //                     </div>
+
+                //                     <button type="button">
+                //                         Add To Cart
+                //                     </button>
+                //                 </div>
+                //             </div>
+                //         </div>
+
+                //     `
+                //     document.querySelector('.row').innerHTML += productData
+
+                // }
+
+
+
+
+
+
+            })
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
