@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import Contact, User
+from . models import Contact, User, Product
 from django.core.mail import send_mail
 from django.conf import settings
 import random 
@@ -113,11 +113,7 @@ def profile(request):
             return render(request, 'profile.html', {'user': user})
         else:
             return render(request, 'seller-profile.html', {'user': user})
-            
-    
-    
-def seller_add_product(request):
-    return render(request, 'seller-add-product.html')
+
 
 def forgot_password(request):
     if request.method == 'POST':
@@ -166,5 +162,28 @@ def new_password(request):
         return render(request,'new-password.html', {'msg':msg})
     
     
+def seller_add_product(request):
+    seller = User.objects.get(email=request.session['email'])
+    if request.method =='POST':
+        Product.objects.create(
+            seller=seller,
+            product_category=request.POST['product_category'],
+            product_name=request.POST['product_name'],
+            product_desc=request.POST['product_desc'],
+            product_price=request.POST['product_price'],
+            product_discount=request.POST['product_discount'],
+            product_picture=request.FILES['product_picture']
+        )
+        msg='Product add Successfully'
+        return render(request, 'seller-add-product.html',{'msg':msg})
     
+    else: 
+        return render(request, 'seller-add-product.html')
     
+
+
+    
+def seller_view_product(request):
+     seller = User.objects.get(email=request.session['email'])
+     products = Product.objects.filter(seller=seller)
+     return render(request, 'seller-views-product.html',{'products':products})

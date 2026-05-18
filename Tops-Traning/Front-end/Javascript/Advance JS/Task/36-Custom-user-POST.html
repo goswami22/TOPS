@@ -52,44 +52,66 @@
         // productData()
 
 
-        let newitems = [
-            {
-                title: 'Product 1',
-                description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, debitis.',
-                category: 'Cat1',
-                price: 25.99
-            },
-            {
-                title: 'Product 2',
-                description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, debitis.',
-                category: 'Cat2',
-                price: 30.99
-            },
-            {
-                title: 'Product 3',
-                description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, debitis.',
-                category: 'Cat3',
-                price: 35.99
-            }
-        ]
+        // let newitems = [
+        //     {
+        //         title: 'Product 1',
+        //         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, debitis.',
+        //         category: 'Cat1',
+        //         price: 25.99
+        //     },
+        //     {
+        //         title: 'Product 2',
+        //         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, debitis.',
+        //         category: 'Cat2',
+        //         price: 30.99
+        //     },
+        //     {
+        //         title: 'Product 3',
+        //         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, debitis.',
+        //         category: 'Cat3',
+        //         price: 35.99
+        //     }
+        // ]
 
 
 
 
-        let newProduct = async () => {
+        // let newProduct = async () => {
 
-            for (let item of newitems) {
+        //     for (let item of newitems) {
 
-                let res = await axios.post('https://6a057850aa826ca75c09e2bd.mockapi.io/Products', item)
+        //         let res = await axios.post('https://6a057850aa826ca75c09e2bd.mockapi.io/Products', item)
             
-                console.log(res)
-                console.log(res.data)
-            }
+        //         console.log(res)
+        //         console.log(res.data)
+        //     }
 
+        // }
+        // newProduct()
+
+        // let datadel = async () => {
+        //     let res = await axios.delete('https://6a057850aa826ca75c09e2bd.mockapi.io/Products/3')
+
+        //     console.log(res.data)
+        //     console.log(res)
+        // }
+        // datadel()
+
+        let stu = {
+            name : 'Raj',
+            age : 26
         }
 
+        let stuData = async () => {
+            let res = await axios.put(`https://6a057850aa826ca75c09e2bd.mockapi.io/Products/${stu.name}`, stu)
 
-        newProduct()
+            console.log(res)
+        }
+
+        stuData()
+
+
+
     </script>
 
 

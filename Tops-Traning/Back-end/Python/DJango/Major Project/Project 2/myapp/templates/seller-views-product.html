@@ -1,0 +1,75 @@
+<!-- Ref link:- https://dt-cartrek.myshopify.com/ -->
+{% extends 'seller-header.html' %}
+{% load static %}
+{% block content %}
+<!doctype html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+  <main class="home-content">
+
+    <!-- our product start -->
+    <section class="our-product pb-120 pt-120">
+      <div class="container-fluid container-fluid-1500">
+        <h2 class="title">our products</h2>
+        <p class="subtitle">Velit Laoreet Id Donec Ultrices Tincidunt Aliquam Sem Fringil Arcu.</p>
+        <div class="featured-collation-wrapper">
+          <div class="featured-block">
+            <h6 class="subheading">The #1 supplier of car parts</h6>
+            <h2 class="heading">Providing high-quality car parts for any brands</h2>
+            <p class="description">Suspendisse ultrices gravida dictum fusce ut placerat. Urna id volutpat lacus laoreet
+              non curabitur gravida. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Tincidunt
+              arcu non sodales neque sodales.</p>
+            <a href="#" class="main-btn">get new plans</a>
+          </div>
+          <div class="featured-product-wrapper">
+           {% for i in products %}
+            <div class="product-item mb-3">
+              <div class="card">
+                <div class="img-box">
+                  <img src="{{i.product_picture.url}}" alt="product" class="card-img-top">
+                  <a href="#" class="main-btn">add to cart</a>
+                </div>
+                <div class="product-content">
+                  <h6 class="product-subtitle">{{i.product_category}}</h6>
+                  <h4 class="product-title"><a href="#">{{i.product_name}}</a></h4>
+                  <p class="current-price"><span>Rs.</span>{{i.product_price}}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+           
+           
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    <!-- our product end -->
+  </main>
+
+  <!-- Modal -->
+  <div class="modal fade" id="search-box-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mobile-search-box">
+            <div class="input-group-search">
+              <input type="text" class="form-control" placeholder="search" aria-label="search-modal">
+              <button><i class="fa-solid fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock %}

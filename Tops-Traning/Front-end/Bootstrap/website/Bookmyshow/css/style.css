@@ -69,4 +69,68 @@
 .cities-card.card.border-0.text-center {
     flex: 60px;
 }
+.carousel-indicators [data-bs-target] {
+    width: 8px;
+    height: 8px;
+}
+.premiere{
+    background: rgb(43, 49, 72);
+}
+.button-area a {
+    width: 60px;
+    height: 60px;
+    background: #dc3545;
+    display: grid;
+    align-content: center;
+    text-align: center;
+}
+.middle-box-area strong {
+    color: rgb(153, 153, 153);
+}
+.middle-box-area a {
+    color: rgb(128, 128, 128);
+    transition: 0.3s all linear;
+}
+.middle-box-area a:hover {
+    color: rgb(153, 153, 153);
+}
+.middle-box-area ul li:not(:first-child)::before {
+    content: '|';
+    position: absolute;
+    left: -14px;
+    color: rgb(128, 128, 128);
+} 
+.footer-bottom .f-logo img {
+    width: 160px;
+    padding-inline: 20px;
+    background: #212529;
+    position: relative;
+    z-index: 1;
+}
+.footer-bottom .f-logo::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(2%, -50%);
+    background-color: rgb(153, 153, 153);
+    height: 1px;
+    width: 96%;
+}
+.f-social-links ul li a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(128, 128, 128);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s all linear;
+}
+.f-social-links ul li a:hover {
+    background-color: #ffffff;
+}
+.f-social-links ul li a:hover {
+    background-color: #ffffff;
+}
 /* RECOMANDED MOVIE CSS */
