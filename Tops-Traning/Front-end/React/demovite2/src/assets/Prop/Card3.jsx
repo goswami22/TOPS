@@ -5,7 +5,7 @@ function Card3({img, desc, title, btn}){
 
         <div className="col-md-3">
             <div className="card">
-                <img src={img} alt="" />
+                <img src={img} alt="image"/>
                 <div className="card-body">
                     <h2>{title}</h2>
                     <p>{desc}</p>

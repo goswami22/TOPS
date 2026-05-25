@@ -31,8 +31,11 @@
               <div class="card">
                 <div class="img-box">
                   <img src="{{i.product_picture.url}}" alt="product" class="card-img-top">
-                  <a href="#" class="main-btn">add to cart</a>
-                  <!-- <a href="#" class="main-btn view-product">view product</a> -->
+                  <div class="prodcut-botton-btn">
+                    <a href="#" class="main-btn">add to cart</a>  
+                    <a href="{url 'seller-product-detail' }" class="main-btn view-product">view product</a>
+                  </div>
+                
                 </div>
                 <div class="product-content">
                   <h6 class="product-subtitle">{{i.product_category}}</h6>
