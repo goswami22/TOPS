@@ -7,6 +7,7 @@ import React from 'react'
 // import Card3Container from './assets/Prop/Card3Container'
 import MainState from './assets/State/MainState'
 import MainForm from './assets/FormHanding/MainForm'
+import MainContext from './assets/Context/MainContext'
 
 
 
@@ -31,7 +32,9 @@ function App() {
 
         {/* <MainState/> */}
 
-        <MainForm/>
+        {/* <MainForm/> */}
+
+        <MainContext />
 
 
 
