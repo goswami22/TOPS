@@ -8,6 +8,7 @@ import React from 'react'
 import MainState from './assets/State/MainState'
 import MainForm from './assets/FormHanding/MainForm'
 import MainContext from './assets/Context/MainContext'
+import Main_boot from './assets/Bootstrap/main_boot'
 
 
 
@@ -34,8 +35,9 @@ function App() {
 
         {/* <MainForm/> */}
 
-        <MainContext />
+        {/* <MainContext /> */}
 
+        <Main_boot/>
 
 
     </div>

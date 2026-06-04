@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    
+    <h4>What is an array?</h4>
+    <p>Array is special variable that can hold multiple values in single variable.</p>
+    <ul>
+        <li>Mutable values</li>
+        <li>Ordered collection</li>
+        <li>Zero-indexed</li>
+        <li>Duplicates allowed</li>
+        <li>Use [] brackets</li>
+    </ul>
+
+
+    <script>
+        let arr = [1, 2, 3.3, "Bhavesh", true];
+        console.log(arr)
+
+        console.log(arr[0])
+
+
+        // Change the value of an element in the array
+        arr[1] = "RJ"
+        console.log(arr)
+
+
+        arr.pop() // removes the last element from the array
+        console.log(arr)
+
+        arr.push(200) // adds a new element to the end of the array
+        console.log(arr)
+        document.write(arr)
+
+        arr.shift() // removes the first element from the array
+        console.log(arr)
+
+        arr.unshift("Tops") // adds a new element to the beginning of the array
+        console.log(arr)
+
+        arr.splice(2, 1) // removes the element at index 2
+        console.log(arr)
+
+        arr1 = arr.slice(1,3)   // returns a new array containing a portion of the original array, starting from index 1 and ending at index 3 (exclusive)
+        console.log(arr1);
+
+        arr2 = arr.includes("Bhavesh") // checks if the array includes a certain element
+        console.log(arr2)
+
+        arr3 = arr.indexOf("Bhavesh") // returns the index of the first occurrence of a certain element
+        console.log(arr3)
+
+        arr.sort()              // sorts the elements of the array in place and returns the sorted array
+        console.log(arr)
+
+        arr.reverse()           // reverses the order of the elements in the array in place and returns the reversed array
+        console.log(arr)
+
+              //
+        console.log(arr.length) // returns the number of elements in the array
+
+        console.log("For Loop")
+        // for loop to iterate over the array
+        for(let i = 0; i < arr.length; i++){
+            console.log(arr[i])
+        }
+
+
+        console.log("For of Loop")
+        for(let data of arr){
+            console.log(data)
+        }
+
+        console.log("For in Loop")
+        for(let data in arr){
+            console.log(data, arr[data])
+        }
+
+        console.log("forEach Loop")
+        arr.forEach((data, index)=>{
+            console.log(index, data)
+        })
+
+        console.log("map Loop")
+        arr.map((data, index)=>{
+            console.log(index, data)
+        })
+
+
+    </script>
+
+
+</body>
+</html>
