@@ -20,10 +20,13 @@
 
     <script>
         let arr = [1, 2, 3.3, "Bhavesh", true];
+        let newarr = [200,25,30]
         console.log(arr)
 
         console.log(arr[0])
 
+        let arr22 = [...arr,...newarr]
+        console.log(arr22)
 
         // Change the value of an element in the array
         arr[1] = "RJ"
@@ -43,8 +46,11 @@
         arr.unshift("Tops") // adds a new element to the beginning of the array
         console.log(arr)
 
-        arr.splice(2, 1) // removes the element at index 2
+        arr.splice(2, 1, "Rohan", "Rakesh") // removes the element at index 2
         console.log(arr)
+
+        let name = "Bhavesh"
+        console.log(name.split(""))
 
         arr1 = arr.slice(1,3)   // returns a new array containing a portion of the original array, starting from index 1 and ending at index 3 (exclusive)
         console.log(arr1);
@@ -61,7 +67,18 @@
         arr.reverse()           // reverses the order of the elements in the array in place and returns the reversed array
         console.log(arr)
 
-              //
+        
+        let arr4 = [1,[1.1, 12.1], 2,5, "Bhavesh"]  
+
+        console.log(arr4.flat()) // Flat convert nested array to single array
+
+        let arr5 = [1, 2]
+        let arr6 = ["Bhavesh", true]
+
+        let result = arr5.concat(arr6)
+        console.log(result)
+
+
         console.log(arr.length) // returns the number of elements in the array
 
         console.log("For Loop")
