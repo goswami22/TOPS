@@ -9,6 +9,9 @@ import MainState from './assets/State/MainState'
 import MainForm from './assets/FormHanding/MainForm'
 import MainContext from './assets/Context/MainContext'
 import Main_boot from './assets/Bootstrap/main_boot'
+import Header from './assets/Layout/Comman/Header'
+import Footer from './assets/Layout/Comman/Footer'
+import About from './assets/Layout/Pages/About'
 
 
 
@@ -37,8 +40,11 @@ function App() {
 
         {/* <MainContext /> */}
 
-        <Main_boot/>
+        {/* <Main_boot/> */}
 
+        <Header/>
+        <About/>
+        <Footer/>
 
     </div>
   )

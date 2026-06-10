@@ -7,9 +7,12 @@ function Main_boot() {
   return (
     <div>
       <h1>Main Bootstrap Component</h1>
-      <Boot />
+      {/* <Boot />
       <CardBoot />
-      <MDBBootsrap/>
+      <MDBBootsrap/> */}
+
+
+      
     </div>
   )
 }
