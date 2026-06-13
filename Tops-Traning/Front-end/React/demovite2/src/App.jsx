@@ -12,6 +12,7 @@ import Main_boot from './assets/Bootstrap/main_boot'
 import Header from './assets/Layout/Comman/Header'
 import Footer from './assets/Layout/Comman/Footer'
 import About from './assets/Layout/Pages/About'
+import Tailwindcss from './assets/Tailwindcss/tailwindcss'
 
 
 
@@ -42,9 +43,11 @@ function App() {
 
         {/* <Main_boot/> */}
 
-        <Header/>
+        <Tailwindcss/>
+
+        {/* <Header/>
         <About/>
-        <Footer/>
+        <Footer/> */}
 
     </div>
   )
