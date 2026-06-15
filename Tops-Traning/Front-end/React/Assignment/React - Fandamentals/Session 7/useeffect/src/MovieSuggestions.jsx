@@ -24,6 +24,7 @@ function MovieSuggestions() {
 
     return (
         <div>
+            {/* Task 4 */}
             <button onClick={featchData}>Get Data</button>
             {
                 loading ? (
