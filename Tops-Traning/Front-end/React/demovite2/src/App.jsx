@@ -13,6 +13,8 @@ import Header from './assets/Layout/Comman/Header'
 import Footer from './assets/Layout/Comman/Footer'
 import About from './assets/Layout/Pages/About'
 import Tailwindcss from './assets/Tailwindcss/tailwindcss'
+import UseRef from './assets/useRef/useRef'
+import DataManager from './assets/ComstomHokks/DataManager'
 
 
 
@@ -44,6 +46,9 @@ function App() {
         {/* <Main_boot/> */}
 
         <Tailwindcss/>
+
+        <UseRef />
+        <DataManager />
 
         {/* <Header/>
         <About/>

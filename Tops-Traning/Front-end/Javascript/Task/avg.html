@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        // let sum = [50,25,58,96,85,56]
+        // let total = 0;
+
+        // let price = [250, 2562, 582, 458]    
+
+
+        // for(let i of sum){
+        //     total += i
+        // }
+
+
+        // console.log(`Total sum is-  ${total}`)
+
+        // let avg = total / sum.length
+        // console.log(avg)
+
+        // console.log(price)
+
+        // for(let i = 0; i < price.length; i++){
+        //     let offer = price[i] / 10;
+        //     price[i] -= offer
+        // }
+
+        // console.log(price)
+
+        // Callback function -> One function take as argument onther funcition
+        // function sum(a, b){
+        //     console.log(a + b) 
+        // }
+
+        // function calc(a, b, sumcallback){
+        //     sumcallback(a, b)
+        // }
+
+        // calc(10, 20, sum)
+
+
+
+        // let hello = () => {
+        //     console.log("Bhavesh")
+        // }
+
+        // setTimeout(hello, 2000)
+
+
+        // callback hell
+
+        // function getData(dataId, nextGetData){
+
+        //     setTimeout(()=> {
+        //         console.log('data :', dataId )
+        //         if(nextGetData){
+        //             nextGetData()
+        //         }
+        //     }, 2000)
+        // }
+
+        // getData(1, ()=>{
+        //     getData(2, ()=>{
+        //         getData(3)
+        //     })
+        // })
+
+
+        // callback hell
+        // function getData(dataId, nextData) {
+        //     setTimeout(() => {
+        //         console.log('Data is :' , dataId)
+        //         if(nextData){
+        //             nextData()
+        //         }
+        //     }, 2000);
+        // }
+
+        // getData(1, ()=> {
+        //     getData(2)
+        // })
+
+        // callback hell
+        // function getData(dataId, nextDAta){
+        //     setTimeout(()=>{
+        //         console.log('Data : ', dataId)
+        //         if(nextDAta){
+        //             nextDAta() 
+        //         } 
+        //     },2000)
+
+        // }
+
+        // getData(1, ()=>{
+        //     getData(2,()=> {
+        //         getData(3)
+        //     })
+        // })
+
+        function getData(dataId, nextData) {
+            setTimeout(() => {
+                console.log('Data', dataId)
+                if(nextData){
+                    nextData()
+                }
+            }, 2000)
+        }
+
+        getData(1, ()=>{
+            getData(2)
+        })
+
+
+        // 
+
+    </script>
+</body>
+
+</html>
