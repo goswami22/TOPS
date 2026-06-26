@@ -1,0 +1,485 @@
+{
+  "admin": [
+    {
+      "id": 3,
+      "name": "Rahul",
+      "password": "rahul123"
+    },
+    {
+      "id": 4,
+      "name": "Priya",
+      "password": "priya456"
+    },
+    {
+      "id": 5,
+      "name": "Amit",
+      "password": "amit789"
+    },
+    {
+      "id": 6,
+      "name": "Neha",
+      "password": "neha321"
+    },
+    {
+      "id": 7,
+      "name": "Karan",
+      "password": "karan654"
+    },
+    {
+      "id": 8,
+      "name": "Riya",
+      "password": "riya987"
+    }
+  ],
+  "users": [
+    {
+      "id": 4,
+      "name": "Rohan",
+      "email": "rohan@gmail.com",
+      "password": "123456",
+      "status": "unblock"
+    },
+    {
+      "id": 5,
+      "name": "Priya",
+      "email": "priya@gmail.com",
+      "password": "123456",
+      "status": "block"
+    },
+    {
+      "id": 6,
+      "name": "Amit",
+      "email": "amit@gmail.com",
+      "password": "123456",
+      "status": "unblock"
+    },
+    {
+      "id": 7,
+      "name": "Neha",
+      "email": "neha@gmail.com",
+      "password": "123456",
+      "status": "unblock"
+    },
+    {
+      "id": 8,
+      "name": "Karan",
+      "email": "karan@gmail.com",
+      "password": "123456",
+      "status": "block"
+    },
+    {
+      "id": 9,
+      "name": "Sneha",
+      "email": "sneha@gmail.com",
+      "password": "123456",
+      "status": "unblock"
+    },
+    {
+      "id": 10,
+      "name": "Vishal",
+      "email": "vishal@gmail.com",
+      "password": "123456",
+      "status": "block"
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      "date": "23 Mon 2022",
+      "post": "Bhavesh",
+      "title": "Adventure Trip",
+      "dis": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos."
+    },
+    {
+      "id": 2,
+      "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800",
+      "date": "24 Mon 2022",
+      "post": "Bhavesh",
+      "title": "Mountain Hiking",
+      "dis": "Explore breathtaking mountain trails and enjoy unforgettable hiking experiences."
+    },
+    {
+      "id": 3,
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      "date": "25 Mon 2022",
+      "post": "Bhavesh",
+      "title": "Beach Vacation",
+      "dis": "Relax by the sea and discover the beauty of tropical beach destinations."
+    },
+    {
+      "id": 4,
+      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      "date": "26 Mon 2022",
+      "post": "Bhavesh",
+      "title": "Forest Camping",
+      "dis": "Experience peaceful nights under the stars while camping in beautiful forests."
+    },
+    {
+      "id": 5,
+      "image": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1",
+      "date": "27 Mon 2022",
+      "post": "Bhavesh",
+      "title": "Road Trip",
+      "dis": "Hit the open road and explore scenic routes with friends and family."
+    },
+    {
+      "id": 6,
+      "image": "https://images.unsplash.com/photo-1527631746610-bca00a040d60",
+      "date": "28 Mon 2022",
+      "post": "Bhavesh",
+      "title": "Desert Safari",
+      "dis": "Enjoy thrilling dune rides and experience the magic of the desert landscape."
+    },
+    {
+      "id": 7,
+      "image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      "date": "29 Mon 2022",
+      "post": "Bhavesh",
+      "title": "Nature Escape",
+      "dis": "Reconnect with nature by visiting lush green valleys and peaceful rivers."
+    },
+    {
+      "id": 8,
+      "image": "https://images.unsplash.com/photo-1493558103817-58b2924bce98",
+      "date": "30 Mon 2022",
+      "post": "Bhavesh",
+      "title": "City Tour",
+      "dis": "Discover iconic landmarks, delicious food, and vibrant nightlife in the city."
+    },
+    {
+      "id": 9,
+      "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206",
+      "date": "01 Tue 2022",
+      "post": "Bhavesh",
+      "title": "Island Adventure",
+      "dis": "Visit crystal-clear islands and enjoy snorkeling, boating, and beach activities."
+    },
+    {
+      "id": 10,
+      "image": "https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef",
+      "date": "02 Tue 2022",
+      "post": "Bhavesh",
+      "title": "Snowy Mountains",
+      "dis": "Experience breathtaking snow-covered peaks and exciting winter sports adventures."
+    }
+  ],
+  "destination": [
+    {
+      "id": 1,
+      "image": "https://images.unsplash.com/photo-1682685797208-c741d58c2eff?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dHJhdmVsJTIwZGVzdGluYXRpb258ZW58MHx8MHx8fDA%3D",
+      "title": "new Yourk"
+    },
+    {
+      "id": 2,
+      "image": "https://plus.unsplash.com/premium_photo-1677002240252-af3f88114efc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dHJhdmVsJTIwZGVzdGluYXRpb258ZW58MHx8MHx8fDA%3D",
+      "title": "Himalaya"
+    },
+    {
+      "id": 3,
+      "image": "https://images.unsplash.com/photo-1606922183036-62e19495eaab?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHRyYXZlbCUyMGRlc3RpbmF0aW9ufGVufDB8fDB8fHww",
+      "title": "China"
+    },
+    {
+      "id": 4,
+      "image": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&auto=format&fit=crop&q=60",
+      "title": "Paris"
+    },
+    {
+      "id": 5,
+      "image": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&auto=format&fit=crop&q=60",
+      "title": "Dubai"
+    },
+    {
+      "id": 6,
+      "image": "https://images.unsplash.com/photo-1528164344705-47542687000d?w=600&auto=format&fit=crop&q=60",
+      "title": "London"
+    },
+    {
+      "id": 7,
+      "image": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&auto=format&fit=crop&q=60",
+      "title": "Tokyo"
+    },
+    {
+      "id": 8,
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600&auto=format&fit=crop&q=60",
+      "title": "Switzerland"
+    },
+    {
+      "id": 9,
+      "image": "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600&auto=format&fit=crop&q=60",
+      "title": "Bali"
+    },
+    {
+      "id": 10,
+      "image": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=600&auto=format&fit=crop&q=60",
+      "title": "Maldives"
+    }
+  ],
+  "ExpolorTour": [
+    {
+      "id": 1,
+      "name": "weekend Tour",
+      "image": "https://images.unsplash.com/photo-1554366347-897a5113f6ab?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dHJhdmVsJTIwZGVzdGluYXRpb258ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "id": 2,
+      "name": "Adventure Tour",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 3,
+      "name": "Family Tour",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 4,
+      "name": "Honeymoon Tour",
+      "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 5,
+      "name": "Wildlife Tour",
+      "image": "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 6,
+      "name": "Mountain Tour",
+      "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 7,
+      "name": "Beach Tour",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 8,
+      "name": "Luxury Tour",
+      "image": "https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 9,
+      "name": "Historical Tour",
+      "image": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 10,
+      "name": "International Tour",
+      "image": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&auto=format&fit=crop&q=60"
+    }
+  ],
+  "gallery": [
+    {
+      "id": 1,
+      "name": "weekend Tour",
+      "image": "https://images.unsplash.com/photo-1584467541268-b040f83be3fd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsJTIwZGVzdGluYXRpb258ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "id": 2,
+      "name": "World tour",
+      "image": "https://plus.unsplash.com/premium_photo-1661962660197-6c2430fb49a6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHRyYXZlbCUyMGRlc3RpbmF0aW9ufGVufDB8fDB8fHww"
+    },
+    {
+      "id": 3,
+      "name": "Adventure Tour",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 4,
+      "name": "Family Tour",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 5,
+      "name": "Honeymoon Tour",
+      "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 6,
+      "name": "Beach Tour",
+      "image": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 7,
+      "name": "Mountain Tour",
+      "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 8,
+      "name": "Wildlife Tour",
+      "image": "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 9,
+      "name": "City Tour",
+      "image": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 10,
+      "name": "Luxury Tour",
+      "image": "https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=600&auto=format&fit=crop&q=60"
+    }
+  ],
+  "TravelGuid": [
+    {
+      "id": 3,
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&auto=format&fit=crop&q=60",
+      "name": "David Miller",
+      "designation": "Frontend Developer"
+    },
+    {
+      "id": 4,
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&auto=format&fit=crop&q=60",
+      "name": "James Wilson",
+      "designation": "Backend Developer"
+    },
+    {
+      "id": 5,
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&auto=format&fit=crop&q=60",
+      "name": "Sophia Brown",
+      "designation": "UI/UX Designer"
+    },
+    {
+      "id": 6,
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=60",
+      "name": "Emma Johnson",
+      "designation": "Graphic Designer"
+    },
+    {
+      "id": 7,
+      "image": "https://images.unsplash.com/photo-1504593811423-6dd665756598?w=600&auto=format&fit=crop&q=60",
+      "name": "Michael Lee",
+      "designation": "React Developer"
+    },
+    {
+      "id": 8,
+      "image": "https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=600&auto=format&fit=crop&q=60",
+      "name": "Olivia Davis",
+      "designation": "Project Manager"
+    },
+    {
+      "id": 9,
+      "image": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=600&auto=format&fit=crop&q=60",
+      "name": "Daniel Thomas",
+      "designation": "Full Stack Developer"
+    },
+    {
+      "id": 10,
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&auto=format&fit=crop&q=60",
+      "name": "Isabella Clark",
+      "designation": "Software Engineer"
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "title": "Overview",
+      "des": "Due to the widespread use of <table> elements across third-party widgets like calendars and date pickers, Bootstrap’s tables are opt-in. Add the base class .table to any <table>, then extend with our optional modifier classes or custom styles.",
+      "icon": "https://plus.unsplash.com/premium_photo-1668373496860-0c4bb952835c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 2,
+      "title": "Adventure Tours",
+      "des": "Experience thrilling adventures with mountain trekking, river rafting, and camping guided by experienced professionals.",
+      "icon": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 3,
+      "title": "Hotel Booking",
+      "des": "Book premium hotels and budget accommodations with the best prices and comfortable facilities for your trip.",
+      "icon": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 4,
+      "title": "Flight Booking",
+      "des": "Find affordable domestic and international flights with flexible schedules and secure online booking.",
+      "icon": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 5,
+      "title": "Tour Guide",
+      "des": "Our professional tour guides help you discover local attractions, culture, and hidden gems during your journey.",
+      "icon": "https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 6,
+      "title": "Travel Insurance",
+      "des": "Protect your trip with comprehensive travel insurance covering medical emergencies, cancellations, and baggage loss.",
+      "icon": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 7,
+      "title": "Cruise Packages",
+      "des": "Enjoy luxurious cruise vacations with world-class entertainment, dining, and breathtaking ocean views.",
+      "icon": "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 8,
+      "title": "Car Rental",
+      "des": "Rent well-maintained vehicles for city tours, business trips, or family vacations at affordable prices.",
+      "icon": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 9,
+      "title": "Visa Assistance",
+      "des": "Get expert support with visa documentation, application processing, and travel requirements for international trips.",
+      "icon": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": 10,
+      "title": "Holiday Packages",
+      "des": "Choose from customized holiday packages designed for couples, families, and groups at the best prices.",
+      "icon": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&auto=format&fit=crop&q=60"
+    }
+  ],
+  "tour": [
+    {
+      "id": 1,
+      "title": "Weekend Tour",
+      "image": "https://plus.unsplash.com/premium_photo-1723780821848-c401df7b31b9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8V2Vla2VuZCUyMFRvdXJ8ZW58MHx8MHx8fDA%3D",
+      "category": "National"
+    },
+    {
+      "id": 2,
+      "title": "Holiday Tour",
+      "image": "https://images.unsplash.com/photo-1566371486490-560ded23b5e4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SG9saWRheSUyMFRvdXJ8ZW58MHx8MHx8fDA%3D",
+      "category": "National"
+    },
+    {
+      "id": 3,
+      "title": "Road Trip",
+      "image": "https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Um9hZCUyMFRyaXB8ZW58MHx8MHx8fDA%3D",
+      "category": "National"
+    },
+    {
+      "id": 4,
+      "title": "Historical Trip",
+      "image": "https://images.unsplash.com/photo-1664485032641-127031773396?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEhpc3RvcmljYWwlMjBUcmlwfGVufDB8fDB8fHww",
+      "category": "National"
+    },
+    {
+      "id": 5,
+      "title": "Beach Tour",
+      "image": "https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1326&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "National"
+    },
+    {
+      "id": 6,
+      "title": "Japan",
+      "image": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "international"
+    },
+    {
+      "id": 7,
+      "title": "Russia",
+      "image": "https://images.unsplash.com/photo-1490879112094-281fea0883dc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fFJ1c3NpYXxlbnwwfHwwfHx8MA%3D%3D",
+      "category": "international"
+    },
+    {
+      "id": 8,
+      "title": "spain",
+      "image": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3BhaW58ZW58MHx8MHx8fDA%3D",
+      "category": "international"
+    }
+  ]
+}
