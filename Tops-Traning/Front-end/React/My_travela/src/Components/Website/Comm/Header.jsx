@@ -61,7 +61,7 @@ function Header() {
                                     <NavLink to="/tour" className="dropdown-item">Explore Tour</NavLink>
                                     <NavLink to="/booking" className="dropdown-item">Travel Booking</NavLink>
                                     <NavLink to="/gallery" className="dropdown-item">Our Gallery</NavLink>
-                                    <NavLink to="/guides" className="dropdown-item">Travel Guides</NavLink>
+                                    <NavLink to="/travelGuides" className="dropdown-item">Travel Guides</NavLink>
                                     <NavLink to="/testimonial" className="dropdown-item">Testimonial</NavLink>
                                 </div>
                             </div>

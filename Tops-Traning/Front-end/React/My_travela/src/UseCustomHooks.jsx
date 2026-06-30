@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { toast } from 'react-toastify'
 
 function UseCustomHooks(apiData) {
 
@@ -9,6 +10,7 @@ function UseCustomHooks(apiData) {
         try {
             const res = await axios.get(apiData)
             setApi(res.data)
+            
         } catch (error) {
             console.log('API Not found', error)
         }

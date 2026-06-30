@@ -3,7 +3,7 @@ import React from 'react'
 function AdminDashboardAnalytics() {
     return (
         <div>
-            <section className="py-4">
+            <section className="sectionSpace ">
                 <div className="container-fluid">
                     <div className="row g-4">
 

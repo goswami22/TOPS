@@ -21,6 +21,16 @@ import TravelGuid from "./Components/Admin/Apages/TravelGuid";
 import AGallery from "./Components/Admin/Apages/AGallery";
 import AServices from "./Components/Admin/Apages/AServices";
 import AExpolorTour from "./Components/Admin/Apages/AExpolorTour";
+import ATestimonial from "./Components/Admin/Apages/ATestimonial";
+import APackages from "./Components/Admin/Apages/APackages";
+import TravelGuides from "./Components/Website/Pages/guides";
+import AddTour from "./Components/Admin/Apages/AddTour";
+import AddBlog from "./Components/Admin/Apages/AddBlog";
+import AddPackages from "./Components/Admin/Apages/AddPackages";
+import AddDestination from "./Components/Admin/Apages/AddDestination";
+import { ToastContainer } from "react-toastify";
+import AddGallery from "./Components/Admin/Apages/AddGallery";
+import AddTravelGuides from "./Components/Admin/Apages/AddTravelGuides";
 
 
 
@@ -28,6 +38,7 @@ import AExpolorTour from "./Components/Admin/Apages/AExpolorTour";
 function App() {
   return (
     <div>
+      <ToastContainer />
 
         <BrowserRouter>
 
@@ -41,7 +52,7 @@ function App() {
             <Route path="/tour" element={<Tour />}/>
             <Route path="/booking" element={<Booking />}/>
             <Route path="/gallery" element={<Gallary />}/>
-            <Route path="/guides" element={<Guides />}/>
+            <Route path="/travelGuides" element={<TravelGuides />}/>
             <Route path="/testimonial" element={<Testimonial />}/>
             <Route path="/contact" element={<Contact />}/>
             <Route path="*" element={<PageNotFound />}/>
@@ -54,8 +65,16 @@ function App() {
           <Route path="/Adesination" element={<AdminDestination />}/>
           <Route path="/Atour" element={<AExpolorTour />}/>
           <Route path="/Agallery" element={<AGallery />}/>
+          <Route path="/AddGallery" element={<AddGallery />}/>
           <Route path="/AtravelGuid" element={<TravelGuid />}/>
           <Route path="/Aservices" element={<AServices />}/>
+          <Route path="/ATestimonial" element={<ATestimonial />}/>
+          <Route path="/APackages" element={<APackages/>}/>
+          <Route path="/AddTour" element={<AddTour/>}/>
+          <Route path="/AddBlog" element={<AddBlog/>}/>
+          <Route path="/AddPackages" element={<AddPackages/>}/>
+          <Route path="/AddDestination" element={<AddDestination/>}/>
+          <Route path="/AddTravelGuides" element={<AddTravelGuides/>}/>
           
 
 

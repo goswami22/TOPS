@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AdminFooter() {
+function AFooter() {
   return (
     <footer className="border-top py-3 mt-auto">
       <div className="container-fluid">
@@ -32,4 +32,4 @@ function AdminFooter() {
   );
 }
 
-export default AdminFooter;
+export default AFooter;

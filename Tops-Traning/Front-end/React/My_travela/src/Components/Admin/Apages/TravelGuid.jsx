@@ -2,60 +2,123 @@ import React, { useEffect, useState } from 'react'
 import Aheader from '../Acommon/Aheader'
 import Ahero from '../Acommon/Ahero'
 import axios from 'axios'
+import UseCustomHooks from '../../../UseCustomHooks'
+import { FaArrowRight } from "react-icons/fa6";
+import AFooter from '../Acommon/AFooter'
+import UseCustomDelete from '../../../UseCustomDelete'
 
 function TravelGuid() {
 
 
-    const [travel, setTravel] = useState([])
+    // const [travel, setTravel] = useState([])
 
-    useEffect(() => {
-        getData()
-    }, [])
+    // useEffect(() => {
+    //     getData()
+    // }, [])
 
 
 
-    const getData = async () => {
-        try {
-            const res = await axios.get('http://localhost:3000/TravelGuid')
-            setTravel(res.data)
-        } catch (err) {
-            console.log("API Not Found", err)
-        }
-    }
+    // const getData = async () => {
+    //     try {
+    //         const res = await axios.get('http://localhost:3000/TravelGuid')
+    //         setTravel(res.data)
+    //     } catch (err) {
+    //         console.log("API Not Found", err)
+    //     }
+    // }
+
+
+  useEffect(() => {
+        fetchApi()
+    })
+
+    const { api, fetchApi } = UseCustomHooks('http://localhost:3000/TravelGuid')  
+
+    const {deleteData} = UseCustomDelete('http://localhost:3000/TravelGuid')
+    fetchApi()
 
 
 
     return (
         <div>
             <Aheader />
-            <Ahero title={"Travel Guid"} page={'Travel Guid'} />
+            <Ahero title={"Admin Travel Guid"} page={'Travel Guid'} />
+
+            <section className='travelGuid sectionSpace'>
+                <div className="container mt-5">
+                    <div className="row">
+                        <table className="table table-hover table-bordered">
+                            <thead>
+                                <tr className='text-center'>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Designation</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    api && api.map((item, index) => {
+                                        return (
+                                            <tr key={index} className='text-center'>
+                                                <th scope="row">{item.id}</th>
+                                                <td>
+                                                    <img src={item.image} alt="image" />
+                                                </td>
+                                                <td>{item.name}</td>
+                                                <td>{item.designation}</td>
+
+                                                {/* action button */}
+                                                <td >
+                                                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target={`#travelGuid${item.id}`}>
+                                                        view
+                                                    </button>
+                                                    <button className='text-uppercase fs-6 btn btn-success mx-2'>edit</button>
+                                                    <button onClick={()=> deleteData(item.id)} className='text-uppercase fs-6 btn btn-danger '>delete</button>
+
+                                                    {/* modal */}
+                                                    <div className="modal fade" id={`travelGuid${item.id}`} tabIndex="{-1}" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div className="modal-dialog  modal-lg">
+                                                            <div className="modal-content">
+                                                                <div className="modal-body">
+                                                                    <div className="row g-4 justify-content-center">
+                                                                        <div className="col-md-12">
+                                                                            <div className="blog-item">
+                                                                                <div className="blog-img">
+                                                                                    <div className="blog-img-inner">
+                                                                                        <img className="img-fluid w-100 rounded-top" src={item.image} alt="Image" />
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className="blog-content text-start border border-top-0 rounded-bottom p-4">
+
+                                                                                    <a href="#" className="h4 text-capitalize mb-4 d-inline-block ">{item.title}</a>
+                                                                                    <p>{item.designation}</p>
+                                                                                    <br />
+                                                                                    <a href="#" className="btn btn-primary rounded-pill py-2 px-4">View all place <FaArrowRight /></a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
 
-            <div className="container">
-                <h1>Travel Guid</h1>
-                <div className="row">
-                    {
-                        travel && travel.map((item, index) => {
-                            return (
-                                <div className="col-3" key={index}>
-                                    <div className="card" style={{ width: '18rem' }}>
-                                        <img src={item.image} className="card-img-top" alt="..." />
-                                        <div className="card-body">
-                                            <h5 className="card-title">{item.name}</h5>
-                                            <span>{item.designation}</span><br />
-                                            <a href="#" className="btn btn-primary">Go somewhere</a>
-                                        </div>
-                                    </div>
+                                                </td>
+                                            </tr>
+                                        )
+                                    })
+                                }
+                            </tbody>
+                        </table>
+                    </div>
 
-                                </div>
-                            )
-                        })
-                    }
                 </div>
+            </section>
 
-            </div>
-
-
+            <AFooter/>
         </div>
     )
 }

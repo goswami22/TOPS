@@ -2,15 +2,15 @@ import React from 'react'
 import Aheader from '../Acommon/Aheader'
 import Ahero from '../Acommon/Ahero'
 import AdminDashboardAnalytics from './AdminDashboardAnalytics'
-import AdminFooter from './AdminFooter'
+import AdminFooter from '../Acommon/AFooter'
 
 function AdminDash() {
   return (
     <div>
       <Aheader />
-      <Ahero title={'Admin Dashboard'} page={'Admin Dashboard'} />
+      <Ahero title={'Admin Dashboard'} page={'Dashboard'} />
 
-      <section className="container py-5">
+      <section className="container sectionSpace">
         <div className="row text-center g-4">
 
           <div className="col-md-3">

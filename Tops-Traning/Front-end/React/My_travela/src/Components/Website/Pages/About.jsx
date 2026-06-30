@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../Comm/Header'
 import Footer from '../Comm/Footer'
 import Hero from '../Comm/Hero'
 import Subscribe from '../Comm/Subscribe'
+import UseCustomHooks from '../../../UseCustomHooks'
 
 function About() {
+
+    useEffect(() => {
+        fetchApi()
+    })
+
+    const { api, fetchApi } = UseCustomHooks('http://localhost:3000/TravelGuid')
+
+
     return (
         <div>
             <Header />
@@ -61,28 +70,34 @@ function About() {
                             <h1 className="mb-0">Meet Our Guide</h1>
                         </div>
                         <div className="row g-4">
-                            <div className="col-md-6 col-lg-3">
-                                <div className="guide-item">
-                                    <div className="guide-img">
-                                        <div className="guide-img-efects">
-                                            <img src="img/guide-1.jpg" className="img-fluid w-100 rounded-top" alt="Image" />
+                            {
+                                api && api.map((item,index) => {
+                                    return (
+                                        <div key={item.id} className="col-md-6 col-lg-3">
+                                            <div className="guide-item">
+                                                <div className="guide-img">
+                                                    <div className="guide-img-efects">
+                                                        <img src={item.image} className="img-fluid w-100 rounded-top" alt="Image" />
+                                                    </div>
+                                                    <div className="guide-icon rounded-pill p-2">
+                                                        <a className="btn btn-square btn-primary rounded-circle mx-1" href><i className="fab fa-facebook-f" /></a>
+                                                        <a className="btn btn-square btn-primary rounded-circle mx-1" href><i className="fab fa-twitter" /></a>
+                                                        <a className="btn btn-square btn-primary rounded-circle mx-1" href><i className="fab fa-instagram" /></a>
+                                                        <a className="btn btn-square btn-primary rounded-circle mx-1" href><i className="fab fa-linkedin-in" /></a>
+                                                    </div>
+                                                </div>
+                                                <div className="guide-title text-center rounded-bottom p-4">
+                                                    <div className="guide-title-inner">
+                                                        <h4 className="mt-3">{item.title}</h4>
+                                                        <p className="mb-0">{item.designation}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="guide-icon rounded-pill p-2">
-                                            <a className="btn btn-square btn-primary rounded-circle mx-1" href><i className="fab fa-facebook-f" /></a>
-                                            <a className="btn btn-square btn-primary rounded-circle mx-1" href><i className="fab fa-twitter" /></a>
-                                            <a className="btn btn-square btn-primary rounded-circle mx-1" href><i className="fab fa-instagram" /></a>
-                                            <a className="btn btn-square btn-primary rounded-circle mx-1" href><i className="fab fa-linkedin-in" /></a>
-                                        </div>
-                                    </div>
-                                    <div className="guide-title text-center rounded-bottom p-4">
-                                        <div className="guide-title-inner">
-                                            <h4 className="mt-3">Full Name</h4>
-                                            <p className="mb-0">Designation</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-6 col-lg-3">
+                                    )
+                                })
+                            }
+                            {/* <div className="col-md-6 col-lg-3">
                                 <div className="guide-item">
                                     <div className="guide-img">
                                         <div className="guide-img-efects">
@@ -144,7 +159,7 @@ function About() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

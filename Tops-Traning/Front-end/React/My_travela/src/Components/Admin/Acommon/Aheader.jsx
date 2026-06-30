@@ -52,17 +52,54 @@ function Aheader() {
                             <NavLink to="/admin" className="nav-item nav-link">Home</NavLink>
                             {/* <NavLink to="/about" className="nav-item nav-link">About</NavLink> */}
                             <NavLink to="/Aservices" className="nav-item nav-link">Services</NavLink>
-                            <NavLink to="/packages" className="nav-item nav-link">Packages</NavLink>
-                            <NavLink to="/AdminBlog" className="nav-item nav-link">Manage Blog</NavLink>
+                            <div className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Packages</a>
+                                <div className="dropdown-menu m-0">
+                                    <NavLink to="/APackages" className="dropdown-item">Manage Packages</NavLink>
+                                    <NavLink to="/AddPackages" className="dropdown-item">Add Packages</NavLink>
+                                </div>
+                            </div>
+                            <div className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
+                                <div className="dropdown-menu m-0">
+                                    <NavLink to="/AdminBlog" className="dropdown-item">Manage Blog</NavLink>
+                                    <NavLink to="/AddBlog" className="dropdown-item">Add Blog</NavLink>
+                                </div>
+                            </div>
+                            <div className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Tour</a>
+                                <div className="dropdown-menu m-0">
+                                    <NavLink to="/AddTour" className="dropdown-item">Add Tour</NavLink>
+                                    <NavLink to="/Atour" className="dropdown-item">Explore Tour</NavLink>
+                                </div>
+                            </div>
+                            <div className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Destination</a>
+                                <div className="dropdown-menu m-0">
+                                    <NavLink to="/Adesination" className="dropdown-item">Manage Destination</NavLink>
+                                    <NavLink to="/AddDestination" className="dropdown-item">Add Destination</NavLink>
+                                </div>
+                            </div>
+                            <div className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gallery</a>
+                                <div className="dropdown-menu m-0">
+                                    <NavLink to="/Agallery" className="dropdown-item">Manage Gallery</NavLink>
+                                    <NavLink to="/AddGallery" className="dropdown-item">Add Gallery</NavLink>
+                                </div>
+                            </div>
+                            <div className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Travel Guides</a>
+                                <div className="dropdown-menu m-0">
+                                    <NavLink to="/AtravelGuid" className="dropdown-item">Manage Travel Guides</NavLink>
+                                    <NavLink to="/AddTravelGuides" className="dropdown-item">Add Travel Guides</NavLink>
+                                </div>
+                            </div>
                             <div className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                                 <div className="dropdown-menu m-0">
-                                    <NavLink to="/Adesination" className="dropdown-item">Destination</NavLink>
-                                    <NavLink to="/Atour" className="dropdown-item">Explore Tour</NavLink>
                                     {/* <NavLink to="/booking" className="dropdown-item">Travel Booking</NavLink> */}
-                                    <NavLink to="/Agallery" className="dropdown-item">Our Gallery</NavLink>
                                     <NavLink to="/AtravelGuid" className="dropdown-item">Travel Guides</NavLink>
-                                    <NavLink to="/testimonial" className="dropdown-item">Testimonial</NavLink>
+                                    <NavLink to="/" className="dropdown-item">Testimonial</NavLink>
                                 </div>
                             </div>
                             <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
