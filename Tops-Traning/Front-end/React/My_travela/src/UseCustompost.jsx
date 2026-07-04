@@ -28,8 +28,7 @@ function UseCustompost(api, initialData, redictPath) {
             toast.success('Data Successfully added')
             
         } catch (error) {
-            console.log('API not Found', error)
-            toast.error('Api nOt Found')
+            toast.error('Api Not Found')
         }
     } 
 

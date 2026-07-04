@@ -15,7 +15,7 @@ function AddTour() {
     //     category: ''
     // },)
 
-
+//  Post method
     const redirect = useNavigate()
 
     const [form, setForm] = useState({

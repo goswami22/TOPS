@@ -71,7 +71,7 @@
 }
 
 .btn.btn-primary:hover {
-    box-shadow: inset 300px 0 0 0 var(--bs-light) !important;
+    box-shadow: inset 1300px 0 0 0 var(--bs-light) !important;
     color: var(--bs-primary) !important;
 }
 
@@ -454,6 +454,11 @@
 .service .service-content-inner:hover .service-content p,
 .service .service-content-inner:hover .service-icon i {
     color: var(--bs-white) !important;
+}
+
+.service i {
+    font-size: 60px;
+    color: var(--bs-primary);
 }
 
 /*** Service End ***/
@@ -1264,6 +1269,64 @@ table .modal .blog-img-inner img {
 }
 
 /*** Subscribe End ***/
+
+/*** Login start ***/
+.login-section{
+    position: relative;
+}
+
+.login-section .card{
+    transition: .3s;
+}
+
+.login-section .card:hover{
+    transform: translateY(-5px);
+}
+
+.login-section .form-control{
+    height:55px;
+    border-radius:10px;
+}
+
+.login-section .form-control:focus{
+    border-color:#13357B;
+    box-shadow: 0 0 10px rgba(19, 54, 123, 0.3);
+}
+
+/*** login End ***/
+
+/*** signuppage start ***/
+.signuppage  .card {
+    transition: .3s;
+}
+
+.signuppage  .card:hover {
+    transform: translateY(-5px);
+}
+
+.signuppage  .form-control,
+.signuppage .form-select {
+    height: 55px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.signuppage .form-control:focus,
+.signuppage .form-select:focus {
+    border-color: #13357B;
+    box-shadow: 0 0 10px rgba(19, 54, 123, 0.3);
+}
+
+.signuppage  .btn {
+    transition: .3s;
+}
+
+.signuppage  .btn:hover {
+    transform: translateY(-2px);
+}
+/*** signuppage End ***/
+
+
 
 /*** Footer Start ***/
 .footer {

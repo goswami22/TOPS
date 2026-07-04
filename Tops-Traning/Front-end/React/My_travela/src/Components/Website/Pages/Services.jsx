@@ -1,17 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Subscribe from '../Comm/Subscribe'
 import Header from '../Comm/Header'
 import Footer from '../Comm/Footer'
 import Hero from '../Comm/Hero'
+import UseCustomHooks from '../../../UseCustomHooks'
 
 function Services() {
+
+
+    useEffect(() => {
+        fetchApi()
+    })
+
+    const { api, fetchApi } = UseCustomHooks('http://localhost:3000/services')
+
+
     return (
         <div>
             <div>
-                <Header/>
+                <Header />
 
                 {/* hero start */}
-               <Hero title="Services Us" page="Services" />
+                <Hero title="Services Us" page="Services" />
                 {/* hero End */}
                 {/* Services Start */}
                 <div className="container-fluid bg-light service py-5">
@@ -23,106 +33,47 @@ function Services() {
                         <div className="row g-4">
                             <div className="col-lg-6">
                                 <div className="row g-4">
-                                    <div className="col-12">
-                                        <div className="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
-                                            <div className="service-content text-end">
-                                                <h5 className="mb-4">WorldWide Tours</h5>
-                                                <p className="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                                </p>
-                                            </div>
-                                            <div className="service-icon p-4">
-                                                <i className="fa fa-globe fa-4x text-primary" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="service-content-inner d-flex align-items-center  bg-white border border-primary rounded p-4 pe-0">
-                                            <div className="service-content text-end">
-                                                <h5 className="mb-4">Hotel Reservation</h5>
-                                                <p className="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                                </p>
-                                            </div>
-                                            <div className="service-icon p-4">
-                                                <i className="fa fa-hotel fa-4x text-primary" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
-                                            <div className="service-content text-end">
-                                                <h5 className="mb-4">Travel Guides</h5>
-                                                <p className="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                                </p>
-                                            </div>
-                                            <div className="service-icon p-4">
-                                                <i className="fa fa-user fa-4x text-primary" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
-                                            <div className="service-content text-end">
-                                                <h5 className="mb-4">Event Management</h5>
-                                                <p className="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                                </p>
-                                            </div>
-                                            <div className="service-icon p-4">
-                                                <i className="fa fa-cog fa-4x text-primary" />
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {
+                                        api && api.map((item, index) => {
+                                            return (
+                                                <div className="col-12" key={item.id}>
+                                                    <div className="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                                                        <div className="service-content text-end">
+                                                            <h5 className="mb-4">{item.title}</h5>
+                                                            <p className="mb-0">{item.des}</p>
+                                                        </div>
+                                                        <div className="service-icon p-4">
+                                                            <i className={item.icon} />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            )
+                                        })
+                                    }
+
                                 </div>
                             </div>
                             <div className="col-lg-6">
                                 <div className="row g-4">
-                                    <div className="col-12">
-                                        <div className="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                                            <div className="service-icon p-4">
-                                                <i className="fa fa-globe fa-4x text-primary" />
-                                            </div>
-                                            <div className="service-content">
-                                                <h5 className="mb-4">WorldWide Tours</h5>
-                                                <p className="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                                            <div className="service-icon p-4">
-                                                <i className="fa fa-hotel fa-4x text-primary" />
-                                            </div>
-                                            <div className="service-content">
-                                                <h5 className="mb-4">Hotel Reservation</h5>
-                                                <p className="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                                            <div className="service-icon p-4">
-                                                <i className="fa fa-user fa-4x text-primary" />
-                                            </div>
-                                            <div className="service-content">
-                                                <h5 className="mb-4">Travel Guides</h5>
-                                                <p className="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                                            <div className="service-icon p-4">
-                                                <i className="fa fa-cog fa-4x text-primary" />
-                                            </div>
-                                            <div className="service-content">
-                                                <h5 className="mb-4">Event Management</h5>
-                                                <p className="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {
+                                        api && api.map((item, index) => {
+                                            return (
+                                                <div className="col-12" key={item.id}>
+                                                    <div className="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                                                        <div className="service-content text-end">
+                                                            <h5 className="mb-4">{item.title}</h5>
+                                                            <p className="mb-0">{item.des}</p>
+                                                        </div>
+                                                        <div className="service-icon p-4">
+                                                            <i className={item.icon} />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            )
+                                        })
+                                    }
                                 </div>
                             </div>
                             <div className="col-12">
@@ -230,7 +181,7 @@ function Services() {
                 <Subscribe />
                 {/* Subscribe end */}
                 {/* Footer Start */}
-                <Footer/>
+                <Footer />
                 {/* Footer End */}
             </div>
 

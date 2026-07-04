@@ -6,6 +6,10 @@ import UseCustomHooks from '../../../UseCustomHooks'
 // import { FaArrowRight } from "react-icons/fa6"
 import AFooter from '../Acommon/AFooter'
 import UseCoustomCategory from '../../../UseCoustomCategory'
+import { NavLink } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import UseCustomDelete from '../../../UseCustomDelete'
+
 
 function AExpolorTour() {
 
@@ -27,13 +31,60 @@ function AExpolorTour() {
   //   }
   // }
 
-    // const {dataCategory, fetchdata} = UseCoustomCategory(`http://localhost:3000/tour`)
+  // const {dataCategory, fetchdata} = UseCoustomCategory(`http://localhost:3000/tour`)
 
   // useEffect(() => {
   //   fetchApi()
   // }, [])
 
+
+
+
+  // get data from api
   const { api, fetchApi } = UseCustomHooks('http://localhost:3000/tour')
+
+
+  // delete method
+  const {deleteData} = UseCustomDelete('http://localhost:3000/tour')
+  fetchApi()
+
+
+
+// Put method
+  const [editModal, setEditModal] = useState(null)
+  const [editData, SetEditData] = useState({
+    id: "",
+    title: "",
+    image: "",
+    category: ""
+  })
+
+  const handleEdit = (data) => {
+    console.log(data)
+    setEditModal(data)
+    SetEditData(data)
+  }
+
+  const getData = (e) => {
+    SetEditData({
+      ...editData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleUpdate = async (e) => {
+    try {
+      e.preventDefault()
+      const res = await axios.put(`http://localhost:3000/tour/${editData.id}`, editData)
+      toast.success('Data Updated Successfully')
+      setEditModal(null)
+      fetchApi()
+      
+    } catch (error) {
+      toast.error('Api Not Found')
+    }
+  }
+
 
 
   return (
@@ -43,28 +94,15 @@ function AExpolorTour() {
 
 
       <section className='ExploreTour sectionSpace'>
-        <div className="container-fluid">
+        <div className="container-fluid my-5">
           <div className="container">
-            <div className="mx-auto text-center mb-5" style={{ maxWidth: 900 }}>
+
+            <div className="mx-auto text-center w-75 mb-5">
               <h5 className="section-title px-3">Explore Tour</h5>
               <h1 className="mb-4">The World</h1>
               <p className="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
               </p>
             </div>
-            {/* <div className="tab-class text-center">
-              <ul className="nav nav-pills d-inline-flex justify-content-center mb-5">
-                <li className="nav-item">
-                  <a onClick={() => fetchdata()} className="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#National">
-                    <span className="text-dark" style={{ width: 250 }}>National Tour Category</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a onClick={() => fetchdata()} className="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#International">
-                    <span className="text-dark" style={{ width: 250 }}>International tour Category</span>
-                  </a>
-                </li>
-              </ul>
-            </div> */}
 
           </div>
         </div>
@@ -100,8 +138,8 @@ function AExpolorTour() {
                             <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target={`#destinationview${item.id}`}>
                               view
                             </button>
-                            <button className='text-uppercase fs-6 btn btn-success mx-2'>edit</button>
-                            <button className='text-uppercase fs-6 btn btn-danger '>delete</button>
+                            <button onClick={() => handleEdit(item)} className='text-uppercase fs-6 btn btn-success mx-2'>edit</button>
+                            <button onClick={()=> deleteData(item.id)} className='text-uppercase fs-6 btn btn-danger '>delete</button>
 
                             {/* modal */}
                             <div className="modal fade" id={`destinationview${item.id}`} tabIndex="{-1}" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -136,6 +174,67 @@ function AExpolorTour() {
                   }
                 </tbody>
               </table>
+            }
+
+            <div className='bottom-button text-end mt-4'>
+              <NavLink to="/AddTour" className="btn py-3 px-5   btn-primary">Add Tour</NavLink>
+            </div>
+          </div>
+          <div className="row">
+
+            {
+              editModal && (
+                <div className="container-fluid booking py-5">
+                  <div className="container py-5">
+                    <div className="row g-5 align-items-center">
+
+                      <div className="col-lg-8 mx-auto text-center">
+                        <h1 className="text-white mb-3">Book A Tour Deals</h1>
+                        <p className="text-white mb-5">Get <span className="text-warning">50% Off</span> On Your First Adventure Trip With Travela. Get More Deal Offers Here.</p>
+                        <form>
+                          <div className="row g-3">
+                            <div className="col-md-12">
+                              <div className="form-floating">
+                                <input type="text" name='title' value={editData.title}  onChange={getData} className="form-control bg-white border-0" id="name" placeholder="Your Name" />
+                                <label htmlFor="name">Your Name</label>
+                              </div>
+                            </div>
+                            <div className="col-md-12">
+                              <div className="form-floating">
+                                <input
+                                  type="url"
+                                  name='image'
+                                  value={editData.image}
+                                  onChange={getData}
+                                  className="form-control bg-white border-0"
+                                  id="img"
+                                  placeholder="Your img"
+                                />
+                                <label htmlFor="img">Your image</label>
+                              </div>
+                            </div>
+                            <div className="col-md-12">
+                              <div className="form-floating">
+                                <select name='category' value={editData.category}  onChange={getData} className="form-select bg-white border-0" id="select1">
+                                  <option value='national'>national</option>
+                                  <option value='international'>international</option>
+                                </select>
+                                <label htmlFor="select1">Destination</label>
+                              </div>
+                            </div>
+                            <div className="col-6">
+                              <button className="btn btn-primary text-white w-100 py-3" onClick={handleUpdate} type="submit">Update</button>
+                            </div>
+                            <div className="col-6">
+                              <button className="btn btn-primary text-white w-100 py-3" onClick={()=> setEditModal(null)} type="submit">Cancel</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
 
 
             }
@@ -143,8 +242,8 @@ function AExpolorTour() {
         </div>
       </section>
 
-            <AFooter/>
-            
+      <AFooter />
+
     </div>
   )
 }

@@ -1,54 +1,53 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Aheader from '../Acommon/Aheader'
-import AFooter from '../Acommon/AFooter'
 import Ahero from '../Acommon/Ahero'
-import UseCustomHooks from '../../../UseCustomHooks'
+import AFooter from '../Acommon/AFooter'
 import UseCustompost from '../../../UseCustompost'
+import UseCustomDelete from '../../../UseCustomDelete'
 
-function AddTravelGuides() {
+function AddServices() {
 
-    // Post Method
-    const { apiData, getapiData, submitData } = UseCustompost('http://localhost:3000/TravelGuid', {
+    const {apiData,getapiData,submitData } = UseCustompost('http://localhost:3000/services', {
         id: '',
-        image: '',
-        name: '',
-        designation: '',
+        title: '',
+        des: '',
+        icon: ''
     },
-    '/AtravelGuid')
-
+    '/AServices')
 
     return (
         <div>
-            <Aheader />
-            <Ahero />
 
+            <Aheader />
+            <Ahero title="Add Services" page="Services" />
 
             <div className="container-fluid booking py-5">
                 <div className="container py-5">
                     <div className="row g-5 align-items-center">
                         <div className="col-lg-10 mx-auto text-center">
-                            <h1 className="text-white mb-3">Travel Guides</h1>
+                            <h1 className="text-white mb-3">Add Services</h1>
                             <p className="text-white mb-5">Get <span className="text-warning">50% Off</span> On Your First Adventure Trip With Travela. Get More Deal Offers Here.</p>
-                            <form onSubmit={submitData}> 
+                            <form onSubmit={submitData} >
                                 <div className="row g-3">
                                     <div className="col-md-12">
                                         <div className="form-floating">
-                                            <input type="text" name='name' value={apiData.name} onChange={getapiData} className="form-control bg-white border-0" id="name" placeholder="Your Name" />
-                                            <label htmlFor="name">Your Name</label>
+                                            <input type="text" name='title' value={apiData.title} onChange={getapiData} className="form-control bg-white border-0" id="title" placeholder="Your Title" />
+                                            <label htmlFor="title">Your Title</label>
                                         </div>
                                     </div>
                                     <div className="col-md-12">
                                         <div className="form-floating">
-                                            <input type="url" name='image' value={apiData.image} onChange={getapiData} className="form-control bg-white border-0" id="image" placeholder="Your image" />
-                                            <label htmlFor="email">Your image</label>
+                                            <input type="text" name='icon' value={apiData.icon} onChange={getapiData} className="form-control bg-white border-0" id="icon" placeholder="fas fa-user" />
+                                            <label htmlFor="icon">icon class (fas fa-user)</label>
                                         </div>
                                     </div>
                                     <div className="col-md-12">
                                         <div className="form-floating">
-                                            <input type="text" name='designation' value={apiData.designation} onChange={getapiData} className="form-control bg-white border-0" id="designation" placeholder="Your designation" />
-                                            <label htmlFor="email">Your designation</label>
+                                            <textarea name="des" value={apiData.des} onChange={getapiData} className="form-control bg-white border-0" id="description" placeholder="Your Description"></textarea>
+                                            <label htmlFor="description">Your Description</label>
                                         </div>
                                     </div>
+
                                     <div className="col-12">
                                         <button className="btn btn-primary text-white w-100 py-3" type="submit">Add Travel Guide</button>
                                     </div>
@@ -59,12 +58,11 @@ function AddTravelGuides() {
                 </div>
             </div>
 
-
-
             <AFooter />
-        </div>
 
+
+        </div>
     )
 }
 
-export default AddTravelGuides
+export default AddServices

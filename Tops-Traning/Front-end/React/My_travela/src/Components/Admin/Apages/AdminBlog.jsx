@@ -4,6 +4,7 @@ import Ahero from '../Acommon/Ahero'
 import axios from 'axios'
 import UseCustomHooks from '../../../UseCustomHooks'
 import { toast } from 'react-toastify';
+import { NavLink } from 'react-router-dom'
 
 function AdminBlog() {
 
@@ -30,8 +31,8 @@ function AdminBlog() {
     }, [])
 
     const { api, fetchApi } = UseCustomHooks('http://localhost:3000/blogs')
-    
-    // Post method start
+
+
     const [blogData, setBlogData] = useState({
         id: "",
         image: "",
@@ -51,17 +52,23 @@ function AdminBlog() {
         }
     }
 
-    // Post method start
+    
 
-    const  deleteData = async (id) => {
-            try {
-                const res = await axios.delete(`http://localhost:3000/blogs/${id}`)
-                toast.success("Data Delete Successfully!");
-                fetchApi()
-            } catch (error) {
-                toast.error('Api not Found', error)
-            }   
+    const deleteData = async (id) => {
+        try {
+            const res = await axios.delete(`http://localhost:3000/blogs/${id}`)
+            toast.success("Data Delete Successfully!");
+            fetchApi()
+        } catch (error) {
+            toast.error('Api not Found', error)
         }
+    }
+
+
+
+
+
+
     
     return (
         <div>
@@ -70,6 +77,15 @@ function AdminBlog() {
 
             <section className='sectionSpace'>
                 <div className="container my-5">
+
+                    <div className="mx-auto text-center w-75 mb-5">
+                        <h5 className="section-title px-3">Our blog</h5>
+                        <h1 className="mb-4">Popular Travel Blogs</h1>
+                        <p className="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
+                        </p>
+                    </div>
+
+
                     <table className="table table-hover table-bordered">
                         <thead>
                             <tr className='text-center'>
@@ -97,7 +113,7 @@ function AdminBlog() {
                                                     view
                                                 </button>
                                                 <button className="btn btn-success mx-2">Edit</button>
-                                                <button onClick={()=> deleteData(item.id)} className="btn btn-danger">Delete</button>
+                                                <button onClick={() => deleteData(item.id)} className="btn btn-danger">Delete</button>
 
                                                 {/* Modal */}
 
@@ -156,6 +172,10 @@ function AdminBlog() {
 
                         </tbody>
                     </table>
+
+                    <div className='bottom-button text-end mt-4'>
+                        <NavLink to="/AddBlog" className="btn py-3 px-5   btn-primary">Add Blog</NavLink>
+                    </div>
                 </div>
             </section>
 

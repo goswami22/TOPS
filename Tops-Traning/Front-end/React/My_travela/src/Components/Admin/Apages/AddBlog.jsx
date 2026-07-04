@@ -50,6 +50,10 @@ function AddBlog() {
 
     }
 
+    const [editModal, setEditMOdal] = useState(null)
+    const [editData, SetEditData]= useState({
+        
+    })
 
 
 

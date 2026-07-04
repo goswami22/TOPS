@@ -6,6 +6,8 @@ import UseCustomHooks from '../../../UseCustomHooks'
 import { FaArrowRight } from "react-icons/fa6";
 import AFooter from '../Acommon/AFooter'
 import UseCustomDelete from '../../../UseCustomDelete'
+import { NavLink } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 function TravelGuid() {
 
@@ -28,14 +30,68 @@ function TravelGuid() {
     // }
 
 
-  useEffect(() => {
+    useEffect(() => {
         fetchApi()
     })
 
-    const { api, fetchApi } = UseCustomHooks('http://localhost:3000/TravelGuid')  
+    const { api, fetchApi } = UseCustomHooks('http://localhost:3000/TravelGuid')
 
-    const {deleteData} = UseCustomDelete('http://localhost:3000/TravelGuid')
+    const { deleteData } = UseCustomDelete('http://localhost:3000/TravelGuid')
     fetchApi()
+
+    // Post Method start
+    // when user click on edit button, set the data to editData state and open the modal
+    // Why we need to use two state variables for editModal and editData?
+    // We need to use two state variables for editModal and editData because we want to keep track of the data that is being edited and also whether the modal is open or closed. 
+    // The editData state variable will hold the data that is being edited, while the editModal state variable will hold the id of the item that is being edited. 
+    // This way, we can easily open and close the modal for a specific item and also keep track of the data that is being edited.
+
+    const [editModal, SetEditModal] = useState(null)
+    const [editData, SetEditData] = useState({
+        id: '',
+        image: '',
+        name: '',
+        designation: '',
+    })
+
+    // when user click on edit button, set the data to editData state and open the modal
+    // why we need to use two state variables for editModal and editData?
+    // We need to use two state variables for editModal and editData because we want to keep track of the data that is being edited and also whether the modal is open or closed. 
+    // The editData state variable will hold the data that is being edited, while the editModal state variable will hold the id of the item that is being edited. 
+    // This way, we can easily open and close the modal for a specific item and also keep track of the data that is being edited.
+    const dataHandle = (data) => {
+        SetEditData(data)
+        SetEditModal(data)
+        console.log(data)
+    }
+
+    // When user changes the input fields, update the editData state
+    // why we need to use two state variables for editModal and editData?
+    // We need to use two state variables for editModal and editData because we want to keep track of the data that is being edited and also whether the modal is open or closed. 
+    // The editData state variable will hold the data that is being edited, while the editModal state variable will hold the id of the item that is being edited.
+    const changeData = (e) => {
+        SetEditData({
+            ...editData,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    // When user submits the form, send a PUT request to update the data
+    // why we need to use two state variables for editModal and editData?
+    // We need to use two state variables for editModal and editData because we want to keep track of the data that is being edited and also whether the modal is open or closed. 
+    // The editData state variable will hold the data that is being edited, while the editModal state variable will hold the id of the item that is being edited.
+    const submitData = async (e) => {
+        e.preventDefault()
+        try {
+            const res = await axios.put(`http://localhost:3000/TravelGuid/${editData.id}`, editData)
+            toast.success('Data Updated Successfully')
+            SetEditModal(null)
+            fetchApi()
+        } catch (err) {
+            toast.error('API not Found')
+        }
+    }
+
 
 
 
@@ -46,6 +102,13 @@ function TravelGuid() {
 
             <section className='travelGuid sectionSpace'>
                 <div className="container mt-5">
+
+                    <div className="mx-auto text-center w-75 mb-5">
+                        <h5 className="section-title px-3">Travel Guide</h5>
+                        <h1 className="mb-4">Meet Our Guide</h1>
+                    </div>
+
+
                     <div className="row">
                         <table className="table table-hover table-bordered">
                             <thead>
@@ -74,8 +137,8 @@ function TravelGuid() {
                                                     <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target={`#travelGuid${item.id}`}>
                                                         view
                                                     </button>
-                                                    <button className='text-uppercase fs-6 btn btn-success mx-2'>edit</button>
-                                                    <button onClick={()=> deleteData(item.id)} className='text-uppercase fs-6 btn btn-danger '>delete</button>
+                                                    <button onClick={() => dataHandle(item)} className='text-uppercase fs-6 btn btn-success mx-2'>edit</button>
+                                                    <button onClick={() => deleteData(item.id)} className='text-uppercase fs-6 btn btn-danger '>delete</button>
 
                                                     {/* modal */}
                                                     <div className="modal fade" id={`travelGuid${item.id}`} tabIndex="{-1}" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -92,7 +155,7 @@ function TravelGuid() {
                                                                                 </div>
                                                                                 <div className="blog-content text-start border border-top-0 rounded-bottom p-4">
 
-                                                                                    <a href="#" className="h4 text-capitalize mb-4 d-inline-block ">{item.title}</a>
+                                                                                    <a href="#" className="h4 text-capitalize mb-4 d-inline-block ">{item.name}</a>
                                                                                     <p>{item.designation}</p>
                                                                                     <br />
                                                                                     <a href="#" className="btn btn-primary rounded-pill py-2 px-4">View all place <FaArrowRight /></a>
@@ -113,12 +176,67 @@ function TravelGuid() {
                                 }
                             </tbody>
                         </table>
-                    </div>
 
+
+                        <div className='top-button text-end mt-4'>
+                            <NavLink to="/AddTravelGuides" className="btn py-3 px-4 btn-primary">Add Travel Guide</NavLink>
+                        </div>
+                    </div>
+                    {
+                        editModal && (
+                            <div className="container-fluid booking py-5">
+                                <div className="container py-5">
+                                    <div className="row g-5 align-items-center">
+
+                                        <div className="col-lg-8 mx-auto text-center">
+                                            {/* <h1 className="text-white mb-3">Book A Tour Deals</h1>
+                                            <p className="text-white mb-5">Get <span className="text-warning">50% Off</span> On Your First Adventure Trip With Travela. Get More Deal Offers Here.</p> */}
+                                            <form>
+                                                <div className="row g-3">
+                                                    <div className="col-md-12">
+                                                        <div className="form-floating">
+                                                            <input type="text" name='name' value={editData.name} onChange={changeData} className="form-control bg-white border-0" id="name" placeholder="Your Name" />
+                                                            <label htmlFor="name">Your Name</label>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-12">
+                                                        <div className="form-floating">
+                                                            <input
+                                                                type="url"
+                                                                name='image'
+                                                                value={editData.image}
+                                                                onChange={changeData}
+                                                                className="form-control bg-white border-0"
+                                                                id="img"
+                                                                placeholder="Your img"
+                                                            />
+                                                            <label htmlFor="img">Your image</label>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-12">
+                                                        <div className="form-floating">
+                                                            <input type="text" name='designation' value={editData.designation} onChange={changeData} className="form-control bg-white border-0" id="name" placeholder="Your Name" />
+                                                            <label htmlFor="designation">Your designation</label>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-6">
+                                                        <button className="btn btn-primary text-white w-100 py-3" onClick={submitData} type="submit">Update</button>
+                                                    </div>
+                                                    <div className="col-6">
+                                                        <button className="btn btn-primary text-white w-100 py-3" onClick={() => SetEditModal(null)} type="submit">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
                 </div>
             </section>
 
-            <AFooter/>
+            <AFooter />
         </div>
     )
 }

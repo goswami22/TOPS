@@ -8,6 +8,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import AFooter from '../Acommon/AFooter'
 import UseCustomDelete from '../../../UseCustomDelete'
 import { toast } from 'react-toastify';
+import { NavLink } from 'react-router-dom'
 
 
 function AGallery() {
@@ -36,9 +37,49 @@ function AGallery() {
   const { api, fetchApi } = UseCustomHooks('http://localhost:3000/gallery')
 
 
-    // Delete data 
-    const {deleteData} = UseCustomDelete('http://localhost:3000/gallery')
-    fetchApi()
+  // Delete data 
+  const { deleteData } = UseCustomDelete('http://localhost:3000/gallery')
+  fetchApi()
+
+
+  // Update dat 
+  const [editModal, SetEditModal] = useState(null)
+
+  const [editData, SetEditData] = useState({
+    id: '',
+    name: '',
+    image: '',
+    category: ''
+  })
+
+
+  const handleData = (data) => {
+    SetEditData(data)
+    SetEditModal(data)
+    console.log(data)
+  }
+
+
+  const changeData = (e) => {
+    SetEditData({
+      ...editData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const updateData = async (e) => {
+    e.preventDefault()
+
+    try {
+      const res = await axios.put(`http://localhost:3000/gallery/${editData.id}`, editData)
+      toast.success("Data Updated Successfull")
+      SetEditModal(null)
+      fetchApi()
+    } catch (error) {
+      toast.error("API not Found")
+    }
+
+  }
 
 
   return (
@@ -50,38 +91,12 @@ function AGallery() {
         <div className="container my-5">
           <div className="row">
 
-            {/* <div className="tab-class text-center">
-              <ul className="nav nav-pills d-inline-flex justify-content-center mb-5">
-                <li className="nav-item">
-                  <a  className="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#GalleryTab-1">
-                    <span className="text-dark" style={{ width: 150 }}>All</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a onClick={()=> fetchApi('category="WeekendTour"')} className="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#GalleryTab-2">
-                    <span className="text-dark" style={{ width: 150 }}>World tour</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a onClick={()=> fetchApi('category=""')} className="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#GalleryTab-3">
-                    <span className="text-dark" style={{ width: 150 }}>Ocean Tour</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#GalleryTab-4">
-                    <span className="text-dark" style={{ width: 150 }}>Summer Tour</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#GalleryTab-5">
-                    <span className="text-dark" style={{ width: 150 }}>Sport Tour</span>
-                  </a>
-                </li>
-              </ul>
-
-            </div> */}
-
-
+            <div className="mx-auto text-center w-75 mb-5">
+              <h5 className="section-title px-3">our Gallery</h5>
+              <h1 className="mb-4">Tourism & Traveling Gallery.</h1>
+              <p className="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
+              </p>
+            </div>
 
             {
               <table className="table table-hover table-bordered">
@@ -112,8 +127,8 @@ function AGallery() {
                             <button type="button" className="btn btn-primary" data-bs-toggle="modal" onClick={() => fetchApi(item.id)} data-bs-target={`#galleryview${item.id}`}>
                               view
                             </button>
-                            <button className='text-uppercase fs-6 btn btn-success mx-2'>edit</button>
-                            <button onClick={()=> deleteData(item.id)} className='text-uppercase fs-6 btn btn-danger '>delete</button>
+                            <button onClick={() => handleData(item)} className='text-uppercase fs-6 btn btn-success mx-2'>edit</button>
+                            <button onClick={() => deleteData(item.id)} className='text-uppercase fs-6 btn btn-danger '>delete</button>
 
                             {/* modal */}
                             <div className="modal fade" id={`galleryview${item.id}`} tabIndex="{-1}" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -138,7 +153,7 @@ function AGallery() {
                                       </div>
                                     </div>
                                   </div>
-
+                                  
                                 </div>
                               </div>
                             </div>
@@ -150,36 +165,70 @@ function AGallery() {
                       )
                     })
 
-
                   }
                 </tbody>
               </table>
-
-
-
             }
 
-            {/* {
-            gallery && gallery.map((item, index) => {
-              return (
-                // <div className="col-3" key={index}>
-                //   <div className="card" style={{ width: '18rem' }}>
-                //     <img src={item.image} className="card-img-top" alt="..." />
-                //     <div className="card-body">
-                //       <h5 className="card-title">{item.name}</h5><a href="#" className="btn btn-primary">Go somewhere</a>
-                //     </div>
-                //   </div>
-
-                // </div>
-
-              )
-            })
-          } */}
+            <div className='top-button text-end mt-4'>
+              <NavLink to="/AddGallery" className="btn py-3 px-4 btn-primary">Add Gallery</NavLink>
+            </div>
           </div>
+
         </div>
+        {
+          editModal && (
+            <div className="container-fluid booking py-5">
+              <div className="container py-5">
+                <div className="row g-5 align-items-center">
+                  <div className="col-lg-10 mx-auto text-center">
+                    <h1 className="text-white mb-3">Our Gallery</h1>
+                    <p className="text-white mb-5">Get <span className="text-warning">50% Off</span> On Your First Adventure Trip With Travela. Get More Deal Offers Here.</p>
+
+                    <form onSubmit={updateData}>
+                      <div className="row g-3">
+                        <div className="col-md-12">
+                          <div className="form-floating">
+                            <input type="text" name='name' value={editData.name} onChange={changeData} className="form-control bg-white border-0" id="name" placeholder="Your Tour Name" />
+                            <label htmlFor="name">Your Tour Name</label>
+                          </div>
+                        </div>
+                        <div className="col-md-12">
+                          <div className="form-floating">
+                            <input type="url" name='image' value={editData.image} onChange={changeData} className="form-control bg-white border-0" id="image" placeholder="Add Image Link" />
+                            <label htmlFor="image">Add Image Link</label>
+                          </div>
+                        </div>
+                        <div className="col-md-12">
+                          <div className="form-floating">
+                            <select name='category' value={editData.category} onChange={changeData} className="form-select bg-white border-0" id="select1">
+                              <option hidden> Select Here </option>
+                              <option value='WorldTour'>WorldTour</option>
+                              <option value='OceanTour'>OceanTour</option>
+                              <option value='SummerTour'>SummerTour</option>
+                              <option value='SportTour'>SportTour</option>
+                            </select>
+                            <label htmlFor="select1">Category</label>
+                          </div>
+                        </div>
+
+                        <div className="col-6">
+                          <button onClick={updateData} className="btn btn-primary text-white w-100 py-3" type="submit">Update</button>
+                        </div>
+                        <div className="col-6">
+                          <button onClick={() => SetEditModal(null)} className="btn btn-primary text-white w-100 py-3" type="submit">cancel</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        }
       </section>
 
-      <AFooter/>
+      <AFooter />
 
     </div>
   )

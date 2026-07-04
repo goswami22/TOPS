@@ -4,6 +4,7 @@ import AFooter from '../Acommon/AFooter'
 import Ahero from '../Acommon/Ahero'
 import UseCustomHooks from '../../../UseCustomHooks'
 import UseCustomDelete from '../../../UseCustomDelete'
+import { NavLink } from 'react-router-dom'
 
 function APackages() {
 
@@ -15,7 +16,7 @@ function APackages() {
 
     const { api, fetchApi } = UseCustomHooks('http://localhost:3000/packages')
 
-    const {deleteData} = UseCustomDelete('http://localhost:3000/packages')
+    const { deleteData } = UseCustomDelete('http://localhost:3000/packages')
     fetchApi()
 
 
@@ -26,9 +27,14 @@ function APackages() {
             <Ahero title={'Admin Travel Packages'} page={'Packages'} />
 
             <section className="packages sectionSpace">
-                <div className=" container text-center mb-5">
-                    <h5 className="section-title px-3">Packages</h5>
-                    <h1 className="mb-5">Awesome Packages</h1>
+                <div className=" container text-center my-5">
+
+                    <div className="mx-auto text-center w-75 mb-5">
+                        <h5 className="section-title px-3">Packages</h5>
+                        <h1 className="mb-4">Awesome Packages</h1>
+                        <p className="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
+                        </p>
+                    </div>
 
                     <div className="row">
 
@@ -70,7 +76,7 @@ function APackages() {
                                                         view
                                                     </button>
                                                     <button className="btn btn-success mx-2">Edit</button>
-                                                    <button onClick={()=> deleteData(item.id)} className="btn btn-danger">Delete</button>
+                                                    <button onClick={() => deleteData(item.id)} className="btn btn-danger">Delete</button>
 
                                                     {/* Modal */}
 
@@ -113,15 +119,14 @@ function APackages() {
                                             </tr>
                                         )
                                     })
-
-
                                 }
-
                             </tbody>
                         </table>
 
                     </div>
-
+                    <div className='top-button text-end mt-4'>
+                        <NavLink to="/AddPackages" className="btn py-3 px-4 btn-primary">Add Package</NavLink>
+                    </div>
                 </div>
 
             </section>

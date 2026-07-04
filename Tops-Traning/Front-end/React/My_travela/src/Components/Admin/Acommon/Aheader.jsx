@@ -1,8 +1,28 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 function Aheader() {
+
+    const redirect = useNavigate()
+
+    useEffect(()=> {
+        if(!localStorage.getItem('Aid')) {
+            redirect('/Alogin')
+        }
+    })
+    
+    
+    const logout = () => {
+        localStorage.removeItem('Aid')
+        localStorage.removeItem('Aname')
+        redirect('/alogin')
+        toast.success('Logout Successfully')
+    }
+
+
+
     return (
+
         <div>
             {/* Topbar Start */}
             <div className="container-fluid bg-primary px-5 d-none d-lg-block">
@@ -19,7 +39,32 @@ function Aheader() {
                     <div className="col-lg-4 text-center text-lg-end">
                         <div className="d-inline-flex align-items-center" style={{ height: 45 }}>
                             <a href="#"><small className="me-3 text-light"><i className="fa fa-user me-2" />Register</small></a>
-                            <a href="#"><small className="me-3 text-light"><i className="fa fa-sign-in-alt me-2" />Login</small></a>
+
+                            <span className='me-2 d-inline-block text-white'>
+                                {
+                                    (() => {
+                                        if (localStorage.getItem('Aid')) {
+                                            return (
+                                                <small>( Hello {localStorage.getItem('Aname')} )</small>
+                                            )
+                                        }
+                                    })()
+                                }
+
+                                {
+                                    (() => {
+                                        if (localStorage.getItem('Aid')) {
+                                            return (
+                                                <Link onClick={logout}><small className="mx-3 text-light"><i className="fa fa-sign-out-alt me-2" />Log Out</small></Link>
+                                            )
+                                        } else {
+                                            return (
+                                                <Link to='/Alogin'><small className="mx-3 text-light"><i className="fa fa-sign-in-alt me-2" />Log In</small></Link>
+                                            )
+                                        }
+                                    })()
+                                }
+                            </span>
                             <div className="dropdown">
                                 <a href="#" className="dropdown-toggle text-light" data-bs-toggle="dropdown"><small><i className="fa fa-home me-2" /> My Dashboard</small></a>
                                 <div className="dropdown-menu rounded">
@@ -49,16 +94,22 @@ function Aheader() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <div className="navbar-nav ms-auto py-0">
+
                             <NavLink to="/admin" className="nav-item nav-link">Home</NavLink>
                             {/* <NavLink to="/about" className="nav-item nav-link">About</NavLink> */}
-                            <NavLink to="/Aservices" className="nav-item nav-link">Services</NavLink>
                             <div className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Packages</a>
+                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                                 <div className="dropdown-menu m-0">
-                                    <NavLink to="/APackages" className="dropdown-item">Manage Packages</NavLink>
-                                    <NavLink to="/AddPackages" className="dropdown-item">Add Packages</NavLink>
+                                    <NavLink to="/Aservices" className="dropdown-item">Manage Services</NavLink>
+                                    <NavLink to="/AddServices" className="dropdown-item">Add Services</NavLink>
                                 </div>
                             </div>
+                            {/* <div className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Packages</a>
+                                <div className="dropdown-menu m-0">
+                                    <NavLink to="/AddPackages" className="dropdown-item">Add Packages</NavLink>
+                                </div>
+                            </div> */}
                             <div className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
                                 <div className="dropdown-menu m-0">
@@ -66,39 +117,39 @@ function Aheader() {
                                     <NavLink to="/AddBlog" className="dropdown-item">Add Blog</NavLink>
                                 </div>
                             </div>
-                            <div className="nav-item dropdown">
+                            {/* <div className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Tour</a>
                                 <div className="dropdown-menu m-0">
                                     <NavLink to="/AddTour" className="dropdown-item">Add Tour</NavLink>
-                                    <NavLink to="/Atour" className="dropdown-item">Explore Tour</NavLink>
                                 </div>
                             </div>
                             <div className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Destination</a>
                                 <div className="dropdown-menu m-0">
-                                    <NavLink to="/Adesination" className="dropdown-item">Manage Destination</NavLink>
                                     <NavLink to="/AddDestination" className="dropdown-item">Add Destination</NavLink>
                                 </div>
                             </div>
                             <div className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gallery</a>
                                 <div className="dropdown-menu m-0">
-                                    <NavLink to="/Agallery" className="dropdown-item">Manage Gallery</NavLink>
                                     <NavLink to="/AddGallery" className="dropdown-item">Add Gallery</NavLink>
                                 </div>
                             </div>
                             <div className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Travel Guides</a>
                                 <div className="dropdown-menu m-0">
-                                    <NavLink to="/AtravelGuid" className="dropdown-item">Manage Travel Guides</NavLink>
                                     <NavLink to="/AddTravelGuides" className="dropdown-item">Add Travel Guides</NavLink>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Page</a>
                                 <div className="dropdown-menu m-0">
-                                    {/* <NavLink to="/booking" className="dropdown-item">Travel Booking</NavLink> */}
-                                    <NavLink to="/AtravelGuid" className="dropdown-item">Travel Guides</NavLink>
+                                    <NavLink to="/APackages" className="dropdown-item">Manage Packages</NavLink>
+                                    <NavLink to="/Adesination" className="dropdown-item">Manage Destination</NavLink>
+                                    <NavLink to="/Atour" className="dropdown-item">Manage Explore Tour</NavLink>
+                                    <NavLink to="/Agallery" className="dropdown-item">Manage Gallery</NavLink>
+                                    <NavLink to="/" className="dropdown-item">Travel Booking</NavLink>
+                                    <NavLink to="/AtravelGuid" className="dropdown-item">Manage Travel Guides</NavLink>
                                     <NavLink to="/" className="dropdown-item">Testimonial</NavLink>
                                 </div>
                             </div>

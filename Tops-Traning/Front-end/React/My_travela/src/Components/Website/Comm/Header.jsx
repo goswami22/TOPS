@@ -18,7 +18,7 @@ function Header() {
                     </div>
                     <div className="col-lg-4 text-center text-lg-end">
                         <div className="d-inline-flex align-items-center" style={{ height: 45 }}>
-                            <a href="#"><small className="me-3 text-light"><i className="fa fa-user me-2" />Register</small></a>
+                            <NavLink to={'/Signup'}><small className="me-3 text-light"><i className="fa fa-user me-2" />Register</small></NavLink>
                             <a href="#"><small className="me-3 text-light"><i className="fa fa-sign-in-alt me-2" />Login</small></a>
                             <div className="dropdown">
                                 <a href="#" className="dropdown-toggle text-light" data-bs-toggle="dropdown"><small><i className="fa fa-home me-2" /> My Dashboard</small></a>
@@ -61,7 +61,7 @@ function Header() {
                                     <NavLink to="/tour" className="dropdown-item">Explore Tour</NavLink>
                                     <NavLink to="/booking" className="dropdown-item">Travel Booking</NavLink>
                                     <NavLink to="/gallery" className="dropdown-item">Our Gallery</NavLink>
-                                    <NavLink to="/travelGuides" className="dropdown-item">Travel Guides</NavLink>
+                                    <NavLink to="/guides" className="dropdown-item">Travel Guides</NavLink>
                                     <NavLink to="/testimonial" className="dropdown-item">Testimonial</NavLink>
                                 </div>
                             </div>

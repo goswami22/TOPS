@@ -1,85 +1,60 @@
 {
   "admin": [
     {
-      "id": "3",
-      "name": "Rahul",
-      "password": "rahul123"
+      "id": "1",
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "1234"
     },
     {
-      "id": "4",
-      "name": "Priya",
-      "password": "priya456"
-    },
-    {
-      "id": "5",
-      "name": "Amit",
-      "password": "amit789"
-    },
-    {
-      "id": "6",
-      "name": "Neha",
-      "password": "neha321"
-    },
-    {
-      "id": "7",
-      "name": "Karan",
-      "password": "karan654"
-    },
-    {
-      "id": "8",
-      "name": "Riya",
-      "password": "riya987"
+      "id": "2",
+      "name": "Bhavesh",
+      "email": "bhavesh@gmail.com",
+      "password": "123456"
     }
   ],
   "users": [
     {
-      "id": "4",
-      "name": "Rohan",
-      "email": "rohan@gmail.com",
+      "id": "1",
+      "name": "user",
+      "email": "user@gmail.com",
       "password": "123456",
       "status": "unblock"
     },
     {
-      "id": "5",
+      "id": "2",
       "name": "Priya",
       "email": "priya@gmail.com",
       "password": "123456",
       "status": "block"
     },
     {
-      "id": "6",
+      "id": "3",
       "name": "Amit",
       "email": "amit@gmail.com",
       "password": "123456",
       "status": "unblock"
     },
     {
-      "id": "7",
+      "id": "4",
       "name": "Neha",
       "email": "neha@gmail.com",
       "password": "123456",
       "status": "unblock"
     },
     {
-      "id": "8",
+      "id": "5",
       "name": "Karan",
       "email": "karan@gmail.com",
       "password": "123456",
       "status": "block"
     },
     {
-      "id": "9",
-      "name": "Sneha",
-      "email": "sneha@gmail.com",
-      "password": "123456",
+      "id": "oqgFV-piqvE",
+      "name": "Bharat",
+      "email": "bharat@gmail.com",
+      "password": "1",
       "status": "unblock"
-    },
-    {
-      "id": "10",
-      "name": "Vishal",
-      "email": "vishal@gmail.com",
-      "password": "123456",
-      "status": "block"
     }
   ],
   "blogs": [
@@ -166,6 +141,18 @@
       "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600",
       "title": "Banff National Park",
       "category": "Canada"
+    },
+    {
+      "id": "hpgLpHsjzGg",
+      "image": "https://images.unsplash.com/photo-1782350378286-aa8c7db3610a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8",
+      "title": "Europe Trip 2",
+      "category": "Europe"
+    },
+    {
+      "id": "aM_X_kS-rDc",
+      "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=60",
+      "title": "My trip",
+      "category": "Singapore"
     }
   ],
   "gallery": [
@@ -219,7 +206,7 @@
     },
     {
       "id": "LEUMSnLQ4Kg",
-      "name": "Beautiful Lake",
+      "name": "Beautiful Lake 2",
       "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600",
       "category": "OceanTour"
     }
@@ -279,61 +266,37 @@
       "id": "1",
       "title": "Overview",
       "des": "Due to the widespread use of <table> elements across third-party widgets like calendars and date pickers, Bootstrap’s tables are opt-in. Add the base class .table to any <table>, then extend with our optional modifier classes or custom styles.",
-      "icon": "https://plus.unsplash.com/premium_photo-1668373496860-0c4bb952835c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "icon": "fas fa-globe"
     },
     {
       "id": "2",
       "title": "Adventure Tours",
       "des": "Experience thrilling adventures with mountain trekking, river rafting, and camping guided by experienced professionals.",
-      "icon": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600&auto=format&fit=crop&q=60"
+      "icon": "fas fa-hotel"
     },
     {
       "id": "3",
       "title": "Hotel Booking",
       "des": "Book premium hotels and budget accommodations with the best prices and comfortable facilities for your trip.",
-      "icon": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&auto=format&fit=crop&q=60"
+      "icon": "fas fa-user-alt"
     },
     {
       "id": "4",
       "title": "Flight Booking",
       "des": "Find affordable domestic and international flights with flexible schedules and secure online booking.",
-      "icon": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&auto=format&fit=crop&q=60"
+      "icon": "fas fa-cog"
     },
     {
       "id": "5",
       "title": "Tour Guide",
       "des": "Our professional tour guides help you discover local attractions, culture, and hidden gems during your journey.",
-      "icon": "https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=600&auto=format&fit=crop&q=60"
+      "icon": "fas fa-map-marked-alt"
     },
     {
       "id": "6",
       "title": "Travel Insurance",
       "des": "Protect your trip with comprehensive travel insurance covering medical emergencies, cancellations, and baggage loss.",
-      "icon": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&auto=format&fit=crop&q=60"
-    },
-    {
-      "id": "7",
-      "title": "Cruise Packages",
-      "des": "Enjoy luxurious cruise vacations with world-class entertainment, dining, and breathtaking ocean views.",
-      "icon": "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=600&auto=format&fit=crop&q=60"
-    },
-    {
-      "id": "8",
-      "title": "Car Rental",
-      "des": "Rent well-maintained vehicles for city tours, business trips, or family vacations at affordable prices.",
-      "icon": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&auto=format&fit=crop&q=60"
-    },
-    {
-      "id": "9",
-      "title": "Visa Assistance",
-      "des": "Get expert support with visa documentation, application processing, and travel requirements for international trips.",
-      "icon": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60"
-    },
-    {
-      "id": "10",
-      "title": "Holiday Packages",
-      "des": "Choose from customized holiday packages designed for couples, families, and groups at the best prices.",
-      "icon": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&auto=format&fit=crop&q=60"
+      "icon": "fas fa-shield-alt"
     }
   ],
   "tour": [
