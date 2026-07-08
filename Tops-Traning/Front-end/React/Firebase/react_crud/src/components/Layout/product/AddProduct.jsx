@@ -95,10 +95,7 @@ function AddProduct() {
                     <option value="">Select Category</option>
                     <option value="Mobile">Mobile</option>
                     <option value="Laptop">Laptop</option>
-                    <option value="Electronics">Electronics</option>
                     <option value="Watch">Watch</option>
-                    <option value="Fashion">Fashion</option>
-                    <option value="Shoes">Shoes</option>
                   </select>
                 </div>
 

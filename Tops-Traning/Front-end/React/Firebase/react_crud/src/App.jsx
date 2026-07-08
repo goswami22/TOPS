@@ -11,6 +11,7 @@ import Product from './components/Layout/product/Product';
 import AddProduct from './components/Layout/product/AddProduct';
 import { Routes, Route } from "react-router-dom";
 import UpdateProduct from './components/Layout/product/UpdateProduct';
+import ViewProduct from './components/Layout/product/ViewProduct';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         {/* <Route path="/updateproduct" element={<UpdateProduct/>}/> */}
         {/* <Route path="/update-product/:id" element={<UpdateProduct />} /> */}
         <Route path="/updateProduct" element={<UpdateProduct />} />
+        <Route path="/view-product" element={<ViewProduct />} />
       </Routes>
     </div>
   )

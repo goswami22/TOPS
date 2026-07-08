@@ -14,6 +14,7 @@ function Product() {
 
     const [product, setProduct] = useState([])
 
+
     const getProduct = () => {
         try {
 
@@ -50,7 +51,7 @@ function Product() {
         <div className="bg-light min-vh-100">
 
             {/* Header */}
-            <header className="bg-white shadow-sm py-3 mb-4">
+            <header className="bg-white shadow-sm py-3 mb-4 position-sticky top-0 z-1">
                 <div className="container d-flex justify-content-between align-items-center">
                     <h2 className="fw-bold m-0">Product Management</h2>
 
@@ -70,17 +71,17 @@ function Product() {
 
                         <div className="row align-items-center">
 
-                            <div className="col-md-6">
-                                <h4 className="mb-0">All Products</h4>
+                            <div className="col-md-12 text-center py-3">
+                                <h4 className="mb-0 fw-semibold">All Products</h4>
                             </div>
 
-                            <div className="col-md-6">
+                            {/* <div className="col-md-6">
                                 <input
                                     type="text"
                                     className="form-control"
                                     placeholder="Search Product..."
                                 />
-                            </div>
+                            </div> */}
 
                         </div>
 
@@ -110,7 +111,10 @@ function Product() {
                                                 <tr key={index} className='text-center'>
                                                     <td>{item.id}</td>
 
-                                                    <td><img src={item.image} alt="product image" style={{ maxWidth: '150px' }} /></td>
+                                                    <td><img src={item.image} alt="product image" style={{
+                                                        maxWidth: '150px', height: '150px', objectFit:
+                                                            'cover'
+                                                    }} /></td>
                                                     <td>{item.title.slice(0, 30)}...</td>
 
                                                     <td>{item.category}</td>
@@ -118,7 +122,9 @@ function Product() {
                                                     <td>${item.price}</td>
 
                                                     <td>
-                                                        <button className="btn btn-primary btn-sm">
+                                                        <button
+                                                            className="btn btn-primary btn-sm me-2"
+                                                            onClick={() => navigate("/view-product", { state: item })}>
                                                             <i className="fa-solid fa-eye"></i>
                                                         </button>
 
@@ -129,7 +135,7 @@ function Product() {
                                                             <i className="fa-solid fa-pen"></i>
                                                         </Link>
 
-                                                        <button className="btn btn-danger btn-sm" onClick={()=> deleteProduct(item.id)}>
+                                                        <button className="btn btn-danger btn-sm" onClick={() => deleteProduct(item.id)}>
                                                             <i className="fa-solid fa-trash"></i>
                                                         </button>
                                                     </td>
