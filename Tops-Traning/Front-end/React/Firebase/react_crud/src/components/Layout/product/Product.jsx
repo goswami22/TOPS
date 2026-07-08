@@ -53,9 +53,9 @@ function Product() {
             {/* Header */}
             <header className="bg-white shadow-sm py-3 mb-4 position-sticky top-0 z-1">
                 <div className="container d-flex justify-content-between align-items-center">
-                    <h2 className="fw-bold m-0">Product Management</h2>
+                    <h2 className="fw-bold m-0" style={{fontSize: 'clamp(24px, 2vw, 45px)'}}>Product Management</h2>
 
-                    <NavLink className="btn btn-success" to={'/addProduct'}>
+                    <NavLink className="btn btn-success" style={{textWrap: 'nowrap'}} to={'/addProduct'}>
                         <i className="fa-solid fa-plus me-2"></i>
                         Add Product
                     </NavLink>
@@ -95,12 +95,12 @@ function Product() {
 
                                 <thead className="table-dark">
                                     <tr className='text-center'>
-                                        <th width="70">#</th>
-                                        <th>Image</th>
-                                        <th>Product Name</th>
-                                        <th>Category</th>
-                                        <th>Price</th>
-                                        <th width="220">Action</th>
+                                        <th width="70">ID</th>
+                                        <th>IMAGE</th>
+                                        <th>PRODUCT NAME</th>
+                                        <th>CATEGORY</th>
+                                        <th>PRICE</th>
+                                        <th width="220">ACTION</th>
                                     </tr>
                                 </thead>
 
@@ -113,7 +113,7 @@ function Product() {
 
                                                     <td><img src={item.image} alt="product image" style={{
                                                         maxWidth: '150px', height: '150px', objectFit:
-                                                            'cover'
+                                                            'contain',objectPosition: 'center',mixBlendMode: 'multiply'
                                                     }} /></td>
                                                     <td>{item.title.slice(0, 30)}...</td>
 
@@ -123,14 +123,11 @@ function Product() {
 
                                                     <td>
                                                         <button
-                                                            className="btn btn-primary btn-sm me-2"
+                                                            className="btn btn-primary btn-sm"
                                                             onClick={() => navigate("/view-product", { state: item })}>
                                                             <i className="fa-solid fa-eye"></i>
                                                         </button>
 
-                                                        {/* <button className="btn btn-warning btn-sm m-2" onClick={()=> navigate(`/update-product/${item.id}`)}>
-                                                            <i className="fa-solid fa-pen"></i>
-                                                        </button> */}
                                                         <Link className="btn btn-warning btn-sm m-2" to={'/updateProduct'} state={item}>
                                                             <i className="fa-solid fa-pen"></i>
                                                         </Link>

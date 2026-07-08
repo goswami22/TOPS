@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html,
+body,
+#root {
+  
+}
+.dark {
+  background-color: #222222;
+  color: #ffffff;
+  padding: 50px;
+  min-height: 100vh;
+}
+
+.light {
+  background-color: #ffffff;
+  color: #222222;
+  padding: 50px;
+  min-height: 100vh;
+}
