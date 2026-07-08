@@ -36,6 +36,7 @@ import Guides from "./Components/Website/Pages/Guides";
 import TravelGuid from "./Components/Admin/Apages/TravelGuid";
 import Alogin from "./Components/Admin/Apages/Alogin";
 import Signup from "./Components/Website/Pages/Signup";
+import Login from "./Components/Website/Pages/Login";
 
 
 
@@ -60,7 +61,7 @@ function App() {
           <Route path="/guides" element={<Guides />} />
 
           <Route path="/Signup" element={<Signup />} />
-          {/* <Route path="/travelGuides" element={<Guides/>}/> */}
+          <Route path="/Login" element={<Login />} />
           <Route path="/testimonial" element={<Testimonial />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<PageNotFound />} />

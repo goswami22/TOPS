@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Route, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function Signup() {
@@ -27,6 +27,13 @@ function Signup() {
     const submitData = async (e) => {
         e.preventDefault();
 
+        const {name, email, password}  = form
+
+        if(name == '' || email == '' || password == ''){
+            toast.error('Please full fields')
+            return false
+        }
+
         try {
             const res = await axios.post('http://localhost:3000/users', form)
             toast.success('Signup Successfully')
@@ -36,7 +43,6 @@ function Signup() {
                 name: '',
                 email: '',
                 password: '',
-                status: ''
             })
         } catch (error) {
             toast.error('API not Found')
@@ -80,7 +86,7 @@ function Signup() {
                             }}
                         >
                             <h2 className="text-center fw-bold mb-4">
-                                Admin Sign Up
+                                Sign Up
                             </h2>
 
                             <form onSubmit={submitData}>
@@ -105,16 +111,7 @@ function Signup() {
 
                                     <input type="password" name="password" value={form.password} onChange={setData} className="form-control form-control-lg" placeholder="Enter Password"/></div>
 
-                                {/* Status */}
-                                <div className="mb-4">
-                                    <label className="form-label fw-semibold">Status</label>
-
-                                    <select className="form-select form-select-lg" name="status" value={form.status} onChange={setData}>
-                                        <option hidden>Select Status</option>
-                                        <option>Block</option>
-                                        <option>unblock</option>
-                                    </select>
-                                </div>
+                                
 
                                 {/* Button */}
                                 <button className="btn text-white w-100 py-3"
@@ -123,7 +120,7 @@ function Signup() {
                                 <div className="text-center mt-4">
                                     Already have an account?
 
-                                    <Link to="/adminLogin" className="ms-2 text-decoration-none fw-bold" style={{ color: "#13357B" }}>
+                                    <Link to="/Login" className="ms-2 text-decoration-none fw-bold" style={{ color: "#13357B" }}>
                                         Login
                                     </Link>
                                 </div>

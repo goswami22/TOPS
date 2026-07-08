@@ -55,6 +55,13 @@
       "email": "bharat@gmail.com",
       "password": "1",
       "status": "unblock"
+    },
+    {
+      "id": "nb8Vxgtp3Yg",
+      "name": "Bhavesh Goswami",
+      "email": "b@gmail.com",
+      "password": "1",
+      "status": "unblock"
     }
   ],
   "blogs": [

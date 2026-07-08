@@ -1,7 +1,26 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 function Header() {
+
+    const redirect = useNavigate()
+
+    useEffect(()=>{
+        if(!localStorage.getItem('uid')){
+            redirect('/login')
+        }
+    })
+
+
+    const logout = () => {
+        localStorage.removeItem('uid')
+        localStorage.removeItem('uname')
+        redirect('/login')
+        toast.success('logout successfull')
+    }
+
+
     return (
         <div>
             {/* Topbar Start */}
@@ -19,7 +38,24 @@ function Header() {
                     <div className="col-lg-4 text-center text-lg-end">
                         <div className="d-inline-flex align-items-center" style={{ height: 45 }}>
                             <NavLink to={'/Signup'}><small className="me-3 text-light"><i className="fa fa-user me-2" />Register</small></NavLink>
-                            <a href="#"><small className="me-3 text-light"><i className="fa fa-sign-in-alt me-2" />Login</small></a>
+                            
+                            {
+                                
+                                (()=>{
+                                    if(localStorage.getItem('uid')){
+                                        return(
+                                            <NavLink to={'/Login'} onClick={logout}><small className="me-3 text-light"><i className="fa fa-sign-out-alt me-2" />Logout</small></NavLink>
+                                        )
+                                    } else {
+                                        return(
+                                            <NavLink to={'/Login'}><small className="me-3 text-light"><i className="fa fa-sign-in-alt me-2" />Login</small></NavLink>
+                                        )
+                                    }
+                                })()
+
+                            }
+                            
+                            
                             <div className="dropdown">
                                 <a href="#" className="dropdown-toggle text-light" data-bs-toggle="dropdown"><small><i className="fa fa-home me-2" /> My Dashboard</small></a>
                                 <div className="dropdown-menu rounded">
