@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* Class-based dark mode: UIContext toggles `.dark` on <html>, so map
+   Tailwind's `dark:` variant to that class instead of the OS preference. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Design tokens
+ * ---------------------------------------------------------------
+ * Every color used across the shell + sections is expressed as a CSS
+ * variable here so both themes stay centrally tunable and every
+ * component can reference the same semantic names (e.g. `bg-[var(--surface)]`)
+ * instead of hard-coded hex/opacity values duplicated per file.
+ */
+:root {
+  color-scheme: light;
+
+  /* canvas + surfaces */
+  --bg-canvas: #F6F5FB;
+  --bg-canvas-alt: #EFEDF9;
+  --bg-elevated: #FFFFFF;
+  --surface: rgba(255, 255, 255, 0.68);
+  --surface-hover: rgba(255, 255, 255, 0.88);
+  --surface-strong: rgba(255, 255, 255, 0.94);
+  --surface-faint: rgba(255, 255, 255, 0.55);
+
+  /* borders */
+  --border: rgba(15, 23, 42, 0.10);
+  --border-hover: rgba(109, 40, 217, 0.32);
+  --border-strong: rgba(15, 23, 42, 0.18);
+  --border-accent: rgba(109, 40, 217, 0.35);
+
+  /* text */
+  --text-primary: #0F172A;
+  --text-secondary: #33394D;
+  --text-muted: #5B6478;
+  --text-faint: #8891A5;
+
+  /* brand accents (kept darker/more saturated than dark-mode for AA contrast on light surfaces) */
+  --accent: #6D28D9;
+  --accent-2: #7C3AED;
+  --accent-hover: #5B21B6;
+  --accent-cyan: #0E7490;
+  --accent-soft: rgba(109, 40, 217, 0.08);
+  --accent-soft-strong: rgba(109, 40, 217, 0.14);
+
+  /* shadows */
+  --shadow-color: rgba(15, 23, 42, 0.10);
+  --shadow-color-strong: rgba(15, 23, 42, 0.18);
+  --shadow-accent: rgba(109, 40, 217, 0.22);
+  --shadow-accent-strong: rgba(109, 40, 217, 0.32);
+
+  /* ambient background glows */
+  --glow-violet: rgba(124, 92, 255, 0.18);
+  --glow-cyan: rgba(14, 116, 144, 0.14);
+
+  --ring-focus: #6D28D9;
+  --scrollbar-thumb: rgba(15, 23, 42, 0.16);
+  --scrollbar-thumb-hover: rgba(15, 23, 42, 0.28);
+  --scrim: rgba(15, 23, 42, 0.38);
+}
+
+.dark {
+  color-scheme: dark;
+
+  /* canvas + surfaces */
+  --bg-canvas: #0B0F19;
+  --bg-canvas-alt: #0E1424;
+  --bg-elevated: #111827;
+  --surface: rgba(255, 255, 255, 0.045);
+  --surface-hover: rgba(255, 255, 255, 0.07);
+  --surface-strong: rgba(255, 255, 255, 0.09);
+  --surface-faint: rgba(255, 255, 255, 0.025);
+
+  /* borders */
+  --border: rgba(255, 255, 255, 0.10);
+  --border-hover: rgba(124, 92, 255, 0.45);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --border-accent: rgba(124, 92, 255, 0.35);
+
+  /* text */
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #97A2B8;
+  --text-faint: #6B7690;
+
+  /* brand accents */
+  --accent: #7C5CFF;
+  --accent-2: #9D7CFF;
+  --accent-hover: #8F6FFF;
+  --accent-cyan: #5BE7FF;
+  --accent-soft: rgba(124, 92, 255, 0.12);
+  --accent-soft-strong: rgba(124, 92, 255, 0.18);
+
+  /* shadows */
+  --shadow-color: rgba(0, 0, 0, 0.55);
+  --shadow-color-strong: rgba(0, 0, 0, 0.72);
+  --shadow-accent: rgba(124, 92, 255, 0.35);
+  --shadow-accent-strong: rgba(124, 92, 255, 0.55);
+
+  /* ambient background glows */
+  --glow-violet: rgba(124, 92, 255, 0.15);
+  --glow-cyan: rgba(91, 231, 255, 0.10);
+
+  --ring-focus: #9D7CFF;
+  --scrollbar-thumb: rgba(255, 255, 255, 0.12);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.22);
+  --scrim: rgba(0, 0, 0, 0.6);
+}
+
+html {
+  background-color: var(--bg-canvas);
+  transition: background-color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  min-height: 100dvh;
+}
+
+/* Premium, theme-aware selection + focus states applied globally so every
+   interactive element gets consistent, accessible treatment without every
+   component needing its own focus-visible utility classes. */
+::selection {
+  background-color: var(--accent-soft-strong);
+  color: var(--text-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring-focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}

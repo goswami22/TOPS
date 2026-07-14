@@ -12,11 +12,7 @@ code {
     monospace;
 }
 
-html,
-body,
-#root {
-  
-}
+
 .dark {
   background-color: #222222;
   color: #ffffff;
