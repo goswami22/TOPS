@@ -1,5 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+export { default as SectionHeading } from "./SectionHeading";
+
+export function AmbientGlow({ className = "" }) {
+  return (
+    <div className={`absolute rounded-full mix-blend-screen filter blur-[100px] opacity-60 pointer-events-none ${className}`} />
+  );
+}
 
 export function IconButton({ onClick, ariaLabel, className = "", children, ...props }) {
   return (

@@ -4,11 +4,11 @@ import { getproduct } from "../slice/ProductSlice";
 
 function ProductData() {
 
-  const { products, pending } = useSelector((state) => state.ProductStore);
-  console.log(pending)
+  const { products} = useSelector((state) => state.ProductStore);
+
   console.log(products)
 
-
+  
   const dispatch = useDispatch()
 
   useEffect(() => {
