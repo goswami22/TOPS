@@ -32,7 +32,7 @@ function AdminBlog() {
 
     const { api, fetchApi } = UseCustomHooks('http://localhost:3000/blogs')
 
-
+//  view 
     const [blogData, setBlogData] = useState({
         id: "",
         image: "",

@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getproduct } from "../slice/ProductSlice";
+import { deleteproduct, getproduct } from "../slice/ProductSlice";
 
 function ProductData() {
 
-  const { products} = useSelector((state) => state.ProductStore);
+  const { products } = useSelector((state) => state.ProductStore);
 
   console.log(products)
 
-  
+
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -42,7 +42,11 @@ function ProductData() {
                       <img src={item.image} alt={item.title} width="80" />
                     </td>
                     <td>{item.category}</td>
-                    <td><button className='btn btn-info'>View</button><button className='btn btn-success mx-2'>Edit</button><button className='btn btn-danger'>Delete</button></td>
+                    <td>
+                      <button className='btn btn-info'>View</button>
+                      <button className='btn btn-success mx-2'>Edit</button>
+                      <button onClick={()=> dispatch(deleteproduct(item.id))} className='btn btn-danger'>Delete</button>
+                    </td>
                   </tr>
                 )
               })
