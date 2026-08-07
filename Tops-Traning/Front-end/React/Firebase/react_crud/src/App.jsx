@@ -17,8 +17,8 @@ function App() {
   return (
     <div>
 
-        <ToastContainer
-          autoClose={2000} />
+      <ToastContainer
+        autoClose={2000} />
 
       <Routes>
 

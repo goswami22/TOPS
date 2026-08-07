@@ -7,3 +7,10 @@ db.sqlite3
 *.zip
 *.mp4
 *.exe
+
+node_modules
+dist
+.vscode
+
+.env.local
+# Zip files

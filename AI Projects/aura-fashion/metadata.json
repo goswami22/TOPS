@@ -1,0 +1,6 @@
+{
+  "name": "Aura Fashion",
+  "description": "Modern, premium, high-converting fashion eCommerce website for a luxury, trendy clothing brand.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Savoria Gourmet Chain",
+  "description": "A luxury, modern food chain & restaurant experience featuring interactive online ordering, AI food pairings, table reservations, live order tracking, and multi-location dining.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

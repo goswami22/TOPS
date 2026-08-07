@@ -12,7 +12,6 @@ import ProductCard from './components/ProductCard';
 import QuickViewModal from './components/QuickViewModal';
 import AiStylistSection from './components/AiStylistSection';
 import BrandStory from './components/BrandStory';
-import { div } from 'motion/react-client';
 
 export default function App() {
   const [activePage, setActivePage] = useState<string>('home');
