@@ -1,6 +1,10 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 function AddToPlaylist() {
+
+    useEffect(()=>{
+      inputRef.current.focus()
+    },[])
 
     const [song, setSong] = useState('')
     const [playlist, setPlaylist] = useState([])
@@ -13,10 +17,6 @@ function AddToPlaylist() {
         setPlaylist([...playlist, song])
 
         setSong("")
-
-        inputRef.current.focus()
-
-
     }
 
   return (

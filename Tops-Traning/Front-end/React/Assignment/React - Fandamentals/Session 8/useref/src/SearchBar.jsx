@@ -1,4 +1,4 @@
-import React, {  useRef, useState } from 'react'
+import React, {  useEffect, useRef, useState } from 'react'
 
 
 
@@ -10,9 +10,10 @@ function SearchBar() {
     // const inputRef = useRef()
     const messageRef = useRef()
 
-    // useEffect(() => {
-    //     inputRef.current.focus()
-    // }, [])
+    useEffect(() => {
+        // inputRef.current.focus()
+        messageRef.current.focus()
+    },[])
 
 
     const formsubmit = (e) => {
@@ -23,7 +24,7 @@ function SearchBar() {
         // inputRef.current.value = ""
         setName('')
         setMessage('')
-        messageRef.current.focus()
+        
     }
 
     return (
