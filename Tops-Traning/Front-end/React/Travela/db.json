@@ -19,21 +19,21 @@
       "name": "user",
       "email": "user@gmail.com",
       "password": "123456",
-      "status": "unblock"
+      "status": "block"
     },
     {
       "id": "2",
       "name": "Priya",
       "email": "priya@gmail.com",
       "password": "123456",
-      "status": "block"
+      "status": "unblock"
     },
     {
       "id": "3",
       "name": "Amit",
       "email": "amit@gmail.com",
       "password": "123456",
-      "status": "block"
+      "status": "unblock"
     },
     {
       "id": "4",
@@ -54,14 +54,14 @@
       "name": "Bharat",
       "email": "bharat@gmail.com",
       "password": "1",
-      "status": "unblock"
+      "status": "block"
     },
     {
       "id": "nb8Vxgtp3Yg",
       "name": "Bhavesh Goswami",
       "email": "b@gmail.com",
       "password": "1",
-      "status": "unblock"
+      "status": "block"
     }
   ],
   "blogs": [
