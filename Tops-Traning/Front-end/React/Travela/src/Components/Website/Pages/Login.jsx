@@ -39,9 +39,10 @@ function Login() {
 
         try {
             const res = await axios.get(`http://localhost:3000/users?email=${email}`)
+            // const res = await axios.get(`https://my-api-lx2t.onrender.com/users?email=${email}`)
             console.log(res.data)
 
-            if(res.data.lenght === 0){
+            if(res.data.length === 0){
                 toast.error('Email not found')
                 return false
             }
