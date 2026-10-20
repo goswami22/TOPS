@@ -158,8 +158,6 @@ function AdminBlog() {
 
                                                 {/* Button trigger modal */}
                                                 <div>
-
-
                                                     <div className="modal fade" id={`blogview${item.id}`} tabIndex="{-1}" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div className="modal-dialog  modal-lg">
                                                             <div className="modal-content">

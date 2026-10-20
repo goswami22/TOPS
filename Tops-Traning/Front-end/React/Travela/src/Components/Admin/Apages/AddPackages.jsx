@@ -44,7 +44,7 @@ function AddPackages() {
                 hotel: '',
                 dis: ''
             })
-            redirect('/APackages')
+            redirect('/ ')
         } catch (error) {
             console.log('API not Found', error)
         }

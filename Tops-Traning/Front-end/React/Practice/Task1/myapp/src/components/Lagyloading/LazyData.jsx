@@ -1,0 +1,15 @@
+
+
+const LazyData = () =>  {
+    return(
+        <div>
+            <h1>Loading Data</h1>
+            <h1>Loading Data</h1>
+            <h1>Loading Data</h1>
+            <h1>Loading Data</h1>
+            <h1>Loading Data</h1>
+        </div>
+    )
+}
+
+export default LazyData

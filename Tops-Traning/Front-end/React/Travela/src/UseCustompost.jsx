@@ -31,7 +31,7 @@ function UseCustompost(api, initialData, redictPath) {
             toast.error('Api Not Found')
         }
     } 
-
+    
     return {apiData,getapiData,submitData}
 }
 

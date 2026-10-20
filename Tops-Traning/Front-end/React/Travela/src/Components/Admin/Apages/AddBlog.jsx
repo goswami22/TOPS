@@ -10,11 +10,8 @@ import { toast } from 'react-toastify';
 function AddBlog() {
 
     const redirect = useNavigate()
-
-
-
+    
     const [blogdata, setBlogdata] = useState({
-        id: '',
         image: '',
         date: '',
         post: '',
@@ -25,7 +22,7 @@ function AddBlog() {
     const getData = (e) => {
         setBlogdata({
             ...blogdata,
-            id: new Date().getTime().toString(),
+            id: new Date.getTime().toString(),
             [e.target.name]: e.target.value
         })
     }
@@ -35,7 +32,6 @@ function AddBlog() {
         try {
             const res = await axios.post('http://localhost:3000/blogs', blogdata)
             setBlogdata({
-                id: '',
                 image: '',
                 date: '',
                 post: '',

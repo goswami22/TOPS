@@ -41,7 +41,7 @@ function AGallery() {
   fetchApi()
 
 
-  // Update dat 
+  // Update data
   const [editModal, SetEditModal] = useState(null)
   const [editData, SetEditData] = useState({
     id: '',
@@ -178,103 +178,103 @@ function AGallery() {
         </div>
         {
           editModal && (
-          // Edit mOdal
-          <div className="modal fade" id="updateModal" tabIndex={-1} aria-labelledby="editModalLabel" aria-hidden="true">
-            <div className="modal-dialog modal-lg">
-              <div className="modal-content">
+            // Edit mOdal
+            <div className="modal fade" id="updateModal" tabIndex={-1} aria-labelledby="editModalLabel" aria-hidden="true">
+              <div className="modal-dialog modal-lg">
+                <div className="modal-content">
 
-                <div className="modal-header">
-                  <h5 className="modal-title" id="editModalLabel">Update Gallary</h5>
-                  <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="editModalLabel">Update Gallary</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+
+                  <form onSubmit={updateData}>
+                    <div className="modal-body">
+
+                      <div className="mb-3">
+                        <label className="form-label">Name</label>
+                        <input type="text" name="name" value={editData.name} onChange={changeData} className="form-control" />
+                      </div>
+
+                      <div className="mb-3">
+                        <label className="form-label">Image URL</label>
+                        <input type="url" name="image" value={editData.image} onChange={changeData} className="form-control" />
+                      </div>
+
+                      <div className="mb-3">
+                        <label className="form-label">Category</label>
+
+                        <select name="category" value={editData.category} onChange={changeData} className="form-select">
+                          <option value='WorldTour'>WorldTour</option>
+                          <option value='OceanTour'>OceanTour</option>
+                          <option value='SummerTour'>SummerTour</option>
+                          <option value='SportTour'>SportTour</option>
+                        </select>
+                      </div>
+
+                      <div className="text-center">
+                        <img src={editData.image} alt="" className="img-fluid rounded" style={{ maxHeight: "250px" }} />
+                      </div>
+                    </div>
+
+                    <div className="modal-footer">
+                      <button type="button" className="btn btn-dark" data-bs-dismiss="modal">Cancel</button>
+                      <button type="submit" className="btn btn-primary">Update Gllary</button>
+
+                    </div>
+                  </form>
+
                 </div>
-
-                <form onSubmit={updateData}>
-                  <div className="modal-body">
-
-                    <div className="mb-3">
-                      <label className="form-label">Name</label>
-                      <input type="text" name="name" value={editData.name} onChange={changeData} className="form-control" />
-                    </div>
-
-                    <div className="mb-3">
-                      <label className="form-label">Image URL</label>
-                      <input type="url" name="image" value={editData.image} onChange={changeData} className="form-control" />
-                    </div>
-
-                    <div className="mb-3">
-                      <label className="form-label">Category</label>
-
-                      <select name="category" value={editData.category} onChange={changeData} className="form-select">
-                        <option value='WorldTour'>WorldTour</option>
-                        <option value='OceanTour'>OceanTour</option>
-                        <option value='SummerTour'>SummerTour</option>
-                        <option value='SportTour'>SportTour</option>
-                      </select>
-                    </div>
-
-                    <div className="text-center">
-                      <img src={editData.image} alt="" className="img-fluid rounded" style={{ maxHeight: "250px" }} />
-                    </div>
-                  </div>
-
-                  <div className="modal-footer">
-                    <button type="button" className="btn btn-dark" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" className="btn btn-primary">Update Gllary</button>
-
-                  </div>
-                </form>
-
               </div>
             </div>
-          </div>
 
 
-          // <div className="container-fluid booking py-5">
-          //   <div className="container py-5">
-          //     <div className="row g-5 align-items-center">
-          //       <div className="col-lg-10 mx-auto text-center">
-          //         <h1 className="text-white mb-3">Our Gallery</h1>
-          //         <p className="text-white mb-5">Get <span className="text-warning">50% Off</span> On Your First Adventure Trip With Travela. Get More Deal Offers Here.</p>
+            // <div className="container-fluid booking py-5">
+            //   <div className="container py-5">
+            //     <div className="row g-5 align-items-center">
+            //       <div className="col-lg-10 mx-auto text-center">
+            //         <h1 className="text-white mb-3">Our Gallery</h1>
+            //         <p className="text-white mb-5">Get <span className="text-warning">50% Off</span> On Your First Adventure Trip With Travela. Get More Deal Offers Here.</p>
 
-          //         <form onSubmit={updateData}>
-          //           <div className="row g-3">
-          //             <div className="col-md-12">
-          //               <div className="form-floating">
-          //                 <input type="text" name='name' value={editData.name} onChange={changeData} className="form-control bg-white border-0" id="name" placeholder="Your Tour Name" />
-          //                 <label htmlFor="name">Your Tour Name</label>
-          //               </div>
-          //             </div>
-          //             <div className="col-md-12">
-          //               <div className="form-floating">
-          //                 <input type="url" name='image' value={editData.image} onChange={changeData} className="form-control bg-white border-0" id="image" placeholder="Add Image Link" />
-          //                 <label htmlFor="image">Add Image Link</label>
-          //               </div>
-          //             </div>
-          //             <div className="col-md-12">
-          //               <div className="form-floating">
-          //                 <select name='category' value={editData.category} onChange={changeData} className="form-select bg-white border-0" id="select1">
-          //                   <option hidden> Select Here </option>
-          //                   <option value='WorldTour'>WorldTour</option>
-          //                   <option value='OceanTour'>OceanTour</option>
-          //                   <option value='SummerTour'>SummerTour</option>
-          //                   <option value='SportTour'>SportTour</option>
-          //                 </select>
-          //                 <label htmlFor="select1">Category</label>
-          //               </div>
-          //             </div>
+            //         <form onSubmit={updateData}>
+            //           <div className="row g-3">
+            //             <div className="col-md-12">
+            //               <div className="form-floating">
+            //                 <input type="text" name='name' value={editData.name} onChange={changeData} className="form-control bg-white border-0" id="name" placeholder="Your Tour Name" />
+            //                 <label htmlFor="name">Your Tour Name</label>
+            //               </div>
+            //             </div>
+            //             <div className="col-md-12">
+            //               <div className="form-floating">
+            //                 <input type="url" name='image' value={editData.image} onChange={changeData} className="form-control bg-white border-0" id="image" placeholder="Add Image Link" />
+            //                 <label htmlFor="image">Add Image Link</label>
+            //               </div>
+            //             </div>
+            //             <div className="col-md-12">
+            //               <div className="form-floating">
+            //                 <select name='category' value={editData.category} onChange={changeData} className="form-select bg-white border-0" id="select1">
+            //                   <option hidden> Select Here </option>
+            //                   <option value='WorldTour'>WorldTour</option>
+            //                   <option value='OceanTour'>OceanTour</option>
+            //                   <option value='SummerTour'>SummerTour</option>
+            //                   <option value='SportTour'>SportTour</option>
+            //                 </select>
+            //                 <label htmlFor="select1">Category</label>
+            //               </div>
+            //             </div>
 
-          //             <div className="col-6">
-          //               <button onClick={updateData} className="btn btn-primary text-white w-100 py-3" type="submit">Update</button>
-          //             </div>
-          //             <div className="col-6">
-          //               <button onClick={() => SetEditModal(null)} className="btn btn-primary text-white w-100 py-3" type="submit">cancel</button>
-          //             </div>
-          //           </div>
-          //         </form>
-          //       </div>
-          //     </div>
-          //   </div>
-          // </div>
+            //             <div className="col-6">
+            //               <button onClick={updateData} className="btn btn-primary text-white w-100 py-3" type="submit">Update</button>
+            //             </div>
+            //             <div className="col-6">
+            //               <button onClick={() => SetEditModal(null)} className="btn btn-primary text-white w-100 py-3" type="submit">cancel</button>
+            //             </div>
+            //           </div>
+            //         </form>
+            //       </div>
+            //     </div>
+            //   </div>
+            // </div>
           )
         }
       </section>

@@ -1,29 +1,50 @@
 {
-    "posts": [
-        {
-            "id": 1,
-            "title": "JSON-Server",
-            "author": "Amit"
-        },
-        {
-            "id": 2,
-            "title": "Node.js",
-            "author": "Mohit"
-        }
-    ],
-    "comments": [
-        {
-            "id": 1,
-            "body": "Great post!",
-            "postId": 1
-        },
-        {
-            "id": 2,
-            "body": "Informative!",
-            "postId": 2
-        }
-    ],
-    "profile": {
-        "name": "Amit Kumar"
+  "posts": [
+    {
+      "id": "1",
+      "title": "JSON-Server",
+      "author": "Amit"
+    },
+    {
+      "id": "2",
+      "title": "Node.js",
+      "author": "Mohit"
     }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "Great post!",
+      "postId": 1
+    },
+    {
+      "id": "2",
+      "body": "Informative!",
+      "postId": 2
+    }
+  ],
+  "profile": {
+    "name": "Amit Kumar"
+  },
+  "person": [
+    {
+      "fname": "Bhavesh",
+      "lname": "Goswami",
+      "age": "25",
+      "phone": "6358585458",
+      "email": "test@gmail.com",
+      "address": "test",
+      "id": "IlPy8MSw3VY"
+    },
+    {
+      "fname": "janak",
+      "lname": "Goswami",
+      "age": "20",
+      "phone": "635854584",
+      "email": "janak@123.com",
+      "address": "ahmedabad",
+      "id": "63d2GsjCWPA"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
