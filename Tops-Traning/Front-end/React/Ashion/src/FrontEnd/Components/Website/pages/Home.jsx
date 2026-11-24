@@ -1,4 +1,5 @@
 import React from 'react'
+import category1 from '../../../Assets/img/categories/category-1.jpg'
 
 function Home() {
   return (
@@ -8,7 +9,7 @@ function Home() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-6 p-0">
-              <div className="categories__item categories__large__item set-bg" data-setbg="img/categories/category-1.jpg">
+              <div className="categories__item categories__large__item set-bg" data-setbg={category1} style={{category1}}>
                 <div className="categories__text">
                   <h1>Women’s fashion</h1>
                   <p>Sitamet, consectetur adipiscing elit, sed do eiusmod tempor incidid-unt labore

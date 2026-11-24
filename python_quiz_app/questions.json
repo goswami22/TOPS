@@ -1,0 +1,94 @@
+
+{
+    "title": "Python Fundamentals Quiz",
+    "questions": [
+        {
+            "id": 1,
+            "question": "Who developed Python?",
+            "options": [
+                "James Gosling",
+                "Guido van Rossum",
+                "Dennis Ritchie",
+                "Bjarne Stroustrup"
+            ],
+            "answerIndex": 1
+        },
+        {
+            "id": 2,
+            "question": "Which symbol is used for comments in Python?",
+            "options": [
+                "//",
+                "/* */",
+                "#",
+                "<!-- -->"
+            ],
+            "answerIndex": 2
+        },
+        {
+            "id": 3,
+            "question": "Which data type is used to store True or False?",
+            "options": [
+                "int",
+                "str",
+                "bool",
+                "list"
+            ],
+            "answerIndex": 2
+        },
+        {
+            "id": 4,
+            "question": "Which keyword is used to define a function?",
+            "options": [
+                "function",
+                "def",
+                "fun",
+                "define"
+            ],
+            "answerIndex": 1
+        },
+        {
+            "id": 5,
+            "question": "Which collection is ordered and mutable?",
+            "options": [
+                "Tuple",
+                "Set",
+                "List",
+                "String"
+            ],
+            "answerIndex": 2
+        },
+        {
+            "id": 6,
+            "question": "What is the output of 2 ** 3?",
+            "options": [
+                "5",
+                "6",
+                "8",
+                "9"
+            ],
+            "answerIndex": 2
+        },
+        {
+            "id": 7,
+            "question": "Which method adds an item to a list?",
+            "options": [
+                "add()",
+                "append()",
+                "insertItem()",
+                "push()"
+            ],
+            "answerIndex": 1
+        },
+        {
+            "id": 8,
+            "question": "Which keyword is used for a loop?",
+            "options": [
+                "repeat",
+                "loop",
+                "for",
+                "iterate"
+            ],
+            "answerIndex": 2
+        }
+    ]
+}
